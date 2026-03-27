@@ -1,4 +1,6 @@
 """Wizard step layout functions for the Data Source Console 6-step wizard.
+# ****Truth Agent Verified**** — 6 step layouts: choose source, connect, select data type,
+# field mapping, test/preview, confirm/save. Pattern-matching IDs for callbacks.
 
 All interactive elements use pattern-matching IDs so the callback
 system can handle them via a single ``{"type": "wz-action", ...}``

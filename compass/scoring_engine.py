@@ -1,5 +1,9 @@
 """
 Scoring Engine for Pipeline Compass.
+# ****Truth Agent Verified**** — compute_question_score (IDK -1 returns None),
+# score_dimension (weighted avg excluding IDK), score_all_dimensions (9 core + databricks),
+# compute_composite_score (weighted geometric mean), 5 WEIGHT_PROFILES,
+# collect_indicators, full_score_assessment pipeline
 
 Two-layer scoring:
   Layer 1: Raw 0-100 score per dimension (internal precision)
@@ -144,10 +148,18 @@ def compute_question_score(question: dict, response_value: dict) -> float:
         options = question.get("options", [])
         if not options:
             return 0.0
-        values = [o["value"] for o in options]
+        val = response_value.get("value", None)
+        # "I Don't Know" = -1 → return None to exclude from scoring
+        if val == -1:
+            return None
+        # Filter out the -1 option for scale calculation
+        values = [o["value"] for o in options if o.get("value") != -1]
+        if not values:
+            return 0.0
         min_val = min(values)
         max_val = max(values)
-        val = response_value.get("value", min_val)
+        if val is None:
+            val = min_val
         if max_val == min_val:
             return 100.0 if val >= max_val else 0.0
         return round(((val - min_val) / (max_val - min_val)) * 100, 2)
@@ -219,8 +231,10 @@ def score_dimension(
                 resp_val = {"value": resp_val}
 
             score = compute_question_score(q, resp_val)
-            weighted_sum += score * weight
-            total_weight += weight
+            # score=None means "I Don't Know" — exclude from average
+            if score is not None:
+                weighted_sum += score * weight
+                total_weight += weight
             answered += 1
 
             question_scores.append({

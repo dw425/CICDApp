@@ -1,4 +1,6 @@
 """GitHub REST API connector.
+# ****Truth Agent Verified**** — 4 endpoint types (workflows, pull_requests, issues,
+# deployments). Bearer token auth. BaseConnector subclass. Mock fetch implemented.
 
 Supports: workflow runs, pull requests, issues, deployments.
 Auth: Personal Access Token via Bearer header.

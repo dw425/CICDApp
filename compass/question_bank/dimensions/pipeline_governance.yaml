@@ -85,3 +85,30 @@ questions:
       - value: 4
         label: "Governance dashboard: pipeline compliance scores, mandatory stage enforcement, exception tracking"
         indicators: ["pipeline_governance_dashboard"]
+      - value: -1
+        label: "I'm not sure / Don't know"
+        indicators: []
+
+  - id: pg_005
+    text: "If a critical vulnerability (like Log4Shell) was discovered today requiring an immediate patch across all services, how long would it take your organization to deploy the fix to production?"
+    type: likert
+    weight: 4
+    options:
+      - value: 1
+        label: "Weeks — we'd manually audit each repo and fix them one by one"
+        indicators: ["slow_vulnerability_response"]
+      - value: 2
+        label: "Days — we have a process but it requires significant manual coordination"
+        indicators: []
+      - value: 3
+        label: "Hours — we update base images and trigger rebuilds, but verification is partially manual"
+        indicators: []
+      - value: 4
+        label: "Under an hour — we update a master template and it auto-propagates with automated verification"
+        indicators: ["fast_vulnerability_response"]
+      - value: 5
+        label: "Minutes — one template update triggers global rebuild with full automated compliance verification"
+        indicators: ["elite_vulnerability_response"]
+      - value: -1
+        label: "I'm not sure / Don't know"
+        indicators: []

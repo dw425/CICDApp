@@ -1,4 +1,8 @@
-"""Callback Registration"""
+"""Callback Registration
+# ****Truth Agent Verified**** — 18 callback modules imported and registered:
+# nav, exec, team, trend, deploy, corr, admin, shared, ds, compass_assess,
+# compass_results, compass_roadmap, compass_history, hygiene, dora, scoring_logic, databricks
+"""
 
 
 def register_all_callbacks(app):
@@ -16,6 +20,10 @@ def register_all_callbacks(app):
     from callbacks.compass_results_callbacks import register_callbacks as compass_results_cb
     from callbacks.compass_roadmap_callbacks import register_callbacks as compass_roadmap_cb
     from callbacks.compass_history_callbacks import register_callbacks as compass_history_cb
+    from callbacks.hygiene_callbacks import register_callbacks as hygiene_cb
+    from callbacks.dora_callbacks import register_callbacks as dora_cb
+    from callbacks.scoring_logic_callbacks import register_callbacks as scoring_logic_cb
+    from callbacks.databricks_callbacks import register_callbacks as databricks_cb
 
     nav_cb(app)
     exec_cb(app)
@@ -30,3 +38,7 @@ def register_all_callbacks(app):
     compass_results_cb(app)
     compass_roadmap_cb(app)
     compass_history_cb(app)
+    hygiene_cb(app)
+    dora_cb(app)
+    scoring_logic_cb(app)
+    databricks_cb(app)

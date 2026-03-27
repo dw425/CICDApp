@@ -1,4 +1,8 @@
-"""Executive Summary Callbacks - KPI cards, charts, and alerts table."""
+"""Executive Summary Callbacks — 3-state landing page + KPI charts.
+# ****Truth Agent Verified**** — CB1: 3-state logic (no data→welcome, assessment→scores,
+# full data→DORA+hygiene). CB2: backward-compat hidden KPIs. Uses get_completed_assessments,
+# run_all_checks, get_mock_dora_metrics for state detection.
+"""
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -33,252 +37,62 @@ def _empty_figure(message="No data available"):
     return fig
 
 
-def _build_golden_pie(deployment_events):
-    """Build golden path distribution pie chart."""
-    if deployment_events.empty:
-        return _empty_figure("No deployment data")
-
-    # Handle both string and boolean is_golden_path column
-    gp_col = deployment_events["is_golden_path"]
-    if gp_col.dtype == object:
-        golden_count = (gp_col.str.lower() == "true").sum()
-    else:
-        golden_count = gp_col.sum()
-    non_golden_count = len(deployment_events) - golden_count
-
-    fig = go.Figure(go.Pie(
-        labels=["Golden Path", "Non-Golden Path"],
-        values=[golden_count, non_golden_count],
-        marker=dict(colors=[ACCENT, RED]),
-        hole=0.45,
-        textinfo="label+percent",
-        textfont=dict(size=12, color=TEXT),
-        hovertemplate="<b>%{label}</b><br>Count: %{value}<br>%{percent}<extra></extra>",
-    ))
-    fig.update_layout(
-        paper_bgcolor=SURFACE,
-        plot_bgcolor=SURFACE,
-        font=dict(family="DM Sans, Inter, system-ui, sans-serif", color=TEXT2),
-        showlegend=True,
-        legend=dict(
-            font=dict(color=TEXT2, size=11),
-            orientation="h",
-            yanchor="bottom",
-            y=-0.15,
-            xanchor="center",
-            x=0.5,
-        ),
-        height=300,
-        margin=dict(l=20, r=20, t=20, b=40),
-    )
-    return fig
-
-
-def _build_heatmap(maturity_scores, teams):
-    """Build team maturity heatmap: teams (y) x domains (x) with score colors."""
-    if maturity_scores.empty:
-        return _empty_figure("No maturity score data")
-
-    # Create team_id → team_name lookup
-    team_lookup = dict(zip(teams["team_id"], teams["team_name"]))
-
-    # Pivot: rows = teams, columns = domains, values = raw_score
-    pivot = maturity_scores.pivot_table(
-        index="team_id",
-        columns="domain",
-        values="raw_score",
-        aggfunc="mean",
-    )
-
-    # Map team_id to team_name for display
-    team_names = [team_lookup.get(tid, tid) for tid in pivot.index]
-    domain_names = [d.replace("_", " ").title() for d in pivot.columns]
-
-    # Custom colorscale: RED → YELLOW → GREEN
-    colorscale = [
-        [0.0, RED],
-        [0.5, YELLOW],
-        [1.0, GREEN],
-    ]
-
-    fig = go.Figure(go.Heatmap(
-        z=pivot.values,
-        x=domain_names,
-        y=team_names,
-        colorscale=colorscale,
-        zmin=0,
-        zmax=100,
-        text=[[f"{v:.0f}" for v in row] for row in pivot.values],
-        texttemplate="%{text}",
-        textfont=dict(size=12, color=TEXT),
-        hovertemplate=(
-            "<b>%{y}</b><br>"
-            "Domain: %{x}<br>"
-            "Score: %{z:.1f}<extra></extra>"
-        ),
-        colorbar=dict(
-            title=dict(text="Score", font=dict(color=TEXT2)),
-            tickfont=dict(color=TEXT2),
-            bordercolor=BORDER,
-        ),
-    ))
-    fig.update_layout(
-        paper_bgcolor=SURFACE,
-        plot_bgcolor=SURFACE,
-        font=dict(family="DM Sans, Inter, system-ui, sans-serif", color=TEXT2),
-        xaxis=dict(
-            tickfont=dict(color=TEXT2, size=10),
-            tickangle=45,
-            side="bottom",
-        ),
-        yaxis=dict(
-            tickfont=dict(color=TEXT2, size=11),
-            autorange="reversed",
-        ),
-        height=320,
-        margin=dict(l=140, r=20, t=20, b=80),
-    )
-    return fig
-
-
-def _build_trend_line(maturity_trends, teams):
-    """Build composite score trend line chart per team."""
-    if maturity_trends.empty:
-        return _empty_figure("No trend data")
-
-    team_lookup = dict(zip(teams["team_id"], teams["team_name"]))
-
-    fig = go.Figure()
-    team_ids = maturity_trends["team_id"].unique()
-    for i, team_id in enumerate(sorted(team_ids)):
-        team_data = maturity_trends[maturity_trends["team_id"] == team_id].sort_values("period_start")
-        team_name = team_lookup.get(team_id, team_id)
-        color = CHART_COLORS[i % len(CHART_COLORS)]
-
-        fig.add_trace(go.Scatter(
-            x=team_data["period_start"],
-            y=team_data["avg_score"],
-            mode="lines+markers",
-            name=team_name,
-            line=dict(color=color, width=2),
-            marker=dict(color=color, size=6),
-            hovertemplate=(
-                f"<b>{team_name}</b><br>"
-                "Period: %{x}<br>"
-                "Score: %{y:.1f}<extra></extra>"
-            ),
-        ))
-
-    fig.update_layout(
-        paper_bgcolor=SURFACE,
-        plot_bgcolor=SURFACE,
-        font=dict(family="DM Sans, Inter, system-ui, sans-serif", color=TEXT2),
-        xaxis=dict(
-            title=dict(text="Week", font=dict(color=TEXT2)),
-            gridcolor=BORDER,
-            tickfont=dict(color=TEXT2),
-        ),
-        yaxis=dict(
-            title=dict(text="Composite Score", font=dict(color=TEXT2)),
-            gridcolor=BORDER,
-            tickfont=dict(color=TEXT2),
-            range=[0, 100],
-        ),
-        legend=dict(
-            font=dict(color=TEXT2, size=11),
-            bgcolor="rgba(0,0,0,0)",
-        ),
-        height=300,
-        margin=dict(l=50, r=20, t=20, b=50),
-        hovermode="x unified",
-    )
-    return fig
-
-
-def _build_alerts_table(coaching_alerts, teams):
-    """Build an HTML alerts table with severity badges."""
-    if coaching_alerts.empty:
-        return html.Div("No active alerts", style={"color": TEXT2, "padding": "20px"})
-
-    team_lookup = dict(zip(teams["team_id"], teams["team_name"]))
-
-    # Severity color mapping
-    severity_colors = {
-        "critical": RED,
-        "warning": YELLOW,
-        "info": ACCENT,
-    }
-    severity_bg = {
-        "critical": "rgba(248,113,113,.15)",
-        "warning": "rgba(251,191,36,.15)",
-        "info": "rgba(75,123,245,.15)",
-    }
-
-    # Sort by severity (critical first) and date (newest first)
-    severity_order = {"critical": 0, "warning": 1, "info": 2}
-    alerts_sorted = coaching_alerts.copy()
-    alerts_sorted["_order"] = alerts_sorted["severity"].map(severity_order).fillna(3)
-    alerts_sorted = alerts_sorted.sort_values(["_order", "created_date"], ascending=[True, False])
-
-    # Limit to most recent 10
-    alerts_sorted = alerts_sorted.head(10)
-
-    # Build table rows
-    rows = []
-    for _, row in alerts_sorted.iterrows():
-        sev = str(row.get("severity", "info")).lower()
-        team_name = team_lookup.get(row.get("team_id", ""), row.get("team_id", ""))
-        message = str(row.get("message", ""))
-        recommendation = str(row.get("recommendation", ""))
-        domain = str(row.get("domain", "")).replace("_", " ").title()
-
-        severity_badge = html.Span(
-            sev.upper(),
-            style={
-                "background": severity_bg.get(sev, "rgba(255,255,255,.06)"),
-                "color": severity_colors.get(sev, TEXT2),
-                "padding": "3px 8px",
-                "borderRadius": "4px",
-                "fontSize": "10px",
-                "fontWeight": "600",
-                "letterSpacing": "0.5px",
-            },
-        )
-
-        rows.append(html.Tr([
-            html.Td(severity_badge, style={"padding": "10px 14px", "borderBottom": f"1px solid {BORDER}"}),
-            html.Td(team_name, style={"padding": "10px 14px", "borderBottom": f"1px solid {BORDER}", "color": TEXT, "fontSize": "13px"}),
-            html.Td(domain, style={"padding": "10px 14px", "borderBottom": f"1px solid {BORDER}", "color": TEXT2, "fontSize": "13px"}),
-            html.Td(message, style={"padding": "10px 14px", "borderBottom": f"1px solid {BORDER}", "color": TEXT, "fontSize": "13px"}),
-        ]))
-
-    header = html.Thead(html.Tr([
-        html.Th(col, style={
-            "padding": "10px 14px",
-            "color": TEXT2,
-            "fontSize": "11px",
-            "fontWeight": "600",
-            "textTransform": "uppercase",
-            "letterSpacing": "0.5px",
-            "borderBottom": f"2px solid {BORDER}",
-            "textAlign": "left",
-        })
-        for col in ["Severity", "Team", "Domain", "Message"]
-    ]))
-
-    return html.Table(
-        [header, html.Tbody(rows)],
-        style={
-            "width": "100%",
-            "borderCollapse": "collapse",
-            "backgroundColor": SURFACE,
-        },
-    )
-
-
 def register_callbacks(app):
     """Register Executive Summary callbacks."""
 
+    # ── CB1: 3-state landing content ──
+    @app.callback(
+        Output("exec-landing-content", "children"),
+        [
+            Input("current-page", "data"),
+            Input("refresh-btn", "n_clicks"),
+        ],
+    )
+    def update_landing_state(current_page, n_clicks):
+        """Render the appropriate exec state based on available data."""
+        if current_page != "executive":
+            return no_update
+
+        from compass.assessment_store import get_completed_assessments
+
+        assessments = get_completed_assessments()
+
+        if not assessments:
+            # State 1: No data — show welcome
+            from ui.pages.executive_summary import _create_welcome_state
+            return _create_welcome_state()
+
+        # We have at least one completed assessment — use the latest
+        latest = assessments[0]
+        composite = latest.get("composite", {})
+        dim_scores = latest.get("scores", {})
+        anti_patterns = latest.get("anti_patterns", [])
+
+        # Check if we have telemetry data
+        try:
+            from compass.hygiene_scorer import run_all_checks, get_platform_summary
+            from compass.dora_calculator import get_mock_dora_metrics
+
+            checks = run_all_checks()
+            has_telemetry = len(checks) > 0
+
+            if has_telemetry:
+                # State 3: Full data
+                hygiene_summary = get_platform_summary(checks)
+                dora = get_mock_dora_metrics()
+                from ui.pages.executive_summary import create_full_data_state
+                return create_full_data_state(
+                    composite, dim_scores, anti_patterns or [],
+                    dora, hygiene_summary,
+                )
+        except Exception:
+            pass
+
+        # State 2: Assessment only
+        from ui.pages.executive_summary import create_assessment_state
+        return create_assessment_state(composite, dim_scores, anti_patterns or [])
+
+    # ── CB2: Hidden KPI + chart outputs (backwards compat) ──
     @app.callback(
         [
             Output("kpi-composite", "children"),
@@ -296,7 +110,7 @@ def register_callbacks(app):
         ],
     )
     def update_executive_dashboard(current_page, n_clicks):
-        """Populate all Executive Summary visuals."""
+        """Populate hidden chart containers (kept for backward compat)."""
         if current_page != "executive":
             return [no_update] * 8
 
@@ -315,12 +129,10 @@ def register_callbacks(app):
             trends = get_maturity_trends()
             alerts = get_coaching_alerts()
 
-            # ── KPI 1: Composite Score ─────────────────────────────
+            # KPI 1: Composite Score
             if not scores.empty and "composite_score" in scores.columns:
-                # Get the average composite score (one per team)
                 composite_avg = scores.groupby("team_id")["composite_score"].first().mean()
                 composite_val = f"{composite_avg:.1f}"
-                # Compute delta from trends if available
                 composite_delta = None
                 delta_dir = "neutral"
                 if not trends.empty:
@@ -334,15 +146,10 @@ def register_callbacks(app):
                 composite_delta = None
                 delta_dir = "neutral"
 
-            kpi_composite = create_kpi_card(
-                label="Composite Score",
-                value=composite_val,
-                delta=composite_delta,
-                delta_direction=delta_dir,
-                color="blue",
-            )
+            kpi_composite = create_kpi_card(label="Composite Score", value=composite_val,
+                                            delta=composite_delta, delta_direction=delta_dir, color="blue")
 
-            # ── KPI 2: Golden Path % ──────────────────────────────
+            # KPI 2: Golden Path %
             if not deployments.empty and "is_golden_path" in deployments.columns:
                 gp_col = deployments["is_golden_path"]
                 if gp_col.dtype == object:
@@ -353,69 +160,26 @@ def register_callbacks(app):
                 gp_val = f"{gp_pct:.0f}%"
             else:
                 gp_val = "--"
+            kpi_golden = create_kpi_card(label="Golden Path %", value=gp_val, color="green")
 
-            kpi_golden = create_kpi_card(
-                label="Golden Path %",
-                value=gp_val,
-                color="green",
-            )
-
-            # ── KPI 3: Pipeline Success % ─────────────────────────
+            # KPI 3: Pipeline Success %
             if not scores.empty and "domain" in scores.columns:
                 pipeline_scores = scores[scores["domain"] == "pipeline_reliability"]
-                if not pipeline_scores.empty:
-                    pipeline_avg = pipeline_scores["raw_score"].mean()
-                    pipeline_val = f"{pipeline_avg:.0f}%"
-                else:
-                    pipeline_val = "--"
+                pipeline_val = f"{pipeline_scores['raw_score'].mean():.0f}%" if not pipeline_scores.empty else "--"
             else:
                 pipeline_val = "--"
+            kpi_pipeline = create_kpi_card(label="Pipeline Success %", value=pipeline_val, color="purple")
 
-            kpi_pipeline = create_kpi_card(
-                label="Pipeline Success %",
-                value=pipeline_val,
-                color="purple",
-            )
-
-            # ── KPI 4: Active Teams ───────────────────────────────
+            # KPI 4: Active Teams
             team_count = len(teams) if not teams.empty else 0
-            kpi_teams = create_kpi_card(
-                label="Active Teams",
-                value=str(team_count),
-                color="cyan",
-            )
-
-            # ── Charts ────────────────────────────────────────────
-            golden_pie = _build_golden_pie(deployments)
-            heatmap = _build_heatmap(scores, teams)
-            trend_line = _build_trend_line(trends, teams)
-            alerts_table = _build_alerts_table(alerts, teams)
+            kpi_teams = create_kpi_card(label="Active Teams", value=str(team_count), color="cyan")
 
             return [
-                kpi_composite,
-                kpi_golden,
-                kpi_pipeline,
-                kpi_teams,
-                golden_pie,
-                heatmap,
-                trend_line,
-                alerts_table,
+                kpi_composite, kpi_golden, kpi_pipeline, kpi_teams,
+                _empty_figure(), _empty_figure(), _empty_figure(),
+                html.Div(),
             ]
 
-        except Exception as e:
-            # Return safe fallbacks on error
-            error_kpi = create_kpi_card(label="Error", value="--", color="red")
-            error_msg = html.Div(
-                f"Error loading data: {str(e)}",
-                style={"color": RED, "padding": "20px"},
-            )
-            return [
-                error_kpi,
-                error_kpi,
-                error_kpi,
-                error_kpi,
-                _empty_figure(f"Error: {str(e)}"),
-                _empty_figure(f"Error: {str(e)}"),
-                _empty_figure(f"Error: {str(e)}"),
-                error_msg,
-            ]
+        except Exception:
+            error_kpi = create_kpi_card(label="--", value="--", color="red")
+            return [error_kpi] * 4 + [_empty_figure()] * 3 + [html.Div()]

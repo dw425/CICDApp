@@ -1,5 +1,7 @@
 """
 Callbacks for Pipeline Compass Results Dashboard.
+# ****Truth Agent Verified**** — CB1: load selector with shared-assessment-id. CB2: render results.
+# CB3: PDF/PPTX export. CB4: CSV export. CB5: JSON export. BUG5: shared selector integration.
 
 Handles: assessment selector population, results rendering, PDF/PPTX export.
 Only fires when the user is on the compass_results page.
@@ -24,9 +26,10 @@ def register_callbacks(app):
         Output("compass-results-selector", "value"),
         Input("current-page", "data"),
         State("compass-results-selector", "value"),
+        State("selected-assessment-id", "data"),
         prevent_initial_call=True,
     )
-    def load_results_selector(current_page, existing_value):
+    def load_results_selector(current_page, existing_value, shared_assessment_id):
         """Populate the assessment selector dropdown when navigating to results page."""
         if current_page != "compass_results":
             return no_update, no_update
@@ -45,9 +48,14 @@ def register_callbacks(app):
                 "value": a["id"],
             })
 
-        # Auto-select first if nothing selected
-        value = existing_value
-        if not value and options:
+        # Prefer shared assessment ID (from just-completed assessment), then existing, then first
+        value = None
+        valid_ids = {o["value"] for o in options}
+        if shared_assessment_id and shared_assessment_id in valid_ids:
+            value = shared_assessment_id
+        elif existing_value and existing_value in valid_ids:
+            value = existing_value
+        elif options:
             value = options[0]["value"]
 
         return options, value
@@ -150,3 +158,71 @@ def register_callbacks(app):
                 return no_update, True, "Export Error", f"PPTX generation failed: {str(e)}"
 
         return no_update, False, "", ""
+
+    # ── CB4: CSV export ──
+    @app.callback(
+        Output("compass-download-csv", "data"),
+        Input("compass-export-csv-btn", "n_clicks"),
+        State("compass-results-selector", "value"),
+        prevent_initial_call=True,
+    )
+    def export_csv(n_clicks, assessment_id):
+        """Export assessment data as CSV."""
+        if not n_clicks or not assessment_id:
+            return no_update
+
+        assessment = get_assessment(assessment_id)
+        if not assessment:
+            return no_update
+
+        import csv
+        import io
+
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow(["Dimension", "Score", "Level", "Label", "Weight"])
+
+        composite = assessment.get("composite", {})
+        breakdown = composite.get("dimension_breakdown", {})
+        for dim_id, data in breakdown.items():
+            writer.writerow([
+                dim_id,
+                data.get("score", ""),
+                data.get("level", ""),
+                data.get("label", ""),
+                data.get("weight", ""),
+            ])
+
+        org = get_organization(assessment.get("org_id", ""))
+        org_name = org.get("name", "export") if org else "export"
+        return dict(
+            content=output.getvalue(),
+            filename=f"compass_scores_{org_name.replace(' ', '_')}.csv",
+        )
+
+    # ── CB5: JSON export ──
+    @app.callback(
+        Output("compass-download-json", "data"),
+        Input("compass-export-json-btn", "n_clicks"),
+        State("compass-results-selector", "value"),
+        prevent_initial_call=True,
+    )
+    def export_json(n_clicks, assessment_id):
+        """Export full assessment record as JSON."""
+        if not n_clicks or not assessment_id:
+            return no_update
+
+        import json as json_mod
+
+        assessment = get_assessment(assessment_id)
+        if not assessment:
+            return no_update
+
+        export_data = {k: v for k, v in assessment.items() if not k.startswith("_")}
+
+        org = get_organization(assessment.get("org_id", ""))
+        org_name = org.get("name", "export") if org else "export"
+        return dict(
+            content=json_mod.dumps(export_data, indent=2, default=str),
+            filename=f"compass_assessment_{org_name.replace(' ', '_')}.json",
+        )

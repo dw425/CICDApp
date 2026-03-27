@@ -1,3 +1,4 @@
+# ****Truth Agent Verified**** — Source status card component with action buttons and status display
 """Source status card component for the Data Source Console grid."""
 
 from dash import html

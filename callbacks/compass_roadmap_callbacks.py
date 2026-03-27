@@ -24,9 +24,10 @@ def register_callbacks(app):
         Output("compass-roadmap-selector", "value"),
         Input("current-page", "data"),
         State("compass-roadmap-selector", "value"),
+        State("selected-assessment-id", "data"),
         prevent_initial_call=True,
     )
-    def load_roadmap_selector(current_page, existing_value):
+    def load_roadmap_selector(current_page, existing_value, shared_assessment_id):
         """Populate the assessment selector when navigating to roadmap page."""
         if current_page != "compass_roadmap":
             return no_update, no_update
@@ -45,8 +46,14 @@ def register_callbacks(app):
                 "value": a["id"],
             })
 
-        value = existing_value
-        if not value and options:
+        # Prefer shared assessment ID, then existing, then first
+        value = None
+        valid_ids = {o["value"] for o in options}
+        if shared_assessment_id and shared_assessment_id in valid_ids:
+            value = shared_assessment_id
+        elif existing_value and existing_value in valid_ids:
+            value = existing_value
+        elif options:
             value = options[0]["value"]
 
         return options, value

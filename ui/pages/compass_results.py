@@ -48,7 +48,25 @@ def create_layout():
                     size="sm",
                     style={"marginLeft": "4px"},
                 ),
+                dbc.Button(
+                    [html.I(className="fas fa-file-csv"), " CSV"],
+                    id="compass-export-csv-btn",
+                    color="secondary",
+                    outline=True,
+                    size="sm",
+                    style={"marginLeft": "4px"},
+                ),
+                dbc.Button(
+                    [html.I(className="fas fa-code"), " JSON"],
+                    id="compass-export-json-btn",
+                    color="secondary",
+                    outline=True,
+                    size="sm",
+                    style={"marginLeft": "4px"},
+                ),
                 dcc.Download(id="compass-download"),
+                dcc.Download(id="compass-download-csv"),
+                dcc.Download(id="compass-download-json"),
             ], style={"display": "flex", "alignItems": "center"}),
         ], style={
             "display": "flex",
@@ -182,7 +200,14 @@ def create_results_dashboard(
         create_antipattern_grid(anti_patterns),
     ], style={**_card_style(), "marginBottom": "12px"})
 
-    return html.Div([kpi_row, row1, row2, row3, row4])
+    # Row 5: Vulnerability Response Time callout (Oh Sh*t Factor)
+    vuln_response = _get_vuln_response(assessment)
+    row5 = html.Div() if not vuln_response else html.Div([
+        _section_header("Vulnerability Response Time — \"Oh Sh*t Factor\""),
+        vuln_response,
+    ], style={**_card_style(), "marginBottom": "12px"})
+
+    return html.Div([kpi_row, row1, row2, row3, row4, row5])
 
 
 def _section_header(title: str) -> html.Div:
@@ -201,6 +226,49 @@ def _card_style() -> dict:
         "padding": "20px",
         "border": "1px solid var(--border, #272D3F)",
     }
+
+
+def _get_vuln_response(assessment: dict) -> html.Div:
+    """Extract the Oh Sh*t Factor response (pg_005) and render a callout."""
+    responses = assessment.get("responses", {})
+    pg_005 = responses.get("pg_005")
+    if not pg_005:
+        return None
+
+    resp_val = pg_005.get("response_value", pg_005)
+    if isinstance(resp_val, dict):
+        val = resp_val.get("value", 0)
+    else:
+        val = resp_val
+
+    if val == -1:
+        return None
+
+    labels = {
+        1: ("Weeks", "#EF4444", "fas fa-exclamation-triangle"),
+        2: ("Days", "#F97316", "fas fa-clock"),
+        3: ("Hours", "#EAB308", "fas fa-hourglass-half"),
+        4: ("Under an Hour", "#22C55E", "fas fa-bolt"),
+        5: ("Minutes", "#3B82F6", "fas fa-rocket"),
+    }
+
+    label, color, icon = labels.get(val, ("Unknown", "#6B7280", "fas fa-question"))
+
+    return html.Div([
+        html.Div([
+            html.I(className=icon, style={"color": color, "fontSize": "24px", "marginRight": "12px"}),
+            html.Div([
+                html.Div(label, style={"color": color, "fontSize": "22px", "fontWeight": "700"}),
+                html.Div("to deploy a critical vulnerability fix across all services",
+                         style={"color": "#8B949E", "fontSize": "12px"}),
+            ]),
+        ], style={"display": "flex", "alignItems": "center"}),
+    ], style={
+        "backgroundColor": f"{color}11",
+        "borderRadius": "8px",
+        "padding": "16px 20px",
+        "border": f"1px solid {color}33",
+    })
 
 
 def _kpi_card(label: str, value: str, sublabel: str, color: str) -> html.Div:

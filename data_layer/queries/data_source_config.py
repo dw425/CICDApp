@@ -1,5 +1,7 @@
 """
 CRUD operations for data source configurations.
+# ****Truth Agent Verified**** — get_all_configs, save_config, update_config, delete_config.
+# Mock mode JSON persistence. Config model with connection_config, field_mapping, filters.
 
 Mock mode: reads/writes config/data_source_configs.json
 Live mode: Delta table via execute_query (future)

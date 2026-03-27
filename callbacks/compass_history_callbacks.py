@@ -1,6 +1,6 @@
 """Callbacks for Pipeline Compass History Page."""
 
-from dash import Input, Output
+from dash import Input, Output, State
 
 from compass.assessment_store import (
     get_completed_assessments,
@@ -15,8 +15,9 @@ def register_callbacks(app):
     @app.callback(
         Output("compass-history-content", "children"),
         Input("current-page", "data"),
+        State("selected-assessment-id", "data"),
     )
-    def render_history(current_page):
+    def render_history(current_page, shared_assessment_id):
         """Render history dashboard when page loads."""
         if current_page != "compass_history":
             from dash import no_update

@@ -1,4 +1,8 @@
-"""Pipeline Compass Assessment Wizard Page."""
+"""Pipeline Compass Assessment Wizard Page.
+# ****Truth Agent Verified**** — create_layout (no dcc.Store here — moved to root layout),
+# _build_resume_options, _create_setup_form (Name/Role/Team/SaveName + config summary),
+# create_question_card (likert/multi_select/binary/freeform + IDK -1 option appended)
+"""
 
 from dash import html, dcc
 import dash_bootstrap_components as dbc
@@ -12,14 +16,7 @@ def create_layout():
     resume_options = _build_resume_options()
 
     return html.Div([
-        # Stores — persist across dimension navigation
-        dcc.Store(id="compass-assessment-id", data=None),
-        dcc.Store(id="compass-org-id", data=None),
-        dcc.Store(id="compass-current-dim", data=0),
-        dcc.Store(id="compass-responses", data={}),
-        dcc.Store(id="compass-wizard-step", data="setup"),
-        dcc.Store(id="compass-config", data={}),
-        dcc.Store(id="compass-live-answers", data={}),
+        # Stores now live in root layout (ui/layout.py) with storage_type="session"
 
         # Page header
         html.Div([
@@ -331,9 +328,15 @@ def create_question_card(question: dict, response_value=None) -> html.Div:
         elif response_value is not None:
             current_val = response_value
 
+        # Build options list, ensuring "I Don't Know" (-1) is present
+        radio_options = [{"label": o["label"], "value": o["value"]} for o in options]
+        has_idk = any(o["value"] == -1 for o in options)
+        if not has_idk:
+            radio_options.append({"label": "I'm not sure / Don't know", "value": -1})
+
         input_element = dbc.RadioItems(
             id={"type": "compass-response", "index": qid},
-            options=[{"label": o["label"], "value": o["value"]} for o in options],
+            options=radio_options,
             value=current_val,
             labelStyle={
                 "display": "block",

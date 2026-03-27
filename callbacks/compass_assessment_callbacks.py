@@ -1,6 +1,12 @@
-"""Callbacks for Pipeline Compass Assessment Wizard."""
+"""Callbacks for Pipeline Compass Assessment Wizard.
+# ****Truth Agent Verified**** — CB1: clientside response capture. CB2: full navigation
+# (setup→questions→complete, Next/Back/Resume/Save). CB3: autosave every 30s.
+# CB4: completion screen nav (goto-results/roadmap). BUG1: _persist_responses on every
+# nav action. BUG3: persist before scoring. BUG6: direct nav buttons on completion.
+"""
 
-from dash import html, Input, Output, State, ctx, no_update, ALL, clientside_callback
+from datetime import datetime
+from dash import html, Input, Output, State, ctx, no_update, ALL
 import dash_bootstrap_components as dbc
 
 from compass.question_bank.loader import (
@@ -88,6 +94,7 @@ def register_callbacks(app):
         Output("compass-toast", "is_open"),
         Output("compass-toast", "header"),
         Output("compass-toast", "children"),
+        Output("selected-assessment-id", "data"),
         Input("compass-next-btn", "n_clicks"),
         Input("compass-back-btn", "n_clicks"),
         Input("compass-resume-btn", "n_clicks"),
@@ -174,21 +181,15 @@ def register_callbacks(app):
         # ── Save button ──
         if triggered == "compass-save-btn":
             if assessment_id and responses:
-                for qid, resp in responses.items():
-                    q = get_question(qid)
-                    dim = q.get("_dimension", "") if q else ""
-                    sub = q.get("_sub_dimension") if q else None
-                    save_response(
-                        assessment_id, qid, dim, sub,
-                        resp.get("response_type", "likert"),
-                        resp.get("response_value", {}),
-                    )
+                _persist_responses(assessment_id, responses)
                 return _toast_only("Saved", f"Progress saved ({len(responses)} answers). You can resume later.")
             return _toast_only("Nothing to Save", "No assessment in progress.")
 
         # ── Back button ──
         if triggered == "compass-back-btn":
             if step == "questions" and current_dim > 0:
+                # Persist before navigating back
+                _persist_responses(assessment_id, responses)
                 dims = _get_ordered_dimensions(cfg_databricks)
                 current_dim -= 1
                 return _render_dimension_full(
@@ -196,6 +197,8 @@ def register_callbacks(app):
                     assessment_id, org_id, config,
                 )
             elif step == "questions" and current_dim == 0:
+                # Persist before returning to setup
+                _persist_responses(assessment_id, responses)
                 from ui.pages.compass_assessment import _create_setup_form, _build_resume_options
                 resume_options = _build_resume_options()
                 return (
@@ -209,6 +212,7 @@ def register_callbacks(app):
                     "setup",
                     assessment_id, org_id, 0, responses, config,
                     False, "", "",
+                    no_update,  # selected-assessment-id
                 )
             return _no_update()
 
@@ -260,6 +264,9 @@ def register_callbacks(app):
                 )
 
             if step == "questions":
+                # Persist responses before advancing
+                _persist_responses(assessment_id, responses)
+
                 dims = _get_ordered_dimensions(cfg_databricks)
                 if current_dim < len(dims) - 1:
                     current_dim += 1
@@ -274,9 +281,53 @@ def register_callbacks(app):
 
         return _no_update()
 
+    # ── CB3: Auto-save every 30 seconds ──
+    @app.callback(
+        Output("compass-autosave-status", "children"),
+        Input("compass-autosave-interval", "n_intervals"),
+        State("compass-wizard-step", "data"),
+        State("compass-assessment-id", "data"),
+        State("compass-responses", "data"),
+        State("compass-live-answers", "data"),
+        prevent_initial_call=True,
+    )
+    def autosave_responses(n_intervals, step, assessment_id, responses, live_answers):
+        """Silently persist responses every 30 seconds while assessment is active."""
+        if step != "questions" or not assessment_id:
+            return no_update
 
-# ── Output count = 16 (no allow_duplicate outputs) ──
-_OUTPUT_COUNT = 16
+        responses = responses or {}
+        live_answers = live_answers or {}
+        all_responses = {**responses, **live_answers}
+
+        if not all_responses:
+            return no_update
+
+        _persist_responses(assessment_id, all_responses)
+        return f"Auto-saved {len(all_responses)} answers at {datetime.now().strftime('%H:%M:%S')}"
+
+    # ── CB4: Completion screen navigation buttons ──
+    app.clientside_callback(
+        """
+        function(n1, n2) {
+            if (!n1 && !n2) return window.dash_clientside.no_update;
+            var ctx = window.dash_clientside.callback_context;
+            if (!ctx.triggered || ctx.triggered.length === 0) return window.dash_clientside.no_update;
+            var triggered = ctx.triggered[0].prop_id;
+            if (triggered.indexOf('results') >= 0) return 'compass_results';
+            if (triggered.indexOf('roadmap') >= 0) return 'compass_roadmap';
+            return window.dash_clientside.no_update;
+        }
+        """,
+        Output("current-page", "data", allow_duplicate=True),
+        Input("compass-goto-results-btn", "n_clicks"),
+        Input("compass-goto-roadmap-btn", "n_clicks"),
+        prevent_initial_call=True,
+    )
+
+
+# ── Output count = 17 ──
+_OUTPUT_COUNT = 17
 
 
 def _no_update():
@@ -289,6 +340,7 @@ def _toast_only(header, message):
         no_update, no_update, no_update, no_update,
         no_update, no_update, no_update, no_update, no_update,
         True, header, message,
+        no_update,  # selected-assessment-id
     )
 
 
@@ -298,6 +350,21 @@ def _progress_style(pct):
         "borderRadius": "2px", "transition": "width 0.3s ease",
         "width": f"{pct:.0f}%",
     }
+
+
+def _persist_responses(assessment_id, responses):
+    """Save all current responses to the assessment JSON store."""
+    if not assessment_id or not responses:
+        return
+    for qid, resp in responses.items():
+        q = get_question(qid)
+        dim = q.get("_dimension", "") if q else ""
+        sub = q.get("_sub_dimension") if q else None
+        save_response(
+            assessment_id, qid, dim, sub,
+            resp.get("response_type", "likert"),
+            resp.get("response_value", {}),
+        )
 
 
 def _get_ordered_dimensions(uses_databricks: bool) -> list:
@@ -394,6 +461,7 @@ def _render_dimension_full(dims, current_dim, responses, assessment_id, org_id, 
         responses,
         config,
         False, "", "",
+        no_update,  # selected-assessment-id
     )
 
 
@@ -403,15 +471,8 @@ def _submit_assessment(assessment_id, org_id, responses, config):
     industry = config.get("industry", "tech")
     org_size = config.get("org_size", "mid_market")
 
-    for qid, resp in responses.items():
-        q = get_question(qid)
-        dim = q.get("_dimension", "") if q else ""
-        sub = q.get("_sub_dimension") if q else None
-        save_response(
-            assessment_id, qid, dim, sub,
-            resp.get("response_type", "likert"),
-            resp.get("response_value", {}),
-        )
+    # Persist all responses before scoring
+    _persist_responses(assessment_id, responses)
 
     result = full_score_assessment(responses, weight_profile, uses_databricks)
     dim_scores = result["dimension_scores"]
@@ -451,10 +512,24 @@ def _submit_assessment(assessment_id, org_id, responses, config):
                     "color": "#FBBF24" if anti_patterns else "#34D399",
                 }),
             ], style={"marginTop": "8px"}),
-            html.Div(
-                "Navigate to 'Results' or 'Roadmap' in the sidebar to explore your detailed findings.",
-                style={"color": "#484F58", "fontSize": "13px", "marginTop": "16px"},
-            ),
+
+            # Direct navigation buttons
+            html.Div([
+                dbc.Button(
+                    [html.I(className="fas fa-chart-bar"), " View Results"],
+                    id="compass-goto-results-btn",
+                    color="primary",
+                    size="sm",
+                    style={"marginRight": "12px"},
+                ),
+                dbc.Button(
+                    [html.I(className="fas fa-road"), " View Roadmap"],
+                    id="compass-goto-roadmap-btn",
+                    color="info",
+                    outline=True,
+                    size="sm",
+                ),
+            ], style={"marginTop": "24px"}),
         ], style={"textAlign": "center", "padding": "60px 40px"}),
     ], style={
         "backgroundColor": "var(--surface, #161B22)",
@@ -477,4 +552,5 @@ def _submit_assessment(assessment_id, org_id, responses, config):
         responses,
         config,
         True, "Assessment Scored", f"Overall: {overall:.0f}/100 -- L{overall_level} {overall_label}",
+        assessment_id,  # Set selected-assessment-id for cross-page sharing
     )

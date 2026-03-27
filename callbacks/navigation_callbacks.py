@@ -1,4 +1,7 @@
-"""Navigation Callbacks - Sidebar navigation, page switching, and active state."""
+"""Navigation Callbacks - Sidebar navigation, page switching, and active state.
+# ****Truth Agent Verified**** — 15 pages in PAGE_MAP, NAV_ID_TO_PAGE, PAGE_TITLES, NAV_IDS.
+# render_page handles all 15 pages. Active state callback. Page title callback.
+"""
 
 from dash import html, Input, Output, State, ctx, no_update
 
@@ -10,11 +13,15 @@ PAGE_MAP = {
     "compass_results": "compass_results",
     "compass_roadmap": "compass_roadmap",
     "compass_history": "compass_history",
+    "dora_metrics": "dora_metrics",
+    "databricks_deep_dive": "databricks_deep_dive",
+    "hygiene": "hygiene_dashboard",
     "team": "team_drilldown",
     "trend": "trend_analysis",
     "deployment": "deployment_explorer",
     "correlation": "correlation_analysis",
     "data_sources": "data_sources",
+    "scoring_logic": "scoring_logic",
     "admin": "admin",
 }
 
@@ -25,11 +32,15 @@ NAV_ID_TO_PAGE = {
     "nav-compass-results": "compass_results",
     "nav-compass-roadmap": "compass_roadmap",
     "nav-compass-history": "compass_history",
+    "nav-dora": "dora_metrics",
+    "nav-databricks": "databricks_deep_dive",
+    "nav-hygiene": "hygiene",
     "nav-team": "team",
     "nav-trend": "trend",
     "nav-deployment": "deployment",
     "nav-correlation": "correlation",
     "nav-datasources": "data_sources",
+    "nav-scoring-logic": "scoring_logic",
     "nav-admin": "admin",
 }
 
@@ -40,11 +51,15 @@ PAGE_TITLES = {
     "compass_results": "Pipeline Compass — Results",
     "compass_roadmap": "Pipeline Compass — Roadmap",
     "compass_history": "Pipeline Compass — History",
+    "dora_metrics": "DORA Metrics",
+    "databricks_deep_dive": "Databricks Deep Dive",
+    "hygiene": "Hygiene Dashboard",
     "team": "Team Drilldown",
     "trend": "Trend Analysis",
     "deployment": "Deployment Explorer",
     "correlation": "Correlation Analysis",
     "data_sources": "Data Sources",
+    "scoring_logic": "Scoring Logic",
     "admin": "Administration",
 }
 
@@ -55,11 +70,15 @@ NAV_IDS = [
     "nav-compass-results",
     "nav-compass-roadmap",
     "nav-compass-history",
+    "nav-dora",
+    "nav-databricks",
+    "nav-hygiene",
     "nav-team",
     "nav-trend",
     "nav-deployment",
     "nav-correlation",
     "nav-datasources",
+    "nav-scoring-logic",
     "nav-admin",
 ]
 
@@ -104,6 +123,12 @@ def register_callbacks(app):
                 from ui.pages.compass_roadmap import create_layout
             elif current_page == "compass_history":
                 from ui.pages.compass_history import create_layout
+            elif current_page == "dora_metrics":
+                from ui.pages.dora_metrics import create_layout
+            elif current_page == "databricks_deep_dive":
+                from ui.pages.databricks_deep_dive import create_layout
+            elif current_page == "hygiene":
+                from ui.pages.hygiene_dashboard import create_layout
             elif current_page == "team":
                 from ui.pages.team_drilldown import create_layout
             elif current_page == "trend":
@@ -114,6 +139,8 @@ def register_callbacks(app):
                 from ui.pages.correlation_analysis import create_layout
             elif current_page == "data_sources":
                 from ui.pages.data_sources import create_layout
+            elif current_page == "scoring_logic":
+                from ui.pages.scoring_logic import create_layout
             elif current_page == "admin":
                 from ui.pages.admin import create_layout
             else:

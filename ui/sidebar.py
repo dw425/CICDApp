@@ -10,8 +10,11 @@ NAV_ITEMS = [
         {"id": "nav-compass-results", "label": "Results", "icon": "fas fa-chart-pie", "page": "compass_results"},
         {"id": "nav-compass-roadmap", "label": "Roadmap", "icon": "fas fa-road", "page": "compass_roadmap"},
         {"id": "nav-compass-history", "label": "History", "icon": "fas fa-history", "page": "compass_history"},
+        {"id": "nav-dora", "label": "DORA Metrics", "icon": "fas fa-tachometer-alt", "page": "dora_metrics"},
+        {"id": "nav-databricks", "label": "Databricks Deep Dive", "icon": "fas fa-database", "page": "databricks_deep_dive"},
     ]},
     {"group": "ANALYSIS", "items": [
+        {"id": "nav-hygiene", "label": "Hygiene Dashboard", "icon": "fas fa-heartbeat", "page": "hygiene"},
         {"id": "nav-team", "label": "Team Drilldown", "icon": "fas fa-users", "page": "team"},
         {"id": "nav-trend", "label": "Trend Analysis", "icon": "fas fa-chart-area", "page": "trend"},
         {"id": "nav-deployment", "label": "Deployment Explorer", "icon": "fas fa-rocket", "page": "deployment"},
@@ -19,6 +22,7 @@ NAV_ITEMS = [
     ]},
     {"group": "SETTINGS", "items": [
         {"id": "nav-datasources", "label": "Data Sources", "icon": "fas fa-plug", "page": "data_sources"},
+        {"id": "nav-scoring-logic", "label": "Scoring Logic", "icon": "fas fa-calculator", "page": "scoring_logic"},
         {"id": "nav-admin", "label": "Admin", "icon": "fas fa-cog", "page": "admin"},
     ]},
 ]

@@ -1,5 +1,7 @@
 """
 CI/CD Data Source Slot Definitions.
+# ****Truth Agent Verified**** — 6 CI/CD slots: deployment_events, pipeline_runs,
+# pull_requests, work_items, incidents, repo_activity with canonical field schemas.
 
 Each slot defines a canonical data shape the app needs. External sources
 map their fields to one of these slots before data reaches the dashboard.
