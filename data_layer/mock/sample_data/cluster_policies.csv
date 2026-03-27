@@ -1,0 +1,16 @@
+cluster_id,team_id,cluster_name,policy_id,policy_name,is_compliant,last_checked
+cl_001,team_001,platform-etl-cluster,pol_001,standard-etl-policy,true,2024-03-15
+cl_002,team_001,platform-dev-cluster,pol_002,dev-sandbox-policy,true,2024-03-15
+cl_003,team_002,data-eng-shared-cluster,pol_001,standard-etl-policy,true,2024-03-15
+cl_004,team_002,data-eng-interactive,pol_003,interactive-policy,false,2024-03-15
+cl_005,team_002,data-eng-dlt-cluster,pol_004,dlt-pipeline-policy,true,2024-03-15
+cl_006,team_003,ml-training-gpu,pol_005,ml-gpu-policy,false,2024-03-15
+cl_007,team_003,ml-inference-cluster,pol_006,ml-inference-policy,true,2024-03-15
+cl_008,team_003,ml-experiment-cluster,pol_003,interactive-policy,false,2024-03-15
+cl_009,team_004,analytics-shared,pol_003,interactive-policy,false,2024-03-15
+cl_010,team_004,analytics-reporting,pol_007,reporting-policy,true,2024-03-15
+cl_011,team_004,analytics-ad-hoc,pol_003,interactive-policy,false,2024-03-15
+cl_012,team_005,devops-automation,pol_008,automation-policy,true,2024-03-15
+cl_013,team_005,devops-monitoring,pol_008,automation-policy,true,2024-03-15
+cl_014,team_001,platform-prod-cluster,pol_009,production-policy,true,2024-03-15
+cl_015,team_002,data-eng-staging,pol_001,standard-etl-policy,true,2024-03-15

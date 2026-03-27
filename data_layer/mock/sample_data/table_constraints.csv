@@ -1,0 +1,16 @@
+table_name,column_name,constraint_type,team_id,schema_name
+orders,order_id,PRIMARY_KEY,team_001,cicd
+orders,customer_id,NOT_NULL,team_001,cicd
+orders,order_amount,CHECK,team_001,cicd
+customers,customer_id,PRIMARY_KEY,team_002,cicd
+customers,email,NOT_NULL,team_002,cicd
+customers,created_date,NOT_NULL,team_002,cicd
+transactions,txn_id,PRIMARY_KEY,team_002,cicd
+transactions,customer_id,FOREIGN_KEY,team_002,cicd
+features,feature_id,PRIMARY_KEY,team_003,cicd
+features,feature_value,NOT_NULL,team_003,cicd
+predictions,prediction_id,PRIMARY_KEY,team_003,cicd
+metrics,metric_id,PRIMARY_KEY,team_004,cicd
+metrics,metric_value,CHECK,team_004,cicd
+audit_logs,log_id,PRIMARY_KEY,team_005,cicd
+audit_logs,actor_id,NOT_NULL,team_005,cicd

@@ -1,0 +1,12 @@
+command:
+  - gunicorn
+  - app:server
+  - --bind
+  - 0.0.0.0:8050
+  - --workers
+  - "2"
+  - --timeout
+  - "120"
+env:
+  - name: CICD_APP_USE_MOCK
+    value: "false"

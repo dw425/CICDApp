@@ -1,0 +1,10 @@
+{
+  "domains": {
+    "golden_path": {"weight": 0.25, "label": "Golden Path Compliance", "icon": "fa-route"},
+    "environment_promotion": {"weight": 0.15, "label": "Environment Promotion", "icon": "fa-code-branch"},
+    "pipeline_reliability": {"weight": 0.20, "label": "Pipeline Reliability", "icon": "fa-heartbeat"},
+    "data_quality": {"weight": 0.15, "label": "Data Quality", "icon": "fa-check-double"},
+    "security_governance": {"weight": 0.15, "label": "Security & Governance", "icon": "fa-shield-alt"},
+    "cost_efficiency": {"weight": 0.10, "label": "Cost Efficiency", "icon": "fa-dollar-sign"}
+  }
+}

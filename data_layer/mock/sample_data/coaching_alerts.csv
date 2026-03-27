@@ -1,0 +1,16 @@
+alert_id,team_id,created_date,severity,alert_type,domain,message,recommendation,is_acknowledged
+ca_001,team_004,2024-03-10,critical,regression,golden_path,Golden path compliance dropped below 40%,Adopt CI/CD templates from the Platform Engineering team and migrate manual notebook deployments to automated pipelines.,false
+ca_002,team_003,2024-03-08,critical,threshold,environment_promotion,No staging deployments detected in the past 14 days,Implement a staging environment gate in your deployment pipeline to validate changes before production.,false
+ca_003,team_004,2024-03-09,warning,regression,pipeline_reliability,Pipeline failure rate increased to 35% this week,Review recent pipeline failures for common root causes and add retry logic for transient errors.,false
+ca_004,team_002,2024-03-07,warning,threshold,security_governance,Service principal coverage is below 60%,Create dedicated service principals for production workloads and remove human-actor deployments.,true
+ca_005,team_003,2024-03-11,warning,anomaly,cost_efficiency,DBU consumption spiked 45% week-over-week,Review interactive cluster usage and consider migrating ad-hoc workloads to scheduled jobs.,false
+ca_006,team_001,2024-03-05,info,milestone,golden_path,Golden path compliance reached 85% - approaching Optimized tier,Continue current practices and consider mentoring other teams on golden path adoption.,true
+ca_007,team_005,2024-03-06,info,milestone,pipeline_reliability,Pipeline success rate sustained above 95% for 30 days,Document your reliability patterns as a reference architecture for the organization.,true
+ca_008,team_004,2024-03-12,critical,threshold,data_quality,DLT expectation failure rate exceeds 20%,Add data quality expectations to all DLT pipelines and set up alerting for expectation violations.,false
+ca_009,team_002,2024-03-10,warning,regression,environment_promotion,Direct-to-prod deployments detected for 3 workloads,Route all production deployments through the staging environment and enforce promotion gates.,false
+ca_010,team_003,2024-03-13,warning,threshold,golden_path,Only 40% of deployments use golden path - below team target of 60%,Schedule a workshop with Platform Engineering to review golden path templates and adoption blockers.,false
+ca_011,team_001,2024-03-12,info,trend,security_governance,Security governance score trending upward +5 points this month,Maintain current security practices and consider enabling additional Unity Catalog features.,true
+ca_012,team_005,2024-03-09,info,trend,cost_efficiency,Cost per DBU decreased 12% after cluster policy enforcement,Share cluster policy configurations with other teams as a cost optimization best practice.,true
+ca_013,team_002,2024-03-14,warning,anomaly,pipeline_reliability,Three consecutive pipeline failures detected on ETL_daily job,Investigate job cluster sizing and check for upstream data source availability issues.,false
+ca_014,team_004,2024-03-15,critical,threshold,security_governance,No service principals configured for production deployments,Immediately create service principals and rotate away from personal access tokens in production.,false
+ca_015,team_003,2024-03-14,warning,regression,data_quality,Table constraint coverage decreased from 65% to 50%,Re-apply NOT NULL and CHECK constraints that were removed during recent schema migrations.,false

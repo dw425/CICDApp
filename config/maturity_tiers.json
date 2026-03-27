@@ -1,0 +1,9 @@
+{
+  "tiers": [
+    {"name": "Ad Hoc", "min": 0, "max": 20, "color": "#F87171", "description": "No standardized processes"},
+    {"name": "Managed", "min": 21, "max": 40, "color": "#FBBF24", "description": "Basic processes established"},
+    {"name": "Defined", "min": 41, "max": 60, "color": "#4B7BF5", "description": "Standardized processes"},
+    {"name": "Measured", "min": 61, "max": 80, "color": "#A78BFA", "description": "Quantitatively managed"},
+    {"name": "Optimized", "min": 81, "max": 100, "color": "#34D399", "description": "Continuous improvement"}
+  ]
+}
