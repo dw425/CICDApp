@@ -1,16 +1,17 @@
 """
 Callbacks for Pipeline Compass Roadmap Page.
 
-Handles: assessment selector population and roadmap rendering.
+Handles: assessment selector population, roadmap rendering, and status tracking.
 Only fires when user is on the compass_roadmap page.
 """
 
-from dash import html, Input, Output, State, ctx, no_update
+from dash import html, Input, Output, State, ctx, no_update, ALL, MATCH
 
 from compass.assessment_store import (
     get_assessment,
     get_organization,
     get_completed_assessments,
+    update_assessment,
 )
 from compass.roadmap_engine import generate_roadmap
 
@@ -91,3 +92,36 @@ def register_callbacks(app):
 
         from ui.pages.compass_roadmap import create_roadmap_dashboard
         return create_roadmap_dashboard(roadmap, dim_scores)
+
+    # ── CB3: Persist roadmap item status changes ──
+    @app.callback(
+        Output("roadmap-status-store", "data"),
+        Input({"type": "roadmap-status", "index": ALL}, "value"),
+        State("compass-roadmap-selector", "value"),
+        prevent_initial_call=True,
+    )
+    def update_roadmap_status(status_values, assessment_id):
+        """Persist roadmap item status changes to the assessment record."""
+        if not assessment_id or not ctx.triggered:
+            return no_update
+
+        triggered = ctx.triggered
+        if not triggered:
+            return no_update
+
+        # Build status map from all radio values
+        inputs = ctx.inputs_list[0] if ctx.inputs_list else []
+        status_map = {}
+        for inp in inputs:
+            if isinstance(inp, dict) and "id" in inp:
+                item_id = inp["id"].get("index", "")
+                status_map[item_id] = inp.get("value", "not_started")
+
+        # Save to assessment
+        assessment = get_assessment(assessment_id)
+        if assessment:
+            roadmap_status = assessment.get("roadmap_status", {})
+            roadmap_status.update(status_map)
+            update_assessment(assessment_id, {"roadmap_status": roadmap_status})
+
+        return status_map

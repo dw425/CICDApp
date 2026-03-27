@@ -1,0 +1,26 @@
+cluster_id,team_id,cluster_name,cluster_type,state,autoscale_min,autoscale_max,node_type,spark_version,policy_id,has_policy,creator,ingested_at
+cluster_0,team_0,Cluster-0,interactive,TERMINATED,3,12,r5.4xlarge,13.3.x-scala2.12,policy_0,false,user_0,2026-03-22 15:43:28
+cluster_1,team_1,Cluster-1,sql,PENDING,2,6,i3.xlarge,13.2.x-scala2.12,,true,user_1,2026-02-04 15:43:28
+cluster_2,team_2,Cluster-2,interactive,PENDING,3,8,r5.4xlarge,13.0.x-scala2.12,,false,user_2,2026-02-09 15:43:28
+cluster_3,team_3,Cluster-3,interactive,RUNNING,2,3,m5.2xlarge,13.0.x-scala2.12,policy_0,true,user_3,2026-03-08 15:43:28
+cluster_4,team_0,Cluster-4,sql,PENDING,2,3,i3.xlarge,13.1.x-scala2.12,policy_1,true,user_4,2026-02-24 15:43:28
+cluster_5,team_1,Cluster-5,job,PENDING,3,4,m5.2xlarge,13.1.x-scala2.12,policy_2,false,user_0,2026-02-09 15:43:28
+cluster_6,team_2,Cluster-6,interactive,RUNNING,3,14,m5.2xlarge,13.2.x-scala2.12,policy_0,false,user_1,2026-02-10 15:43:28
+cluster_7,team_3,Cluster-7,sql,PENDING,1,9,m5.2xlarge,13.2.x-scala2.12,,true,user_2,2026-03-04 15:43:28
+cluster_8,team_0,Cluster-8,interactive,TERMINATED,1,16,r5.4xlarge,13.0.x-scala2.12,,true,user_3,2026-03-25 15:43:28
+cluster_9,team_1,Cluster-9,interactive,RUNNING,1,9,m5.2xlarge,13.3.x-scala2.12,policy_0,true,user_4,2026-01-27 15:43:28
+cluster_10,team_2,Cluster-10,interactive,PENDING,4,5,m5.2xlarge,13.1.x-scala2.12,policy_1,false,user_0,2026-03-10 15:43:28
+cluster_11,team_3,Cluster-11,interactive,PENDING,3,3,r5.4xlarge,13.0.x-scala2.12,,true,user_1,2026-03-02 15:43:28
+cluster_12,team_0,Cluster-12,interactive,TERMINATED,3,14,m5.2xlarge,13.2.x-scala2.12,,false,user_2,2026-03-27 15:43:28
+cluster_13,team_1,Cluster-13,job,RUNNING,3,11,m5.2xlarge,13.1.x-scala2.12,policy_1,false,user_3,2026-02-06 15:43:28
+cluster_14,team_2,Cluster-14,interactive,PENDING,2,4,i3.xlarge,13.3.x-scala2.12,,false,user_4,2026-02-15 15:43:28
+cluster_15,team_3,Cluster-15,sql,RUNNING,3,2,r5.4xlarge,13.3.x-scala2.12,policy_0,false,user_0,2026-03-21 15:43:28
+cluster_16,team_0,Cluster-16,interactive,PENDING,2,8,m5.2xlarge,13.0.x-scala2.12,policy_1,true,user_1,2026-02-10 15:43:28
+cluster_17,team_1,Cluster-17,job,RUNNING,1,16,i3.xlarge,13.3.x-scala2.12,policy_2,false,user_2,2026-02-26 15:43:28
+cluster_18,team_2,Cluster-18,sql,RUNNING,1,10,i3.xlarge,13.3.x-scala2.12,,true,user_3,2026-02-28 15:43:28
+cluster_19,team_3,Cluster-19,sql,RUNNING,2,6,m5.2xlarge,13.2.x-scala2.12,policy_1,false,user_4,2026-02-11 15:43:28
+cluster_20,team_0,Cluster-20,sql,TERMINATED,3,9,m5.2xlarge,13.1.x-scala2.12,,true,user_0,2026-03-19 15:43:28
+cluster_21,team_1,Cluster-21,sql,RUNNING,2,3,i3.xlarge,13.3.x-scala2.12,policy_0,false,user_1,2026-03-20 15:43:28
+cluster_22,team_2,Cluster-22,sql,TERMINATED,2,9,m5.2xlarge,13.3.x-scala2.12,,true,user_2,2026-03-22 15:43:28
+cluster_23,team_3,Cluster-23,interactive,PENDING,3,15,r5.4xlarge,13.0.x-scala2.12,,false,user_3,2026-03-18 15:43:28
+cluster_24,team_0,Cluster-24,interactive,PENDING,2,7,m5.2xlarge,13.0.x-scala2.12,policy_0,false,user_4,2026-02-03 15:43:28

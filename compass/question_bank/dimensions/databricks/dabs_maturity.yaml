@@ -1,68 +1,82 @@
 dimension: databricks
 sub_dimension: dabs_maturity
-display_name: "Databricks Asset Bundles Maturity"
-description: "Evaluates adoption and sophistication of Databricks Asset Bundles (DABs) for infrastructure-as-code."
-icon: "database"
-color: "#FF3621"
-condition: "org.uses_databricks == true"
-
+display_name: Databricks Asset Bundles Maturity
+description: Evaluates adoption and sophistication of Databricks Asset Bundles (DABs) for infrastructure-as-code.
+icon: database
+color: '#FF3621'
+condition: org.uses_databricks == true
 questions:
-  - id: db_dabs_001
-    text: "How are Databricks jobs and pipelines defined and deployed?"
-    type: likert
-    weight: 4
-    options:
-      - value: 0
-        label: "Manually via the Databricks UI — no version-controlled definitions"
-        indicators: ["no_dabs", "manual_databricks"]
-      - value: 1
-        label: "CLI scripts or REST API calls, but not using DABs"
-        indicators: []
-      - value: 2
-        label: "Basic DABs (databricks.yml) for primary jobs with single-target deployment"
-        indicators: ["dabs_basic"]
-      - value: 3
-        label: "Multi-target DABs (dev/staging/prod) with CI/CD triggers and service principals"
-        indicators: ["dabs_integrated"]
-      - value: 4
-        label: "Custom DABs templates, OIDC workload identity, tag-based releases, automated rollback"
-        indicators: ["dabs_advanced"]
-      - value: 5
-        label: "Org-wide DABs template library with mandatory inheritance and governance-as-code"
-        indicators: ["dabs_governed"]
-
-  - id: db_dabs_002
-    text: "How does your team authenticate Databricks CI/CD pipelines?"
-    type: single_select
-    weight: 3
-    options:
-      - value: 1
-        label: "Personal access tokens stored in pipeline secrets"
-        indicators: ["pat_auth"]
-      - value: 2
-        label: "Service principal with client secret"
-        indicators: []
-      - value: 3
-        label: "Service principal with OIDC workload identity federation (no stored secrets)"
-        indicators: ["oidc_auth"]
-
-  - id: db_dabs_003
-    text: "How are Databricks cluster configurations managed for production workloads?"
-    type: likert
-    weight: 3
-    options:
-      - value: 0
-        label: "All-purpose interactive clusters used for production jobs"
-        indicators: ["interactive_cluster_production"]
-      - value: 1
-        label: "Job clusters configured manually in the UI for each job"
-        indicators: []
-      - value: 2
-        label: "Job clusters defined in DABs with basic sizing"
-        indicators: []
-      - value: 3
-        label: "Job clusters in DABs with cluster policies, auto-scaling, and cost tagging"
-        indicators: ["managed_clusters"]
-      - value: 4
-        label: "Instance pools, spot instance strategies, and automated right-sizing via cluster policies"
-        indicators: ["optimized_clusters"]
+- id: db_dabs_001
+  text: How are Databricks jobs and pipelines defined and deployed?
+  type: likert
+  weight: 4
+  options:
+  - value: 0
+    label: Manually via the Databricks UI — no version-controlled definitions
+    indicators:
+    - no_dabs
+    - manual_databricks
+  - value: 1
+    label: CLI scripts or REST API calls, but not using DABs
+    indicators: []
+  - value: 2
+    label: Basic DABs (databricks.yml) for primary jobs with single-target deployment
+    indicators:
+    - dabs_basic
+  - value: 3
+    label: Multi-target DABs (dev/staging/prod) with CI/CD triggers and service principals
+    indicators:
+    - dabs_integrated
+  - value: 4
+    label: Custom DABs templates, OIDC workload identity, tag-based releases, automated rollback
+    indicators:
+    - dabs_advanced
+  - value: 5
+    label: Org-wide DABs template library with mandatory inheritance and governance-as-code
+    indicators:
+    - dabs_governed
+  - &id001
+    value: -1
+    label: I'm not sure / Don't know
+    indicators: []
+- id: db_dabs_002
+  text: How does your team authenticate Databricks CI/CD pipelines?
+  type: single_select
+  weight: 3
+  options:
+  - value: 1
+    label: Personal access tokens stored in pipeline secrets
+    indicators:
+    - pat_auth
+  - value: 2
+    label: Service principal with client secret
+    indicators: []
+  - value: 3
+    label: Service principal with OIDC workload identity federation (no stored secrets)
+    indicators:
+    - oidc_auth
+  - *id001
+- id: db_dabs_003
+  text: How are Databricks cluster configurations managed for production workloads?
+  type: likert
+  weight: 3
+  options:
+  - value: 0
+    label: All-purpose interactive clusters used for production jobs
+    indicators:
+    - interactive_cluster_production
+  - value: 1
+    label: Job clusters configured manually in the UI for each job
+    indicators: []
+  - value: 2
+    label: Job clusters defined in DABs with basic sizing
+    indicators: []
+  - value: 3
+    label: Job clusters in DABs with cluster policies, auto-scaling, and cost tagging
+    indicators:
+    - managed_clusters
+  - value: 4
+    label: Instance pools, spot instance strategies, and automated right-sizing via cluster policies
+    indicators:
+    - optimized_clusters
+  - *id001

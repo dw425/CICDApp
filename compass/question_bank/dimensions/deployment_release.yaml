@@ -1,108 +1,129 @@
 dimension: deployment_release
-display_name: "Deployment & Release"
-description: "Evaluates deployment automation, environment promotion, and release management."
-icon: "rocket"
-color: "#A78BFA"
-
+display_name: Deployment & Release
+description: Evaluates deployment automation, environment promotion, and release management.
+icon: rocket
+color: '#A78BFA'
 questions:
-  - id: dr_001
-    text: "How are deployments to production triggered?"
-    type: likert
-    weight: 4
-    options:
-      - value: 1
-        label: "Manual process — SSH, console access, or manual script execution"
-        indicators: ["manual_deployment"]
-      - value: 2
-        label: "Semi-automated — CI builds artifacts but deployment is manually triggered"
-        indicators: []
-      - value: 3
-        label: "Automated — deployment to staging is automatic, production requires approval"
-        indicators: ["automated_staging"]
-      - value: 4
-        label: "Continuous delivery — production deployment is one-click with automated rollback"
-        indicators: ["continuous_delivery"]
-      - value: 5
-        label: "Continuous deployment — every passing commit deploys to production automatically"
-        indicators: ["continuous_deployment"]
-
-  - id: dr_002
-    text: "How does your team manage environment promotion (dev → staging → prod)?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "Single environment or no clear separation between dev and prod"
-        indicators: ["no_env_separation"]
-      - value: 2
-        label: "Dev and prod exist but promotion is manual and inconsistent"
-        indicators: []
-      - value: 3
-        label: "Clear dev → staging → prod pipeline with automated promotion gates"
-        indicators: ["env_promotion"]
-      - value: 4
-        label: "Infrastructure-as-code ensures environment parity, with automated smoke tests"
-        indicators: ["env_parity"]
-      - value: 5
-        label: "Ephemeral review environments per PR plus immutable production deployments"
-        indicators: ["ephemeral_envs"]
-
-  - id: dr_003
-    text: "What is your rollback strategy when a production deployment fails?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "No rollback plan — issues are fixed by deploying a hotfix"
-        indicators: ["no_rollback"]
-      - value: 2
-        label: "Manual rollback by redeploying the previous version"
-        indicators: []
-      - value: 3
-        label: "Automated rollback triggered by health check failures"
-        indicators: ["automated_rollback"]
-      - value: 4
-        label: "Blue-green or canary deployments with automatic traffic shifting"
-        indicators: ["advanced_deployment"]
-      - value: 5
-        label: "Progressive delivery with automated canary analysis and instant rollback"
-        indicators: ["progressive_delivery"]
-
-  - id: dr_004
-    text: "How frequently does your team deploy to production?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "Monthly or less frequently"
-        indicators: ["low_deploy_frequency"]
-      - value: 2
-        label: "Every 1-2 weeks"
-        indicators: []
-      - value: 3
-        label: "Multiple times per week"
-        indicators: []
-      - value: 4
-        label: "Daily"
-        indicators: ["daily_deploys"]
-      - value: 5
-        label: "Multiple times per day (on-demand)"
-        indicators: ["on_demand_deploys"]
-
-  - id: dr_005
-    text: "Does your team use feature flags to decouple deployment from release?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "No feature flags — code is released when deployed"
-        indicators: []
-      - value: 2
-        label: "Ad-hoc feature flags using environment variables or config files"
-        indicators: []
-      - value: 3
-        label: "Dedicated feature flag service for major features"
-        indicators: ["feature_flags"]
-      - value: 4
-        label: "Comprehensive feature flag management with targeting and gradual rollout"
-        indicators: ["feature_flags", "gradual_rollout"]
+- id: dr_001
+  text: How are deployments to production triggered?
+  type: likert
+  weight: 4
+  options:
+  - value: 1
+    label: Manual process — SSH, console access, or manual script execution
+    indicators:
+    - manual_deployment
+  - value: 2
+    label: Semi-automated — CI builds artifacts but deployment is manually triggered
+    indicators: []
+  - value: 3
+    label: Automated — deployment to staging is automatic, production requires approval
+    indicators:
+    - automated_staging
+  - value: 4
+    label: Continuous delivery — production deployment is one-click with automated rollback
+    indicators:
+    - continuous_delivery
+  - value: 5
+    label: Continuous deployment — every passing commit deploys to production automatically
+    indicators:
+    - continuous_deployment
+  - &id001
+    value: -1
+    label: I'm not sure / Don't know
+    indicators: []
+- id: dr_002
+  text: How does your team manage environment promotion (dev → staging → prod)?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: Single environment or no clear separation between dev and prod
+    indicators:
+    - no_env_separation
+  - value: 2
+    label: Dev and prod exist but promotion is manual and inconsistent
+    indicators: []
+  - value: 3
+    label: Clear dev → staging → prod pipeline with automated promotion gates
+    indicators:
+    - env_promotion
+  - value: 4
+    label: Infrastructure-as-code ensures environment parity, with automated smoke tests
+    indicators:
+    - env_parity
+  - value: 5
+    label: Ephemeral review environments per PR plus immutable production deployments
+    indicators:
+    - ephemeral_envs
+  - *id001
+- id: dr_003
+  text: What is your rollback strategy when a production deployment fails?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: No rollback plan — issues are fixed by deploying a hotfix
+    indicators:
+    - no_rollback
+  - value: 2
+    label: Manual rollback by redeploying the previous version
+    indicators: []
+  - value: 3
+    label: Automated rollback triggered by health check failures
+    indicators:
+    - automated_rollback
+  - value: 4
+    label: Blue-green or canary deployments with automatic traffic shifting
+    indicators:
+    - advanced_deployment
+  - value: 5
+    label: Progressive delivery with automated canary analysis and instant rollback
+    indicators:
+    - progressive_delivery
+  - *id001
+- id: dr_004
+  text: How frequently does your team deploy to production?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: Monthly or less frequently
+    indicators:
+    - low_deploy_frequency
+  - value: 2
+    label: Every 1-2 weeks
+    indicators: []
+  - value: 3
+    label: Multiple times per week
+    indicators: []
+  - value: 4
+    label: Daily
+    indicators:
+    - daily_deploys
+  - value: 5
+    label: Multiple times per day (on-demand)
+    indicators:
+    - on_demand_deploys
+  - *id001
+- id: dr_005
+  text: Does your team use feature flags to decouple deployment from release?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: No feature flags — code is released when deployed
+    indicators: []
+  - value: 2
+    label: Ad-hoc feature flags using environment variables or config files
+    indicators: []
+  - value: 3
+    label: Dedicated feature flag service for major features
+    indicators:
+    - feature_flags
+  - value: 4
+    label: Comprehensive feature flag management with targeting and gradual rollout
+    indicators:
+    - feature_flags
+    - gradual_rollout
+  - *id001

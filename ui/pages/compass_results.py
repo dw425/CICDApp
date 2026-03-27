@@ -174,10 +174,11 @@ def create_results_dashboard(
         ], style={**_card_style(), "flex": "2", "minWidth": "400px"}),
     ], style={"display": "flex", "gap": "12px", "marginBottom": "12px", "flexWrap": "wrap"})
 
-    # Row 2: Traffic Light Grid
+    # Row 2: Traffic Light Grid with Per-Question Drill-Down
     row2 = html.Div([
-        _section_header("Dimension Scorecard"),
+        _section_header("Dimension Scorecard — Click a dimension to expand"),
         create_traffic_light_grid(dimension_scores),
+        _create_dimension_drilldown(assessment, dimension_scores),
     ], style={**_card_style(), "marginBottom": "12px"})
 
     # Row 3: Gap Waterfall + Benchmark
@@ -269,6 +270,159 @@ def _get_vuln_response(assessment: dict) -> html.Div:
         "padding": "16px 20px",
         "border": f"1px solid {color}33",
     })
+
+
+def _create_dimension_drilldown(assessment: dict, dimension_scores: dict) -> html.Div:
+    """Create expandable per-question drill-down for each dimension."""
+    responses = assessment.get("responses", {})
+    hygiene_data = assessment.get("hygiene_scores", {})
+
+    from compass.question_bank.loader import load_all_dimensions, get_questions_for_dimension
+    from compass.scoring_engine import compute_question_score, TIER_COLORS
+    load_all_dimensions()
+
+    accordion_items = []
+    for dim_id, score_data in sorted(
+        dimension_scores.items(),
+        key=lambda x: x[1].get("raw_score", 0) if isinstance(x[1], dict) else 0,
+    ):
+        if not isinstance(score_data, dict):
+            continue
+        raw_score = score_data.get("raw_score", 0)
+        level = score_data.get("level", 1)
+        label = score_data.get("label", "Initial")
+        display_name = score_data.get("display_name", dim_id.replace("_", " ").title())
+        color = TIER_COLORS.get(level, "#888")
+
+        questions = get_questions_for_dimension(dim_id)
+        if not questions:
+            continue
+
+        # Build question rows sorted by score (lowest first)
+        q_rows = []
+        for q in questions:
+            qid = q["id"]
+            resp = responses.get(qid)
+            if not resp:
+                q_rows.append((None, _question_row(q, None, None)))
+                continue
+            resp_val = resp.get("response_value", resp)
+            if isinstance(resp_val, (int, float)):
+                resp_val = {"value": resp_val}
+            score = compute_question_score(q, resp_val)
+            answer_text = _get_answer_text(q, resp_val)
+            q_rows.append((score, _question_row(q, score, answer_text)))
+
+        q_rows.sort(key=lambda x: x[0] if x[0] is not None else 999)
+        question_content = [r[1] for r in q_rows]
+
+        # Hygiene checks for this dimension
+        dim_hygiene = [h for h in hygiene_data if isinstance(h, dict) and h.get("dimension") == dim_id] if isinstance(hygiene_data, list) else []
+        hygiene_section = html.Div()
+        if dim_hygiene:
+            hygiene_rows = []
+            for h in dim_hygiene:
+                status = h.get("status", "unknown")
+                badge_color = {"pass": "#34D399", "warn": "#FBBF24", "fail": "#EF4444"}.get(status, "#6B7280")
+                hygiene_rows.append(html.Div([
+                    html.Span(status.upper(), style={
+                        "display": "inline-block", "padding": "1px 6px", "borderRadius": "3px",
+                        "backgroundColor": badge_color, "color": "#fff", "fontSize": "10px",
+                        "fontWeight": "700", "width": "40px", "textAlign": "center", "marginRight": "8px",
+                    }),
+                    html.Span(h.get("name", h.get("check_id", "")), style={"color": "#E6EDF3", "fontSize": "12px"}),
+                    html.Span(f" — {h.get('raw_value', '')}", style={"color": "#8B949E", "fontSize": "11px", "marginLeft": "8px"}),
+                ], style={"padding": "4px 0"}))
+            hygiene_section = html.Div([
+                html.Div("Hygiene Checks", style={"color": "#A78BFA", "fontSize": "12px", "fontWeight": "700", "marginTop": "12px", "marginBottom": "6px"}),
+                *hygiene_rows,
+            ])
+
+        accordion_items.append(dbc.AccordionItem(
+            title=f"{display_name} — {raw_score:.0f}/100 (L{level} {label})",
+            children=[
+                html.Div(question_content, style={"marginBottom": "8px"}),
+                hygiene_section,
+            ],
+            style={"backgroundColor": "var(--elevated, #21262D)", "border": f"1px solid {color}33"},
+        ))
+
+    if not accordion_items:
+        return html.Div()
+
+    return html.Div([
+        html.Div("Per-Question Breakdown", style={
+            "color": "#E6EDF3", "fontSize": "14px", "fontWeight": "700",
+            "marginTop": "16px", "marginBottom": "8px",
+        }),
+        dbc.Accordion(accordion_items, start_collapsed=True, flush=True),
+    ])
+
+
+def _question_row(question: dict, score, answer_text: str) -> html.Div:
+    """Render a single question row in the drill-down."""
+    if score is None and answer_text is None:
+        badge_color = "#484F58"
+        badge_text = "—"
+    elif score is None:
+        badge_color = "#6B7280"
+        badge_text = "IDK"
+    elif score <= 25:
+        badge_color = "#EF4444"
+        badge_text = f"{score:.0f}"
+    elif score <= 50:
+        badge_color = "#F97316"
+        badge_text = f"{score:.0f}"
+    elif score <= 75:
+        badge_color = "#EAB308"
+        badge_text = f"{score:.0f}"
+    else:
+        badge_color = "#34D399"
+        badge_text = f"{score:.0f}"
+
+    return html.Div([
+        html.Span(badge_text, style={
+            "display": "inline-block", "width": "36px", "textAlign": "center",
+            "padding": "2px 4px", "borderRadius": "4px",
+            "backgroundColor": badge_color, "color": "#fff",
+            "fontSize": "11px", "fontWeight": "700", "marginRight": "10px",
+            "flexShrink": "0",
+        }),
+        html.Div([
+            html.Div(question.get("text", ""), style={"color": "#E6EDF3", "fontSize": "12px"}),
+            html.Div(answer_text or "Not answered", style={
+                "color": "#8B949E", "fontSize": "11px", "fontStyle": "italic",
+            }),
+        ], style={"flex": "1"}),
+    ], style={
+        "display": "flex", "alignItems": "flex-start", "padding": "6px 0",
+        "borderBottom": "1px solid rgba(39,45,63,0.3)",
+    })
+
+
+def _get_answer_text(question: dict, resp_val: dict) -> str:
+    """Get human-readable answer text from response value."""
+    qtype = question.get("type", "likert")
+    if qtype in ("likert", "single_select"):
+        val = resp_val.get("value")
+        if val == -1:
+            return "I'm not sure / Don't know"
+        for opt in question.get("options", []):
+            if opt.get("value") == val:
+                return opt.get("label", str(val))
+        return str(val) if val is not None else ""
+    elif qtype == "binary":
+        return "Yes" if resp_val.get("value") else "No"
+    elif qtype == "multi_select":
+        selected = resp_val.get("values", [])
+        labels = []
+        for opt in question.get("options", []):
+            if opt.get("value") in selected:
+                labels.append(opt.get("label", opt["value"]))
+        return ", ".join(labels) if labels else "None selected"
+    elif qtype == "freeform":
+        return resp_val.get("text", "")[:200]
+    return ""
 
 
 def _kpi_card(label: str, value: str, sublabel: str, color: str) -> html.Div:

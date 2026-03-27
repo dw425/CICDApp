@@ -190,6 +190,78 @@ class MockDataProvider:
         df = self._load("service_principals.csv")
         return self._filter_team(df, team_id)
 
+    # ------------------------------------------------------------------
+    # New mock data methods for Phase 2-4 dashboards
+    # ------------------------------------------------------------------
+
+    def get_github_repo_hygiene(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("github_repo_hygiene.csv")
+        return self._filter_team(df, team_id)
+
+    def get_ado_branch_policies(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("ado_branch_policies.csv")
+        return self._filter_team(df, team_id)
+
+    def get_ado_test_runs(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("ado_test_runs.csv")
+        return self._filter_team(df, team_id)
+
+    def get_jenkins_jobs(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("jenkins_jobs.csv")
+        return self._filter_team(df, team_id)
+
+    def get_jenkins_builds(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("jenkins_builds.csv")
+        return self._filter_team(df, team_id)
+
+    def get_jenkins_plugins(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("jenkins_plugins.csv")
+        return self._filter_team(df, team_id)
+
+    def get_gitlab_pipelines(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("gitlab_pipelines.csv")
+        return self._filter_team(df, team_id)
+
+    def get_gitlab_merge_requests(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("gitlab_merge_requests.csv")
+        return self._filter_team(df, team_id)
+
+    def get_gitlab_dora_metrics(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("gitlab_dora_metrics.csv")
+        return self._filter_team(df, team_id)
+
+    def get_jira_incidents(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("jira_incidents.csv")
+        return self._filter_team(df, team_id)
+
+    def get_databricks_job_inventory(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("databricks_job_inventory.csv")
+        return self._filter_team(df, team_id)
+
+    def get_databricks_cluster_inventory(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("databricks_cluster_inventory.csv")
+        return self._filter_team(df, team_id)
+
+    def get_databricks_uc_tables(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("databricks_uc_tables.csv")
+        return self._filter_team(df, team_id)
+
+    def get_databricks_dlt_events(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("databricks_dlt_events.csv")
+        return self._filter_team(df, team_id)
+
+    def get_hygiene_scores(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("hygiene_scores.csv")
+        return self._filter_team(df, team_id)
+
+    def get_dora_metrics(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("dora_metrics.csv")
+        return self._filter_team(df, team_id)
+
+    def get_compass_scores(self, team_id: Optional[str] = None) -> pd.DataFrame:
+        df = self._load("compass_scores.csv")
+        return self._filter_team(df, team_id)
+
     def get_data_source_configs(self) -> list[dict]:
         """Return data source configurations from JSON file."""
         import json

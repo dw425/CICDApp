@@ -1,6 +1,6 @@
 """DDL for cicd_normalized schema — cleaned, canonicalized data.
-# ****Truth Agent Verified**** — 4 normalized tables: pipeline_executions, code_changes,
-# deployments, incidents. NORMALIZED_DDL_STATEMENTS dict. Platform-partitioned.
+6 normalized tables: pipeline_executions, code_changes, deployments, incidents,
+repo_hygiene, test_executions. Platform-partitioned.
 """
 
 from config.settings import get_full_table_name
@@ -73,9 +73,50 @@ CREATE TABLE IF NOT EXISTS {get_full_table_name('normalized_incidents')} (
 COMMENT 'Normalized incident records for MTTR calculation'
 """
 
+NORMALIZED_REPO_HYGIENE = f"""
+CREATE TABLE IF NOT EXISTS {get_full_table_name('normalized_repo_hygiene')} (
+    repo_id              STRING NOT NULL,
+    team_id              STRING NOT NULL,
+    platform             STRING NOT NULL,
+    has_branch_protection BOOLEAN,
+    required_reviewers   INT,
+    has_ci_config        BOOLEAN,
+    has_secret_scanning  BOOLEAN,
+    has_vulnerability_scanning BOOLEAN,
+    ci_trigger_pct       DOUBLE,
+    build_success_pct    DOUBLE,
+    test_coverage_pct    DOUBLE,
+    environment_count    INT,
+    normalized_at        TIMESTAMP
+) USING DELTA
+PARTITIONED BY (platform)
+COMMENT 'Normalized repository hygiene data across all platforms'
+"""
+
+NORMALIZED_TEST_EXECUTIONS = f"""
+CREATE TABLE IF NOT EXISTS {get_full_table_name('normalized_test_executions')} (
+    test_run_id          STRING NOT NULL,
+    team_id              STRING NOT NULL,
+    platform             STRING NOT NULL,
+    pipeline_name        STRING,
+    build_id             STRING,
+    total_tests          INT,
+    passed_tests         INT,
+    failed_tests         INT,
+    skipped_tests        INT,
+    duration_seconds     DOUBLE,
+    pass_rate            DOUBLE,
+    executed_at          TIMESTAMP
+) USING DELTA
+PARTITIONED BY (platform)
+COMMENT 'Normalized test execution results from all CI/CD platforms'
+"""
+
 NORMALIZED_DDL_STATEMENTS = {
     "normalized_pipeline_executions": NORMALIZED_PIPELINE_EXECUTIONS,
     "normalized_code_changes": NORMALIZED_CODE_CHANGES,
     "normalized_deployments": NORMALIZED_DEPLOYMENTS,
     "normalized_incidents": NORMALIZED_INCIDENTS,
+    "normalized_repo_hygiene": NORMALIZED_REPO_HYGIENE,
+    "normalized_test_executions": NORMALIZED_TEST_EXECUTIONS,
 }

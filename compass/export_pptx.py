@@ -97,6 +97,11 @@ def _generate_pptx(assessment: dict, org: dict) -> bytes:
     _add_text(slide, 3.5, 3.5, 6, 0.8, f"Level {overall_level}: {overall_label}", 28, text_color, False, PP_ALIGN.CENTER)
     _add_text(slide, 1.5, 5.0, 10, 0.5, f"Weight Profile: {composite.get('weight_profile', 'balanced').replace('_', ' ').title()}", 16, muted_color, False, PP_ALIGN.CENTER)
     _add_text(slide, 1.5, 5.6, 10, 0.5, f"Anti-patterns detected: {len(anti_patterns)}", 16, muted_color, False, PP_ALIGN.CENTER)
+    confidence = assessment.get("confidence", {})
+    if confidence:
+        high_c = sum(1 for v in confidence.values() if v == "high")
+        total_c = len(confidence)
+        _add_text(slide, 1.5, 6.2, 10, 0.4, f"Confidence: {high_c}/{total_c} dimensions at high confidence", 14, muted_color, False, PP_ALIGN.CENTER)
 
     # ── Slide 3: Dimension Scorecard ──
     slide = prs.slides.add_slide(prs.slide_layouts[6])
@@ -143,7 +148,60 @@ def _generate_pptx(assessment: dict, org: dict) -> bytes:
     else:
         _add_text(slide, 3, 3, 7, 0.6, "No anti-patterns detected!", 20, RGBColor(0x34, 0xD3, 0x99), False, PP_ALIGN.CENTER)
 
-    # ── Slide 6: Quick Wins ──
+    # ── Slide 6: DORA Metrics ──
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    _add_bg(slide)
+    _add_text(slide, 0.8, 0.5, 11, 0.6, "DORA 2025 Metrics", 28, accent_color, True)
+    dora_data = assessment.get("dora_metrics", {})
+    if dora_data:
+        y_dora = 1.5
+        for metric_name, metric_info in dora_data.items():
+            if isinstance(metric_info, dict):
+                val = metric_info.get("value", "N/A")
+                tier = metric_info.get("tier", "Unknown")
+                unit = metric_info.get("unit", "")
+                tier_colors_dora = {"Elite": RGBColor(0x3B, 0x82, 0xF6), "High": RGBColor(0x22, 0xC5, 0x5E),
+                                     "Medium": RGBColor(0xEA, 0xB3, 0x08), "Low": RGBColor(0xEF, 0x44, 0x44)}
+                tc = tier_colors_dora.get(tier, muted_color)
+                _add_text(slide, 1.0, y_dora, 4, 0.4, metric_name.replace("_", " ").title(), 16, text_color, True)
+                _add_text(slide, 5.5, y_dora, 3, 0.4, f"{val} {unit}", 16, text_color)
+                _add_text(slide, 9.0, y_dora, 2, 0.4, tier, 16, tc, True)
+                y_dora += 0.6
+    else:
+        _add_text(slide, 3, 3, 7, 0.6, "No DORA data available — connect data sources to enable", 16, muted_color, False, PP_ALIGN.CENTER)
+
+    # ── Slide 7: Hygiene Summary ──
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    _add_bg(slide)
+    _add_text(slide, 0.8, 0.5, 11, 0.6, "Hygiene Check Summary", 28, accent_color, True)
+    hygiene_data = assessment.get("hygiene_scores", [])
+    if hygiene_data and isinstance(hygiene_data, list):
+        platform_stats = {}
+        for h in hygiene_data:
+            if not isinstance(h, dict):
+                continue
+            plat = h.get("platform", "unknown")
+            if plat not in platform_stats:
+                platform_stats[plat] = {"pass": 0, "warn": 0, "fail": 0}
+            status = h.get("status", "unknown")
+            if status in platform_stats[plat]:
+                platform_stats[plat][status] += 1
+
+        _add_text(slide, 1.0, 1.3, 3, 0.4, "Platform", 14, muted_color, True)
+        _add_text(slide, 4.5, 1.3, 1.5, 0.4, "Pass", 14, RGBColor(0x22, 0xC5, 0x5E), True)
+        _add_text(slide, 6.0, 1.3, 1.5, 0.4, "Warn", 14, RGBColor(0xEA, 0xB3, 0x08), True)
+        _add_text(slide, 7.5, 1.3, 1.5, 0.4, "Fail", 14, RGBColor(0xEF, 0x44, 0x44), True)
+        y_hyg = 1.9
+        for plat, stats in sorted(platform_stats.items()):
+            _add_text(slide, 1.0, y_hyg, 3, 0.4, plat.replace("_", " ").title(), 14, text_color)
+            _add_text(slide, 4.5, y_hyg, 1.5, 0.4, str(stats["pass"]), 14, RGBColor(0x22, 0xC5, 0x5E), True)
+            _add_text(slide, 6.0, y_hyg, 1.5, 0.4, str(stats["warn"]), 14, RGBColor(0xEA, 0xB3, 0x08), True)
+            _add_text(slide, 7.5, y_hyg, 1.5, 0.4, str(stats["fail"]), 14, RGBColor(0xEF, 0x44, 0x44), True)
+            y_hyg += 0.5
+    else:
+        _add_text(slide, 3, 3, 7, 0.6, "No hygiene data — connect CI/CD platforms to enable", 16, muted_color, False, PP_ALIGN.CENTER)
+
+    # ── Slide 8: Quick Wins (was Slide 6) ──
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     _add_bg(slide)
     _add_text(slide, 0.8, 0.5, 11, 0.6, "30-Day Quick Wins", 28, accent_color, True)

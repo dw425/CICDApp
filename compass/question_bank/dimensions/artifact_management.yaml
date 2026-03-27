@@ -1,87 +1,110 @@
 dimension: artifact_management
-display_name: "Artifact Management"
-description: "Evaluates artifact repositories, versioning, signing, supply-chain security, and dependency management."
-icon: "package"
-color: "#F59E0B"
-
+display_name: Artifact Management
+description: Evaluates artifact repositories, versioning, signing, supply-chain security, and dependency management.
+icon: package
+color: '#F59E0B'
 questions:
-  - id: am_001
-    text: "How does your organization manage build artifacts (binaries, containers, packages)?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "No artifact repository — artifacts are built and deployed directly or stored on shared drives"
-        indicators: ["no_artifact_repo"]
-      - value: 2
-        label: "Basic artifact storage (S3 bucket, file share) with no versioning or metadata"
-        indicators: []
-      - value: 3
-        label: "Dedicated artifact repository (Artifactory, Nexus, GitHub Packages) with versioning"
-        indicators: ["artifact_repo"]
-      - value: 4
-        label: "Artifact repository with retention policies, promotion workflows, and vulnerability scanning"
-        indicators: ["artifact_repo", "artifact_promotion"]
-      - value: 5
-        label: "Immutable artifact registry with signed artifacts, provenance attestation, and SLSA Level 3+"
-        indicators: ["artifact_signing", "slsa_compliance"]
-
-  - id: am_002
-    text: "How are container images or deployment packages versioned?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "No versioning — images tagged as 'latest' or overwritten in place"
-        indicators: ["no_versioning"]
-      - value: 2
-        label: "Manual version tags (v1.0, v1.1) applied inconsistently"
-        indicators: []
-      - value: 3
-        label: "Automated semantic versioning from CI based on commit or branch"
-        indicators: ["semver"]
-      - value: 4
-        label: "Immutable tags (git SHA or build ID) with promotion metadata and traceability"
-        indicators: ["immutable_tags"]
-      - value: 5
-        label: "Full artifact lifecycle: build → scan → sign → promote → deploy with complete provenance chain"
-        indicators: ["immutable_tags", "artifact_signing"]
-
-  - id: am_003
-    text: "How does your team manage third-party dependencies?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "Direct pulls from public registries with no pinning or lockfiles"
-        indicators: ["unpinned_deps"]
-      - value: 2
-        label: "Lockfiles used but dependencies updated manually and infrequently"
-        indicators: []
-      - value: 3
-        label: "Automated dependency updates (Dependabot, Renovate) with CI checks"
-        indicators: ["automated_dep_updates"]
-      - value: 4
-        label: "Private mirror/proxy registry, automated updates, and vulnerability-gated promotion"
-        indicators: ["dep_mirror", "automated_dep_updates"]
-      - value: 5
-        label: "Curated dependency allow-list, automated updates with license and vulnerability analysis, private registry"
-        indicators: ["dep_mirror", "dep_allowlist"]
-
-  - id: am_004
-    text: "Is there a software supply chain security standard in place (e.g., SLSA, SSDF)?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "No supply chain security practices"
-        indicators: ["no_supply_chain_security"]
-      - value: 2
-        label: "Basic practices: lockfiles, some dependency scanning"
-        indicators: []
-      - value: 3
-        label: "SLSA Level 1-2: scripted builds, provenance generated"
-        indicators: ["slsa_basic"]
-      - value: 4
-        label: "SLSA Level 3+: isolated builds, signed provenance, verified artifacts"
-        indicators: ["slsa_compliance"]
+- id: am_001
+  text: How does your organization manage build artifacts (binaries, containers, packages)?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: No artifact repository — artifacts are built and deployed directly or stored on shared drives
+    indicators:
+    - no_artifact_repo
+  - value: 2
+    label: Basic artifact storage (S3 bucket, file share) with no versioning or metadata
+    indicators: []
+  - value: 3
+    label: Dedicated artifact repository (Artifactory, Nexus, GitHub Packages) with versioning
+    indicators:
+    - artifact_repo
+  - value: 4
+    label: Artifact repository with retention policies, promotion workflows, and vulnerability scanning
+    indicators:
+    - artifact_repo
+    - artifact_promotion
+  - value: 5
+    label: Immutable artifact registry with signed artifacts, provenance attestation, and SLSA Level 3+
+    indicators:
+    - artifact_signing
+    - slsa_compliance
+  - &id001
+    value: -1
+    label: I'm not sure / Don't know
+    indicators: []
+- id: am_002
+  text: How are container images or deployment packages versioned?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: No versioning — images tagged as 'latest' or overwritten in place
+    indicators:
+    - no_versioning
+  - value: 2
+    label: Manual version tags (v1.0, v1.1) applied inconsistently
+    indicators: []
+  - value: 3
+    label: Automated semantic versioning from CI based on commit or branch
+    indicators:
+    - semver
+  - value: 4
+    label: Immutable tags (git SHA or build ID) with promotion metadata and traceability
+    indicators:
+    - immutable_tags
+  - value: 5
+    label: 'Full artifact lifecycle: build → scan → sign → promote → deploy with complete provenance chain'
+    indicators:
+    - immutable_tags
+    - artifact_signing
+  - *id001
+- id: am_003
+  text: How does your team manage third-party dependencies?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: Direct pulls from public registries with no pinning or lockfiles
+    indicators:
+    - unpinned_deps
+  - value: 2
+    label: Lockfiles used but dependencies updated manually and infrequently
+    indicators: []
+  - value: 3
+    label: Automated dependency updates (Dependabot, Renovate) with CI checks
+    indicators:
+    - automated_dep_updates
+  - value: 4
+    label: Private mirror/proxy registry, automated updates, and vulnerability-gated promotion
+    indicators:
+    - dep_mirror
+    - automated_dep_updates
+  - value: 5
+    label: Curated dependency allow-list, automated updates with license and vulnerability analysis, private registry
+    indicators:
+    - dep_mirror
+    - dep_allowlist
+  - *id001
+- id: am_004
+  text: Is there a software supply chain security standard in place (e.g., SLSA, SSDF)?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: No supply chain security practices
+    indicators:
+    - no_supply_chain_security
+  - value: 2
+    label: 'Basic practices: lockfiles, some dependency scanning'
+    indicators: []
+  - value: 3
+    label: 'SLSA Level 1-2: scripted builds, provenance generated'
+    indicators:
+    - slsa_basic
+  - value: 4
+    label: 'SLSA Level 3+: isolated builds, signed provenance, verified artifacts'
+    indicators:
+    - slsa_compliance
+  - *id001

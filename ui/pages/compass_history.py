@@ -1,7 +1,8 @@
-"""Pipeline Compass Assessment History Page."""
+"""Pipeline Compass Assessment History Page — with compare mode."""
 
 from dash import html, dcc
 import dash_bootstrap_components as dbc
+import plotly.graph_objects as go
 
 
 def create_layout():
@@ -21,6 +22,34 @@ def create_layout():
                 ]),
             ], style={"display": "flex", "alignItems": "center", "gap": "12px"}),
         ], style={"marginBottom": "20px"}),
+
+        # Compare controls
+        html.Div(id="compass-compare-controls", children=[
+            dbc.Button(
+                [html.I(className="fas fa-columns"), " Compare Two Assessments"],
+                id="compass-compare-toggle",
+                color="secondary",
+                outline=True,
+                size="sm",
+                style={"marginBottom": "12px"},
+            ),
+            html.Div(id="compass-compare-selectors", style={"display": "none"}, children=[
+                html.Div([
+                    dbc.Select(id="compass-compare-a", options=[], placeholder="Assessment A...", style={
+                        "backgroundColor": "var(--elevated, #21262D)", "color": "#E6EDF3",
+                        "border": "1px solid var(--border, #272D3F)", "width": "300px",
+                    }),
+                    dbc.Select(id="compass-compare-b", options=[], placeholder="Assessment B...", style={
+                        "backgroundColor": "var(--elevated, #21262D)", "color": "#E6EDF3",
+                        "border": "1px solid var(--border, #272D3F)", "width": "300px", "marginLeft": "8px",
+                    }),
+                    dbc.Button("Compare", id="compass-compare-btn", color="primary", size="sm", style={"marginLeft": "8px"}),
+                ], style={"display": "flex", "alignItems": "center", "gap": "4px"}),
+            ]),
+        ]),
+
+        # Comparison results
+        html.Div(id="compass-compare-content"),
 
         # Content (populated by callback)
         html.Div(id="compass-history-content"),
@@ -169,6 +198,99 @@ def create_history_dashboard(assessments: list, organizations: dict) -> html.Div
     })
 
     return html.Div([kpi_row, trend_chart, assessment_list])
+
+
+def create_comparison_view(assessment_a: dict, assessment_b: dict, orgs: dict) -> html.Div:
+    """Build a side-by-side comparison of two assessments."""
+    comp_a = assessment_a.get("composite", {})
+    comp_b = assessment_b.get("composite", {})
+    bd_a = comp_a.get("dimension_breakdown", {})
+    bd_b = comp_b.get("dimension_breakdown", {})
+
+    org_a = orgs.get(assessment_a.get("org_id", ""), {})
+    org_b = orgs.get(assessment_b.get("org_id", ""), {})
+    name_a = f"{org_a.get('name', 'Unknown')} ({assessment_a.get('completed_at', '')[:10]})"
+    name_b = f"{org_b.get('name', 'Unknown')} ({assessment_b.get('completed_at', '')[:10]})"
+
+    # Dual radar
+    all_dims = sorted(set(list(bd_a.keys()) + list(bd_b.keys())))
+    dim_names = [bd_a.get(d, bd_b.get(d, {})).get("display_name", d.replace("_", " ").title()) for d in all_dims]
+    scores_a = [bd_a.get(d, {}).get("score", 0) for d in all_dims]
+    scores_b = [bd_b.get(d, {}).get("score", 0) for d in all_dims]
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatterpolar(r=scores_a + [scores_a[0]], theta=dim_names + [dim_names[0]],
+                                   fill='toself', name=name_a, line=dict(color="#4B7BF5", width=2),
+                                   fillcolor="rgba(75,123,245,0.15)"))
+    fig.add_trace(go.Scatterpolar(r=scores_b + [scores_b[0]], theta=dim_names + [dim_names[0]],
+                                   fill='toself', name=name_b, line=dict(color="#34D399", width=2),
+                                   fillcolor="rgba(52,211,153,0.15)"))
+    fig.update_layout(
+        polar=dict(
+            bgcolor="rgba(0,0,0,0)",
+            radialaxis=dict(visible=True, range=[0, 100], gridcolor="rgba(39,45,63,0.3)", tickfont=dict(color="#8B949E")),
+            angularaxis=dict(tickfont=dict(color="#8B949E")),
+        ),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        showlegend=True,
+        legend=dict(font=dict(color="#8B949E")),
+        margin=dict(l=60, r=60, t=30, b=30),
+        height=350,
+    )
+
+    radar = html.Div([
+        html.Div("Dual Radar Comparison", style={"color": "#E6EDF3", "fontSize": "14px", "fontWeight": "700", "marginBottom": "8px"}),
+        dcc.Graph(figure=fig, config={"displayModeBar": False}),
+    ], style={
+        "backgroundColor": "var(--surface, #161B22)", "borderRadius": "8px",
+        "padding": "20px", "border": "1px solid var(--border, #272D3F)", "marginBottom": "12px",
+    })
+
+    # Delta table
+    delta_rows = []
+    for d in all_dims:
+        sa = bd_a.get(d, {}).get("score", 0)
+        sb = bd_b.get(d, {}).get("score", 0)
+        delta = sb - sa
+        dname = bd_a.get(d, bd_b.get(d, {})).get("display_name", d.replace("_", " ").title())
+        delta_color = "#34D399" if delta > 0 else "#EF4444" if delta < 0 else "#8B949E"
+        arrow = "+" if delta > 0 else ""
+        delta_rows.append(html.Tr([
+            html.Td(dname, style={"color": "#E6EDF3", "padding": "8px"}),
+            html.Td(f"{sa:.0f}", style={"color": "#4B7BF5", "textAlign": "center", "padding": "8px"}),
+            html.Td(f"{sb:.0f}", style={"color": "#34D399", "textAlign": "center", "padding": "8px"}),
+            html.Td(f"{arrow}{delta:.0f}", style={"color": delta_color, "textAlign": "center", "fontWeight": "700", "padding": "8px"}),
+        ]))
+
+    overall_a = comp_a.get("overall_score", 0)
+    overall_b = comp_b.get("overall_score", 0)
+    overall_delta = overall_b - overall_a
+    overall_color = "#34D399" if overall_delta > 0 else "#EF4444" if overall_delta < 0 else "#8B949E"
+    delta_rows.append(html.Tr([
+        html.Td("OVERALL", style={"color": "#E6EDF3", "padding": "8px", "fontWeight": "700", "borderTop": "2px solid #272D3F"}),
+        html.Td(f"{overall_a:.0f}", style={"color": "#4B7BF5", "textAlign": "center", "fontWeight": "700", "padding": "8px", "borderTop": "2px solid #272D3F"}),
+        html.Td(f"{overall_b:.0f}", style={"color": "#34D399", "textAlign": "center", "fontWeight": "700", "padding": "8px", "borderTop": "2px solid #272D3F"}),
+        html.Td(f"{'+'if overall_delta > 0 else ''}{overall_delta:.0f}", style={"color": overall_color, "textAlign": "center", "fontWeight": "700", "padding": "8px", "borderTop": "2px solid #272D3F"}),
+    ]))
+
+    delta_table = html.Div([
+        html.Div("Per-Dimension Delta", style={"color": "#E6EDF3", "fontSize": "14px", "fontWeight": "700", "marginBottom": "8px"}),
+        html.Table([
+            html.Thead(html.Tr([
+                html.Th("Dimension", style={"color": "#8B949E", "padding": "8px", "borderBottom": "1px solid #272D3F"}),
+                html.Th(name_a[:20], style={"color": "#4B7BF5", "textAlign": "center", "padding": "8px", "borderBottom": "1px solid #272D3F"}),
+                html.Th(name_b[:20], style={"color": "#34D399", "textAlign": "center", "padding": "8px", "borderBottom": "1px solid #272D3F"}),
+                html.Th("Change", style={"color": "#8B949E", "textAlign": "center", "padding": "8px", "borderBottom": "1px solid #272D3F"}),
+            ])),
+            html.Tbody(delta_rows),
+        ], style={"width": "100%", "borderCollapse": "collapse"}),
+    ], style={
+        "backgroundColor": "var(--surface, #161B22)", "borderRadius": "8px",
+        "padding": "20px", "border": "1px solid var(--border, #272D3F)", "marginBottom": "12px",
+    })
+
+    return html.Div([radar, delta_table])
 
 
 def _kpi_card(label: str, value: str, sublabel: str, color: str) -> html.Div:

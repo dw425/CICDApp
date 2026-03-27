@@ -1,128 +1,148 @@
 dimension: security_compliance
-display_name: "Security & Compliance"
-description: "Evaluates security practices, compliance automation, and governance integration in the pipeline."
-icon: "lock"
-color: "#F87171"
-
+display_name: Security & Compliance
+description: Evaluates security practices, compliance automation, and governance integration in the pipeline.
+icon: lock
+color: '#F87171'
 questions:
-  - id: sc_001
-    text: "How are secrets and credentials managed in your CI/CD pipelines?"
-    type: likert
-    weight: 4
-    options:
-      - value: 1
-        label: "Hardcoded in source code or pipeline config files"
-        indicators: ["hardcoded_secrets"]
-      - value: 2
-        label: "Stored as CI/CD platform secrets (e.g., GitHub Secrets, pipeline variables)"
-        indicators: []
-      - value: 3
-        label: "Centralized secrets vault (HashiCorp Vault, AWS Secrets Manager)"
-        indicators: ["secrets_vault"]
-      - value: 4
-        label: "Dynamic short-lived credentials with automatic rotation"
-        indicators: ["dynamic_secrets"]
-      - value: 5
-        label: "Workload identity federation — no stored secrets at all (OIDC)"
-        indicators: ["oidc_auth"]
-
-  - id: sc_002
-    text: "Which security scanning stages are integrated into your CI/CD pipeline?"
-    type: multi_select
-    weight: 3
-    options:
-      - value: "pre_commit_secrets"
-        label: "Pre-commit secrets detection (gitleaks, GitGuardian)"
-      - value: "sast"
-        label: "Static Application Security Testing (SAST)"
-      - value: "sca"
-        label: "Software Composition Analysis (dependency vulnerabilities)"
-      - value: "container_scan"
-        label: "Container image scanning"
-      - value: "dast"
-        label: "Dynamic Application Security Testing (DAST)"
-      - value: "iac_scan"
-        label: "Infrastructure-as-Code security scanning (Checkov, tfsec)"
-      - value: "none"
-        label: "None of the above"
-        indicators: ["no_security_scanning"]
-    scoring:
-      per_selection: 17
-
-  - id: sc_003
-    text: "Does your organization enforce policy-as-code for compliance?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "No automated policy enforcement — compliance is manual review"
-        indicators: ["no_policy_enforcement"]
-      - value: 2
-        label: "Some policies documented but enforcement is manual"
-        indicators: []
-      - value: 3
-        label: "Key policies enforced via CI checks (e.g., branch protection, required reviews)"
-        indicators: []
-      - value: 4
-        label: "Policy-as-code framework (OPA, Sentinel) with automated enforcement"
-        indicators: ["policy_as_code"]
-      - value: 5
-        label: "Comprehensive governance-as-code with audit trails and exception workflows"
-        indicators: ["governance_as_code"]
-
-  - id: sc_004
-    text: "How is your Software Bill of Materials (SBOM) managed?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "No SBOM generation or tracking"
-        indicators: ["no_sbom"]
-      - value: 2
-        label: "SBOM generated manually on request"
-        indicators: []
-      - value: 3
-        label: "SBOM auto-generated in CI for every release"
-        indicators: ["sbom_automated"]
-      - value: 4
-        label: "SBOM with VEX (vulnerability exploitability) and automated alerting"
-        indicators: ["sbom_vex"]
-
-  - id: sc_005
-    text: "How quickly can your team respond to a critical zero-day vulnerability (e.g., Log4Shell)?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "Days to weeks — no automated way to identify affected services"
-        indicators: ["slow_vulnerability_response"]
-      - value: 2
-        label: "Within 24-48 hours — manual inventory check and patching"
-        indicators: []
-      - value: 3
-        label: "Within hours — SCA identifies affected repos, teams notified automatically"
-        indicators: []
-      - value: 4
-        label: "Under 4 hours — automated PR generated with dependency update across all services"
-        indicators: ["fast_vulnerability_response"]
-      - value: 5
-        label: "Under 1 hour — automated detection, patching, testing, and deployment"
-        indicators: ["elite_vulnerability_response"]
-
-  - id: sc_006
-    text: "Is there an audit trail for all pipeline changes and deployments?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "No audit trail — changes are not tracked systematically"
-        indicators: ["no_audit_trail"]
-      - value: 2
-        label: "Git history serves as the primary audit record"
-        indicators: []
-      - value: 3
-        label: "CI/CD platform logs all pipeline executions and deployments"
-        indicators: []
-      - value: 4
-        label: "Comprehensive audit: who deployed what, when, with what approvals, immutable logs"
-        indicators: ["comprehensive_audit"]
+- id: sc_001
+  text: How are secrets and credentials managed in your CI/CD pipelines?
+  type: likert
+  weight: 4
+  options:
+  - value: 1
+    label: Hardcoded in source code or pipeline config files
+    indicators:
+    - hardcoded_secrets
+  - value: 2
+    label: Stored as CI/CD platform secrets (e.g., GitHub Secrets, pipeline variables)
+    indicators: []
+  - value: 3
+    label: Centralized secrets vault (HashiCorp Vault, AWS Secrets Manager)
+    indicators:
+    - secrets_vault
+  - value: 4
+    label: Dynamic short-lived credentials with automatic rotation
+    indicators:
+    - dynamic_secrets
+  - value: 5
+    label: Workload identity federation — no stored secrets at all (OIDC)
+    indicators:
+    - oidc_auth
+  - &id001
+    value: -1
+    label: I'm not sure / Don't know
+    indicators: []
+- id: sc_002
+  text: Which security scanning stages are integrated into your CI/CD pipeline?
+  type: multi_select
+  weight: 3
+  options:
+  - value: pre_commit_secrets
+    label: Pre-commit secrets detection (gitleaks, GitGuardian)
+  - value: sast
+    label: Static Application Security Testing (SAST)
+  - value: sca
+    label: Software Composition Analysis (dependency vulnerabilities)
+  - value: container_scan
+    label: Container image scanning
+  - value: dast
+    label: Dynamic Application Security Testing (DAST)
+  - value: iac_scan
+    label: Infrastructure-as-Code security scanning (Checkov, tfsec)
+  - value: none
+    label: None of the above
+    indicators:
+    - no_security_scanning
+  - value: -1
+    label: I'm not sure / Don't know
+  scoring:
+    per_selection: 17
+- id: sc_003
+  text: Does your organization enforce policy-as-code for compliance?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: No automated policy enforcement — compliance is manual review
+    indicators:
+    - no_policy_enforcement
+  - value: 2
+    label: Some policies documented but enforcement is manual
+    indicators: []
+  - value: 3
+    label: Key policies enforced via CI checks (e.g., branch protection, required reviews)
+    indicators: []
+  - value: 4
+    label: Policy-as-code framework (OPA, Sentinel) with automated enforcement
+    indicators:
+    - policy_as_code
+  - value: 5
+    label: Comprehensive governance-as-code with audit trails and exception workflows
+    indicators:
+    - governance_as_code
+  - *id001
+- id: sc_004
+  text: How is your Software Bill of Materials (SBOM) managed?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: No SBOM generation or tracking
+    indicators:
+    - no_sbom
+  - value: 2
+    label: SBOM generated manually on request
+    indicators: []
+  - value: 3
+    label: SBOM auto-generated in CI for every release
+    indicators:
+    - sbom_automated
+  - value: 4
+    label: SBOM with VEX (vulnerability exploitability) and automated alerting
+    indicators:
+    - sbom_vex
+  - *id001
+- id: sc_005
+  text: How quickly can your team respond to a critical zero-day vulnerability (e.g., Log4Shell)?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: Days to weeks — no automated way to identify affected services
+    indicators:
+    - slow_vulnerability_response
+  - value: 2
+    label: Within 24-48 hours — manual inventory check and patching
+    indicators: []
+  - value: 3
+    label: Within hours — SCA identifies affected repos, teams notified automatically
+    indicators: []
+  - value: 4
+    label: Under 4 hours — automated PR generated with dependency update across all services
+    indicators:
+    - fast_vulnerability_response
+  - value: 5
+    label: Under 1 hour — automated detection, patching, testing, and deployment
+    indicators:
+    - elite_vulnerability_response
+  - *id001
+- id: sc_006
+  text: Is there an audit trail for all pipeline changes and deployments?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: No audit trail — changes are not tracked systematically
+    indicators:
+    - no_audit_trail
+  - value: 2
+    label: Git history serves as the primary audit record
+    indicators: []
+  - value: 3
+    label: CI/CD platform logs all pipeline executions and deployments
+    indicators: []
+  - value: 4
+    label: 'Comprehensive audit: who deployed what, when, with what approvals, immutable logs'
+    indicators:
+    - comprehensive_audit
+  - *id001

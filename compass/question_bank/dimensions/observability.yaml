@@ -1,102 +1,120 @@
 dimension: observability
-display_name: "Observability"
-description: "Evaluates monitoring, telemetry, and incident response capabilities."
-icon: "eye"
-color: "#00E5FF"
-
+display_name: Observability
+description: Evaluates monitoring, telemetry, and incident response capabilities.
+icon: eye
+color: '#00E5FF'
 questions:
-  - id: ob_001
-    text: "What monitoring is in place for your applications and infrastructure?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "Minimal — rely on user-reported issues or basic uptime checks"
-        indicators: ["no_monitoring"]
-      - value: 2
-        label: "Basic metrics (CPU, memory, error rates) with alerting on thresholds"
-        indicators: []
-      - value: 3
-        label: "Application-level metrics, structured logging, and distributed tracing"
-        indicators: ["structured_telemetry"]
-      - value: 4
-        label: "Full observability stack (metrics, logs, traces) with correlation and dashboards"
-        indicators: ["full_observability"]
-      - value: 5
-        label: "AI-assisted observability with anomaly detection and auto-remediation"
-        indicators: ["ai_observability"]
-
-  - id: ob_002
-    text: "Are SLOs (Service Level Objectives) defined and tracked?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "No SLOs defined"
-        indicators: ["no_slos"]
-      - value: 2
-        label: "Informal availability targets exist but not measured"
-        indicators: []
-      - value: 3
-        label: "SLOs defined with error budgets tracked manually"
-        indicators: ["slos_defined"]
-      - value: 4
-        label: "SLOs with automated error budget tracking and burn rate alerts"
-        indicators: ["slo_error_budgets"]
-      - value: 5
-        label: "SLO-driven release decisions — deployments gated on error budget availability"
-        indicators: ["slo_driven_releases"]
-
-  - id: ob_003
-    text: "Can you correlate deployment events with changes in application behavior?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "No — deployments and monitoring are completely separate"
-        indicators: []
-      - value: 2
-        label: "Manual correlation by comparing deployment times with metric changes"
-        indicators: []
-      - value: 3
-        label: "Deployment markers overlaid on monitoring dashboards"
-        indicators: ["deployment_markers"]
-      - value: 4
-        label: "Automated deployment impact analysis with change intelligence"
-        indicators: ["deployment_correlation"]
-
-  - id: ob_004
-    text: "What is your mean time to detect (MTTD) production incidents?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "Hours to days — often discovered by end users"
-        indicators: ["slow_detection"]
-      - value: 2
-        label: "Under 1 hour — basic alerting catches major issues"
-        indicators: []
-      - value: 3
-        label: "Under 15 minutes — comprehensive alerting with low false positive rate"
-        indicators: []
-      - value: 4
-        label: "Under 5 minutes — proactive detection including canary and synthetic monitoring"
-        indicators: ["proactive_detection"]
-
-  - id: ob_005
-    text: "How are pipeline and CI/CD system failures monitored?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "Not monitored — failures discovered when deployments are needed"
-        indicators: ["no_pipeline_monitoring"]
-      - value: 2
-        label: "Email/Slack notifications on build failures"
-        indicators: []
-      - value: 3
-        label: "CI/CD dashboards with trend tracking and flaky test detection"
-        indicators: ["ci_dashboards"]
-      - value: 4
-        label: "Full CI/CD observability with DORA metrics, bottleneck analysis, and optimization"
-        indicators: ["cicd_observability"]
+- id: ob_001
+  text: What monitoring is in place for your applications and infrastructure?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: Minimal — rely on user-reported issues or basic uptime checks
+    indicators:
+    - no_monitoring
+  - value: 2
+    label: Basic metrics (CPU, memory, error rates) with alerting on thresholds
+    indicators: []
+  - value: 3
+    label: Application-level metrics, structured logging, and distributed tracing
+    indicators:
+    - structured_telemetry
+  - value: 4
+    label: Full observability stack (metrics, logs, traces) with correlation and dashboards
+    indicators:
+    - full_observability
+  - value: 5
+    label: AI-assisted observability with anomaly detection and auto-remediation
+    indicators:
+    - ai_observability
+  - &id001
+    value: -1
+    label: I'm not sure / Don't know
+    indicators: []
+- id: ob_002
+  text: Are SLOs (Service Level Objectives) defined and tracked?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: No SLOs defined
+    indicators:
+    - no_slos
+  - value: 2
+    label: Informal availability targets exist but not measured
+    indicators: []
+  - value: 3
+    label: SLOs defined with error budgets tracked manually
+    indicators:
+    - slos_defined
+  - value: 4
+    label: SLOs with automated error budget tracking and burn rate alerts
+    indicators:
+    - slo_error_budgets
+  - value: 5
+    label: SLO-driven release decisions — deployments gated on error budget availability
+    indicators:
+    - slo_driven_releases
+  - *id001
+- id: ob_003
+  text: Can you correlate deployment events with changes in application behavior?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: No — deployments and monitoring are completely separate
+    indicators: []
+  - value: 2
+    label: Manual correlation by comparing deployment times with metric changes
+    indicators: []
+  - value: 3
+    label: Deployment markers overlaid on monitoring dashboards
+    indicators:
+    - deployment_markers
+  - value: 4
+    label: Automated deployment impact analysis with change intelligence
+    indicators:
+    - deployment_correlation
+  - *id001
+- id: ob_004
+  text: What is your mean time to detect (MTTD) production incidents?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: Hours to days — often discovered by end users
+    indicators:
+    - slow_detection
+  - value: 2
+    label: Under 1 hour — basic alerting catches major issues
+    indicators: []
+  - value: 3
+    label: Under 15 minutes — comprehensive alerting with low false positive rate
+    indicators: []
+  - value: 4
+    label: Under 5 minutes — proactive detection including canary and synthetic monitoring
+    indicators:
+    - proactive_detection
+  - *id001
+- id: ob_005
+  text: How are pipeline and CI/CD system failures monitored?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: Not monitored — failures discovered when deployments are needed
+    indicators:
+    - no_pipeline_monitoring
+  - value: 2
+    label: Email/Slack notifications on build failures
+    indicators: []
+  - value: 3
+    label: CI/CD dashboards with trend tracking and flaky test detection
+    indicators:
+    - ci_dashboards
+  - value: 4
+    label: Full CI/CD observability with DORA metrics, bottleneck analysis, and optimization
+    indicators:
+    - cicd_observability
+  - *id001

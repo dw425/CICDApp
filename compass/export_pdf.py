@@ -81,13 +81,19 @@ def _build_html_report(
         label = data.get("label", "Initial")
         color = TIER_COLORS.get(level, "#888")
         name = data.get("display_name", dim_id.replace("_", " ").title())
+        conf = confidence_data.get(dim_id, "") if confidence_data else ""
+        conf_badge = ""
+        if conf:
+            conf_colors = {"high": "#22C55E", "medium": "#EAB308", "low": "#EF4444"}
+            cc = conf_colors.get(conf.lower(), "#888")
+            conf_badge = f'<span style="background:{cc};color:white;padding:1px 5px;border-radius:3px;font-size:9px;margin-left:6px;">{conf.upper()}</span>'
         dim_rows += f"""
         <tr>
             <td style="padding:8px;border-bottom:1px solid #eee;">{name}</td>
             <td style="padding:8px;border-bottom:1px solid #eee;text-align:center;">
                 <span style="background:{color};color:white;padding:2px 8px;border-radius:4px;font-weight:bold;">
                     L{level}
-                </span>
+                </span>{conf_badge}
             </td>
             <td style="padding:8px;border-bottom:1px solid #eee;text-align:center;">{score:.0f}/100</td>
             <td style="padding:8px;border-bottom:1px solid #eee;">{label}</td>
@@ -123,6 +129,76 @@ def _build_html_report(
         if len(items) > 5:
             roadmap_html += f"<li style='color:#888;'>...and {len(items) - 5} more items</li>"
         roadmap_html += "</ul>"
+
+    # DORA metrics section
+    dora_data = assessment.get("dora_metrics", {})
+    dora_html = ""
+    if dora_data:
+        dora_rows = ""
+        tier_colors_map = {"Elite": "#3B82F6", "High": "#22C55E", "Medium": "#EAB308", "Low": "#EF4444"}
+        for metric_name, metric_info in dora_data.items():
+            if isinstance(metric_info, dict):
+                val = metric_info.get("value", "N/A")
+                tier = metric_info.get("tier", "Unknown")
+                unit = metric_info.get("unit", "")
+                tc = tier_colors_map.get(tier, "#888")
+                dora_rows += f"""
+                <tr>
+                    <td style="padding:8px;border-bottom:1px solid #eee;">{metric_name.replace('_', ' ').title()}</td>
+                    <td style="padding:8px;border-bottom:1px solid #eee;text-align:center;">{val} {unit}</td>
+                    <td style="padding:8px;border-bottom:1px solid #eee;text-align:center;">
+                        <span style="background:{tc};color:white;padding:2px 8px;border-radius:4px;font-weight:bold;">{tier}</span>
+                    </td>
+                </tr>
+                """
+        dora_html = f"""
+        <h2>DORA Metrics</h2>
+        <table>
+            <tr><th>Metric</th><th>Value</th><th>Tier</th></tr>
+            {dora_rows}
+        </table>
+        """
+
+    # Hygiene check summary
+    hygiene_data = assessment.get("hygiene_scores", [])
+    hygiene_html = ""
+    if hygiene_data and isinstance(hygiene_data, list):
+        platform_stats = {}
+        for h in hygiene_data:
+            if not isinstance(h, dict):
+                continue
+            plat = h.get("platform", "unknown")
+            if plat not in platform_stats:
+                platform_stats[plat] = {"pass": 0, "warn": 0, "fail": 0}
+            status = h.get("status", "unknown")
+            if status in platform_stats[plat]:
+                platform_stats[plat][status] += 1
+
+        hyg_rows = ""
+        for plat, stats in sorted(platform_stats.items()):
+            total = sum(stats.values())
+            hyg_rows += f"""
+            <tr>
+                <td style="padding:8px;border-bottom:1px solid #eee;">{plat.replace('_', ' ').title()}</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center;color:#22C55E;">{stats['pass']}</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center;color:#EAB308;">{stats['warn']}</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center;color:#EF4444;">{stats['fail']}</td>
+                <td style="padding:8px;border-bottom:1px solid #eee;text-align:center;">{total}</td>
+            </tr>
+            """
+        hygiene_html = f"""
+        <h2>Hygiene Check Summary</h2>
+        <table>
+            <tr><th>Platform</th><th>Pass</th><th>Warn</th><th>Fail</th><th>Total</th></tr>
+            {hyg_rows}
+        </table>
+        """
+
+    # Confidence badges for dimension rows
+    confidence_data = assessment.get("confidence", {})
+    confidence_suffix = ""
+    if confidence_data:
+        confidence_suffix = " (with confidence indicators)"
 
     overall_color = TIER_COLORS.get(overall_level, "#4B7BF5")
 
@@ -185,9 +261,35 @@ def _build_html_report(
 
     <div style="page-break-after:always;"></div>
 
+    {dora_html}
+
+    {hygiene_html}
+
+    <div style="page-break-after:always;"></div>
+
     <!-- Roadmap -->
     <h2>Improvement Roadmap</h2>
     {roadmap_html if roadmap_html else "<p>No improvement items generated.</p>"}
+
+    <!-- Confidence Analysis -->
+    <h2>Confidence Analysis</h2>
+    <p>Confidence levels indicate how reliable each dimension score is based on the data sources available.</p>
+    <table>
+        <tr><th>Level</th><th>Description</th></tr>
+        <tr><td style="padding:8px;"><span style="background:#22C55E;color:white;padding:2px 8px;border-radius:4px;font-weight:bold;">HIGH</span></td><td style="padding:8px;">Both telemetry and assessment data available with strong agreement</td></tr>
+        <tr><td style="padding:8px;"><span style="background:#EAB308;color:white;padding:2px 8px;border-radius:4px;font-weight:bold;">MEDIUM</span></td><td style="padding:8px;">One data source available, or moderate discrepancy between sources</td></tr>
+        <tr><td style="padding:8px;"><span style="background:#EF4444;color:white;padding:2px 8px;border-radius:4px;font-weight:bold;">LOW</span></td><td style="padding:8px;">Limited data or significant discrepancy (>20 points) between assessment and telemetry</td></tr>
+    </table>
+
+    <!-- Scoring Methodology -->
+    <h2>Scoring Methodology</h2>
+    <p>Pipeline Compass uses a two-layer scoring system:</p>
+    <ul>
+        <li><strong>Layer 1 (Raw Score):</strong> 0-100 score per dimension from weighted question responses and telemetry data</li>
+        <li><strong>Layer 2 (Maturity Tier):</strong> L1 Initial (0-20) → L2 Managed (21-40) → L3 Defined (41-60) → L4 Optimized (61-80) → L5 Elite (81-100)</li>
+    </ul>
+    <p>The composite score uses a <strong>weighted geometric mean</strong> to prevent high scores in one dimension from masking critical gaps. Hard-gate checks (e.g., branch protection disabled) cap the dimension score at L2 (40) regardless of other check results.</p>
+    <p>Hybrid scoring blends telemetry (70%) with assessment responses (30%) when both data sources are available.</p>
 
     <!-- Footer -->
     <div class="footer">

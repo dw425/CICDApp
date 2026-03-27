@@ -1,87 +1,104 @@
 dimension: iac_configuration
-display_name: "IaC & Configuration"
-description: "Evaluates Infrastructure-as-Code adoption, GitOps practices, and environment management."
-icon: "server"
-color: "#FBBF24"
-
+display_name: IaC & Configuration
+description: Evaluates Infrastructure-as-Code adoption, GitOps practices, and environment management.
+icon: server
+color: '#FBBF24'
 questions:
-  - id: ic_001
-    text: "What percentage of your infrastructure is managed as code?"
-    type: likert
-    weight: 4
-    options:
-      - value: 1
-        label: "Less than 20% — most infrastructure is provisioned manually via console/CLI"
-        indicators: ["manual_infra"]
-      - value: 2
-        label: "20-50% — some Terraform/CloudFormation but many manual resources"
-        indicators: []
-      - value: 3
-        label: "50-80% — core infrastructure is IaC, some manual exceptions"
-        indicators: ["partial_iac"]
-      - value: 4
-        label: "80-95% — nearly all infrastructure managed by IaC with CI/CD"
-        indicators: ["high_iac"]
-      - value: 5
-        label: "100% — all infrastructure including network, IAM, monitoring defined in code"
-        indicators: ["full_iac"]
-
-  - id: ic_002
-    text: "How are infrastructure changes applied?"
-    type: likert
-    weight: 3
-    options:
-      - value: 1
-        label: "Engineers apply changes directly from their workstation"
-        indicators: ["local_iac_apply"]
-      - value: 2
-        label: "Changes go through PR review but are applied manually"
-        indicators: []
-      - value: 3
-        label: "CI pipeline runs plan on PR, apply on merge to main"
-        indicators: ["iac_ci"]
-      - value: 4
-        label: "GitOps — reconciliation controller continuously syncs desired state"
-        indicators: ["gitops"]
-      - value: 5
-        label: "GitOps with drift detection, automatic remediation, and policy gates"
-        indicators: ["gitops", "drift_detection"]
-
-  - id: ic_003
-    text: "How are development environments provisioned?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "Shared long-lived environments manually maintained"
-        indicators: ["shared_envs"]
-      - value: 2
-        label: "Manually provisioned per-developer environments"
-        indicators: []
-      - value: 3
-        label: "Scripted environment provisioning (Makefile, docker-compose)"
-        indicators: []
-      - value: 4
-        label: "Self-service environment provisioning via internal platform or catalog"
-        indicators: ["self_service_envs"]
-      - value: 5
-        label: "Ephemeral per-PR environments automatically created and destroyed"
-        indicators: ["ephemeral_envs"]
-
-  - id: ic_004
-    text: "Does your organization maintain a module/template catalog for IaC?"
-    type: likert
-    weight: 2
-    options:
-      - value: 1
-        label: "No — each team writes IaC from scratch"
-        indicators: []
-      - value: 2
-        label: "Some shared modules exist but are not actively maintained"
-        indicators: []
-      - value: 3
-        label: "Internal module registry with versioning and documentation"
-        indicators: ["iac_modules"]
-      - value: 4
-        label: "Curated platform module catalog with compliance-approved golden paths"
-        indicators: ["iac_golden_paths"]
+- id: ic_001
+  text: What percentage of your infrastructure is managed as code?
+  type: likert
+  weight: 4
+  options:
+  - value: 1
+    label: Less than 20% — most infrastructure is provisioned manually via console/CLI
+    indicators:
+    - manual_infra
+  - value: 2
+    label: 20-50% — some Terraform/CloudFormation but many manual resources
+    indicators: []
+  - value: 3
+    label: 50-80% — core infrastructure is IaC, some manual exceptions
+    indicators:
+    - partial_iac
+  - value: 4
+    label: 80-95% — nearly all infrastructure managed by IaC with CI/CD
+    indicators:
+    - high_iac
+  - value: 5
+    label: 100% — all infrastructure including network, IAM, monitoring defined in code
+    indicators:
+    - full_iac
+  - &id001
+    value: -1
+    label: I'm not sure / Don't know
+    indicators: []
+- id: ic_002
+  text: How are infrastructure changes applied?
+  type: likert
+  weight: 3
+  options:
+  - value: 1
+    label: Engineers apply changes directly from their workstation
+    indicators:
+    - local_iac_apply
+  - value: 2
+    label: Changes go through PR review but are applied manually
+    indicators: []
+  - value: 3
+    label: CI pipeline runs plan on PR, apply on merge to main
+    indicators:
+    - iac_ci
+  - value: 4
+    label: GitOps — reconciliation controller continuously syncs desired state
+    indicators:
+    - gitops
+  - value: 5
+    label: GitOps with drift detection, automatic remediation, and policy gates
+    indicators:
+    - gitops
+    - drift_detection
+  - *id001
+- id: ic_003
+  text: How are development environments provisioned?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: Shared long-lived environments manually maintained
+    indicators:
+    - shared_envs
+  - value: 2
+    label: Manually provisioned per-developer environments
+    indicators: []
+  - value: 3
+    label: Scripted environment provisioning (Makefile, docker-compose)
+    indicators: []
+  - value: 4
+    label: Self-service environment provisioning via internal platform or catalog
+    indicators:
+    - self_service_envs
+  - value: 5
+    label: Ephemeral per-PR environments automatically created and destroyed
+    indicators:
+    - ephemeral_envs
+  - *id001
+- id: ic_004
+  text: Does your organization maintain a module/template catalog for IaC?
+  type: likert
+  weight: 2
+  options:
+  - value: 1
+    label: No — each team writes IaC from scratch
+    indicators: []
+  - value: 2
+    label: Some shared modules exist but are not actively maintained
+    indicators: []
+  - value: 3
+    label: Internal module registry with versioning and documentation
+    indicators:
+    - iac_modules
+  - value: 4
+    label: Curated platform module catalog with compliance-approved golden paths
+    indicators:
+    - iac_golden_paths
+  - *id001
