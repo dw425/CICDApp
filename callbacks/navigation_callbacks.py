@@ -10,6 +10,7 @@ PAGE_MAP = {
     "trend": "trend_analysis",
     "deployment": "deployment_explorer",
     "correlation": "correlation_analysis",
+    "data_sources": "data_sources",
     "admin": "admin",
 }
 
@@ -20,6 +21,7 @@ NAV_ID_TO_PAGE = {
     "nav-trend": "trend",
     "nav-deployment": "deployment",
     "nav-correlation": "correlation",
+    "nav-datasources": "data_sources",
     "nav-admin": "admin",
 }
 
@@ -30,6 +32,7 @@ PAGE_TITLES = {
     "trend": "Trend Analysis",
     "deployment": "Deployment Explorer",
     "correlation": "Correlation Analysis",
+    "data_sources": "Data Sources",
     "admin": "Administration",
 }
 
@@ -40,6 +43,7 @@ NAV_IDS = [
     "nav-trend",
     "nav-deployment",
     "nav-correlation",
+    "nav-datasources",
     "nav-admin",
 ]
 
@@ -84,6 +88,8 @@ def register_callbacks(app):
                 from ui.pages.deployment_explorer import create_layout
             elif current_page == "correlation":
                 from ui.pages.correlation_analysis import create_layout
+            elif current_page == "data_sources":
+                from ui.pages.data_sources import create_layout
             elif current_page == "admin":
                 from ui.pages.admin import create_layout
             else:

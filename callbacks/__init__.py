@@ -11,6 +11,7 @@ def register_all_callbacks(app):
     from callbacks.correlation_callbacks import register_callbacks as corr_cb
     from callbacks.admin_callbacks import register_callbacks as admin_cb
     from callbacks.shared_callbacks import register_callbacks as shared_cb
+    from callbacks.datasource_callbacks import register_callbacks as ds_cb
 
     nav_cb(app)
     exec_cb(app)
@@ -20,3 +21,4 @@ def register_all_callbacks(app):
     corr_cb(app)
     admin_cb(app)
     shared_cb(app)
+    ds_cb(app)

@@ -133,6 +133,32 @@ TBLPROPERTIES ('delta.autoOptimize.optimizeWrite' = 'true')
 """
 
 # ---------------------------------------------------------------------------
+# Data Source Configs
+# ---------------------------------------------------------------------------
+DATA_SOURCE_CONFIGS_DDL = f"""
+CREATE TABLE IF NOT EXISTS {get_full_table_name('data_source_configs')} (
+    config_id           STRING    NOT NULL  COMMENT 'Unique configuration identifier',
+    source_name         STRING    NOT NULL  COMMENT 'User-friendly source name',
+    source_type         STRING    NOT NULL  COMMENT 'databricks_table, azure_devops, github, csv_upload',
+    slot_id             STRING    NOT NULL  COMMENT 'Target CI/CD data slot',
+    data_type           STRING              COMMENT 'API data type (e.g. pipelines, pull_requests)',
+    is_active           BOOLEAN             COMMENT 'Whether the source is actively syncing',
+    connection_config   STRING              COMMENT 'JSON connection config (secrets as references)',
+    field_mapping       STRING              COMMENT 'JSON source-to-canonical field mapping',
+    filters             STRING              COMMENT 'JSON filters (WHERE clause, date range)',
+    target_table        STRING              COMMENT 'Destination table name',
+    created_at          TIMESTAMP           COMMENT 'Config creation timestamp',
+    updated_at          TIMESTAMP           COMMENT 'Last update timestamp',
+    last_sync_at        TIMESTAMP           COMMENT 'Last sync execution timestamp',
+    last_sync_status    STRING              COMMENT 'success, failed, or null',
+    last_sync_rows      INT                 COMMENT 'Rows written in last sync'
+)
+USING DELTA
+COMMENT 'Data source configurations for the CI/CD wizard'
+TBLPROPERTIES ('delta.autoOptimize.optimizeWrite' = 'true')
+"""
+
+# ---------------------------------------------------------------------------
 # Convenience mapping
 # ---------------------------------------------------------------------------
 DDL_STATEMENTS: dict[str, str] = {
@@ -142,4 +168,5 @@ DDL_STATEMENTS: dict[str, str] = {
     "maturity_trends": MATURITY_TRENDS_DDL,
     "coaching_alerts": COACHING_ALERTS_DDL,
     "external_quality_metrics": EXTERNAL_QUALITY_METRICS_DDL,
+    "data_source_configs": DATA_SOURCE_CONFIGS_DDL,
 }

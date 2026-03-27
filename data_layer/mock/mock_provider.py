@@ -189,3 +189,12 @@ class MockDataProvider:
         """Return service principal records."""
         df = self._load("service_principals.csv")
         return self._filter_team(df, team_id)
+
+    def get_data_source_configs(self) -> list[dict]:
+        """Return data source configurations from JSON file."""
+        import json
+        config_file = Path(__file__).resolve().parent.parent.parent / "config" / "data_source_configs.json"
+        if not config_file.exists():
+            return []
+        with open(config_file, "r") as f:
+            return json.load(f)

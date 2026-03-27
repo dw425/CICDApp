@@ -190,3 +190,46 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 .alert-card.critical { border-left-color: var(--red); background: rgba(248,113,113,.06); }
 .alert-card.warning { border-left-color: var(--yellow); background: rgba(251,191,36,.06); }
 .alert-card.info { border-left-color: var(--accent); background: rgba(75,123,245,.06); }
+
+/* ── Data Source Console ─────────────────────────────────────── */
+
+/* Source card grid */
+.source-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.source-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; transition: transform 0.2s, box-shadow 0.2s; }
+.source-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.3); }
+
+/* Status dot */
+.status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.status-dot.active { background: var(--green); box-shadow: 0 0 6px rgba(52,211,153,.4); }
+.status-dot.draft { background: var(--text3); }
+.status-dot.error { background: var(--red); box-shadow: 0 0 6px rgba(248,113,113,.4); }
+
+/* Source type selection grid */
+.source-type-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.source-type-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.15s; }
+.source-type-card:hover { border-color: var(--accent); background: rgba(75,123,245,.06); }
+.source-type-card.disabled { opacity: 0.4; cursor: not-allowed; }
+.source-type-card.disabled:hover { border-color: var(--border); background: var(--bg); }
+
+/* Wizard stepper */
+.wizard-stepper { display: flex; align-items: center; justify-content: center; gap: 0; padding: 8px 0; }
+.wizard-step { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.wizard-step-circle { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; border: 2px solid var(--border); color: var(--text3); background: transparent; transition: all 0.2s; }
+.wizard-step.active .wizard-step-circle { border-color: var(--accent); color: #fff; background: var(--accent); }
+.wizard-step.completed .wizard-step-circle { border-color: var(--green); color: var(--green); background: rgba(52,211,153,.12); }
+.wizard-step-label { font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+.wizard-step.active .wizard-step-label { color: var(--accent); }
+.wizard-step.completed .wizard-step-label { color: var(--green); }
+.wizard-step-connector { width: 40px; height: 2px; background: var(--border); margin: 0 4px; margin-bottom: 20px; }
+
+/* Wizard section titles */
+.wizard-section-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+
+/* Modal overrides for dark theme */
+.modal-content { background: var(--surface) !important; border: 1px solid var(--border) !important; color: var(--text) !important; }
+.modal-header { border-bottom: 1px solid var(--border) !important; }
+.modal-footer { border-top: 1px solid var(--border) !important; }
+.modal-header .btn-close { filter: invert(1); }
+
+/* Source card action buttons */
+.source-action-btn { font-size: 11px !important; padding: 4px 10px !important; }

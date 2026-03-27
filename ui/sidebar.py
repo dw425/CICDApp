@@ -12,6 +12,7 @@ NAV_ITEMS = [
         {"id": "nav-correlation", "label": "Correlation Analysis", "icon": "fas fa-project-diagram", "page": "correlation"},
     ]},
     {"group": "SETTINGS", "items": [
+        {"id": "nav-datasources", "label": "Data Sources", "icon": "fas fa-plug", "page": "data_sources"},
         {"id": "nav-admin", "label": "Admin", "icon": "fas fa-cog", "page": "admin"},
     ]},
 ]
@@ -33,7 +34,8 @@ def create_sidebar():
     return html.Div([
         # Brand
         html.Div([
-            html.Img(src="/assets/blueprint-logo.png", style={"height": "26px"}),
+            html.Span("CI/CD", style={"color": "#4B7BF5", "fontWeight": "700", "fontSize": "18px"}),
+            html.Span(" Maturity", style={"color": "#E6EDF3", "fontWeight": "400", "fontSize": "18px"}),
         ], className="sidebar-brand"),
         # Nav
         html.Div(nav_elements, className="sidebar-nav", id="sidebar-nav"),
