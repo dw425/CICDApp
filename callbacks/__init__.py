@@ -12,6 +12,10 @@ def register_all_callbacks(app):
     from callbacks.admin_callbacks import register_callbacks as admin_cb
     from callbacks.shared_callbacks import register_callbacks as shared_cb
     from callbacks.datasource_callbacks import register_callbacks as ds_cb
+    from callbacks.compass_assessment_callbacks import register_callbacks as compass_assess_cb
+    from callbacks.compass_results_callbacks import register_callbacks as compass_results_cb
+    from callbacks.compass_roadmap_callbacks import register_callbacks as compass_roadmap_cb
+    from callbacks.compass_history_callbacks import register_callbacks as compass_history_cb
 
     nav_cb(app)
     exec_cb(app)
@@ -22,3 +26,7 @@ def register_all_callbacks(app):
     admin_cb(app)
     shared_cb(app)
     ds_cb(app)
+    compass_assess_cb(app)
+    compass_results_cb(app)
+    compass_roadmap_cb(app)
+    compass_history_cb(app)

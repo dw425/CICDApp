@@ -1,0 +1,68 @@
+dimension: databricks
+sub_dimension: dlt_deployment
+display_name: "DLT Pipeline Deployment"
+description: "Evaluates Delta Live Tables adoption, quality expectations, and deployment maturity."
+icon: "layers"
+color: "#FF3621"
+condition: "org.uses_databricks == true"
+
+questions:
+  - id: db_dlt_001
+    text: "How are Delta Live Tables (DLT) pipelines created and managed?"
+    type: likert
+    weight: 4
+    options:
+      - value: 0
+        label: "Not using DLT — all ETL is custom Spark jobs or notebook-based"
+        indicators: ["no_dlt"]
+      - value: 1
+        label: "DLT pipelines created manually in the Databricks UI"
+        indicators: []
+      - value: 2
+        label: "DLT pipelines defined in code (notebooks or Python files) with Git integration"
+        indicators: ["dlt_code"]
+      - value: 3
+        label: "DLT pipelines deployed via DABs with multi-environment targets and CI/CD"
+        indicators: ["dlt_cicd"]
+      - value: 4
+        label: "DLT pipelines with parameterized configurations, automated testing, and promotion workflows"
+        indicators: ["dlt_advanced"]
+
+  - id: db_dlt_002
+    text: "What is the coverage of DLT expectations (data quality rules) in your pipelines?"
+    type: likert
+    weight: 4
+    options:
+      - value: 0
+        label: "No expectations defined — data quality issues discovered downstream"
+        indicators: ["dlt_no_expectations"]
+      - value: 1
+        label: "Basic expectations on Bronze layer (null checks, type validation)"
+        indicators: []
+      - value: 2
+        label: "Expectations at Bronze and Silver layers with expect_or_drop for critical rules"
+        indicators: ["dlt_expectations_partial"]
+      - value: 3
+        label: "Comprehensive expectations at all medallion layers with expect_or_fail for business-critical rules"
+        indicators: ["dlt_expectations_full"]
+      - value: 4
+        label: "Expectations with custom metrics, alerting on quality degradation, and SLA monitoring"
+        indicators: ["dlt_expectations_full", "dlt_quality_monitoring"]
+
+  - id: db_dlt_003
+    text: "How are DLT pipeline configurations parameterized across environments?"
+    type: likert
+    weight: 3
+    options:
+      - value: 0
+        label: "Hardcoded paths, catalogs, and settings — separate copies per environment"
+        indicators: ["dlt_hardcoded"]
+      - value: 1
+        label: "Some parameterization using pipeline settings or widgets"
+        indicators: []
+      - value: 2
+        label: "Fully parameterized via DABs variables with per-target overrides (dev/staging/prod)"
+        indicators: ["dlt_parameterized"]
+      - value: 3
+        label: "Template-based DLT pipelines with shared configurations, environment-specific catalogs, and automated promotion"
+        indicators: ["dlt_parameterized", "dlt_templates"]

@@ -1,0 +1,108 @@
+dimension: developer_experience
+display_name: "Developer Experience"
+description: "Evaluates build feedback speed, onboarding efficiency, self-service tooling, and engineering culture."
+icon: "code"
+color: "#818CF8"
+
+questions:
+  - id: dx_001
+    text: "How quickly do developers get feedback on a code change (from commit to test results)?"
+    type: likert
+    weight: 3
+    options:
+      - value: 1
+        label: "Over 30 minutes — or feedback requires manual steps"
+        indicators: ["slow_feedback"]
+      - value: 2
+        label: "15-30 minutes"
+        indicators: []
+      - value: 3
+        label: "5-15 minutes with clear pass/fail status in the PR"
+        indicators: []
+      - value: 4
+        label: "Under 5 minutes with detailed test results and inline annotations"
+        indicators: ["fast_feedback"]
+      - value: 5
+        label: "Under 2 minutes with AI-assisted code review and pre-merge confidence scoring"
+        indicators: ["elite_feedback"]
+
+  - id: dx_002
+    text: "How long does it take a new developer to make their first production-ready commit?"
+    type: likert
+    weight: 3
+    options:
+      - value: 1
+        label: "Weeks to a month — environment setup is manual and poorly documented"
+        indicators: ["slow_onboarding"]
+      - value: 2
+        label: "About a week — some documentation exists but requires tribal knowledge"
+        indicators: []
+      - value: 3
+        label: "2-3 days — scripted setup with README-driven onboarding"
+        indicators: []
+      - value: 4
+        label: "Under 1 day — devcontainers or Codespaces with pre-configured environments"
+        indicators: ["fast_onboarding"]
+      - value: 5
+        label: "Under 2 hours — golden path templates, self-service catalog, auto-provisioned environments"
+        indicators: ["elite_onboarding"]
+
+  - id: dx_003
+    text: "Does your organization have an internal developer portal or service catalog?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "No — developers rely on Slack/email to find information about services"
+        indicators: ["no_dev_portal"]
+      - value: 2
+        label: "Informal wiki or Confluence pages listing services"
+        indicators: []
+      - value: 3
+        label: "Basic service catalog (Backstage, Port, or similar) with ownership and documentation"
+        indicators: ["dev_portal"]
+      - value: 4
+        label: "Full developer portal with service catalog, API docs, golden path templates, and scorecards"
+        indicators: ["dev_portal", "golden_paths"]
+      - value: 5
+        label: "Self-service platform with automated service creation, environment provisioning, and observability setup"
+        indicators: ["platform_engineering"]
+
+  - id: dx_004
+    text: "How does your organization measure developer experience and satisfaction?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "Not measured — developer satisfaction is anecdotal"
+        indicators: ["no_dx_measurement"]
+      - value: 2
+        label: "Annual engagement surveys with some engineering-specific questions"
+        indicators: []
+      - value: 3
+        label: "Quarterly DX surveys (SPACE framework or similar) with action items"
+        indicators: ["dx_surveys"]
+      - value: 4
+        label: "Continuous DX measurement: survey data + telemetry (build times, deploy frequency, MTTR)"
+        indicators: ["dx_surveys", "dx_telemetry"]
+
+  - id: dx_005
+    text: "How would you describe the engineering culture around CI/CD and automation?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "CI/CD is seen as overhead — teams resist automation requirements"
+        indicators: ["automation_resistance"]
+      - value: 2
+        label: "CI/CD is accepted but treated as someone else's responsibility (ops/platform team)"
+        indicators: []
+      - value: 3
+        label: "Teams own their pipelines and actively improve them"
+        indicators: ["pipeline_ownership"]
+      - value: 4
+        label: "Strong DevOps culture — 'you build it, you run it' with blameless postmortems"
+        indicators: ["devops_culture"]
+      - value: 5
+        label: "Engineering excellence culture — internal tech talks, pipeline innovation time, cross-team CI/CD community"
+        indicators: ["devops_culture", "engineering_excellence"]

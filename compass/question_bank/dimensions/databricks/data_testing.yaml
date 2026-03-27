@@ -1,0 +1,71 @@
+dimension: databricks
+sub_dimension: data_testing
+display_name: "Data Pipeline Testing"
+description: "Evaluates data quality testing, contract testing, and monitoring practices in data pipelines."
+icon: "check-circle"
+color: "#FF3621"
+condition: "org.uses_databricks == true"
+
+questions:
+  - id: db_dt_001
+    text: "What types of automated tests exist for your data pipelines?"
+    type: multi_select
+    weight: 4
+    options:
+      - value: "unit_tests"
+        label: "Unit tests for transformation logic (pytest, nutter)"
+      - value: "integration_tests"
+        label: "Integration tests against dev/test data"
+      - value: "schema_tests"
+        label: "Schema validation tests (column types, nullability)"
+      - value: "data_quality"
+        label: "Data quality checks (Great Expectations, DLT expectations, dbt tests)"
+      - value: "contract_tests"
+        label: "Contract tests between producer and consumer pipelines"
+      - value: "none"
+        label: "No automated data pipeline tests"
+        indicators: ["no_data_tests"]
+    scoring:
+      per_selection: 20
+
+  - id: db_dt_002
+    text: "How are data contracts between pipeline stages or teams managed?"
+    type: likert
+    weight: 3
+    options:
+      - value: 0
+        label: "No data contracts — schema changes break downstream consumers unexpectedly"
+        indicators: ["no_data_contracts"]
+      - value: 1
+        label: "Informal agreements documented in wiki or Slack"
+        indicators: []
+      - value: 2
+        label: "Schema registries or Delta table schema enforcement prevent breaking changes"
+        indicators: ["schema_enforcement"]
+      - value: 3
+        label: "Formal data contracts with CI validation — breaking changes require consumer sign-off"
+        indicators: ["data_contracts"]
+      - value: 4
+        label: "Data products with versioned APIs, SLA commitments, and automated compatibility testing"
+        indicators: ["data_contracts", "data_products"]
+
+  - id: db_dt_003
+    text: "How is data quality monitored in production?"
+    type: likert
+    weight: 3
+    options:
+      - value: 0
+        label: "Not monitored — data issues discovered by end users or downstream failures"
+        indicators: ["no_data_monitoring"]
+      - value: 1
+        label: "Basic row count and freshness checks via scheduled queries"
+        indicators: []
+      - value: 2
+        label: "Lakehouse Monitoring or Great Expectations with alerting on anomalies"
+        indicators: ["data_monitoring"]
+      - value: 3
+        label: "Comprehensive data observability: schema drift detection, distribution monitoring, freshness SLAs"
+        indicators: ["data_observability"]
+      - value: 4
+        label: "Full data observability with automated root cause analysis and incident routing"
+        indicators: ["data_observability", "data_incident_automation"]

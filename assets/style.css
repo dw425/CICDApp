@@ -233,3 +233,130 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 
 /* Source card action buttons */
 .source-action-btn { font-size: 11px !important; padding: 4px 10px !important; }
+
+/* === Compass Assessment Styles === */
+
+/* Radio/Checklist items — smaller circles, proper alignment */
+.form-check-input[type="radio"],
+.form-check-input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    margin-top: 0 !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
+}
+.form-check-input:checked { background-color: var(--accent) !important; border-color: var(--accent) !important; }
+.form-check-input { background-color: var(--elevated) !important; border-color: var(--border) !important; }
+.form-check-input:focus { box-shadow: 0 0 0 0.2rem rgba(75,123,245,0.25) !important; }
+.form-check-label {
+    color: var(--text2) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+.form-check-label:hover { background-color: rgba(75,123,245,0.08) !important; border-color: var(--accent) !important; }
+.form-check {
+    display: flex !important;
+    align-items: center !important;
+    padding-left: 0 !important;
+}
+
+/* All form inputs dark theme */
+.form-control, .form-control:focus,
+input.form-control, textarea.form-control {
+    background-color: var(--elevated) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+    caret-color: var(--text) !important;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(75,123,245,0.25) !important;
+    border-color: var(--accent) !important;
+}
+.form-control::placeholder { color: var(--text3) !important; }
+
+/* Select dropdown dark theme */
+.form-select, .form-select:focus {
+    background-color: var(--elevated) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%238B949E' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+.form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(75,123,245,0.25) !important;
+    border-color: var(--accent) !important;
+}
+.form-select option {
+    background-color: var(--elevated);
+    color: var(--text);
+}
+
+/* Textarea dark theme */
+textarea.form-control { min-height: 80px; }
+
+/* Bootstrap card/alert overrides */
+.card { background-color: var(--surface) !important; border-color: var(--border) !important; color: var(--text) !important; }
+.card-body { background-color: var(--surface) !important; }
+.card-header { background-color: var(--elevated) !important; border-color: var(--border) !important; color: var(--text) !important; }
+.alert { background-color: var(--elevated) !important; border-color: var(--border) !important; color: var(--text) !important; }
+
+/* Toast dark theme */
+.toast { background-color: var(--surface) !important; color: var(--text) !important; border: 1px solid var(--border) !important; }
+.toast-header { background-color: var(--elevated) !important; color: var(--text) !important; border-bottom: 1px solid var(--border) !important; }
+.toast-header .btn-close { filter: invert(1); }
+.toast-body { color: var(--text2) !important; }
+
+/* Bootstrap button overrides for dark theme */
+.btn-secondary { background-color: var(--elevated) !important; border-color: var(--border) !important; color: var(--text) !important; }
+.btn-secondary:hover { background-color: var(--border) !important; }
+.btn-outline-secondary { color: var(--text2) !important; border-color: var(--border) !important; }
+.btn-outline-secondary:hover { background-color: var(--elevated) !important; color: var(--text) !important; }
+.btn-primary { background-color: var(--accent) !important; border-color: var(--accent) !important; }
+.btn-primary:hover { background-color: var(--accent-hover) !important; border-color: var(--accent-hover) !important; }
+
+/* Plotly chart background override — prevent white */
+.js-plotly-plot .plotly .modebar { background: transparent !important; }
+.js-plotly-plot .plotly .modebar-btn path { fill: var(--text3) !important; }
+
+/* Table dark overrides */
+.table { color: var(--text) !important; --bs-table-bg: transparent !important; }
+.table th, .table td { border-color: var(--border) !important; }
+.table-striped > tbody > tr:nth-of-type(odd) { background-color: rgba(22,27,34,0.5) !important; }
+
+/* Compass dimension tabs scrollbar */
+#compass-dim-tabs::-webkit-scrollbar { height: 4px; }
+#compass-dim-tabs::-webkit-scrollbar-track { background: transparent; }
+#compass-dim-tabs::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* Dash DataTable dark theme */
+.dash-spreadsheet-container .dash-spreadsheet-inner th,
+.dash-spreadsheet-container .dash-spreadsheet-inner td {
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* Dropdown dark theme (dcc.Dropdown) */
+.Select-control { background-color: var(--elevated) !important; border-color: var(--border) !important; }
+.Select-menu-outer { background-color: var(--elevated) !important; border-color: var(--border) !important; }
+.Select-option { background-color: var(--elevated) !important; color: var(--text) !important; }
+.Select-option.is-focused { background-color: rgba(75,123,245,0.15) !important; }
+.Select-value-label { color: var(--text) !important; }
+.Select-placeholder { color: var(--text3) !important; }
+
+/* Prevent any white background leaks */
+.dash-graph { background: transparent !important; }
+._dash-loading { background: transparent !important; }
+#page-content { background: transparent; }
+h1, h2, h3, h4, h5, h6 { background: transparent !important; color: var(--text); }
+
+/* Native date input dark theme */
+input[type="date"] {
+    color-scheme: dark;
+}
+
+/* Hide Dash dev tools toolbar */
+._dash-debug-menu { display: none !important; }
+._dash-debug-menu--closed { display: none !important; }

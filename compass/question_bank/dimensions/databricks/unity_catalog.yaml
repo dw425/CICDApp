@@ -1,0 +1,68 @@
+dimension: databricks
+sub_dimension: unity_catalog
+display_name: "Unity Catalog Governance"
+description: "Evaluates Unity Catalog adoption, access governance, lineage integration, and data classification."
+icon: "shield"
+color: "#FF3621"
+condition: "org.uses_databricks == true"
+
+questions:
+  - id: db_uc_001
+    text: "What is your organization's Unity Catalog adoption status?"
+    type: likert
+    weight: 4
+    options:
+      - value: 0
+        label: "Still using hive_metastore exclusively — no Unity Catalog"
+        indicators: ["hive_metastore_only"]
+      - value: 1
+        label: "Unity Catalog enabled but most tables still in hive_metastore"
+        indicators: []
+      - value: 2
+        label: "New workloads use Unity Catalog; legacy hive_metastore tables being migrated"
+        indicators: ["uc_migrating"]
+      - value: 3
+        label: "All production tables in Unity Catalog with per-environment catalogs (dev/staging/prod)"
+        indicators: ["uc_adopted"]
+      - value: 4
+        label: "Full UC governance: per-environment catalogs, service principal access, automated grant management"
+        indicators: ["uc_governed"]
+
+  - id: db_uc_002
+    text: "How are Unity Catalog permissions and grants managed?"
+    type: likert
+    weight: 4
+    options:
+      - value: 0
+        label: "No structured permissions — all users have broad access via account groups"
+        indicators: ["uc_no_governance"]
+      - value: 1
+        label: "Manual GRANT statements run by admins on request"
+        indicators: []
+      - value: 2
+        label: "Terraform or DABs manage grants with code-reviewed changes"
+        indicators: ["uc_grants_as_code"]
+      - value: 3
+        label: "Governance-as-code: automated grant management, row-level security, column masking"
+        indicators: ["uc_governance_as_code"]
+      - value: 4
+        label: "Full data mesh: domain-owned catalogs, self-service data products, automated classification and lineage"
+        indicators: ["uc_data_mesh"]
+
+  - id: db_uc_003
+    text: "How is data lineage tracked and used in your Databricks environment?"
+    type: likert
+    weight: 3
+    options:
+      - value: 0
+        label: "No lineage tracking — dependencies between tables/jobs are undocumented"
+        indicators: ["no_lineage"]
+      - value: 1
+        label: "Lineage captured by Unity Catalog but not actively used for decision-making"
+        indicators: []
+      - value: 2
+        label: "Lineage used to assess blast radius before schema changes or migrations"
+        indicators: ["lineage_active"]
+      - value: 3
+        label: "Lineage integrated into CI/CD: automated impact analysis, downstream notifications, and quality propagation"
+        indicators: ["lineage_cicd"]

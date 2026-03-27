@@ -6,7 +6,6 @@ from ui.components.kpi_card import create_kpi_card
 def create_layout():
     """Return the Executive Summary page layout."""
     return html.Div([
-        html.H2("Executive Summary", className="section-title"),
 
         # ── KPI Row ──────────────────────────────────────────────
         html.Div([

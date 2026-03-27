@@ -1,15 +1,47 @@
-"""Admin Callbacks - Mock toggle, connection info, and team registry."""
+"""Admin Callbacks - Assessment config, mock toggle, connection info, team registry."""
 
-from dash import html, Input, Output, no_update
+from dash import html, Input, Output, State, no_update
 
 from ui.theme import (
     SURFACE, ELEVATED, TEXT, TEXT2, TEXT3, BORDER, ACCENT, GREEN, RED,
 )
 from ui.components.data_table import create_data_table
+from compass.admin_config import save_admin_config
+from compass.scoring_engine import WEIGHT_PROFILE_LABELS
 
 
 def register_callbacks(app):
     """Register Administration callbacks."""
+
+    # ── Callback 0: Save assessment configuration ────────────────
+    @app.callback(
+        Output("admin-toast", "is_open"),
+        Output("admin-toast", "header"),
+        Output("admin-toast", "children"),
+        Output("admin-active-profile-label", "children"),
+        Input("admin-save-config-btn", "n_clicks"),
+        State("admin-org-name", "value"),
+        State("admin-org-size", "value"),
+        State("admin-industry", "value"),
+        State("admin-uses-databricks", "value"),
+        State("admin-scoring-profile", "value"),
+        prevent_initial_call=True,
+    )
+    def save_assessment_config(n_clicks, org_name, org_size, industry, uses_db, profile):
+        """Save assessment configuration to persistent store."""
+        if not n_clicks:
+            return no_update, no_update, no_update, no_update
+
+        save_admin_config({
+            "organization_name": org_name or "",
+            "org_size": org_size or "mid_market",
+            "industry": industry or "tech",
+            "uses_databricks": bool(uses_db),
+            "scoring_profile": profile or "balanced",
+        })
+
+        label = WEIGHT_PROFILE_LABELS.get(profile or "balanced", "Balanced")
+        return True, "Configuration Saved", "Assessment settings updated successfully.", label
 
     # ── Callback 1: Mock toggle → connection info ──────────────────
     @app.callback(
@@ -37,7 +69,6 @@ def register_callbacks(app):
                 _status_row("Latency", "< 1ms", GREEN),
             ]
         else:
-            # In a real deployment, this would check the actual Databricks connection
             try:
                 from config.settings import (
                     DATABRICKS_SERVER_HOSTNAME,
@@ -73,7 +104,6 @@ def register_callbacks(app):
                 ]
 
         return html.Div([
-            # Status header
             html.Div([
                 status_icon,
                 html.Span(status_text, style={
@@ -90,7 +120,6 @@ def register_callbacks(app):
                 "borderRadius": "6px",
                 "border": f"1px solid {BORDER}",
             }),
-            # Detail rows
             html.Div(details),
         ])
 
@@ -114,7 +143,6 @@ def register_callbacks(app):
                     style={"color": TEXT2, "padding": "20px"},
                 )
 
-            # Format dates
             display_df = teams.copy()
             if "created_date" in display_df.columns:
                 display_df["created_date"] = display_df["created_date"].astype(str).str[:10]

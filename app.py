@@ -32,5 +32,5 @@ register_all_callbacks(app)
 
 if __name__ == "__main__":
     port = int(os.environ.get("APP_PORT", 8050))
-    debug = os.environ.get("APP_DEBUG", "true").lower() == "true"
+    debug = os.environ.get("APP_DEBUG", "false").lower() == "true"
     app.run(debug=debug, port=port, host="0.0.0.0")

@@ -5,6 +5,12 @@ NAV_ITEMS = [
     {"group": "OVERVIEW", "items": [
         {"id": "nav-executive", "label": "Executive Summary", "icon": "fas fa-chart-line", "page": "executive"},
     ]},
+    {"group": "COMPASS", "items": [
+        {"id": "nav-compass-assess", "label": "Assessment", "icon": "fas fa-compass", "page": "compass_assessment"},
+        {"id": "nav-compass-results", "label": "Results", "icon": "fas fa-chart-pie", "page": "compass_results"},
+        {"id": "nav-compass-roadmap", "label": "Roadmap", "icon": "fas fa-road", "page": "compass_roadmap"},
+        {"id": "nav-compass-history", "label": "History", "icon": "fas fa-history", "page": "compass_history"},
+    ]},
     {"group": "ANALYSIS", "items": [
         {"id": "nav-team", "label": "Team Drilldown", "icon": "fas fa-users", "page": "team"},
         {"id": "nav-trend", "label": "Trend Analysis", "icon": "fas fa-chart-area", "page": "trend"},

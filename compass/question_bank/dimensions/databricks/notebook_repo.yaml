@@ -1,0 +1,65 @@
+dimension: databricks
+sub_dimension: notebook_repo
+display_name: "Notebook vs. Repo-First Development"
+description: "Evaluates the maturity of development practices from notebook-only to IDE-first with full CI/CD."
+icon: "book-open"
+color: "#FF3621"
+condition: "org.uses_databricks == true"
+
+questions:
+  - id: db_nb_001
+    text: "Where does your team primarily develop Databricks code?"
+    type: likert
+    weight: 4
+    options:
+      - value: 0
+        label: "Entirely in Databricks workspace notebooks with no Git integration"
+        indicators: ["notebook_monolith"]
+      - value: 1
+        label: "Databricks notebooks with Repos linked to Git"
+        indicators: []
+      - value: 2
+        label: "Mix of notebooks and shared Python modules, with unit tests"
+        indicators: []
+      - value: 3
+        label: "IDE-first (VS Code/PyCharm + Databricks Connect); notebooks only for exploration"
+        indicators: ["repo_first"]
+      - value: 4
+        label: "IDE-first with internal package registry, devcontainers, and full code quality gates in CI"
+        indicators: ["platform_engineering"]
+
+  - id: db_nb_002
+    text: "How are production workloads executed?"
+    type: single_select
+    weight: 4
+    options:
+      - value: 0
+        label: "Directly running notebooks interactively or via scheduled notebook runs"
+        indicators: ["production_notebook_execution"]
+      - value: 1
+        label: "Databricks Jobs referencing notebook paths"
+        indicators: []
+      - value: 2
+        label: "Databricks Workflows/Jobs using packaged code (wheels or JARs)"
+        indicators: ["packaged_production"]
+
+  - id: db_nb_003
+    text: "How is shared logic (utilities, transformations) reused across Databricks projects?"
+    type: likert
+    weight: 3
+    options:
+      - value: 0
+        label: "Copy-paste between notebooks — no code reuse mechanism"
+        indicators: ["notebook_copypaste"]
+      - value: 1
+        label: "%run magic commands to chain notebooks together"
+        indicators: []
+      - value: 2
+        label: "Shared Python modules in Repos, imported via relative imports"
+        indicators: []
+      - value: 3
+        label: "Internal Python packages published to a registry (PyPI, Artifactory), versioned and tested"
+        indicators: ["internal_packages"]
+      - value: 4
+        label: "Internal package registry with automated publishing from CI, semantic versioning, and documentation"
+        indicators: ["internal_packages", "package_registry"]

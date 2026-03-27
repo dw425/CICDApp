@@ -1,0 +1,132 @@
+dimension: testing_quality
+display_name: "Testing & Quality"
+description: "Evaluates test automation coverage, quality gates, and defect prevention maturity."
+icon: "shield-check"
+color: "#34D399"
+
+questions:
+  - id: tq_001
+    text: "What is the approximate automated test coverage across your codebase?"
+    type: likert
+    weight: 3
+    options:
+      - value: 1
+        label: "Minimal or no automated tests — testing is primarily manual"
+        indicators: ["no_automated_tests"]
+      - value: 2
+        label: "Some unit tests exist but coverage is below 40%"
+        indicators: []
+      - value: 3
+        label: "Moderate coverage (40-70%) with unit and some integration tests"
+        indicators: []
+      - value: 4
+        label: "Good coverage (70-85%) with unit, integration, and some E2E tests"
+        indicators: ["good_test_coverage"]
+      - value: 5
+        label: "Comprehensive coverage (85%+) with a well-structured test pyramid"
+        indicators: ["excellent_test_coverage"]
+
+  - id: tq_002
+    text: "How does your team implement the test pyramid?"
+    type: likert
+    weight: 3
+    options:
+      - value: 1
+        label: "No structured approach — tests are added ad-hoc"
+        indicators: []
+      - value: 2
+        label: "Mostly E2E/UI tests with few unit tests (inverted pyramid)"
+        indicators: ["ice_cream_cone"]
+      - value: 3
+        label: "Mix of unit and integration tests but no clear strategy"
+        indicators: []
+      - value: 4
+        label: "Proper pyramid — many unit, moderate integration, few E2E"
+        indicators: ["test_pyramid"]
+      - value: 5
+        label: "Testing diamond with contract tests for service boundaries"
+        indicators: ["testing_diamond"]
+
+  - id: tq_003
+    text: "How are flaky tests managed in your CI pipeline?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "Flaky tests are tolerated and retried manually or ignored"
+        indicators: ["flaky_tests_unmanaged"]
+      - value: 2
+        label: "Known flaky tests are skipped or disabled"
+        indicators: []
+      - value: 3
+        label: "Flaky tests are tracked and assigned for fixing"
+        indicators: []
+      - value: 4
+        label: "Automated flaky detection with quarantine — run but don't block"
+        indicators: ["flaky_quarantine"]
+      - value: 5
+        label: "Zero-tolerance with automated detection, quarantine, and 'PRs Impacted' tracking"
+        indicators: ["flaky_quarantine", "flaky_metrics"]
+
+  - id: tq_004
+    text: "What code quality gates are enforced before merging to main?"
+    type: multi_select
+    weight: 3
+    options:
+      - value: "linting"
+        label: "Linting / formatting checks"
+      - value: "unit_tests"
+        label: "Unit tests must pass"
+      - value: "coverage_threshold"
+        label: "Code coverage threshold enforced"
+      - value: "code_review"
+        label: "Mandatory peer code review"
+      - value: "sast"
+        label: "Static Application Security Testing (SAST)"
+      - value: "none"
+        label: "No enforced quality gates"
+        indicators: ["no_quality_gates"]
+    scoring:
+      per_selection: 20
+
+  - id: tq_005
+    text: "Does your team practice shift-left security testing?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "Security testing is done manually before release, if at all"
+        indicators: ["no_security_testing"]
+      - value: 2
+        label: "SAST runs on main branch only"
+        indicators: []
+      - value: 3
+        label: "SAST and dependency scanning run on every PR"
+        indicators: ["shift_left_security"]
+      - value: 4
+        label: "SAST, SCA, secrets detection, and container scanning in CI"
+        indicators: ["comprehensive_security_scanning"]
+      - value: 5
+        label: "Full DevSecOps: all above plus DAST and policy-as-code"
+        indicators: ["devsecops"]
+
+  - id: tq_006
+    text: "How are data quality checks handled in your data pipelines (if applicable)?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "No data quality checks — issues found in production"
+        indicators: ["no_data_quality"]
+      - value: 2
+        label: "Basic row count / null checks after processing"
+        indicators: []
+      - value: 3
+        label: "Schema validation and business rule checks at pipeline boundaries"
+        indicators: []
+      - value: 4
+        label: "Great Expectations or DLT expectations at every medallion layer"
+        indicators: ["data_quality_expectations"]
+      - value: 5
+        label: "Contract testing between producers and consumers with SLA monitoring"
+        indicators: ["data_contracts"]

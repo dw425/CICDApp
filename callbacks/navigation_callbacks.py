@@ -6,6 +6,10 @@ from dash import html, Input, Output, State, ctx, no_update
 # Page name to layout module mapping
 PAGE_MAP = {
     "executive": "executive_summary",
+    "compass_assessment": "compass_assessment",
+    "compass_results": "compass_results",
+    "compass_roadmap": "compass_roadmap",
+    "compass_history": "compass_history",
     "team": "team_drilldown",
     "trend": "trend_analysis",
     "deployment": "deployment_explorer",
@@ -17,6 +21,10 @@ PAGE_MAP = {
 # Nav-item id to page name mapping
 NAV_ID_TO_PAGE = {
     "nav-executive": "executive",
+    "nav-compass-assess": "compass_assessment",
+    "nav-compass-results": "compass_results",
+    "nav-compass-roadmap": "compass_roadmap",
+    "nav-compass-history": "compass_history",
     "nav-team": "team",
     "nav-trend": "trend",
     "nav-deployment": "deployment",
@@ -28,6 +36,10 @@ NAV_ID_TO_PAGE = {
 # Page name to display title mapping
 PAGE_TITLES = {
     "executive": "Executive Summary",
+    "compass_assessment": "Pipeline Compass — Assessment",
+    "compass_results": "Pipeline Compass — Results",
+    "compass_roadmap": "Pipeline Compass — Roadmap",
+    "compass_history": "Pipeline Compass — History",
     "team": "Team Drilldown",
     "trend": "Trend Analysis",
     "deployment": "Deployment Explorer",
@@ -39,6 +51,10 @@ PAGE_TITLES = {
 # Ordered list of nav item ids (for consistent output ordering)
 NAV_IDS = [
     "nav-executive",
+    "nav-compass-assess",
+    "nav-compass-results",
+    "nav-compass-roadmap",
+    "nav-compass-history",
     "nav-team",
     "nav-trend",
     "nav-deployment",
@@ -80,6 +96,14 @@ def register_callbacks(app):
         try:
             if current_page == "executive":
                 from ui.pages.executive_summary import create_layout
+            elif current_page == "compass_assessment":
+                from ui.pages.compass_assessment import create_layout
+            elif current_page == "compass_results":
+                from ui.pages.compass_results import create_layout
+            elif current_page == "compass_roadmap":
+                from ui.pages.compass_roadmap import create_layout
+            elif current_page == "compass_history":
+                from ui.pages.compass_history import create_layout
             elif current_page == "team":
                 from ui.pages.team_drilldown import create_layout
             elif current_page == "trend":

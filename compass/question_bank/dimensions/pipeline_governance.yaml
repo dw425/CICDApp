@@ -1,0 +1,87 @@
+dimension: pipeline_governance
+display_name: "Pipeline Governance"
+description: "Evaluates pipeline template management, inheritance models, governance enforcement, and organizational standardization."
+icon: "git-branch"
+color: "#EC4899"
+
+questions:
+  - id: pg_001
+    text: "How are CI/CD pipeline configurations managed across your organization?"
+    type: likert
+    weight: 4
+    options:
+      - value: 1
+        label: "Each team maintains their own pipeline from scratch — no organizational standards"
+        indicators: ["pipeline_copypaste"]
+      - value: 2
+        label: "Some shared scripts or plugins exist, but pipeline configurations are largely fragmented"
+        indicators: []
+      - value: 3
+        label: "Centralized templates maintained by a platform team, required for new services"
+        indicators: ["pipeline_templates"]
+      - value: 4
+        label: "Managed inheritance — services inherit from a Golden Pipeline by reference with versioned updates"
+        indicators: ["golden_pipeline"]
+      - value: 5
+        label: "Flexible governance — mandatory stages (security, compliance) with Insert Blocks for team-specific logic"
+        indicators: ["flexible_governance"]
+
+  - id: pg_002
+    text: "How are changes to shared pipeline templates rolled out?"
+    type: likert
+    weight: 3
+    options:
+      - value: 1
+        label: "No shared templates — each team updates independently"
+        indicators: ["no_pipeline_templates"]
+      - value: 2
+        label: "Shared templates exist but updates require manual adoption by each team"
+        indicators: []
+      - value: 3
+        label: "Templates are versioned; teams pin to versions and update at their own pace"
+        indicators: ["versioned_templates"]
+      - value: 4
+        label: "Automated rollout: template updates propagate via PRs to consuming repositories"
+        indicators: ["automated_template_rollout"]
+      - value: 5
+        label: "Canary rollout of template changes with automatic rollback on failure rate increase"
+        indicators: ["canary_template_rollout"]
+
+  - id: pg_003
+    text: "Can your organization respond to a critical pipeline vulnerability (e.g., compromised action/plugin) across all services?"
+    type: likert
+    weight: 3
+    options:
+      - value: 1
+        label: "No visibility — we would need to manually check each repository"
+        indicators: ["no_pipeline_visibility"]
+      - value: 2
+        label: "Partial visibility — can identify some affected repos through search"
+        indicators: []
+      - value: 3
+        label: "Full inventory of pipeline dependencies with manual remediation"
+        indicators: ["pipeline_inventory"]
+      - value: 4
+        label: "Automated detection and bulk PR generation to patch across all affected services"
+        indicators: ["pipeline_vulnerability_response"]
+      - value: 5
+        label: "Automated detection, patch, test, and deploy within hours with zero manual intervention"
+        indicators: ["elite_pipeline_response"]
+
+  - id: pg_004
+    text: "How is pipeline execution audited and governed for compliance?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "No pipeline auditing — no visibility into who changed what or when"
+        indicators: ["no_pipeline_audit"]
+      - value: 2
+        label: "Basic CI/CD platform logs available but not centralized or searchable"
+        indicators: []
+      - value: 3
+        label: "Centralized pipeline execution logs with searchable audit trail"
+        indicators: ["pipeline_audit"]
+      - value: 4
+        label: "Governance dashboard: pipeline compliance scores, mandatory stage enforcement, exception tracking"
+        indicators: ["pipeline_governance_dashboard"]

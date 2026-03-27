@@ -1,0 +1,110 @@
+dimension: build_integration
+display_name: "Build & Integration"
+description: "Evaluates how code is compiled, packaged, and integrated into the shared mainline."
+icon: "hammer"
+color: "#2E75B6"
+
+questions:
+  - id: bi_001
+    text: "How are builds triggered in your primary CI/CD pipeline?"
+    type: likert
+    weight: 3
+    options:
+      - value: 1
+        label: "Manual — developers trigger builds by hand or there is no CI server"
+        indicators: ["no_ci_server"]
+      - value: 2
+        label: "Semi-automated — builds run on merges to main but not on every commit"
+        indicators: []
+      - value: 3
+        label: "Automated — every commit to any branch triggers a build"
+        indicators: ["commit_triggered"]
+      - value: 4
+        label: "Optimized — builds are parallelized with caching, completing in under 10 minutes"
+        indicators: ["fast_builds"]
+      - value: 5
+        label: "Elite — self-optimizing build infrastructure with sub-2-minute feedback loops"
+        indicators: ["elite_builds"]
+    skip_if:
+      - condition: "bi_001.value <= 1"
+        skip: ["bi_003", "bi_004"]
+
+  - id: bi_002
+    text: "What is your team's primary branching strategy?"
+    type: likert
+    weight: 3
+    options:
+      - value: 1
+        label: "Long-lived feature branches (days to weeks before merge)"
+        indicators: ["long_lived_branches"]
+      - value: 2
+        label: "Feature branches with regular merges (every 1-3 days)"
+        indicators: []
+      - value: 3
+        label: "Trunk-based development with short-lived branches (< 1 day)"
+        indicators: ["trunk_based"]
+      - value: 4
+        label: "Trunk-based with feature flags and continuous integration"
+        indicators: ["trunk_based", "feature_flags"]
+
+  - id: bi_003
+    text: "How long does your average build take from commit to test results?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "Over 30 minutes"
+        indicators: ["slow_builds"]
+      - value: 2
+        label: "15-30 minutes"
+        indicators: []
+      - value: 3
+        label: "5-15 minutes"
+        indicators: []
+      - value: 4
+        label: "Under 5 minutes"
+        indicators: ["fast_builds"]
+      - value: 5
+        label: "Under 2 minutes"
+        indicators: ["elite_builds"]
+
+  - id: bi_004
+    text: "Do you use any of the following build optimization techniques?"
+    type: multi_select
+    weight: 2
+    options:
+      - value: "build_caching"
+        label: "Build/dependency caching"
+      - value: "parallel_builds"
+        label: "Parallel test/build execution"
+      - value: "incremental_builds"
+        label: "Incremental builds (only rebuild changed modules)"
+      - value: "merge_queue"
+        label: "Merge queue with automated conflict resolution"
+      - value: "managed_inheritance"
+        label: "Pipeline-as-code with managed inheritance (Golden Pipeline)"
+      - value: "none"
+        label: "None of the above"
+    scoring:
+      per_selection: 20
+
+  - id: bi_005
+    text: "How does your organization manage pipeline configurations across services?"
+    type: likert
+    weight: 2
+    options:
+      - value: 1
+        label: "Copy-paste — each repo has its own manually maintained pipeline config"
+        indicators: ["pipeline_copypaste"]
+      - value: 2
+        label: "Some shared scripts or plugins, but overall pipeline logic is fragmented"
+        indicators: []
+      - value: 3
+        label: "Centralized templates maintained by platform team, required for new services"
+        indicators: ["pipeline_templates"]
+      - value: 4
+        label: "Managed inheritance — services inherit from a master Golden Pipeline by reference"
+        indicators: ["golden_pipeline"]
+      - value: 5
+        label: "Flexible governance — mandatory stages with Insert Blocks for team-specific logic"
+        indicators: ["flexible_governance"]
