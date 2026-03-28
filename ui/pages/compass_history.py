@@ -135,7 +135,7 @@ def create_history_dashboard(assessments: list, organizations: dict) -> html.Div
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
             xaxis=dict(gridcolor="rgba(39,45,63,0.3)", tickfont=dict(color="#8B949E")),
-            yaxis=dict(title="Score", range=[0, 105], gridcolor="rgba(39,45,63,0.3)", tickfont=dict(color="#8B949E"), titlefont=dict(color="#8B949E")),
+            yaxis=dict(title="Score", range=[0, 105], gridcolor="rgba(39,45,63,0.3)", tickfont=dict(color="#8B949E"), title_font=dict(color="#8B949E")),
             margin=dict(l=50, r=20, t=10, b=40),
             height=250,
         )

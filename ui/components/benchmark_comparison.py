@@ -83,7 +83,7 @@ def create_benchmark_chart(
             range=[0, 105],
             gridcolor="rgba(39,45,63,0.3)",
             tickfont=dict(color="#8B949E"),
-            titlefont=dict(color="#8B949E"),
+            title_font=dict(color="#8B949E"),
         ),
         showlegend=True,
         legend=dict(

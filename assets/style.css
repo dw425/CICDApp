@@ -236,19 +236,41 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 
 /* === Compass Assessment Styles === */
 
-/* Radio/Checklist items — smaller circles, proper alignment */
+/* Radio/Checklist items — rounded square indicators, not circles */
 .form-check-input[type="radio"],
 .form-check-input[type="checkbox"] {
-    width: 16px !important;
-    height: 16px !important;
-    min-width: 16px !important;
-    min-height: 16px !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
     margin-top: 0 !important;
     flex-shrink: 0 !important;
     vertical-align: middle !important;
+    border-radius: 4px !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+    cursor: pointer !important;
+    position: relative !important;
+    aspect-ratio: 1 / 1 !important;
 }
-.form-check-input:checked { background-color: var(--accent) !important; border-color: var(--accent) !important; }
-.form-check-input { background-color: var(--elevated) !important; border-color: var(--border) !important; }
+.form-check-input[type="radio"]:checked,
+.form-check-input[type="checkbox"]:checked {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M4 8l3 3 5-6'/%3e%3c/svg%3e") !important;
+    background-size: 12px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.form-check-input:not(:checked) {
+    background-color: var(--elevated) !important;
+    border-color: var(--border) !important;
+    background-image: none !important;
+}
 .form-check-input:focus { box-shadow: 0 0 0 0.2rem rgba(75,123,245,0.25) !important; }
 .form-check-label {
     color: var(--text2) !important;
@@ -415,3 +437,37 @@ input[type="date"] {
 /* Hide Dash dev tools toolbar */
 ._dash-debug-menu { display: none !important; }
 ._dash-debug-menu--closed { display: none !important; }
+
+/* === Bootstrap Accordion — dark theme override === */
+.accordion {
+    --bs-accordion-bg: var(--surface) !important;
+    --bs-accordion-color: var(--text) !important;
+    --bs-accordion-border-color: var(--border) !important;
+    --bs-accordion-btn-bg: var(--elevated) !important;
+    --bs-accordion-btn-color: var(--text) !important;
+    --bs-accordion-active-bg: var(--elevated) !important;
+    --bs-accordion-active-color: var(--text) !important;
+    --bs-accordion-btn-focus-box-shadow: none !important;
+}
+.accordion-item {
+    background-color: var(--surface) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+.accordion-button {
+    background-color: var(--elevated) !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: none !important;
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--elevated) !important;
+    color: var(--accent) !important;
+}
+.accordion-button::after {
+    filter: invert(0.7) !important;
+}
+.accordion-body {
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+}
