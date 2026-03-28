@@ -16,10 +16,12 @@ PAGE_MAP = {
     "dora_metrics": "dora_metrics",
     "databricks_deep_dive": "databricks_deep_dive",
     "hygiene": "hygiene_dashboard",
+    "golden_path": "golden_path_adoption",
     "team": "team_drilldown",
     "trend": "trend_analysis",
     "deployment": "deployment_explorer",
     "correlation": "correlation_analysis",
+    "roi": "roi_dashboard",
     "data_sources": "data_sources",
     "scoring_logic": "scoring_logic",
     "admin": "admin",
@@ -35,10 +37,12 @@ NAV_ID_TO_PAGE = {
     "nav-dora": "dora_metrics",
     "nav-databricks": "databricks_deep_dive",
     "nav-hygiene": "hygiene",
+    "nav-golden-path": "golden_path",
     "nav-team": "team",
     "nav-trend": "trend",
     "nav-deployment": "deployment",
     "nav-correlation": "correlation",
+    "nav-roi": "roi",
     "nav-datasources": "data_sources",
     "nav-scoring-logic": "scoring_logic",
     "nav-admin": "admin",
@@ -54,10 +58,12 @@ PAGE_TITLES = {
     "dora_metrics": "DORA Metrics",
     "databricks_deep_dive": "Databricks Deep Dive",
     "hygiene": "Hygiene Dashboard",
+    "golden_path": "Golden Path Adoption",
     "team": "Team Drilldown",
     "trend": "Trend Analysis",
     "deployment": "Deployment Explorer",
     "correlation": "Correlation Analysis",
+    "roi": "ROI Calculator",
     "data_sources": "Data Sources",
     "scoring_logic": "Scoring Logic",
     "admin": "Administration",
@@ -73,10 +79,12 @@ NAV_IDS = [
     "nav-dora",
     "nav-databricks",
     "nav-hygiene",
+    "nav-golden-path",
     "nav-team",
     "nav-trend",
     "nav-deployment",
     "nav-correlation",
+    "nav-roi",
     "nav-datasources",
     "nav-scoring-logic",
     "nav-admin",
@@ -131,6 +139,8 @@ def register_callbacks(app):
                 from ui.pages.databricks_deep_dive import create_layout
             elif current_page == "hygiene":
                 from ui.pages.hygiene_dashboard import create_layout
+            elif current_page == "golden_path":
+                from ui.pages.golden_path_adoption import create_layout
             elif current_page == "team":
                 from ui.pages.team_drilldown import create_layout
             elif current_page == "trend":
@@ -139,6 +149,8 @@ def register_callbacks(app):
                 from ui.pages.deployment_explorer import create_layout
             elif current_page == "correlation":
                 from ui.pages.correlation_analysis import create_layout
+            elif current_page == "roi":
+                from ui.pages.roi_dashboard import create_layout
             elif current_page == "data_sources":
                 from ui.pages.data_sources import create_layout
             elif current_page == "scoring_logic":

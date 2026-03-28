@@ -1,0 +1,49 @@
+# Golden Path CI/CD Template — GitHub Actions
+# This is the standard pipeline that deployments should follow.
+# Deployments using this pipeline are classified as "standard" by the Golden Path Classifier.
+
+name: Golden Path Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  GOLDEN_PATH_TOKEN: ${{ secrets.GOLDEN_PATH_TOKEN }}
+  DEPLOY_ENV: production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Lint
+        run: flake8 --max-line-length=120 .
+      - name: Test
+        run: pytest tests/ -v
+      - name: Security Scan
+        run: pip install safety && safety check
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        run: |
+          echo "Deploying via golden path pipeline"
+          # Add deployment commands here
+        env:
+          GOLDEN_PATH_TOKEN: ${{ secrets.GOLDEN_PATH_TOKEN }}
+      - name: Notify
+        if: always()
+        run: |
+          echo "Deployment status: ${{ job.status }}"

@@ -24,6 +24,8 @@ def register_all_callbacks(app):
     from callbacks.dora_callbacks import register_callbacks as dora_cb
     from callbacks.scoring_logic_callbacks import register_callbacks as scoring_logic_cb
     from callbacks.databricks_callbacks import register_callbacks as databricks_cb
+    from callbacks.golden_path_callbacks import register_callbacks as golden_path_cb
+    from callbacks.roi_callbacks import register_callbacks as roi_cb
 
     nav_cb(app)
     exec_cb(app)
@@ -42,5 +44,7 @@ def register_all_callbacks(app):
     dora_cb(app)
     scoring_logic_cb(app)
     databricks_cb(app)
+    golden_path_cb(app)
+    roi_cb(app)
     # ****Checked and Verified as Real*****
     # Register all callbacks with the Dash app.

@@ -1,0 +1,45 @@
+# Golden Path CI/CD Template — Azure DevOps
+# Standard pipeline for golden path compliance tracking.
+
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  GOLDEN_PATH_TOKEN: $(GoldenPathToken)
+  pythonVersion: "3.11"
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildAndTest
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: $(pythonVersion)
+          - script: pip install -r requirements.txt
+            displayName: Install dependencies
+          - script: flake8 --max-line-length=120 .
+            displayName: Lint
+          - script: pytest tests/ -v --junitxml=test-results.xml
+            displayName: Test
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFiles: test-results.xml
+
+  - stage: Deploy
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    jobs:
+      - deployment: Production
+        environment: production
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - script: echo "Deploying via golden path"
+                  displayName: Deploy

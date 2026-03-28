@@ -15,10 +15,12 @@ NAV_ITEMS = [
     ]},
     {"group": "ANALYSIS", "items": [
         {"id": "nav-hygiene", "label": "Hygiene Dashboard", "icon": "fas fa-heartbeat", "page": "hygiene"},
+        {"id": "nav-golden-path", "label": "Golden Path", "icon": "fas fa-road", "page": "golden_path"},
         {"id": "nav-team", "label": "Team Drilldown", "icon": "fas fa-users", "page": "team"},
         {"id": "nav-trend", "label": "Trend Analysis", "icon": "fas fa-chart-area", "page": "trend"},
         {"id": "nav-deployment", "label": "Deployment Explorer", "icon": "fas fa-rocket", "page": "deployment"},
         {"id": "nav-correlation", "label": "Correlation Analysis", "icon": "fas fa-project-diagram", "page": "correlation"},
+        {"id": "nav-roi", "label": "ROI Calculator", "icon": "fas fa-dollar-sign", "page": "roi"},
     ]},
     {"group": "SETTINGS", "items": [
         {"id": "nav-datasources", "label": "Data Sources", "icon": "fas fa-plug", "page": "data_sources"},

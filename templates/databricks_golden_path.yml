@@ -1,0 +1,50 @@
+# Golden Path CI/CD Template — Databricks Asset Bundles
+# Standard deployment workflow for Databricks workspaces.
+
+bundle:
+  name: golden_path_deployment
+
+variables:
+  golden_path_token:
+    description: "Token for golden path compliance tracking"
+    default: ""
+
+workspace:
+  host: ${var.DATABRICKS_HOST}
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/dev
+
+  staging:
+    workspace:
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/staging
+    permissions:
+      - level: CAN_MANAGE
+        group_name: deployers
+
+  production:
+    workspace:
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/prod
+    permissions:
+      - level: CAN_MANAGE
+        group_name: deployers
+      - level: CAN_VIEW
+        group_name: viewers
+
+resources:
+  jobs:
+    golden_path_deploy:
+      name: "Golden Path Deployment"
+      tasks:
+        - task_key: validate
+          notebook_task:
+            notebook_path: ./notebooks/validate.py
+        - task_key: deploy
+          depends_on:
+            - task_key: validate
+          notebook_task:
+            notebook_path: ./notebooks/deploy.py

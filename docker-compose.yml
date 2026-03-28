@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cicd_maturity
+      POSTGRES_USER: cicd_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-cicd_dev_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cicd_user -d cicd_maturity"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  dash:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8070:8070"
+    environment:
+      APP_PORT: "8070"
+      DATABASE_URL: postgresql://cicd_user:${DB_PASSWORD:-cicd_dev_password}@db:5432/cicd_maturity
+      AUTH_MODE: ${AUTH_MODE:-dev}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8071:8071"
+    environment:
+      DATABASE_URL: postgresql://cicd_user:${DB_PASSWORD:-cicd_dev_password}@db:5432/cicd_maturity
+      AUTH_MODE: ${AUTH_MODE:-dev}
+      CORS_ORIGINS: "http://localhost:8070"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:

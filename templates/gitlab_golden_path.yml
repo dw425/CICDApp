@@ -1,0 +1,43 @@
+# Golden Path CI/CD Template — GitLab CI
+# Standard pipeline for golden path compliance tracking.
+
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  GOLDEN_PATH_TOKEN: $GOLDEN_PATH_TOKEN
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+
+cache:
+  paths:
+    - .pip-cache/
+
+build:
+  stage: build
+  image: python:3.11-slim
+  script:
+    - pip install -r requirements.txt
+    - flake8 --max-line-length=120 .
+
+test:
+  stage: test
+  image: python:3.11-slim
+  script:
+    - pip install -r requirements.txt
+    - pytest tests/ -v --junitxml=report.xml
+  artifacts:
+    reports:
+      junit: report.xml
+
+deploy:
+  stage: deploy
+  image: python:3.11-slim
+  script:
+    - echo "Deploying via golden path pipeline"
+  environment:
+    name: production
+  only:
+    - main
+  when: manual
