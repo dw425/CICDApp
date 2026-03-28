@@ -60,9 +60,9 @@ SOURCE_TYPES = [
     {"id": "github", "label": "GitHub", "icon": "fab fa-github",
      "desc": "Actions workflows, pull requests, issues, deployments"},
     {"id": "gitlab", "label": "GitLab", "icon": "fab fa-gitlab",
-     "desc": "CI pipelines, merge requests, issues (coming soon)"},
+     "desc": "CI pipelines, merge requests, issues, DORA metrics via REST API"},
     {"id": "jira", "label": "Jira", "icon": "fab fa-jira",
-     "desc": "Issues, sprints, work items (coming soon)"},
+     "desc": "Issues, sprints, incidents, MTTR metrics via REST API"},
     {"id": "csv_upload", "label": "CSV Upload", "icon": "fas fa-file-csv",
      "desc": "Upload a CSV file and map columns to a CI/CD data slot"},
 ]
@@ -72,7 +72,7 @@ def render_step_1():
     """Step 1: Choose Source Type — grid of clickable cards."""
     cards = []
     for st in SOURCE_TYPES:
-        disabled = st["id"] in ("gitlab", "jira")
+        disabled = False
         card = html.Div([
             html.I(className=st["icon"], style={"fontSize": "28px", "color": "var(--accent)", "marginBottom": "10px"}),
             html.Div(st["label"], style={"fontWeight": "600", "fontSize": "14px", "marginBottom": "4px"}),
@@ -102,6 +102,10 @@ def render_step_2(source_type=None, state=None):
         return _render_step_2_csv(state)
     elif source_type in ("azure_devops", "github"):
         return _render_step_2_api(source_type, state)
+    elif source_type == "gitlab":
+        return _render_step_2_gitlab(state)
+    elif source_type == "jira":
+        return _render_step_2_jira(state)
     else:
         return html.Div("Select a source type in Step 1.", style={"color": "var(--text2)", "padding": "20px"})
 
@@ -191,6 +195,65 @@ def _render_step_2_csv(state):
             style={"padding": "40px"},
         ),
         html.Div(preview_content, style={"marginTop": "16px"}),
+    ])
+
+
+def _render_step_2_gitlab(state):
+    """GitLab connection form."""
+    test_result = state.get("connection_test_result")
+    fields = [
+        ("api-server-url", "GitLab Server URL", "https://gitlab.com", "server_url"),
+        ("api-project-id", "Project ID (numeric)", "12345", "project_id"),
+        ("api-token", "Personal Access Token", "glpat-...", "token"),
+    ]
+    return _render_step_2_generic("GitLab Connection", fields, state, test_result)
+
+
+def _render_step_2_jira(state):
+    """Jira connection form."""
+    test_result = state.get("connection_test_result")
+    fields = [
+        ("api-server-url", "Jira Server URL", "https://mycompany.atlassian.net", "server_url"),
+        ("api-email", "Email", "user@company.com", "email"),
+        ("api-token", "API Token", "Paste your Jira API token", "token"),
+        ("api-project-key", "Project Key", "PROJ", "project_key"),
+    ]
+    return _render_step_2_generic("Jira Connection", fields, state, test_result)
+
+
+def _render_step_2_generic(title, fields, state, test_result):
+    """Generic API credential form builder."""
+    form_items = []
+    for field_idx, label, placeholder, key in fields:
+        is_secret = key in ("token", "pat")
+        form_items.append(html.Div([
+            html.Label(label, style={"fontSize": "12px", "color": "var(--text2)", "marginBottom": "4px", "display": "block"}),
+            dbc.Input(
+                id={"type": "wz-input", "index": field_idx},
+                placeholder=placeholder,
+                type="password" if is_secret else "text",
+                value=state.get(key, ""),
+                style={"marginBottom": "12px"},
+            ),
+        ]))
+
+    result_badge = None
+    if test_result == "success":
+        result_badge = html.Span([html.I(className="fas fa-check-circle"), " Connected"], className="badge success", style={"marginLeft": "12px"})
+    elif test_result == "failed":
+        result_badge = html.Span([html.I(className="fas fa-times-circle"), " Failed"], className="badge critical", style={"marginLeft": "12px"})
+
+    return html.Div([
+        html.Div(title, className="wizard-section-title"),
+        *form_items,
+        html.Div([
+            html.Button(
+                [html.I(className="fas fa-plug"), " Test Connection"],
+                id={"type": "wz-action", "index": "test-connection"},
+                className="btn btn-primary",
+            ),
+            result_badge,
+        ], style={"display": "flex", "alignItems": "center"}),
     ])
 
 
@@ -335,6 +398,19 @@ def _get_data_type_options(source_type):
         ]
     elif source_type == "databricks_table":
         return [{"label": "Table data (as-is)", "value": "table"}]
+    elif source_type == "gitlab":
+        return [
+            {"label": "Pipelines", "value": "pipelines"},
+            {"label": "Merge Requests", "value": "merge_requests"},
+            {"label": "DORA Metrics", "value": "dora_metrics"},
+            {"label": "Issues", "value": "issues"},
+        ]
+    elif source_type == "jira":
+        return [
+            {"label": "Incidents", "value": "incidents"},
+            {"label": "Issues (Bugs)", "value": "bugs"},
+            {"label": "Sprints", "value": "sprints"},
+        ]
     elif source_type == "csv_upload":
         return [{"label": "CSV data (as-is)", "value": "csv"}]
     return []
@@ -507,6 +583,8 @@ def render_step_6(state=None):
         "databricks_table": "Databricks Table",
         "azure_devops": "Azure DevOps",
         "github": "GitHub",
+        "gitlab": "GitLab",
+        "jira": "Jira",
         "csv_upload": "CSV Upload",
     }
 

@@ -27,7 +27,6 @@ def register_callbacks(app):
         Input("current-page", "data"),
         State("compass-results-selector", "value"),
         State("selected-assessment-id", "data"),
-        prevent_initial_call=True,
     )
     def load_results_selector(current_page, existing_value, shared_assessment_id):
         """Populate the assessment selector dropdown when navigating to results page."""

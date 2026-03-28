@@ -14,7 +14,7 @@ def create_layout():
                 options=[{"label": "All", "value": "All"}],
                 value="All",
                 placeholder="Team",
-                style={"backgroundColor": "#0D1117", "flex": "1"},
+                style={"backgroundColor": "#0D1117", "color": "#E6EDF3", "border": "1px solid #272D3F", "flex": "1"},
             ),
             dcc.Dropdown(
                 id="deploy-env-filter",
@@ -26,7 +26,7 @@ def create_layout():
                 ],
                 value="All",
                 placeholder="Environment",
-                style={"backgroundColor": "#0D1117", "flex": "1"},
+                style={"backgroundColor": "#0D1117", "color": "#E6EDF3", "border": "1px solid #272D3F", "flex": "1"},
             ),
             dcc.Dropdown(
                 id="deploy-actor-filter",
@@ -37,7 +37,7 @@ def create_layout():
                 ],
                 value="All",
                 placeholder="Actor Type",
-                style={"backgroundColor": "#0D1117", "flex": "1"},
+                style={"backgroundColor": "#0D1117", "color": "#E6EDF3", "border": "1px solid #272D3F", "flex": "1"},
             ),
         ], style={"display": "flex", "gap": "12px", "marginBottom": "16px"}),
 

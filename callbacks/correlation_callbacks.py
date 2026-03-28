@@ -161,10 +161,10 @@ def _build_correlation_matrix(pivot):
     # Pretty-print domain names
     labels = [DOMAIN_LABELS.get(d, d.replace("_", " ").title()) for d in corr.columns]
 
-    # Diverging colorscale: RED (-1) → SURFACE (0) → GREEN (+1)
+    # Diverging colorscale: RED (-1) → AMBER (0) → GREEN (+1)
     colorscale = [
         [0.0, RED],
-        [0.5, SURFACE],
+        [0.5, "#FBBF24"],
         [1.0, GREEN],
     ]
 

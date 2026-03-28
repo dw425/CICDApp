@@ -5,6 +5,7 @@
 """
 
 from dash import html, dcc, dash_table
+import dash_bootstrap_components as dbc
 from compass.scoring_engine import WEIGHT_PROFILES, WEIGHT_PROFILE_LABELS, TIER_MAP, TIER_COLORS
 from compass.scoring_constants import DORA_BENCHMARKS, DORA_TIER_COLORS, DIMENSION_IDS
 from compass.hygiene_scorer import get_all_check_definitions
@@ -57,6 +58,38 @@ def create_layout():
             _weight_matrix_table(),
         ]),
 
+        # Section 3b: Adjustable weights (interactive)
+        _section("Adjust Active Weights", [
+            html.P("Modify dimension weights for the active profile. Changes apply to future scoring runs.",
+                   style={"color": "#8B949E", "fontSize": "12px", "marginBottom": "14px"}),
+            html.Div([
+                *[_weight_slider_row(dim) for dim in DIMENSION_IDS],
+            ], id="scoring-weight-sliders"),
+            html.Div([
+                html.Label("Hard Gate Threshold", style={"color": "#E6EDF3", "fontSize": "13px", "fontWeight": "600"}),
+                dcc.Slider(
+                    id="scoring-hard-gate-threshold",
+                    min=0, max=100, step=5, value=50,
+                    marks={0: "0", 25: "25", 50: "50", 75: "75", 100: "100"},
+                    tooltip={"placement": "bottom", "always_visible": False},
+                ),
+                html.Div("Checks scoring below this threshold trigger a hard gate (dimension capped at L2).",
+                         style={"color": "#8B949E", "fontSize": "11px", "marginTop": "4px"}),
+            ], style={"marginTop": "16px", "marginBottom": "16px"}),
+            html.Button(
+                [html.I(className="fas fa-save", style={"marginRight": "6px"}), "Save & Recalculate"],
+                id="scoring-save-btn",
+                className="btn btn-primary",
+            ),
+            dbc.Toast(
+                id="scoring-toast",
+                header="Scoring",
+                is_open=False,
+                duration=3000,
+                style={"position": "fixed", "top": 10, "right": 10, "zIndex": 9999},
+            ),
+        ]),
+
         # Section 4: Hybrid blend formula
         _section("Hybrid Scoring Formula", [
             html.Div([
@@ -96,7 +129,7 @@ def create_layout():
                     ],
                     value="all",
                     clearable=False,
-                    style={"width": "200px", "backgroundColor": "#0D1117"},
+                    style={"width": "200px", "backgroundColor": "#0D1117", "color": "#E6EDF3", "border": "1px solid #272D3F"},
                     className="dash-dropdown-dark",
                 ),
             ], style={"display": "flex", "alignItems": "center", "marginBottom": "10px"}),
@@ -119,6 +152,27 @@ def create_layout():
             }),
         ]),
     ])
+
+
+def _weight_slider_row(dim_id):
+    """Build a single weight slider row for the adjustable weights section."""
+    label = dim_id.replace("_", " ").title()
+    default_weight = WEIGHT_PROFILES["balanced"].get(dim_id, 0.11)
+    return html.Div([
+        html.Div([
+            html.Span(label, style={"color": "#E6EDF3", "fontSize": "12px"}),
+            html.Span(f"{int(default_weight * 100)}%",
+                       id=f"scoring-weight-display-{dim_id}",
+                       style={"color": "#8B949E", "fontSize": "12px", "marginLeft": "auto"}),
+        ], style={"display": "flex", "justifyContent": "space-between", "marginBottom": "4px"}),
+        dcc.Slider(
+            id=f"scoring-weight-{dim_id}",
+            min=0, max=30, step=1,
+            value=int(default_weight * 100),
+            marks=None,
+            tooltip={"placement": "bottom", "always_visible": False},
+        ),
+    ], style={"marginBottom": "12px"})
 
 
 def _section(title: str, children: list) -> html.Div:

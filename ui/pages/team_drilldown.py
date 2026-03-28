@@ -12,7 +12,7 @@ def create_layout():
             id="team-selector",
             options=[],
             placeholder="Select a team...",
-            style={"backgroundColor": "#0D1117", "color": "#E6EDF3"},
+            style={"backgroundColor": "#0D1117", "color": "#E6EDF3", "border": "1px solid #272D3F"},
         ),
 
         # ── Radar + Gauge ────────────────────────────────────────

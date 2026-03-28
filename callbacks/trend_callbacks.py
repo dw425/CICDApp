@@ -14,6 +14,13 @@ from ui.theme import (
 
 
 # Domain display labels
+def _hex_to_rgba(hex_color, alpha=0.6):
+    """Convert a hex color like '#F87171' to 'rgba(248,113,113,0.6)'."""
+    h = hex_color.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
+
 DOMAIN_LABELS = {
     "golden_path": "Golden Path",
     "environment_promotion": "Env Promotion",
@@ -198,7 +205,7 @@ def _build_tier_stacked(trends, team_lookup):
             name=tier,
             stackgroup="one",
             line=dict(width=0.5, color=TIER_COLORS[tier]),
-            fillcolor=TIER_COLORS[tier].replace(")", ",0.6)").replace("rgb", "rgba") if "rgb" in TIER_COLORS[tier] else TIER_COLORS[tier] + "99",
+            fillcolor=_hex_to_rgba(TIER_COLORS[tier], 0.6),
             hovertemplate=f"<b>{tier}</b><br>Week: %{{x}}<br>Teams: %{{y}}<extra></extra>",
         ))
 

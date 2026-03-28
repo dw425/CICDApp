@@ -178,8 +178,6 @@ def register_callbacks(app):
         # ── Source type card click (Step 1) ───────────────────────
         if action.startswith("select-source-"):
             source_type = action.replace("select-source-", "")
-            if source_type in ("gitlab", "jira"):
-                return (no_update,) * 8
             state["source_type"] = source_type
             state["source_columns"] = []
             state["field_mapping"] = {}
@@ -213,6 +211,23 @@ def register_callbacks(app):
                 state["repo"] = inputs.get("api-repo", "")
                 state["token"] = inputs.get("api-token", "")
                 if state["owner"] and state["token"]:
+                    state["connection_test_result"] = "success"
+                else:
+                    state["connection_test_result"] = "failed"
+            elif source_type == "gitlab":
+                state["server_url"] = inputs.get("api-server-url", "")
+                state["project_id"] = inputs.get("api-project-id", "")
+                state["token"] = inputs.get("api-token", "")
+                if state["server_url"] and state["project_id"] and state["token"]:
+                    state["connection_test_result"] = "success"
+                else:
+                    state["connection_test_result"] = "failed"
+            elif source_type == "jira":
+                state["server_url"] = inputs.get("api-server-url", "")
+                state["email"] = inputs.get("api-email", "")
+                state["token"] = inputs.get("api-token", "")
+                state["project_key"] = inputs.get("api-project-key", "")
+                if state["server_url"] and state["email"] and state["token"]:
                     state["connection_test_result"] = "success"
                 else:
                     state["connection_test_result"] = "failed"
@@ -483,6 +498,10 @@ def _build_connection_config(state):
         return {"org_url": state.get("org_url", ""), "project": state.get("project", ""), "pat": "{{secrets/cicd/ado_pat}}"}
     elif source_type == "github":
         return {"owner": state.get("owner", ""), "repo": state.get("repo", ""), "token": "{{secrets/cicd/gh_token}}"}
+    elif source_type == "gitlab":
+        return {"server_url": state.get("server_url", ""), "project_id": state.get("project_id", ""), "token": "{{secrets/cicd/gitlab_token}}"}
+    elif source_type == "jira":
+        return {"server_url": state.get("server_url", ""), "email": state.get("email", ""), "token": "{{secrets/cicd/jira_token}}", "project_key": state.get("project_key", "")}
     elif source_type == "csv_upload":
         return {"filename": state.get("csv_filename", "")}
     return {}
@@ -535,6 +554,17 @@ def _get_mock_api_columns(source_type, data_type=None):
             "pull_requests": ["number", "title", "state", "created_at", "merged_at", "closed_at", "user.login", "head.repo.name", "requested_reviewers"],
             "issues": ["number", "title", "state", "created_at", "closed_at", "user.login", "labels", "assignees"],
             "deployments": ["id", "ref", "environment", "created_at", "updated_at", "creator.login", "description"],
+        },
+        "gitlab": {
+            "pipelines": ["id", "status", "ref", "created_at", "updated_at", "duration", "web_url", "user.name"],
+            "merge_requests": ["iid", "title", "state", "created_at", "merged_at", "author.username", "target_branch", "approvals_required"],
+            "dora_metrics": ["date", "deployment_frequency", "lead_time_for_changes", "time_to_restore_service", "change_failure_rate"],
+            "issues": ["iid", "title", "state", "created_at", "closed_at", "author.username", "labels"],
+        },
+        "jira": {
+            "incidents": ["key", "summary", "status", "priority", "created", "resolutiondate", "assignee", "severity"],
+            "bugs": ["key", "summary", "status", "priority", "created", "updated", "assignee", "components"],
+            "sprints": ["id", "name", "state", "startDate", "endDate", "completeDate", "goal"],
         },
     }
     if source_type in api_columns:

@@ -26,7 +26,6 @@ def register_callbacks(app):
         Input("current-page", "data"),
         State("compass-roadmap-selector", "value"),
         State("selected-assessment-id", "data"),
-        prevent_initial_call=True,
     )
     def load_roadmap_selector(current_page, existing_value, shared_assessment_id):
         """Populate the assessment selector when navigating to roadmap page."""

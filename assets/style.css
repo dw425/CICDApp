@@ -357,6 +357,61 @@ input[type="date"] {
     color-scheme: dark;
 }
 
+/* Dash slider tooltip dark theme */
+.rc-slider-tooltip-inner {
+    background-color: var(--elevated) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+.rc-slider-tooltip-arrow {
+    border-top-color: var(--elevated) !important;
+}
+
+/* Ensure ALL Bootstrap inputs in dark theme */
+.modal-content .form-control,
+.modal-content input,
+.card-body input[type="text"],
+.card-body input[type="number"],
+.card-body input[type="password"] {
+    background-color: var(--elevated) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* DataTable filter inputs */
+.dash-spreadsheet-container .dash-filter input {
+    background-color: var(--elevated) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+}
+
+/* Number input inside Dash components */
+.dash-input, input.dash-input-element {
+    background-color: var(--elevated) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* dcc.Dropdown placeholder and single-value text */
+.Select-value { color: var(--text) !important; }
+.Select-input input { color: var(--text) !important; }
+.Select--single > .Select-control .Select-value { color: var(--text) !important; }
+.Select-clear-zone { color: var(--text3) !important; }
+.Select-arrow-zone { color: var(--text3) !important; }
+
+/* Pagination dark theme */
+.dash-table-container .previous-next-container button {
+    background-color: var(--elevated) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+.dash-table-container .page-number {
+    color: var(--text) !important;
+}
+
 /* Hide Dash dev tools toolbar */
 ._dash-debug-menu { display: none !important; }
 ._dash-debug-menu--closed { display: none !important; }

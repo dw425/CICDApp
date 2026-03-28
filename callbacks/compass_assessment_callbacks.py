@@ -1,8 +1,8 @@
 """Callbacks for Pipeline Compass Assessment Wizard.
-# ****Truth Agent Verified**** — CB1: clientside response capture. CB2: full navigation
+# CB0: reset wizard stores on page entry (prevents stale session state).
+# CB1: clientside response capture. CB2: full navigation
 # (setup→questions→complete, Next/Back/Resume/Save). CB3: autosave every 30s.
-# CB4: completion screen nav (goto-results/roadmap). BUG1: _persist_responses on every
-# nav action. BUG3: persist before scoring. BUG6: direct nav buttons on completion.
+# CB4: completion screen nav (goto-results/roadmap).
 """
 
 from datetime import datetime
@@ -42,6 +42,26 @@ from ui.pages.compass_assessment import create_question_card
 def register_callbacks(app):
     """Register all compass assessment callbacks."""
 
+    # ── CB0: Reset wizard stores when navigating TO the assessment page ──
+    # Prevents stale session storage from breaking the wizard flow.
+    # Users can resume saved assessments via the Resume button.
+    @app.callback(
+        Output("compass-wizard-step", "data", allow_duplicate=True),
+        Output("compass-current-dim", "data", allow_duplicate=True),
+        Output("compass-responses", "data", allow_duplicate=True),
+        Output("compass-live-answers", "data", allow_duplicate=True),
+        Output("compass-config", "data", allow_duplicate=True),
+        Output("compass-assessment-id", "data", allow_duplicate=True),
+        Output("compass-org-id", "data", allow_duplicate=True),
+        Input("current-page", "data"),
+        prevent_initial_call=True,
+    )
+    def reset_wizard_on_page_entry(current_page):
+        """Reset all wizard stores to initial state when entering the assessment page."""
+        if current_page == "compass_assessment":
+            return "setup", 0, {}, {}, {}, None, None
+        return (no_update,) * 7
+
     # ── CB1: Client-side callback to capture responses into store ──
     # Runs in the browser — no server round-trip, no output conflicts.
     app.clientside_callback(
@@ -76,7 +96,6 @@ def register_callbacks(app):
     )
 
     # ── CB2: Main navigation (Next / Back / Resume / Save) ──
-    # No pattern-matching, no allow_duplicate — clean callback.
     @app.callback(
         Output("compass-content", "children"),
         Output("compass-progress-bar", "style"),
@@ -127,6 +146,7 @@ def register_callbacks(app):
         responses = responses or {}
         config = config or {}
         live_answers = live_answers or {}
+        current_dim = current_dim or 0
 
         # Merge live answers into responses
         if live_answers:
@@ -218,6 +238,7 @@ def register_callbacks(app):
 
         # ── Next button ──
         if triggered == "compass-next-btn":
+            # Setup step: validate form and create assessment
             if step == "setup":
                 if not team_name or not team_name.strip():
                     return _toast_only("Validation Error", "Please enter a team name.")
@@ -263,8 +284,8 @@ def register_callbacks(app):
                     new_config,
                 )
 
+            # Questions step: persist and advance to next dimension
             if step == "questions":
-                # Persist responses before advancing
                 _persist_responses(assessment_id, responses)
 
                 dims = _get_ordered_dimensions(cfg_databricks)
@@ -357,6 +378,8 @@ def _persist_responses(assessment_id, responses):
     if not assessment_id or not responses:
         return
     for qid, resp in responses.items():
+        if not isinstance(resp, dict):
+            continue
         q = get_question(qid)
         dim = q.get("_dimension", "") if q else ""
         sub = q.get("_sub_dimension") if q else None
@@ -386,8 +409,9 @@ def _render_dimension_full(dims, current_dim, responses, assessment_id, org_id, 
 
     response_vals = {}
     for qid, r in responses.items():
-        rv = r.get("response_value", {})
-        response_vals[qid] = rv
+        if isinstance(r, dict):
+            rv = r.get("response_value", {})
+            response_vals[qid] = rv
 
     questions = get_adaptive_questions(dim_id, response_vals, bool(uses_db))
 
@@ -395,7 +419,7 @@ def _render_dimension_full(dims, current_dim, responses, assessment_id, org_id, 
     for q in questions:
         qid = q["id"]
         existing = None
-        if qid in responses:
+        if qid in responses and isinstance(responses[qid], dict):
             existing = responses[qid].get("response_value")
         cards.append(create_question_card(q, existing))
 
