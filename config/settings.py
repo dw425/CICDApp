@@ -16,7 +16,7 @@ load_dotenv()
 # ---------------------------------------------------------------------------
 # Data catalog / schema
 # ---------------------------------------------------------------------------
-CATALOG: str = os.getenv("CICD_APP_CATALOG", "lho_analytics")
+CATALOG: str = os.getenv("CICD_APP_CATALOG", "lho_ucm")
 SCHEMA: str = os.getenv("CICD_APP_SCHEMA", "cicd")
 
 # ---------------------------------------------------------------------------

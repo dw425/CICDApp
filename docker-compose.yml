@@ -22,10 +22,12 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8070:8070"
+      - "8050:8050"
     environment:
-      APP_PORT: "8070"
-      DATABASE_URL: postgresql://cicd_user:${DB_PASSWORD:-cicd_dev_password}@db:5432/cicd_maturity
+      APP_PORT: "8050"
+      CICD_APP_USE_MOCK: "${CICD_APP_USE_MOCK:-true}"
+      CICD_APP_CATALOG: "${CICD_APP_CATALOG:-lho_analytics}"
+      CICD_APP_SCHEMA: "${CICD_APP_SCHEMA:-cicd}"
       AUTH_MODE: ${AUTH_MODE:-dev}
     depends_on:
       db:
@@ -39,9 +41,8 @@ services:
     ports:
       - "8071:8071"
     environment:
-      DATABASE_URL: postgresql://cicd_user:${DB_PASSWORD:-cicd_dev_password}@db:5432/cicd_maturity
       AUTH_MODE: ${AUTH_MODE:-dev}
-      CORS_ORIGINS: "http://localhost:8070"
+      CORS_ORIGINS: "http://localhost:8050"
     depends_on:
       db:
         condition: service_healthy

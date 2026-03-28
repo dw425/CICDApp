@@ -1,0 +1,111 @@
+bundle:
+  name: cicd-maturity-intelligence
+
+workspace:
+  host: https://dbc-1459cbde-0cff.cloud.databricks.com
+
+variables:
+  catalog:
+    description: "Unity Catalog name"
+    default: "lho_ucm"
+  schema:
+    description: "Schema name"
+    default: "cicd"
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      root_path: ~/.bundle/${bundle.name}/dev
+    resources:
+      apps:
+        cicd-maturity-dev:
+          name: "cicd-maturity-dev"
+          description: "CI/CD Maturity Intelligence App (dev)"
+          source_code_path: .
+          config:
+            command:
+              - gunicorn
+              - app:server
+              - --bind
+              - 0.0.0.0:8050
+              - --workers
+              - "2"
+              - --timeout
+              - "120"
+            env:
+              - name: CICD_APP_USE_MOCK
+                value: "true"
+              - name: AUTH_MODE
+                value: "databricks"
+              - name: CICD_APP_CATALOG
+                value: ${var.catalog}
+              - name: CICD_APP_SCHEMA
+                value: ${var.schema}
+              - name: APP_DEBUG
+                value: "true"
+
+  staging:
+    workspace:
+      root_path: ~/.bundle/${bundle.name}/staging
+    resources:
+      apps:
+        cicd-maturity-staging:
+          name: "cicd-maturity-staging"
+          description: "CI/CD Maturity Intelligence App (staging)"
+          source_code_path: .
+          config:
+            command:
+              - gunicorn
+              - app:server
+              - --bind
+              - 0.0.0.0:8050
+              - --workers
+              - "2"
+              - --timeout
+              - "120"
+            env:
+              - name: CICD_APP_USE_MOCK
+                value: "false"
+              - name: AUTH_MODE
+                value: "databricks"
+              - name: CICD_APP_CATALOG
+                value: ${var.catalog}
+              - name: CICD_APP_SCHEMA
+                value: ${var.schema}
+              - name: APP_DEBUG
+                value: "false"
+
+  production:
+    workspace:
+      root_path: ~/.bundle/${bundle.name}/prod
+    resources:
+      apps:
+        cicd-maturity:
+          name: "cicd-maturity"
+          description: "CI/CD Maturity Intelligence App"
+          source_code_path: .
+          config:
+            command:
+              - gunicorn
+              - app:server
+              - --bind
+              - 0.0.0.0:8050
+              - --workers
+              - "3"
+              - --timeout
+              - "120"
+              - --graceful-timeout
+              - "30"
+            env:
+              - name: CICD_APP_USE_MOCK
+                value: "false"
+              - name: AUTH_MODE
+                value: "databricks"
+              - name: CICD_APP_CATALOG
+                value: ${var.catalog}
+              - name: CICD_APP_SCHEMA
+                value: ${var.schema}
+              - name: APP_DEBUG
+                value: "false"

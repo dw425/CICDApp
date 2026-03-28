@@ -7,6 +7,16 @@ command:
   - "2"
   - --timeout
   - "120"
+  - --graceful-timeout
+  - "30"
 env:
   - name: CICD_APP_USE_MOCK
+    value: "false"
+  - name: AUTH_MODE
+    value: "databricks"
+  - name: CICD_APP_CATALOG
+    value: "lho_ucm"
+  - name: CICD_APP_SCHEMA
+    value: "cicd"
+  - name: APP_DEBUG
     value: "false"

@@ -1,11 +1,47 @@
 [
   {
-    "id": "61f9740a-35e7-4f6b-8ae0-678ac0d04f49",
-    "name": "Test Corp",
-    "industry": "tech",
-    "size": "mid_market",
-    "cloud_provider": "aws",
+    "id": "9d328cbc-54ba-442d-b2af-01e7df403eb8",
+    "name": "Acme Financial Services",
+    "industry": "Financial Services",
+    "size": "enterprise",
+    "cloud_provider": "Azure",
     "uses_databricks": true,
-    "created_at": "2026-03-27T16:43:30.985237+00:00"
+    "created_at": "2026-03-28T05:26:47.974874+00:00"
+  },
+  {
+    "id": "77128872-bde8-40a4-9e26-534dfdd36e45",
+    "name": "TechStart AI",
+    "industry": "Technology",
+    "size": "startup",
+    "cloud_provider": "AWS",
+    "uses_databricks": true,
+    "created_at": "2026-03-28T05:26:47.981806+00:00"
+  },
+  {
+    "id": "963f9a65-28f6-4d97-a1b9-9d04c59d777c",
+    "name": "MedData Corp",
+    "industry": "Healthcare",
+    "size": "mid_market",
+    "cloud_provider": "Azure",
+    "uses_databricks": true,
+    "created_at": "2026-03-28T05:26:47.993460+00:00"
+  },
+  {
+    "id": "85f5b083-4fd8-4ebb-ae1f-28b8a79ed13a",
+    "name": "GovCloud Agency",
+    "industry": "Government",
+    "size": "enterprise",
+    "cloud_provider": "Azure",
+    "uses_databricks": true,
+    "created_at": "2026-03-28T05:26:48.008788+00:00"
+  },
+  {
+    "id": "ede3f274-c61f-4441-a5b0-dae9e6b95045",
+    "name": "DataPipe Analytics",
+    "industry": "Technology",
+    "size": "mid_market",
+    "cloud_provider": "GCP",
+    "uses_databricks": true,
+    "created_at": "2026-03-28T05:26:48.028737+00:00"
   }
 ]
