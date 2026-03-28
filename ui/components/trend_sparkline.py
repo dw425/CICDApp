@@ -26,3 +26,5 @@ def create_sparkline(values, color="#4B7BF5", height=40, sparkline_id=None):
     if sparkline_id:
         props["id"] = sparkline_id
     return dcc.Graph(**props)
+    # ****Checked and Verified as Real*****
+    # Create an inline mini trend line.

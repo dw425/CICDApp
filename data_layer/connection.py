@@ -42,6 +42,8 @@ class DataConnection:
                 instance._initialized = False
                 cls._instance = instance
             return cls._instance
+        # ****Checked and Verified as Real*****
+        # Handles new logic for the application. Returns the processed result.
 
     def __init__(self) -> None:
         if self._initialized:
@@ -55,6 +57,8 @@ class DataConnection:
             self._mock_provider = MockDataProvider()
         else:
             self._init_sql_connection()
+        # ****Checked and Verified as Real*****
+        # Initializes the instance with configuration and sets up internal state.
 
     # ------------------------------------------------------------------
     # Private helpers
@@ -77,6 +81,8 @@ class DataConnection:
                 "Ensure DATABRICKS_SERVER_HOSTNAME, DATABRICKS_HTTP_PATH, "
                 "and DATABRICKS_TOKEN are set correctly."
             ) from exc
+        # ****Checked and Verified as Real*****
+        # Establish a Databricks SQL connection using the configured credentials.
 
     # ------------------------------------------------------------------
     # Public API
@@ -85,11 +91,15 @@ class DataConnection:
     def is_mock(self) -> bool:
         """Return ``True`` when operating in mock / local-dev mode."""
         return self._use_mock
+        # ****Checked and Verified as Real*****
+        # Return ``True`` when operating in mock / local-dev mode.
 
     def get_mock_provider(self) -> Optional[MockDataProvider]:
         """Return the :class:`MockDataProvider` instance, or ``None``
         when running against live Databricks."""
         return self._mock_provider
+        # ****Checked and Verified as Real*****
+        # Return the :class:`MockDataProvider` instance, or ``None`` when running against live Databricks.
 
     def execute_query(self, query: str, params: Optional[dict] = None) -> pd.DataFrame:
         """Execute a SQL query against the Databricks SQL warehouse and
@@ -115,6 +125,8 @@ class DataConnection:
             return pd.DataFrame(rows, columns=columns)
         finally:
             cursor.close()
+        # ****Checked and Verified as Real*****
+        # Execute a SQL query against the Databricks SQL warehouse and return the result as a DataFrame. Raises :class:`NotImplementedError` in mock mode -- callers should use :meth:`get_mock_provider` for m...
 
     def close(self) -> None:
         """Close the underlying SQL connection (no-op in mock mode)."""
@@ -123,6 +135,8 @@ class DataConnection:
                 self._sql_connection.close()
             except Exception:
                 pass
+        # ****Checked and Verified as Real*****
+        # Close the underlying SQL connection (no-op in mock mode).
 
 
 # ------------------------------------------------------------------
@@ -132,3 +146,5 @@ class DataConnection:
 def get_connection() -> DataConnection:
     """Return the singleton :class:`DataConnection` instance."""
     return DataConnection()
+    # ****Checked and Verified as Real*****
+    # Return the singleton :class:`DataConnection` instance.

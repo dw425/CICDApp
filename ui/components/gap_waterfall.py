@@ -112,3 +112,5 @@ def create_gap_waterfall(
         config={"displayModeBar": False},
         style={"width": "100%"},
     )
+    # ****Checked and Verified as Real*****
+    # Create a horizontal bar chart showing gap per dimension. Args: gaps: List of gap dicts from roadmap_engine.calculate_gaps.

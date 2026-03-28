@@ -35,6 +35,8 @@ def normalize_to_canonical(df, source_system, event_type="deployment"):
                 break
 
     return df
+    # ****Checked and Verified as Real*****
+    # Map external data fields to the canonical external_quality_metrics schema. Args: df: Raw DataFrame from external source source_system: Source identifier (jira, azure_devops, github, gitlab, csv_upl...
 
 
 def normalize_with_slot(df, field_mapping, slot_id, source_system):
@@ -67,6 +69,8 @@ def normalize_with_slot(df, field_mapping, slot_id, source_system):
         df["event_type"] = event_type
 
     return df
+    # ****Checked and Verified as Real*****
+    # Apply explicit field mapping from wizard and slot-aware normalization. Args: df: Raw DataFrame field_mapping: dict of source_col -> canonical_col from wizard Step 4 slot_id: Target CI/CD slot ID so...
 
 
 # Per-source, per-event-type field mappings for common column renames

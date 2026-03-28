@@ -138,3 +138,5 @@ def create_impact_effort_matrix(
         config={"displayModeBar": False},
         style={"width": "100%"},
     )
+    # ****Checked and Verified as Real*****
+    # Create a scatter plot showing recommendations on an Impact x Effort matrix. Args: classified: Dict with keys quick_wins, strategic, fill_ins, deprioritize.

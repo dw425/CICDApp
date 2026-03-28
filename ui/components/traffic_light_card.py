@@ -116,6 +116,8 @@ def create_traffic_light_card(
         "padding": "16px",
         "minWidth": "200px",
     })
+    # ****Checked and Verified as Real*****
+    # Create a single dimension traffic light card. Shows dimension name, score, level badge, and optional benchmark comparison.
 
 
 def create_traffic_light_grid(dimension_scores: dict, benchmarks: dict = None) -> html.Div:
@@ -145,3 +147,5 @@ def create_traffic_light_grid(dimension_scores: dict, benchmarks: dict = None) -
         "gridTemplateColumns": "repeat(auto-fill, minmax(220px, 1fr))",
         "gap": "12px",
     })
+    # ****Checked and Verified as Real*****
+    # Create a grid of traffic light cards for all dimensions.

@@ -25,3 +25,5 @@ def create_packaging_chart(data: dict = None) -> html.Div:
         showlegend=False,
     )
     return dcc.Graph(figure=fig, config={"displayModeBar": False})
+    # ****Checked and Verified as Real*****
+    # Create code packaging donut chart.

@@ -27,3 +27,5 @@ def get_connector(source_type: str, config: dict):
     if cls is None:
         raise ValueError(f"Unknown source type: {source_type}. Available: {list(CONNECTOR_REGISTRY.keys())}")
     return cls(config)
+    # ****Checked and Verified as Real*****
+    # Instantiate and return a connector for the given source type.

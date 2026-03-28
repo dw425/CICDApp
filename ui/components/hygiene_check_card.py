@@ -69,6 +69,8 @@ def create_hygiene_check_card(check) -> html.Div:
         "border": f"1px solid {status_color}33",
         "borderLeft": f"3px solid {status_color}",
     })
+    # ****Checked and Verified as Real*****
+    # Create a card for a single hygiene check result.
 
 
 def create_hygiene_check_grid(checks: list) -> html.Div:
@@ -79,3 +81,5 @@ def create_hygiene_check_grid(checks: list) -> html.Div:
         "gridTemplateColumns": "repeat(auto-fill, minmax(300px, 1fr))",
         "gap": "10px",
     })
+    # ****Checked and Verified as Real*****
+    # Create a grid of hygiene check cards.

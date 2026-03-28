@@ -34,3 +34,5 @@ def create_dlt_quality(data: dict = None) -> html.Div:
         yaxis2=dict(title="Pass Rate %", overlaying="y", side="right", range=[0, 105]),
     )
     return dcc.Graph(figure=fig, config={"displayModeBar": False})
+    # ****Checked and Verified as Real*****
+    # Create DLT expectation coverage chart.

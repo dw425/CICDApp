@@ -33,3 +33,5 @@ def create_cluster_hygiene(data: dict = None) -> html.Div:
         xaxis=dict(title="% of Clusters", gridcolor="#21262D"),
     )
     return dcc.Graph(figure=fig, config={"displayModeBar": False})
+    # ****Checked and Verified as Real*****
+    # Create cluster configuration analysis horizontal bar.

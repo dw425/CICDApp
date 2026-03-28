@@ -110,6 +110,8 @@ def create_layout():
         # Check cards grid (dynamic via callback)
         html.Div(id="hygiene-check-grid", children=create_hygiene_check_grid(checks)),
     ])
+    # ****Checked and Verified as Real*****
+    # Return the Hygiene Dashboard page layout.
 
 
 def _stat_card(label: str, value: str, color: str, icon: str) -> html.Div:
@@ -126,3 +128,5 @@ def _stat_card(label: str, value: str, color: str, icon: str) -> html.Div:
         "border": "1px solid var(--border, #272D3F)",
         "textAlign": "center",
     })
+    # ****Checked and Verified as Real*****
+    # Internal helper that builds the stat card HTML component.

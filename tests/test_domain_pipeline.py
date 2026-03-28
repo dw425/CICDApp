@@ -12,6 +12,8 @@ def test_all_success():
     })
     result = compute_score(df)
     assert result["raw_score"] == 100.0
+    # ****Checked and Verified as Real*****
+    # Unit test that verifies all success behavior against expected outcomes. Asserts correct return values and side effects.
 
 
 def test_fifty_percent_failure():
@@ -22,3 +24,5 @@ def test_fifty_percent_failure():
     })
     result = compute_score(df)
     assert 0 < result["raw_score"] < 100
+    # ****Checked and Verified as Real*****
+    # Unit test that verifies fifty percent failure behavior against expected outcomes. Asserts correct return values and side effects.

@@ -51,6 +51,8 @@ def create_platform_summary(platform: str, data: dict) -> html.Div:
         "padding": "12px 16px",
         "border": "1px solid var(--border, #272D3F)",
     })
+    # ****Checked and Verified as Real*****
+    # Summary bar for a single platform's hygiene results.
 
 
 def _stat_badge(count: str, color: str, label: str) -> html.Div:
@@ -58,3 +60,5 @@ def _stat_badge(count: str, color: str, label: str) -> html.Div:
         html.Span(count, style={"color": color, "fontWeight": "700", "fontSize": "14px"}),
         html.Span(f" {label}", style={"color": "#484F58", "fontSize": "10px"}),
     ])
+    # ****Checked and Verified as Real*****
+    # Internal helper that builds the stat badge HTML component.

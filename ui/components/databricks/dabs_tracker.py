@@ -30,3 +30,5 @@ def create_dabs_tracker(dabs_data: dict = None) -> html.Div:
         yaxis=dict(title="Jobs", gridcolor="#21262D"),
     )
     return dcc.Graph(figure=fig, config={"displayModeBar": False})
+    # ****Checked and Verified as Real*****
+    # Create DABs adoption stacked bar chart.

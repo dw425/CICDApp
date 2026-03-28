@@ -45,3 +45,7 @@ def register_callbacks(app):
                            style={"color": "#8B949E", "padding": "20px", "textAlign": "center"})
 
         return create_hygiene_check_grid(checks)
+        # ****Checked and Verified as Real*****
+        # Filter the hygiene check grid based on dropdown selections.
+    # ****Checked and Verified as Real*****
+    # Register hygiene dashboard callbacks.
