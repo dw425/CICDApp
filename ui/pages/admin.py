@@ -4,6 +4,7 @@ import dash_bootstrap_components as dbc
 from ui.components.upload_modal import create_upload_modal
 from compass.admin_config import get_admin_config
 from compass.scoring_engine import WEIGHT_PROFILES, WEIGHT_PROFILE_LABELS
+import config.settings as _cfg
 
 # Default domain weights (must sum to 100)
 DEFAULT_WEIGHTS = {
@@ -129,6 +130,8 @@ def create_layout():
     """Return the Administration page layout."""
     cfg = get_admin_config()
 
+    is_demo = _cfg.USE_MOCK
+
     return html.Div([
         # Toast for save confirmations
         dbc.Toast(
@@ -138,6 +141,36 @@ def create_layout():
             duration=3000,
             style={"position": "fixed", "top": 10, "right": 10, "zIndex": 9999},
         ),
+
+        # ── Demo Mode ─────────────────────────────────────────
+        html.Div([
+            html.Div([
+                html.Div([
+                    html.I(className="fas fa-flask", style={"color": "#FBBF24", "fontSize": "18px"}),
+                    html.Span("Demo Mode", style={
+                        "color": "#E6EDF3", "fontSize": "15px", "fontWeight": "700", "marginLeft": "10px",
+                    }),
+                ], style={"display": "flex", "alignItems": "center"}),
+                dbc.Checklist(
+                    id="demo-toggle",
+                    options=[{"label": "", "value": 1}],
+                    value=[1] if is_demo else [],
+                    switch=True,
+                    className="demo-toggle-switch",
+                ),
+            ], style={"display": "flex", "justifyContent": "space-between", "alignItems": "center", "marginBottom": "8px"}),
+            html.Div(
+                "Load sample data across all pages for demonstration purposes. "
+                "Includes mock deployment events, team scores, DORA metrics, and a completed assessment.",
+                style={"color": "#8B949E", "fontSize": "12px"},
+            ),
+        ], style={
+            "backgroundColor": "#21262D",
+            "border": "1px solid rgba(251,191,36,0.3)",
+            "borderRadius": "8px",
+            "padding": "16px 20px",
+            "marginBottom": "20px",
+        }),
 
         # ── Assessment Configuration ──────────────────────────
         html.Div([

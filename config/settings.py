@@ -42,6 +42,18 @@ APP_DEBUG: bool = USE_MOCK if os.getenv("APP_DEBUG") is None else os.getenv("APP
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+_ORIGINAL_USE_MOCK: bool = USE_MOCK  # Startup value from env var
+
+
+def set_demo_mode(enabled: bool) -> None:
+    """Toggle demo/mock mode at runtime (used by the UI demo toggle).
+
+    When *enabled* is ``False``, restores the original env-var setting.
+    """
+    global USE_MOCK
+    USE_MOCK = True if enabled else _ORIGINAL_USE_MOCK
+
+
 def get_full_table_name(table: str) -> str:
     """Return the fully-qualified three-level table name.
 

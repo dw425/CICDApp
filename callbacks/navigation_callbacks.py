@@ -115,9 +115,9 @@ def register_callbacks(app):
     # ── Callback 2: Current page → render page content ─────────────
     @app.callback(
         Output("page-content", "children"),
-        Input("current-page", "data"),
+        [Input("current-page", "data"), Input("demo-mode", "data")],
     )
-    def render_page(current_page):
+    def render_page(current_page, demo_mode):
         """Render the layout for the selected page."""
         if current_page is None:
             current_page = "executive"
@@ -162,12 +162,25 @@ def register_callbacks(app):
                     f"Page '{current_page}' not found.",
                     style={"color": "#F87171", "padding": "40px"},
                 )
-            return create_layout()
+            page_content = create_layout()
         except Exception as e:
-            return html.Div(
+            page_content = html.Div(
                 f"Error loading page: {str(e)}",
                 style={"color": "#F87171", "padding": "40px"},
             )
+
+        # Prepend demo banner when demo mode is active
+        if demo_mode:
+            banner = html.Div([
+                html.I(className="fas fa-flask", style={"marginRight": "8px"}),
+                html.Span("DEMO MODE", style={"fontWeight": "700", "marginRight": "8px"}),
+                html.Span("— You are viewing sample data. Disable in "),
+                html.Span("Administration", style={"fontWeight": "600", "textDecoration": "underline"}),
+                html.Span("."),
+            ], className="demo-banner")
+            return html.Div([banner, page_content])
+
+        return page_content
         # ****Checked and Verified as Real*****
         # Render the layout for the selected page.
 

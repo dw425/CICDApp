@@ -13,7 +13,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from config.settings import USE_MOCK, get_full_table_name
+import config.settings as _cfg
+from config.settings import get_full_table_name
 
 _CONFIG_FILE = Path(__file__).resolve().parent.parent.parent / "config" / "data_source_configs.json"
 
@@ -42,7 +43,7 @@ def _save_configs(configs: list[dict]) -> None:
 
 def get_all_configs() -> list[dict]:
     """Return all data source configurations."""
-    if USE_MOCK:
+    if _cfg.USE_MOCK:
         return _load_configs()
 
     from data_layer.connection import DataConnection
@@ -85,7 +86,7 @@ def save_config(config: dict) -> dict:
     config.setdefault("last_sync_status", None)
     config.setdefault("last_sync_rows", 0)
 
-    if USE_MOCK:
+    if _cfg.USE_MOCK:
         configs = _load_configs()
         configs.append(config)
         _save_configs(configs)
@@ -131,7 +132,7 @@ def update_config(config_id: str, updates: dict) -> Optional[dict]:
     """Update an existing config. Returns updated config or None."""
     updates["updated_at"] = datetime.utcnow().isoformat()
 
-    if USE_MOCK:
+    if _cfg.USE_MOCK:
         configs = _load_configs()
         for i, c in enumerate(configs):
             if c.get("config_id") == config_id:
@@ -173,7 +174,7 @@ def update_config(config_id: str, updates: dict) -> Optional[dict]:
 
 def delete_config(config_id: str) -> bool:
     """Delete a config by ID. Returns True if deleted."""
-    if USE_MOCK:
+    if _cfg.USE_MOCK:
         configs = _load_configs()
         original_len = len(configs)
         configs = [c for c in configs if c.get("config_id") != config_id]

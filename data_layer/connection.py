@@ -169,6 +169,14 @@ class DataConnection:
         # ****Checked and Verified as Real*****
         # Close the underlying SQL connection (no-op in mock mode).
 
+    @classmethod
+    def reset(cls) -> None:
+        """Destroy the singleton so the next get_connection() creates a fresh instance."""
+        with cls._lock:
+            if cls._instance is not None:
+                cls._instance.close()
+                cls._instance = None
+
 
 # ------------------------------------------------------------------
 # Module-level convenience accessor

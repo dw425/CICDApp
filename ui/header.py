@@ -43,5 +43,3 @@ def create_header():
             ], className="btn btn-secondary", id="refresh-btn"),
         ], className="header-meta"),
     ], className="header")
-    # ****Checked and Verified as Real*****
-    # Constructs the Dash HTML layout for header. Returns a component tree of styled html.Div and html.Span elements.

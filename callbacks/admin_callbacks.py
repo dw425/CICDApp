@@ -1,4 +1,7 @@
-"""Admin Callbacks - Assessment config, mock toggle, connection info, team registry."""
+"""Admin Callbacks - Assessment config, demo mode, mock toggle, connection info, team registry."""
+
+import json
+import os
 
 from dash import html, Input, Output, State, no_update
 
@@ -9,9 +12,76 @@ from ui.components.data_table import create_data_table
 from compass.admin_config import save_admin_config
 from compass.scoring_engine import WEIGHT_PROFILE_LABELS
 
+_DEMO_FIXTURES = os.path.join(os.path.dirname(__file__), "..", "compass", "data", "demo_fixtures.json")
+_ASSESSMENTS_FILE = os.path.join(os.path.dirname(__file__), "..", "compass", "data", "assessments.json")
+_ORGS_FILE = os.path.join(os.path.dirname(__file__), "..", "compass", "data", "organizations.json")
+
+
+def _inject_demo_data():
+    """Load demo fixtures into the assessment and organization stores."""
+    with open(_DEMO_FIXTURES, "r") as f:
+        fixtures = json.load(f)
+
+    # Organizations
+    try:
+        with open(_ORGS_FILE, "r") as f:
+            orgs = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        orgs = []
+    if not any(o.get("id") == fixtures["organization"]["id"] for o in orgs):
+        orgs.append(fixtures["organization"])
+        with open(_ORGS_FILE, "w") as f:
+            json.dump(orgs, f, indent=2)
+
+    # Assessments
+    try:
+        with open(_ASSESSMENTS_FILE, "r") as f:
+            assessments = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        assessments = []
+    if not any(a.get("id") == fixtures["assessment"]["id"] for a in assessments):
+        assessments.append(fixtures["assessment"])
+        with open(_ASSESSMENTS_FILE, "w") as f:
+            json.dump(assessments, f, indent=2)
+
+
+def _remove_demo_data():
+    """Remove demo fixtures from the assessment and organization stores."""
+    for filepath, demo_id in [(_ORGS_FILE, "demo-org-001"), (_ASSESSMENTS_FILE, "demo-assessment-001")]:
+        try:
+            with open(filepath, "r") as f:
+                data = json.load(f)
+            data = [d for d in data if d.get("id") != demo_id]
+            with open(filepath, "w") as f:
+                json.dump(data, f, indent=2)
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+
 
 def register_callbacks(app):
     """Register Administration callbacks."""
+
+    # ── Callback D: Demo mode toggle ─────────────────────────────
+    @app.callback(
+        Output("demo-mode", "data"),
+        Input("demo-toggle", "value"),
+        prevent_initial_call=True,
+    )
+    def toggle_demo_mode(value):
+        """Toggle between demo (mock) and live data mode."""
+        from config.settings import set_demo_mode
+        from data_layer.connection import DataConnection
+
+        is_demo = bool(value)
+        set_demo_mode(is_demo)
+        DataConnection.reset()
+
+        if is_demo:
+            _inject_demo_data()
+        else:
+            _remove_demo_data()
+
+        return is_demo
 
     # ── Callback 0: Save assessment configuration ────────────────
     @app.callback(
