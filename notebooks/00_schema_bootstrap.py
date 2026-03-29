@@ -246,6 +246,75 @@ for name, ddl in scored_ddl.items():
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC ## Grant Permissions to App Service Principal
+# MAGIC
+# MAGIC The CI/CD Maturity App runs as a Databricks App with its own service principal.
+# MAGIC It needs:
+# MAGIC 1. Access to the app catalog/schema (for custom + scored tables)
+# MAGIC 2. Access to system tables (for live telemetry data)
+# MAGIC
+# MAGIC Set `app_sp_id` to the App's service principal client ID (found in the App settings page).
+
+# COMMAND ----------
+
+# Set this to the App service principal client ID from the Databricks Apps UI
+app_sp_id = dbutils.widgets.get("app_service_principal_id") if "app_service_principal_id" in [w.name for w in dbutils.widgets.getAll()] else ""
+
+if not app_sp_id:
+    dbutils.widgets.text("app_service_principal_id", "", "App Service Principal Client ID")
+    print("⚠ Set the 'app_service_principal_id' widget to the App's service principal client ID, then re-run this cell.")
+    print("  Find it in: Databricks UI → Compute → Apps → your app → Service Principal Client ID")
+else:
+    sp = f"`{app_sp_id}`"
+    print(f"Granting permissions to service principal: {app_sp_id}")
+
+    # --- App catalog/schema grants ---
+    grants_app = [
+        f"GRANT USE CATALOG ON CATALOG {catalog} TO {sp}",
+        f"GRANT USE SCHEMA ON SCHEMA {catalog}.{schema} TO {sp}",
+        f"GRANT SELECT ON SCHEMA {catalog}.{schema} TO {sp}",
+        f"GRANT MODIFY ON SCHEMA {catalog}.{schema} TO {sp}",
+    ]
+    print(f"\n-- App data grants ({catalog}.{schema}) --")
+    for stmt in grants_app:
+        try:
+            spark.sql(stmt)
+            print(f"  OK: {stmt}")
+        except Exception as e:
+            print(f"  SKIP: {stmt}  ({e})")
+
+    # --- System table grants (requires workspace admin) ---
+    system_schemas = [
+        "system.access",
+        "system.lakeflow",
+        "system.billing",
+        "system.compute",
+        "system.information_schema",
+        "system.query",
+    ]
+    print("\n-- System table grants (requires admin) --")
+    try:
+        spark.sql(f"GRANT USE CATALOG ON CATALOG system TO {sp}")
+        print(f"  OK: GRANT USE CATALOG ON CATALOG system TO {sp}")
+    except Exception as e:
+        print(f"  SKIP: USE CATALOG system  ({e})")
+
+    for sys_schema in system_schemas:
+        for priv in ["USE SCHEMA", "SELECT"]:
+            stmt = f"GRANT {priv} ON SCHEMA {sys_schema} TO {sp}"
+            try:
+                spark.sql(stmt)
+                print(f"  OK: {stmt}")
+            except Exception as e:
+                print(f"  SKIP: {priv} on {sys_schema}  ({e})")
+
+    print("\nPermission grants complete.")
+    print("Note: System table grants require workspace admin. If any were skipped,")
+    print("ask a workspace admin to run this notebook or execute the grants manually.")
+
+# COMMAND ----------
+
+# MAGIC %md
 # MAGIC ## Verify All Tables
 
 # COMMAND ----------

@@ -1,9 +1,12 @@
 """
-Query functions for custom CI/CD maturity tables.
+Query functions for CI/CD maturity data.
 
-Each function checks whether the application is running in mock mode:
-- **Mock mode** -- delegates to :class:`MockDataProvider` methods.
-- **Live mode** -- executes a SQL query against the Databricks SQL warehouse.
+In **mock mode**, delegates to the MockDataProvider (CSV-based).
+In **live mode**, queries Databricks system tables — no custom customer
+tables required (except team_registry for team definitions).
+
+The scoring engine and UI callbacks consume the same DataFrame interfaces
+regardless of the backend.
 """
 
 from __future__ import annotations
@@ -14,26 +17,29 @@ import pandas as pd
 
 from config.settings import get_full_table_name
 from data_layer.connection import get_connection
+from data_layer.queries import system_tables
 
 
 # ---------------------------------------------------------------------------
-# Teams
+# Teams — the ONE table that requires customer configuration
 # ---------------------------------------------------------------------------
 
 def get_teams() -> pd.DataFrame:
-    """Return all registered teams."""
+    """Return all registered teams.
+
+    This is the only table that must be customer-managed.  It defines which
+    teams exist and maps workspace artefacts to team ownership.
+    """
     conn = get_connection()
     if conn.is_mock():
         return conn.get_mock_provider().get_teams()
     return conn.execute_query(
         f"SELECT * FROM {get_full_table_name('team_registry')}"
     )
-    # ****Checked and Verified as Real*****
-    # Return all registered teams.
 
 
 # ---------------------------------------------------------------------------
-# Deployment Events
+# Deployment Events — backed by system.access.audit
 # ---------------------------------------------------------------------------
 
 def get_deployment_events(
@@ -41,41 +47,80 @@ def get_deployment_events(
     start_date: Optional[str] = None,
     end_date: Optional[str] = None,
 ) -> pd.DataFrame:
-    """Return deployment events with optional filters."""
-    conn = get_connection()
-    if conn.is_mock():
-        return conn.get_mock_provider().get_deployment_events(
-            team_id=team_id, start_date=start_date, end_date=end_date,
-        )
-
-    clauses: list[str] = []
-    params: dict = {}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    if start_date:
-        clauses.append("event_date >= %(start_date)s")
-        params["start_date"] = start_date
-    if end_date:
-        clauses.append("event_date <= %(end_date)s")
-        params["end_date"] = end_date
-
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    query = f"SELECT * FROM {get_full_table_name('deployment_events')}{where}"
-    return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return deployment events with optional filters.
+    """Return deployment events derived from system audit log."""
+    return system_tables.get_deployment_events(
+        team_id=team_id, start_date=start_date, end_date=end_date,
+    )
 
 
 # ---------------------------------------------------------------------------
-# Maturity Scores
+# Pipeline Runs — backed by system.lakeflow.*
+# ---------------------------------------------------------------------------
+
+def get_pipeline_runs(
+    team_id: Optional[str] = None,
+) -> pd.DataFrame:
+    """Return pipeline run records from system job run timeline."""
+    return system_tables.get_pipeline_runs(team_id=team_id)
+
+
+# ---------------------------------------------------------------------------
+# Billing Usage — backed by system.billing.usage
+# ---------------------------------------------------------------------------
+
+def get_billing_usage(
+    team_id: Optional[str] = None,
+) -> pd.DataFrame:
+    """Return DBU / billing usage from system billing tables."""
+    return system_tables.get_billing_usage(team_id=team_id)
+
+
+# ---------------------------------------------------------------------------
+# Cluster Policies — backed by system.compute.clusters
+# ---------------------------------------------------------------------------
+
+def get_cluster_policies(
+    team_id: Optional[str] = None,
+) -> pd.DataFrame:
+    """Return cluster policy compliance from system compute tables."""
+    return system_tables.get_cluster_policies(team_id=team_id)
+
+
+# ---------------------------------------------------------------------------
+# Table Constraints — backed by system.information_schema
+# ---------------------------------------------------------------------------
+
+def get_table_constraints(
+    team_id: Optional[str] = None,
+) -> pd.DataFrame:
+    """Return table constraint metadata from information schema."""
+    return system_tables.get_table_constraints(team_id=team_id)
+
+
+# ---------------------------------------------------------------------------
+# DLT Expectations — backed by system.lakeflow.pipeline_events
+# ---------------------------------------------------------------------------
+
+def get_dlt_expectations(
+    team_id: Optional[str] = None,
+) -> pd.DataFrame:
+    """Return DLT expectation results from pipeline events."""
+    return system_tables.get_dlt_expectations(team_id=team_id)
+
+
+# ---------------------------------------------------------------------------
+# Maturity Scores — computed & persisted by the scoring engine
 # ---------------------------------------------------------------------------
 
 def get_maturity_scores(
     team_id: Optional[str] = None,
     latest: bool = False,
 ) -> pd.DataFrame:
-    """Return maturity scores, optionally only the latest per team."""
+    """Return maturity scores.
+
+    These are computed by the scoring engine and stored in the app's schema.
+    Falls back to mock data in dev mode.
+    """
     conn = get_connection()
     if conn.is_mock():
         return conn.get_mock_provider().get_maturity_scores(
@@ -105,19 +150,17 @@ def get_maturity_scores(
         query = f"SELECT * FROM {get_full_table_name('maturity_scores')}{where}"
 
     return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return maturity scores, optionally only the latest per team.
 
 
 # ---------------------------------------------------------------------------
-# Maturity Trends
+# Maturity Trends — computed from scores
 # ---------------------------------------------------------------------------
 
 def get_maturity_trends(
     team_id: Optional[str] = None,
     period_type: str = "weekly",
 ) -> pd.DataFrame:
-    """Return maturity trend rollups for the given period type."""
+    """Return maturity trend rollups."""
     conn = get_connection()
     if conn.is_mock():
         return conn.get_mock_provider().get_maturity_trends(
@@ -132,12 +175,10 @@ def get_maturity_trends(
     where = " WHERE " + " AND ".join(clauses)
     query = f"SELECT * FROM {get_full_table_name('maturity_trends')}{where}"
     return conn.execute_query(query, params)
-    # ****Checked and Verified as Real*****
-    # Return maturity trend rollups for the given period type.
 
 
 # ---------------------------------------------------------------------------
-# Coaching Alerts
+# Coaching Alerts — generated by the scoring engine
 # ---------------------------------------------------------------------------
 
 def get_coaching_alerts(
@@ -162,60 +203,10 @@ def get_coaching_alerts(
     where = " WHERE " + " AND ".join(clauses) if clauses else ""
     query = f"SELECT * FROM {get_full_table_name('coaching_alerts')}{where}"
     return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return coaching alerts.
 
 
 # ---------------------------------------------------------------------------
-# Pipeline Runs
-# ---------------------------------------------------------------------------
-
-def get_pipeline_runs(
-    team_id: Optional[str] = None,
-) -> pd.DataFrame:
-    """Return pipeline run records."""
-    conn = get_connection()
-    if conn.is_mock():
-        return conn.get_mock_provider().get_pipeline_runs(team_id=team_id)
-
-    clauses: list[str] = []
-    params: dict = {}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    query = f"SELECT * FROM {get_full_table_name('pipeline_runs')}{where}"
-    return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return pipeline run records.
-
-
-# ---------------------------------------------------------------------------
-# Billing Usage
-# ---------------------------------------------------------------------------
-
-def get_billing_usage(
-    team_id: Optional[str] = None,
-) -> pd.DataFrame:
-    """Return DBU / billing usage records."""
-    conn = get_connection()
-    if conn.is_mock():
-        return conn.get_mock_provider().get_billing_usage(team_id=team_id)
-
-    clauses: list[str] = []
-    params: dict = {}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    query = f"SELECT * FROM {get_full_table_name('billing_usage')}{where}"
-    return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return DBU / billing usage records.
-
-
-# ---------------------------------------------------------------------------
-# External Quality Metrics
+# External Quality Metrics — from connected APIs (Jira, ADO, etc.)
 # ---------------------------------------------------------------------------
 
 def get_external_metrics(
@@ -242,84 +233,10 @@ def get_external_metrics(
         f"SELECT * FROM {get_full_table_name('external_quality_metrics')}{where}"
     )
     return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return external quality metrics (Jira / Azure DevOps).
 
 
 # ---------------------------------------------------------------------------
-# Cluster Policies
-# ---------------------------------------------------------------------------
-
-def get_cluster_policies(
-    team_id: Optional[str] = None,
-) -> pd.DataFrame:
-    """Return cluster policy compliance records."""
-    conn = get_connection()
-    if conn.is_mock():
-        return conn.get_mock_provider().get_cluster_policies(team_id=team_id)
-
-    clauses: list[str] = []
-    params: dict = {}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    query = f"SELECT * FROM {get_full_table_name('cluster_policies')}{where}"
-    return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return cluster policy compliance records.
-
-
-# ---------------------------------------------------------------------------
-# DLT Expectations
-# ---------------------------------------------------------------------------
-
-def get_dlt_expectations(
-    team_id: Optional[str] = None,
-) -> pd.DataFrame:
-    """Return DLT expectation results."""
-    conn = get_connection()
-    if conn.is_mock():
-        return conn.get_mock_provider().get_dlt_expectations(team_id=team_id)
-
-    clauses: list[str] = []
-    params: dict = {}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    query = f"SELECT * FROM {get_full_table_name('dlt_expectations')}{where}"
-    return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return DLT expectation results.
-
-
-# ---------------------------------------------------------------------------
-# Table Constraints
-# ---------------------------------------------------------------------------
-
-def get_table_constraints(
-    team_id: Optional[str] = None,
-) -> pd.DataFrame:
-    """Return table constraint metadata."""
-    conn = get_connection()
-    if conn.is_mock():
-        return conn.get_mock_provider().get_table_constraints(team_id=team_id)
-
-    clauses: list[str] = []
-    params: dict = {}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    query = f"SELECT * FROM {get_full_table_name('table_constraints')}{where}"
-    return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return table constraint metadata.
-
-
-# ---------------------------------------------------------------------------
-# Service Principals
+# Service Principals — from workspace identity (optional)
 # ---------------------------------------------------------------------------
 
 def get_service_principals(
@@ -338,5 +255,3 @@ def get_service_principals(
     where = " WHERE " + " AND ".join(clauses) if clauses else ""
     query = f"SELECT * FROM {get_full_table_name('service_principals')}{where}"
     return conn.execute_query(query, params or None)
-    # ****Checked and Verified as Real*****
-    # Return service principal records.

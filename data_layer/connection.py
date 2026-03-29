@@ -9,11 +9,12 @@ Usage::
     if conn.is_mock():
         df = conn.get_mock_provider().get_teams()
     else:
-        df = conn.execute_query("SELECT * FROM lho_analytics.cicd.teams")
+        df = conn.execute_query("SELECT * FROM demos.cicd.teams")
 """
 
 from __future__ import annotations
 
+import os
 import threading
 from typing import Optional
 
@@ -42,8 +43,6 @@ class DataConnection:
                 instance._initialized = False
                 cls._instance = instance
             return cls._instance
-        # ****Checked and Verified as Real*****
-        # Handles new logic for the application. Returns the processed result.
 
     def __init__(self) -> None:
         if self._initialized:
@@ -57,32 +56,55 @@ class DataConnection:
             self._mock_provider = MockDataProvider()
         else:
             self._init_sql_connection()
-        # ****Checked and Verified as Real*****
-        # Initializes the instance with configuration and sets up internal state.
 
     # ------------------------------------------------------------------
     # Private helpers
     # ------------------------------------------------------------------
 
     def _init_sql_connection(self) -> None:
-        """Establish a Databricks SQL connection using the configured
-        credentials."""
+        """Establish a Databricks SQL connection.
+
+        Supports two modes:
+        1. **Databricks Apps** (AUTH_MODE=databricks): Uses the SDK's built-in
+           service-principal auth — no token needed.
+        2. **External / local**: Uses explicit hostname + http_path + token.
+        """
         try:
             from databricks import sql as dbsql
 
-            self._sql_connection = dbsql.connect(
-                server_hostname=DATABRICKS_SERVER_HOSTNAME,
-                http_path=DATABRICKS_HTTP_PATH,
-                access_token=DATABRICKS_TOKEN,
-            )
+            auth_mode = os.getenv("AUTH_MODE", "dev")
+            if auth_mode == "databricks" and not DATABRICKS_TOKEN:
+                # Running inside Databricks Apps — use SDK-based auth
+                from databricks.sdk import WorkspaceClient
+
+                w = WorkspaceClient()
+                host = (DATABRICKS_SERVER_HOSTNAME
+                        or w.config.host.replace("https://", "").rstrip("/"))
+                http_path = (DATABRICKS_HTTP_PATH
+                             or os.getenv("DATABRICKS_WAREHOUSE_HTTP_PATH"))
+                if not http_path:
+                    raise RuntimeError(
+                        "DATABRICKS_HTTP_PATH or DATABRICKS_WAREHOUSE_HTTP_PATH "
+                        "must be set when running in Databricks Apps mode."
+                    )
+                self._sql_connection = dbsql.connect(
+                    server_hostname=host,
+                    http_path=http_path,
+                    credentials_provider=w.config.authenticate,
+                )
+            else:
+                # External mode — explicit credentials
+                self._sql_connection = dbsql.connect(
+                    server_hostname=DATABRICKS_SERVER_HOSTNAME,
+                    http_path=DATABRICKS_HTTP_PATH,
+                    access_token=DATABRICKS_TOKEN,
+                )
         except Exception as exc:
             raise RuntimeError(
                 "Failed to connect to Databricks SQL. "
-                "Ensure DATABRICKS_SERVER_HOSTNAME, DATABRICKS_HTTP_PATH, "
-                "and DATABRICKS_TOKEN are set correctly."
+                "Check DATABRICKS_SERVER_HOSTNAME, DATABRICKS_HTTP_PATH, "
+                "and auth configuration."
             ) from exc
-        # ****Checked and Verified as Real*****
-        # Establish a Databricks SQL connection using the configured credentials.
 
     # ------------------------------------------------------------------
     # Public API

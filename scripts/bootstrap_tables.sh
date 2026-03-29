@@ -47,6 +47,34 @@ run_sql "CREATE TABLE IF NOT EXISTS $CATALOG.$SCHEMA.scored_dora_metrics (record
 
 run_sql "CREATE TABLE IF NOT EXISTS $CATALOG.$SCHEMA.scored_compass_composite (record_id STRING NOT NULL, team_id STRING NOT NULL, composite_score DOUBLE, maturity_level INT, maturity_label STRING, archetype STRING, dimension_json STRING, scored_at TIMESTAMP) USING DELTA TBLPROPERTIES ('delta.autoOptimize.optimizeWrite' = 'true')" "scored_compass_composite"
 
+# ---------------------------------------------------------------------------
+# Grant permissions to App service principal
+# ---------------------------------------------------------------------------
+echo ""
+APP_SP_ID="${APP_SERVICE_PRINCIPAL_ID:-}"
+
+if [ -z "$APP_SP_ID" ]; then
+    echo "SKIP: No APP_SERVICE_PRINCIPAL_ID set. To grant permissions, re-run with:"
+    echo "  APP_SERVICE_PRINCIPAL_ID=<client-id> ./scripts/bootstrap_tables.sh"
+    echo "  (Find the client ID in: Databricks UI → Compute → Apps → your app)"
+else
+    SP="\`$APP_SP_ID\`"
+    echo "Granting permissions to service principal: $APP_SP_ID"
+
+    echo "  App data grants ($CATALOG.$SCHEMA)..."
+    run_sql "GRANT USE CATALOG ON CATALOG $CATALOG TO $SP" "USE CATALOG $CATALOG"
+    run_sql "GRANT USE SCHEMA ON SCHEMA $CATALOG.$SCHEMA TO $SP" "USE SCHEMA $CATALOG.$SCHEMA"
+    run_sql "GRANT SELECT ON SCHEMA $CATALOG.$SCHEMA TO $SP" "SELECT on $CATALOG.$SCHEMA"
+    run_sql "GRANT MODIFY ON SCHEMA $CATALOG.$SCHEMA TO $SP" "MODIFY on $CATALOG.$SCHEMA"
+
+    echo "  System table grants (requires admin)..."
+    run_sql "GRANT USE CATALOG ON CATALOG system TO $SP" "USE CATALOG system"
+    for SYS_SCHEMA in system.access system.lakeflow system.billing system.compute system.information_schema system.query; do
+        run_sql "GRANT USE SCHEMA ON SCHEMA $SYS_SCHEMA TO $SP" "USE SCHEMA $SYS_SCHEMA"
+        run_sql "GRANT SELECT ON SCHEMA $SYS_SCHEMA TO $SP" "SELECT on $SYS_SCHEMA"
+    done
+fi
+
 echo ""
 echo "Verifying tables..."
 databricks --profile $PROFILE api post /api/2.0/sql/statements \

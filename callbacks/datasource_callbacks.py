@@ -365,17 +365,18 @@ def register_callbacks(app):
         # ****Checked and Verified as Real*****
         # Unified handler for all wizard button actions.
 
-    # ── CB6: Source card actions (toggle, test, edit) ─────────────
+    # ── CB6: Source card actions (toggle, test, sync now) ─────────
     @app.callback(
         [Output("datasource-card-grid", "children", allow_duplicate=True),
          Output("datasource-kpi-row", "children", allow_duplicate=True),
          Output("datasource-toast", "children", allow_duplicate=True),
          Output("datasource-toast", "is_open", allow_duplicate=True)],
         [Input({"type": "source-toggle-btn", "index": ALL}, "n_clicks"),
-         Input({"type": "source-test-btn", "index": ALL}, "n_clicks")],
+         Input({"type": "source-test-btn", "index": ALL}, "n_clicks"),
+         Input({"type": "source-sync-btn", "index": ALL}, "n_clicks")],
         prevent_initial_call=True,
     )
-    def handle_source_card_actions(toggle_clicks, test_clicks):
+    def handle_source_card_actions(toggle_clicks, test_clicks, sync_clicks):
         triggered = ctx.triggered_id
         if triggered is None:
             return no_update, no_update, no_update, no_update
@@ -393,7 +394,32 @@ def register_callbacks(app):
         elif action == "source-test-btn" and any(c for c in (test_clicks or []) if c):
             config = get_config(config_id)
             if config:
-                toast_msg = f"Connection test for {config.get('source_name', '')}: OK (mock mode)"
+                try:
+                    from ingestion.source_manager import SourceManager
+                    mgr = SourceManager(config_id)
+                    ok, msg = mgr.test_connection()
+                    toast_msg = f"Connection test for {config.get('source_name', '')}: {msg}"
+                except Exception as e:
+                    toast_msg = f"Connection test failed: {e}"
+
+        elif action == "source-sync-btn" and any(c for c in (sync_clicks or []) if c):
+            # ── Sync Now: pull data from API → write to lakehouse ──
+            config = get_config(config_id)
+            if config:
+                try:
+                    from ingestion.source_manager import SourceManager
+                    mgr = SourceManager(config_id)
+                    result = mgr.sync()
+                    if result["success"]:
+                        toast_msg = (
+                            f"Sync complete: {config.get('source_name', '')} — "
+                            f"{result['rows']} rows loaded in {result['duration_seconds']}s"
+                        )
+                    else:
+                        err = "; ".join(result.get("errors", [])[:3])
+                        toast_msg = f"Sync failed: {config.get('source_name', '')} — {err}"
+                except Exception as e:
+                    toast_msg = f"Sync error: {e}"
 
         if not toast_msg:
             return no_update, no_update, no_update, no_update
@@ -406,8 +432,6 @@ def register_callbacks(app):
         ) if configs else create_empty_state()
 
         return cards, kpis, toast_msg, True
-        # ****Checked and Verified as Real*****
-        # Dash callback that handles source card actions events and updates the UI accordingly. Triggers on user interaction and returns updated component properties.
 
     # ── CB7: CSV upload handler (special — Upload component) ──────
     @app.callback(

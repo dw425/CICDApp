@@ -76,15 +76,15 @@ def create_source_card(config):
         # Action buttons
         html.Div([
             html.Button(
-                [html.I(className="fas fa-vial"), " Test"],
-                className="btn btn-secondary source-action-btn",
-                id={"type": "source-test-btn", "index": config_id},
+                [html.I(className="fas fa-sync-alt"), " Sync Now"],
+                className="btn btn-primary source-action-btn",
+                id={"type": "source-sync-btn", "index": config_id},
                 style={"fontSize": "11px", "padding": "4px 10px"},
             ),
             html.Button(
-                [html.I(className="fas fa-pen"), " Edit"],
+                [html.I(className="fas fa-vial"), " Test"],
                 className="btn btn-secondary source-action-btn",
-                id={"type": "source-edit-btn", "index": config_id},
+                id={"type": "source-test-btn", "index": config_id},
                 style={"fontSize": "11px", "padding": "4px 10px"},
             ),
             html.Button(

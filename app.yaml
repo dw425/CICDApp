@@ -2,7 +2,7 @@ command:
   - gunicorn
   - app:server
   - --bind
-  - 0.0.0.0:8050
+  - 0.0.0.0:8000
   - --workers
   - "2"
   - --timeout
@@ -11,12 +11,14 @@ command:
   - "30"
 env:
   - name: CICD_APP_USE_MOCK
-    value: "false"
+    value: "true"
   - name: AUTH_MODE
     value: "databricks"
   - name: CICD_APP_CATALOG
-    value: "lho_ucm"
+    value: "your_catalog"
   - name: CICD_APP_SCHEMA
     value: "cicd"
+  - name: DATABRICKS_WAREHOUSE_HTTP_PATH
+    value: "/sql/1.0/warehouses/your_warehouse_id"
   - name: APP_DEBUG
     value: "false"
