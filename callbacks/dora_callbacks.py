@@ -3,7 +3,6 @@
 """
 
 from dash import Input, Output, no_update
-from compass.dora_calculator import get_mock_dora_metrics
 from ui.components.dora_tiles import create_dora_tiles_row
 
 
@@ -15,8 +14,19 @@ def register_callbacks(app):
         Input("dora-period-selector", "value"),
     )
     def update_dora_tiles(period):
-        """Update DORA tiles when period changes (mock mode returns same data)."""
-        dora = get_mock_dora_metrics()
+        """Update DORA tiles when period changes."""
+        from config.settings import USE_MOCK
+        if USE_MOCK:
+            from compass.dora_calculator import get_mock_dora_metrics
+            dora = get_mock_dora_metrics()
+        else:
+            from compass.dora_calculator import compute_dora_metrics
+            from data_layer.queries.custom_tables import get_deployment_events
+            deploys = get_deployment_events()
+            if deploys.empty:
+                dora = {}
+            else:
+                dora = compute_dora_metrics(deploys, days=period)
         dora["period_days"] = period
         return create_dora_tiles_row(dora)
         # ****Checked and Verified as Real*****

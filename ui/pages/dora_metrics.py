@@ -6,14 +6,25 @@
 
 from dash import html, dcc
 import plotly.graph_objects as go
-from compass.dora_calculator import get_mock_dora_metrics
 from compass.scoring_constants import DORA_BENCHMARKS, DORA_TIER_COLORS
 from ui.components.dora_tiles import create_dora_tiles_row
 
 
 def create_layout():
     """Return the DORA Metrics page layout."""
-    dora = get_mock_dora_metrics()
+    from config.settings import USE_MOCK
+    if USE_MOCK:
+        from compass.dora_calculator import get_mock_dora_metrics
+        dora = get_mock_dora_metrics()
+    else:
+        from compass.dora_calculator import compute_dora_metrics
+        from data_layer.queries.custom_tables import get_deployment_events
+        deploys = get_deployment_events()
+        dora = compute_dora_metrics(deploys) if not deploys.empty else {}
+
+    # Safe accessors for chart values
+    def _val(key):
+        return dora.get(key, {}).get("value", 0)
 
     return html.Div([
         # Period selector
@@ -43,7 +54,7 @@ def create_layout():
                 html.Div("Deployment Frequency Trend", className="card-header"),
                 html.Div([
                     dcc.Graph(id="dora-deploy-freq-chart", config={"displayModeBar": False},
-                              figure=_mock_trend_chart("Deploys/Day", dora["deployment_frequency"]["value"],
+                              figure=_mock_trend_chart("Deploys/Day", _val("deployment_frequency"),
                                                        "deployment_frequency")),
                 ], className="card-body"),
             ], className="card"),
@@ -51,7 +62,7 @@ def create_layout():
                 html.Div("Lead Time for Changes", className="card-header"),
                 html.Div([
                     dcc.Graph(id="dora-lead-time-chart", config={"displayModeBar": False},
-                              figure=_mock_trend_chart("Hours", dora["lead_time"]["value"],
+                              figure=_mock_trend_chart("Hours", _val("lead_time"),
                                                        "lead_time", invert=True)),
                 ], className="card-body"),
             ], className="card"),
@@ -63,7 +74,7 @@ def create_layout():
                 html.Div("Change Failure Rate", className="card-header"),
                 html.Div([
                     dcc.Graph(id="dora-cfr-chart", config={"displayModeBar": False},
-                              figure=_mock_trend_chart("%", dora["change_failure_rate"]["value"],
+                              figure=_mock_trend_chart("%", _val("change_failure_rate"),
                                                        "change_failure_rate", invert=True)),
                 ], className="card-body"),
             ], className="card"),
@@ -71,7 +82,7 @@ def create_layout():
                 html.Div("Recovery Time (MTTR)", className="card-header"),
                 html.Div([
                     dcc.Graph(id="dora-mttr-chart", config={"displayModeBar": False},
-                              figure=_mock_trend_chart("Hours", dora["recovery_time"]["value"],
+                              figure=_mock_trend_chart("Hours", _val("recovery_time"),
                                                        "recovery_time", invert=True)),
                 ], className="card-body"),
             ], className="card"),

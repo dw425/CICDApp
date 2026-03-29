@@ -29,17 +29,27 @@ def run_all_checks(platform_data: dict = None, connected_platforms: list = None)
     Args:
         platform_data: {platform: {raw_data_dict}} — pass None for mock data
         connected_platforms: list of platform keys to run checks for.
-            If None, runs all platforms with mock data.
+            If None in mock mode, runs all platforms with mock data.
+            If None in live mode, returns empty (no data to check).
     """
+    from config.settings import USE_MOCK
+
     platform_data = platform_data or {}
     if connected_platforms is None:
-        connected_platforms = list(ALL_EXTRACTORS.keys())
+        if USE_MOCK:
+            connected_platforms = list(ALL_EXTRACTORS.keys())
+        else:
+            # Live mode with no explicit platforms — nothing to check yet
+            return []
 
     all_checks = []
     for platform in connected_platforms:
         extractor_cls = ALL_EXTRACTORS.get(platform)
         if extractor_cls:
             data = platform_data.get(platform, {})
+            # In live mode, skip platforms with no real data
+            if not USE_MOCK and not data:
+                continue
             extractor = extractor_cls(raw_data=data)
             all_checks.extend(extractor.run_checks())
 

@@ -73,7 +73,7 @@ def register_callbacks(app):
         # Check if we have telemetry data
         try:
             from compass.hygiene_scorer import run_all_checks, get_platform_summary
-            from compass.dora_calculator import get_mock_dora_metrics
+            from config.settings import USE_MOCK
 
             checks = run_all_checks()
             has_telemetry = len(checks) > 0
@@ -81,7 +81,14 @@ def register_callbacks(app):
             if has_telemetry:
                 # State 3: Full data
                 hygiene_summary = get_platform_summary(checks)
-                dora = get_mock_dora_metrics()
+                if USE_MOCK:
+                    from compass.dora_calculator import get_mock_dora_metrics
+                    dora = get_mock_dora_metrics()
+                else:
+                    from compass.dora_calculator import compute_dora_metrics
+                    from data_layer.queries.custom_tables import get_deployment_events
+                    deploys = get_deployment_events()
+                    dora = compute_dora_metrics(deploys) if not deploys.empty else {}
                 from ui.pages.executive_summary import create_full_data_state
                 return create_full_data_state(
                     composite, dim_scores, anti_patterns or [],
