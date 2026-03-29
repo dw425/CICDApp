@@ -21,12 +21,7 @@ from typing import Optional
 
 import pandas as pd
 
-from config.settings import (
-    DATABRICKS_HTTP_PATH,
-    DATABRICKS_SERVER_HOSTNAME,
-    DATABRICKS_TOKEN,
-    USE_MOCK,
-)
+import config.settings as _cfg
 from data_layer.mock.mock_provider import MockDataProvider
 
 logger = logging.getLogger(__name__)
@@ -51,7 +46,7 @@ class DataConnection:
         if self._initialized:
             return
         self._initialized = True
-        self._use_mock = USE_MOCK
+        self._use_mock = _cfg.USE_MOCK
         self._mock_provider: Optional[MockDataProvider] = None
         self._sql_connection = None
 
@@ -76,14 +71,14 @@ class DataConnection:
             from databricks import sql as dbsql
 
             auth_mode = os.getenv("AUTH_MODE", "dev")
-            if auth_mode == "databricks" and not DATABRICKS_TOKEN:
+            if auth_mode == "databricks" and not _cfg.DATABRICKS_TOKEN:
                 # Running inside Databricks Apps — use SDK-based auth
                 from databricks.sdk import WorkspaceClient
 
                 w = WorkspaceClient()
-                host = (DATABRICKS_SERVER_HOSTNAME
+                host = (_cfg.DATABRICKS_SERVER_HOSTNAME
                         or w.config.host.replace("https://", "").rstrip("/"))
-                http_path = (DATABRICKS_HTTP_PATH
+                http_path = (_cfg.DATABRICKS_HTTP_PATH
                              or os.getenv("DATABRICKS_WAREHOUSE_HTTP_PATH"))
                 if not http_path:
                     raise RuntimeError(
@@ -98,9 +93,9 @@ class DataConnection:
             else:
                 # External mode — explicit credentials
                 self._sql_connection = dbsql.connect(
-                    server_hostname=DATABRICKS_SERVER_HOSTNAME,
-                    http_path=DATABRICKS_HTTP_PATH,
-                    access_token=DATABRICKS_TOKEN,
+                    server_hostname=_cfg.DATABRICKS_SERVER_HOSTNAME,
+                    http_path=_cfg.DATABRICKS_HTTP_PATH,
+                    access_token=_cfg.DATABRICKS_TOKEN,
                 )
         except Exception as exc:
             logger.error(
