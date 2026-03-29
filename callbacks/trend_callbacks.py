@@ -376,8 +376,8 @@ def register_callbacks(app):
 
             return [multi_line, delta_bars, tier_stacked, domain_multiples]
 
-        except Exception as e:
-            err = _empty_figure(f"Error: {str(e)}")
+        except Exception:
+            err = _empty_figure("No data available yet")
             return [err, err, err, err]
         # ****Checked and Verified as Real*****
         # Populate all Trend Analysis visuals.

@@ -389,9 +389,10 @@ def register_callbacks(app):
 
             return [scatter_gp_rel, scatter_gp_cost, corr_matrix, insights]
 
-        except Exception as e:
-            err = _empty_figure(f"Error: {str(e)}")
-            err_msg = html.Div(f"Error: {str(e)}", style={"color": RED, "padding": "20px"})
+        except Exception:
+            err = _empty_figure("No data available yet")
+            err_msg = html.Div("No correlation data available. Connect a data source to get started.",
+                               style={"color": TEXT2, "padding": "20px"})
             return [err, err, err, err_msg]
         # ****Checked and Verified as Real*****
         # Populate all Correlation Analysis visuals.

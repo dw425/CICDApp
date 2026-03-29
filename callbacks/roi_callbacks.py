@@ -84,13 +84,13 @@ def register_callbacks(app):
                 "builds_per_day": (deploys_week or 20) // 5,
             }
             result = compute_roi(before_scores, after_scores, org_context)
-        except Exception as e:
-            err = _empty_figure(f"Error: {str(e)}")
+        except Exception:
+            err = _empty_figure("No data available yet")
+            empty = html.P("No data available. Connect a data source to get started.",
+                           style={"color": "#8B949E"})
             return [
-                [_kpi_card("Error", str(e)[:50])],
-                err, err,
-                html.P(f"Error: {e}", style={"color": RED}),
-                html.P(f"Error: {e}", style={"color": RED}),
+                [_kpi_card("Annual Savings", "--")],
+                err, err, empty, empty,
             ]
 
         total = result.get("total_annual_value", 0)

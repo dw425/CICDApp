@@ -223,12 +223,11 @@ def register_callbacks(app):
 
             return [kpis, pie, trend, artifact, heatmap, leaderboard, violations_table, coaching]
 
-        except Exception as e:
-            err = _empty_figure(f"Error: {str(e)}")
+        except Exception:
+            err = _empty_figure("No data available yet")
+            empty = html.P("No data available. Connect a data source to get started.",
+                           style={"color": "#8B949E"})
             return [
-                [_kpi_card("Error", str(e)[:50])],
-                err, err, err, err,
-                html.P(f"Error: {e}", style={"color": RED}),
-                html.P(f"Error: {e}", style={"color": RED}),
-                html.P(f"Error: {e}", style={"color": RED}),
+                [_kpi_card("Adoption", "--")],
+                err, err, err, err, empty, empty, empty,
             ]

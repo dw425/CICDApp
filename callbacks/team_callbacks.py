@@ -372,18 +372,11 @@ def register_callbacks(app):
 
             return [radar_fig, gauge, domain_details, deploy_table, recommendations]
 
-        except Exception as e:
-            error_msg = html.Div(
-                f"Error loading team data: {str(e)}",
-                style={"color": RED, "padding": "20px"},
-            )
-            return [
-                _empty_figure(f"Error: {str(e)}"),
-                error_msg,
-                error_msg,
-                error_msg,
-                error_msg,
-            ]
+        except Exception:
+            empty = _empty_figure("No data available yet")
+            empty_msg = html.Div("No team data available. Connect a data source to get started.",
+                                 style={"color": TEXT2, "padding": "20px"})
+            return [empty, empty_msg, empty_msg, empty_msg, empty_msg]
         # ****Checked and Verified as Real*****
         # Update all team drilldown visuals when a team is selected.
     # ****Checked and Verified as Real*****

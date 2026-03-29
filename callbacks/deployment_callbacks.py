@@ -287,9 +287,10 @@ def register_callbacks(app):
 
             return [golden_pie, env_bar, artifact_donut, events_table]
 
-        except Exception as e:
-            err = _empty_figure(f"Error: {str(e)}")
-            err_msg = html.Div(f"Error: {str(e)}", style={"color": RED, "padding": "20px"})
+        except Exception:
+            err = _empty_figure("No data available yet")
+            err_msg = html.Div("No deployment data available. Connect a data source to get started.",
+                               style={"color": TEXT2, "padding": "20px"})
             return [err, err, err, err_msg]
         # ****Checked and Verified as Real*****
         # Filter and update all deployment visualizations.
