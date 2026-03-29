@@ -20,13 +20,13 @@ def register_callbacks(app):
             from compass.dora_calculator import get_mock_dora_metrics
             dora = get_mock_dora_metrics()
         else:
-            from compass.dora_calculator import compute_dora_metrics
-            from data_layer.queries.custom_tables import get_deployment_events
-            deploys = get_deployment_events()
-            if deploys.empty:
+            try:
+                from compass.dora_calculator import compute_dora_metrics
+                from data_layer.queries.custom_tables import get_deployment_events
+                deploys = get_deployment_events()
+                dora = compute_dora_metrics(deploys, days=period) if not deploys.empty else {}
+            except Exception:
                 dora = {}
-            else:
-                dora = compute_dora_metrics(deploys, days=period)
         dora["period_days"] = period
         return create_dora_tiles_row(dora)
         # ****Checked and Verified as Real*****

@@ -17,10 +17,13 @@ def create_layout():
         from compass.dora_calculator import get_mock_dora_metrics
         dora = get_mock_dora_metrics()
     else:
-        from compass.dora_calculator import compute_dora_metrics
-        from data_layer.queries.custom_tables import get_deployment_events
-        deploys = get_deployment_events()
-        dora = compute_dora_metrics(deploys) if not deploys.empty else {}
+        try:
+            from compass.dora_calculator import compute_dora_metrics
+            from data_layer.queries.custom_tables import get_deployment_events
+            deploys = get_deployment_events()
+            dora = compute_dora_metrics(deploys) if not deploys.empty else {}
+        except Exception:
+            dora = {}
 
     # Safe accessors for chart values
     def _val(key):

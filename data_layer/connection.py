@@ -14,6 +14,7 @@ Usage::
 
 from __future__ import annotations
 
+import logging
 import os
 import threading
 from typing import Optional
@@ -27,6 +28,8 @@ from config.settings import (
     USE_MOCK,
 )
 from data_layer.mock.mock_provider import MockDataProvider
+
+logger = logging.getLogger(__name__)
 
 
 class DataConnection:
@@ -100,11 +103,12 @@ class DataConnection:
                     access_token=DATABRICKS_TOKEN,
                 )
         except Exception as exc:
-            raise RuntimeError(
-                "Failed to connect to Databricks SQL. "
-                "Check DATABRICKS_SERVER_HOSTNAME, DATABRICKS_HTTP_PATH, "
-                "and auth configuration."
-            ) from exc
+            logger.error(
+                "Failed to connect to Databricks SQL: %s. "
+                "Queries will return empty results until connection is available.",
+                exc,
+            )
+            self._sql_connection = None
 
     # ------------------------------------------------------------------
     # Public API
@@ -134,6 +138,11 @@ class DataConnection:
             raise NotImplementedError(
                 "execute_query is not available in mock mode. "
                 "Use get_mock_provider() methods instead."
+            )
+
+        if self._sql_connection is None:
+            raise ConnectionError(
+                "No SQL connection available. Check warehouse and auth configuration."
             )
 
         cursor = self._sql_connection.cursor()
