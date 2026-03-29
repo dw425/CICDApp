@@ -115,29 +115,29 @@ def register_callbacks(app):
         # ****Checked and Verified as Real*****
         # Save assessment configuration to persistent store.
 
-    # ── Callback 1: Mock toggle → connection info ──────────────────
+    # ── Callback 1: Demo mode → connection info ──────────────────
     @app.callback(
         Output("connection-info", "children"),
         [
-            Input("mock-toggle", "value"),
+            Input("demo-mode", "data"),
             Input("refresh-connection-btn", "n_clicks"),
         ],
     )
-    def update_connection_info(mock_value, n_clicks):
-        """Show connection status based on mock toggle state."""
-        is_mock = "mock" in (mock_value or [])
+    def update_connection_info(demo_mode, n_clicks):
+        """Show connection status based on demo mode state."""
+        is_mock = bool(demo_mode)
 
         if is_mock:
             status_icon = html.I(
                 className="fas fa-database",
                 style={"color": ACCENT, "marginRight": "8px"},
             )
-            status_text = "Mock Mode Active"
+            status_text = "Demo Mode Active"
             status_color = ACCENT
             details = [
-                _status_row("Data Source", "Local CSV files", ACCENT),
+                _status_row("Data Source", "Sample CSV data", ACCENT),
                 _status_row("Status", "Connected", GREEN),
-                _status_row("Tables", "12 mock tables loaded", TEXT2),
+                _status_row("Tables", "20+ sample tables loaded", TEXT2),
                 _status_row("Latency", "< 1ms", GREEN),
             ]
         else:
@@ -145,7 +145,6 @@ def register_callbacks(app):
                 from config.settings import (
                     DATABRICKS_SERVER_HOSTNAME,
                     DATABRICKS_HTTP_PATH,
-                    USE_MOCK,
                 )
                 if DATABRICKS_SERVER_HOSTNAME:
                     hostname_display = DATABRICKS_SERVER_HOSTNAME[:30] + "..." if len(str(DATABRICKS_SERVER_HOSTNAME)) > 30 else DATABRICKS_SERVER_HOSTNAME
@@ -161,7 +160,7 @@ def register_callbacks(app):
                 details = [
                     _status_row("Hostname", str(hostname_display), TEXT2),
                     _status_row("HTTP Path", "Configured" if DATABRICKS_HTTP_PATH else "Not set", GREEN if DATABRICKS_HTTP_PATH else RED),
-                    _status_row("Auth", "Token" if not USE_MOCK else "Mock", TEXT2),
+                    _status_row("Auth", "Token" if not demo_mode else "Demo", TEXT2),
                     _status_row("Status", "Ready" if DATABRICKS_SERVER_HOSTNAME else "Not configured", GREEN if DATABRICKS_SERVER_HOSTNAME else RED),
                 ]
             except Exception:

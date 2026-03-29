@@ -5,7 +5,7 @@
 # BUG4: compass-autosave-interval (30s). BUG5: shared selected-assessment-id.
 """
 from dash import html, dcc
-from config.settings import USE_MOCK
+import config.settings as _cfg
 from ui.sidebar import create_sidebar
 from ui.header import create_header
 
@@ -25,7 +25,7 @@ def create_layout():
         dcc.Store(id="selected-assessment-id", data=None, storage_type="session"),
 
         # Demo mode toggle store
-        dcc.Store(id="demo-mode", data=USE_MOCK),
+        dcc.Store(id="demo-mode", data=_cfg.USE_MOCK),
 
         # Auto-save interval (every 30 seconds)
         dcc.Interval(id="compass-autosave-interval", interval=30_000, n_intervals=0),

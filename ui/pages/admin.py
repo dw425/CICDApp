@@ -320,14 +320,6 @@ def create_layout():
             html.Div([
                 html.Div("Connection Status", className="card-header"),
                 html.Div([
-                    html.Div([
-                        dcc.Checklist(
-                            id="mock-toggle",
-                            options=[{"label": " Mock Mode", "value": "mock"}],
-                            value=["mock"],
-                            style={"color": "#E6EDF3", "marginBottom": "16px"},
-                        ),
-                    ]),
                     html.Div(id="connection-info", style={"marginBottom": "16px"}),
                     html.Button(
                         "Refresh Connection",
