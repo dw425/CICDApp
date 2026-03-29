@@ -17,6 +17,9 @@ _ASSESSMENTS_FILE = os.path.join(os.path.dirname(__file__), "..", "compass", "da
 _ORGS_FILE = os.path.join(os.path.dirname(__file__), "..", "compass", "data", "organizations.json")
 
 
+_DEMO_IDS = ["demo-assessment-001", "demo-assessment-002", "demo-assessment-003"]
+
+
 def _inject_demo_data():
     """Load demo fixtures into the assessment and organization stores."""
     with open(_DEMO_FIXTURES, "r") as f:
@@ -33,29 +36,44 @@ def _inject_demo_data():
         with open(_ORGS_FILE, "w") as f:
             json.dump(orgs, f, indent=2)
 
-    # Assessments
+    # Assessments (supports both single "assessment" and list "assessments")
+    demo_assessments = fixtures.get("assessments", [])
+    if not demo_assessments and "assessment" in fixtures:
+        demo_assessments = [fixtures["assessment"]]
+
     try:
         with open(_ASSESSMENTS_FILE, "r") as f:
             assessments = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         assessments = []
-    if not any(a.get("id") == fixtures["assessment"]["id"] for a in assessments):
-        assessments.append(fixtures["assessment"])
-        with open(_ASSESSMENTS_FILE, "w") as f:
-            json.dump(assessments, f, indent=2)
+    existing_ids = {a.get("id") for a in assessments}
+    for demo_a in demo_assessments:
+        if demo_a["id"] not in existing_ids:
+            assessments.append(demo_a)
+    with open(_ASSESSMENTS_FILE, "w") as f:
+        json.dump(assessments, f, indent=2)
 
 
 def _remove_demo_data():
     """Remove demo fixtures from the assessment and organization stores."""
-    for filepath, demo_id in [(_ORGS_FILE, "demo-org-001"), (_ASSESSMENTS_FILE, "demo-assessment-001")]:
-        try:
-            with open(filepath, "r") as f:
-                data = json.load(f)
-            data = [d for d in data if d.get("id") != demo_id]
-            with open(filepath, "w") as f:
-                json.dump(data, f, indent=2)
-        except (FileNotFoundError, json.JSONDecodeError):
-            pass
+    # Remove org
+    try:
+        with open(_ORGS_FILE, "r") as f:
+            data = json.load(f)
+        data = [d for d in data if d.get("id") != "demo-org-001"]
+        with open(_ORGS_FILE, "w") as f:
+            json.dump(data, f, indent=2)
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+    # Remove all demo assessments
+    try:
+        with open(_ASSESSMENTS_FILE, "r") as f:
+            data = json.load(f)
+        data = [d for d in data if d.get("id") not in _DEMO_IDS]
+        with open(_ASSESSMENTS_FILE, "w") as f:
+            json.dump(data, f, indent=2)
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
 
 
 def register_callbacks(app):
