@@ -118,7 +118,7 @@ def register_callbacks(app):
         breakdown_chart.update_layout(
             paper_bgcolor=SURFACE, plot_bgcolor=SURFACE,
             font=dict(color=TEXT2), height=350,
-            margin=dict(l=150, r=80, t=20, b=40),
+            margin=dict(l=150, r=120, t=20, b=40),
             xaxis=dict(gridcolor=BORDER, tickfont=dict(color=TEXT2),
                        tickprefix="$", tickformat=","),
             yaxis=dict(tickfont=dict(color=TEXT2, size=11)),

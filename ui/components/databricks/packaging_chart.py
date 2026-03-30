@@ -14,16 +14,26 @@ def create_packaging_chart(data: dict = None) -> html.Div:
     fig = go.Figure(data=[go.Pie(
         labels=list(data.keys()), values=list(data.values()), hole=0.5,
         marker=dict(colors=colors),
-        textinfo="label+percent",
+        textinfo="percent",
         textposition="inside",
+        insidetextorientation="radial",
         textfont=dict(size=10),
     )])
     fig.update_layout(
         template="plotly_dark",
         paper_bgcolor="rgba(0,0,0,0)",
         height=280,
-        margin=dict(l=40, r=40, t=20, b=20),
-        showlegend=False,
+        margin=dict(l=20, r=20, t=10, b=10),
+        showlegend=True,
+        legend=dict(
+            font=dict(color="#E6EDF3", size=11),
+            bgcolor="rgba(0,0,0,0)",
+            orientation="h",
+            yanchor="bottom",
+            y=-0.15,
+            xanchor="center",
+            x=0.5,
+        ),
     )
     return dcc.Graph(figure=fig, config={"displayModeBar": False})
     # ****Checked and Verified as Real*****

@@ -27,7 +27,7 @@ def create_uc_gauge(uc_pct: float = 68) -> html.Div:
         template="plotly_dark",
         paper_bgcolor="rgba(0,0,0,0)",
         height=260,
-        margin=dict(l=30, r=30, t=30, b=10),
+        margin=dict(l=30, r=30, t=30, b=30),
     )
     return dcc.Graph(figure=fig, config={"displayModeBar": False})
     # ****Checked and Verified as Real*****

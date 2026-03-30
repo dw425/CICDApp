@@ -163,8 +163,8 @@ def _live_packaging_chart(jobs_df):
     if not values:
         return _empty_chart("No packaging data")
     colors = ["#4B7BF5", "#F59E0B", "#22C55E", "#8B949E"][:len(values)]
-    fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=0.5, marker=dict(colors=colors), textinfo="label+percent", textfont=dict(size=10))])
-    fig.update_layout(template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", height=260, margin=dict(l=20, r=20, t=10, b=10), showlegend=False)
+    fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=0.5, marker=dict(colors=colors), textinfo="percent", textposition="inside", insidetextorientation="radial", textfont=dict(size=10))])
+    fig.update_layout(template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", height=280, margin=dict(l=20, r=20, t=10, b=10), showlegend=True, legend=dict(font=dict(color="#E6EDF3", size=11), bgcolor="rgba(0,0,0,0)", orientation="h", yanchor="bottom", y=-0.15, xanchor="center", x=0.5))
     return fig
 
 
@@ -301,14 +301,14 @@ def _packaging_chart_mock():
     labels = ["Wheel/JAR", "Notebook Task", "Python Script", "DLT Pipeline"]
     values = [35, 40, 15, 10]
     colors = ["#4B7BF5", "#F59E0B", "#8B949E", "#22C55E"]
-    fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=0.5, marker=dict(colors=colors), textinfo="label+percent", textfont=dict(size=10))])
-    fig.update_layout(template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", height=260, margin=dict(l=20, r=20, t=10, b=10), showlegend=False)
+    fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=0.5, marker=dict(colors=colors), textinfo="percent", textposition="inside", insidetextorientation="radial", textfont=dict(size=10))])
+    fig.update_layout(template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", height=280, margin=dict(l=20, r=20, t=10, b=10), showlegend=True, legend=dict(font=dict(color="#E6EDF3", size=11), bgcolor="rgba(0,0,0,0)", orientation="h", yanchor="bottom", y=-0.15, xanchor="center", x=0.5))
     return fig
 
 
 def _uc_gauge_mock():
-    fig = go.Figure(go.Indicator(mode="gauge+number", value=68, title={"text": "UC Tables / Total Tables", "font": {"size": 12, "color": "#8B949E"}}, number={"suffix": "%", "font": {"color": "#E6EDF3", "size": 28}}, gauge={"axis": {"range": [0, 100], "tickcolor": "#484F58"}, "bar": {"color": "#4B7BF5"}, "bgcolor": "#21262D", "steps": [{"range": [0, 40], "color": "rgba(239,68,68,0.13)"}, {"range": [40, 70], "color": "rgba(234,179,8,0.13)"}, {"range": [70, 100], "color": "rgba(34,197,94,0.13)"}], "threshold": {"line": {"color": "#22C55E", "width": 2}, "thickness": 0.75, "value": 90}}))
-    fig.update_layout(template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", height=260, margin=dict(l=30, r=30, t=30, b=10))
+    fig = go.Figure(go.Indicator(mode="gauge+number", value=68, title={"text": "UC Tables / Total Tables", "font": {"size": 12, "color": "#8B949E"}}, number={"suffix": "%", "font": {"color": "#E6EDF3", "size": 28}}, gauge={"axis": {"range": [0, 100], "tickcolor": "#484F58"}, "bar": {"color": "#4B7BF5"}, "bgcolor": "#21262D", "steps": [{"range": [0, 40], "color": "rgba(239,68,68,0.13)"}, {"range": [40, 70], "color": "rgba(234,179,8,0.13)"}, {"range": [70, 100], "color": "rgba(34,197,94,0.13)"}], "threshold": {"line": {"color": "#22C55E", "width": 2}, "thickness": 0.6, "value": 90}}))
+    fig.update_layout(template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", height=280, margin=dict(l=40, r=40, t=30, b=30))
     return fig
 
 

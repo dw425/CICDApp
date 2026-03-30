@@ -125,8 +125,14 @@ def _mock_trend_chart(unit: str, current_value, metric_key: str, invert: bool = 
             band_top = min(threshold, max(noise) * 2) if threshold < 9999 else max(noise) * 1.5
             r, g, b = int(color[1:3], 16), int(color[3:5], 16), int(color[5:7], 16)
             fig.add_hrect(y0=prev_y, y1=band_top, fillcolor=f"rgba({r},{g},{b},0.03)",
-                         line_width=0, annotation_text=tier, annotation_position="top left",
-                         annotation_font=dict(size=9, color=f"rgba({r},{g},{b},0.5)"))
+                         line_width=0)
+            # Place tier label at the midpoint of the band, on the right
+            mid_y = (prev_y + band_top) / 2
+            fig.add_annotation(
+                x=1, y=mid_y, xref="paper", text=tier,
+                showarrow=False, font=dict(size=9, color=f"rgba({r},{g},{b},0.6)"),
+                xanchor="right",
+            )
             prev_y = band_top
 
     fig.add_trace(go.Scatter(
@@ -142,7 +148,7 @@ def _mock_trend_chart(unit: str, current_value, metric_key: str, invert: bool = 
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         height=220,
-        margin=dict(l=40, r=20, t=10, b=30),
+        margin=dict(l=40, r=60, t=10, b=30),
         xaxis=dict(title="Days Ago", gridcolor="#21262D"),
         yaxis=dict(title=unit, gridcolor="#21262D"),
         showlegend=False,
