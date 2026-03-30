@@ -54,6 +54,14 @@ def _inject_demo_data():
         json.dump(assessments, f, indent=2)
 
 
+# Auto-inject demo data on app startup when demo/mock mode is enabled.
+# This ensures assessments.json is populated even after a fresh deploy
+# (which overwrites the workspace file with the local empty []).
+import config.settings as _cfg
+if _cfg.USE_MOCK:
+    _inject_demo_data()
+
+
 def _remove_demo_data():
     """Remove demo fixtures from the assessment and organization stores."""
     # Remove org
