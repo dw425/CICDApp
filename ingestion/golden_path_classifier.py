@@ -58,6 +58,7 @@ class GoldenPathClassifier:
                 - action_name
                 - source_ip_address
                 - request_params (dict or JSON string)
+                - is_golden_path (optional pre-classification flag)
 
         Returns:
             {
@@ -76,6 +77,12 @@ class GoldenPathClassifier:
         # Extract actor email
         actor = self._extract_actor(event)
         action = event.get("action_name", "")
+
+        # Signal 0: Pre-classified is_golden_path flag (from data source)
+        pre_flag = event.get("is_golden_path")
+        has_pre_flag = pre_flag is not None and str(pre_flag).lower() not in ("", "nan", "none")
+        if has_pre_flag and str(pre_flag).lower() in ("true", "1", "yes"):
+            signals.append("pre_classified_golden_path")
 
         # Signal 1: Service principal actor
         is_sp = self._is_service_principal(actor)
@@ -105,6 +112,8 @@ class GoldenPathClassifier:
 
         # Classification logic — weighted signal evaluation
         score = 0
+        if "pre_classified_golden_path" in signals:
+            score += 50
         if has_token:
             score += 40
         if is_sp:
@@ -126,15 +135,20 @@ class GoldenPathClassifier:
             classification = "unknown"
             confidence = 0.50
 
+        # Use team_id from event if team resolution fails
+        resolved_team = self._resolve_team(actor)
+        if not resolved_team:
+            resolved_team = event.get("team_id")
+
         return {
             "classification": classification,
             "confidence": round(confidence, 2),
             "signals": signals,
-            "artifact_type": ARTIFACT_TYPE_MAP.get(action, "other"),
-            "team_id": self._resolve_team(actor),
+            "artifact_type": event.get("artifact_type") or ARTIFACT_TYPE_MAP.get(action, "other"),
+            "team_id": resolved_team,
             "actor_email": actor,
             "action_name": action,
-            "timestamp": event.get("event_time", event.get("timestamp", datetime.utcnow().isoformat())),
+            "timestamp": event.get("event_date", event.get("event_time", event.get("timestamp", datetime.utcnow().isoformat()))),
         }
 
     def classify_batch(self, events: list[dict]) -> list[dict]:
@@ -223,7 +237,7 @@ class GoldenPathClassifier:
         if not actor:
             return False
         actor_lower = actor.lower()
-        if any(kw in actor_lower for kw in ("service", "spn", "bot", "automation", "cicd", "ci-cd", "deploy")):
+        if any(kw in actor_lower for kw in ("service", "spn", "svc", "bot", "automation", "cicd", "ci-cd", "deploy")):
             return True
         return any(p.match(actor) for p in SP_PATTERNS)
 

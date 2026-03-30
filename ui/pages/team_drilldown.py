@@ -2,6 +2,21 @@
 from dash import html, dcc
 
 
+def _get_team_options():
+    """Load team options for the dropdown at layout-creation time."""
+    try:
+        from data_layer.queries.custom_tables import get_teams
+        teams = get_teams()
+        if not teams.empty:
+            return [
+                {"label": row["team_name"], "value": row["team_id"]}
+                for _, row in teams.iterrows()
+            ]
+    except Exception:
+        pass
+    return []
+
+
 def create_layout():
     """Return the Team Drilldown page layout."""
     return html.Div([
@@ -10,7 +25,7 @@ def create_layout():
         # ── Team selector ────────────────────────────────────────
         dcc.Dropdown(
             id="team-selector",
-            options=[],
+            options=_get_team_options(),
             placeholder="Select a team...",
             style={"backgroundColor": "#0D1117", "color": "#E6EDF3", "border": "1px solid #272D3F"},
         ),
