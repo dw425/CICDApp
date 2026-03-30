@@ -139,7 +139,7 @@ def create_impact_effort_matrix(
         annotations=annotations,
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=60, r=20, t=20, b=60),
+        margin=dict(l=60, r=80, t=20, b=60),
         height=height,
     )
 

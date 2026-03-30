@@ -115,11 +115,12 @@ def register_callbacks(app):
                     hovertemplate="Week of %{x}<br>Adoption: %{y:.1f}%<extra></extra>",
                 ))
                 trend.add_hline(y=80, line_dash="dot", line_color=YELLOW, line_width=1,
-                                annotation_text="Target: 80%", annotation_font=dict(color=YELLOW, size=10))
+                                annotation_text="Target: 80%", annotation_position="top left",
+                                annotation_font=dict(color=YELLOW, size=10))
             trend.update_layout(
                 paper_bgcolor=SURFACE, plot_bgcolor=SURFACE,
                 font=dict(color=TEXT2), height=300,
-                margin=dict(l=50, r=20, t=20, b=40),
+                margin=dict(l=50, r=30, t=20, b=40),
                 xaxis=dict(gridcolor=BORDER, tickfont=dict(color=TEXT2)),
                 yaxis=dict(gridcolor=BORDER, tickfont=dict(color=TEXT2),
                            title=dict(text="Adoption %"), range=[0, 100]),

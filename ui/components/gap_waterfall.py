@@ -103,7 +103,7 @@ def create_gap_waterfall(
             font=dict(color="#8B949E"),
             bgcolor="rgba(0,0,0,0)",
         ),
-        margin=dict(l=120, r=40, t=10, b=50),
+        margin=dict(l=180, r=50, t=10, b=50),
         height=max(height, len(gaps) * 40 + 80),
     )
 

@@ -91,8 +91,8 @@ def _build_scatter(pivot, x_domain, y_domain, x_label, y_label):
             opacity=0.9,
         ),
         text=team_names,
-        textposition="top center",
-        textfont=dict(color=TEXT2, size=10),
+        textposition="top right",
+        textfont=dict(color=TEXT2, size=9),
         hovertemplate=(
             "<b>%{text}</b><br>"
             f"{x_label}: %{{x:.0f}}<br>"
@@ -149,7 +149,7 @@ def _build_scatter(pivot, x_domain, y_domain, x_label, y_label):
         showlegend=True,
         legend=dict(font=dict(color=TEXT2, size=10), bgcolor="rgba(0,0,0,0)"),
         height=320,
-        margin=dict(l=50, r=20, t=20, b=50),
+        margin=dict(l=50, r=30, t=20, b=50),
     )
     return fig
     # ****Checked and Verified as Real*****
@@ -189,7 +189,7 @@ def _build_correlation_matrix(pivot):
             "Correlation: %{z:.3f}<extra></extra>"
         ),
         colorbar=dict(
-            title=dict(text="Corr", font=dict(color=TEXT2)),
+            title=dict(text="Correlation", font=dict(color=TEXT2, size=10)),
             tickfont=dict(color=TEXT2),
             bordercolor=BORDER,
         ),
@@ -209,7 +209,7 @@ def _build_correlation_matrix(pivot):
             autorange="reversed",
         ),
         height=380,
-        margin=dict(l=120, r=20, t=20, b=100),
+        margin=dict(l=120, r=60, t=20, b=100),
     )
     return fig
     # ****Checked and Verified as Real*****

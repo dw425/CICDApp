@@ -15,13 +15,14 @@ def create_packaging_chart(data: dict = None) -> html.Div:
         labels=list(data.keys()), values=list(data.values()), hole=0.5,
         marker=dict(colors=colors),
         textinfo="label+percent",
+        textposition="inside",
         textfont=dict(size=10),
     )])
     fig.update_layout(
         template="plotly_dark",
         paper_bgcolor="rgba(0,0,0,0)",
-        height=260,
-        margin=dict(l=20, r=20, t=10, b=10),
+        height=280,
+        margin=dict(l=40, r=40, t=20, b=20),
         showlegend=False,
     )
     return dcc.Graph(figure=fig, config={"displayModeBar": False})

@@ -36,13 +36,13 @@ def create_gauge(score, title="Composite Score", gauge_id=None):
         paper_bgcolor="#161B22",
         plot_bgcolor="#161B22",
         font={"family": "DM Sans, Inter, system-ui, sans-serif", "color": "#8B949E"},
-        height=250,
-        margin=dict(l=20, r=20, t=40, b=20),
+        height=270,
+        margin=dict(l=20, r=20, t=40, b=40),
     )
     # Add tier annotation
     fig.add_annotation(
         text=tier,
-        x=0.5, y=0.15,
+        x=0.5, y=0.08,
         font=dict(size=14, color=color, family="DM Sans"),
         showarrow=False, xref="paper", yref="paper",
     )

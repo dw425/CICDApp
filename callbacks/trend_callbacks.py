@@ -96,7 +96,7 @@ def _build_multi_line(trends, team_lookup):
             line_color=TEXT3,
             line_width=1,
             annotation_text=label,
-            annotation_position="top right",
+            annotation_position="top left",
             annotation_font=dict(color=TEXT3, size=9),
         )
 
@@ -125,7 +125,7 @@ def _build_multi_line(trends, team_lookup):
             x=0.5,
         ),
         height=380,
-        margin=dict(l=50, r=20, t=50, b=50),
+        margin=dict(l=50, r=30, t=50, b=50),
         hovermode="x unified",
     )
     return fig
