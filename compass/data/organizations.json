@@ -43,5 +43,14 @@
     "cloud_provider": "GCP",
     "uses_databricks": true,
     "created_at": "2026-03-28T05:26:48.028737+00:00"
+  },
+  {
+    "id": "demo-org-001",
+    "name": "Acme Corp (Demo)",
+    "industry": "tech",
+    "size": "mid_market",
+    "cloud_provider": "azure",
+    "uses_databricks": true,
+    "created_at": "2024-01-15T10:00:00Z"
   }
 ]
