@@ -35,6 +35,7 @@
       "composite": {
         "score": 35,
         "overall_score": 35,
+        "overall_level": 2,
         "tier": "Managed",
         "label": "Managed",
         "overall_label": "Managed",
@@ -135,10 +136,11 @@
       "composite": {
         "score": 45,
         "overall_score": 45,
-        "tier": "Managed",
-        "label": "Managed",
-        "overall_label": "Managed",
-        "color": "#FBBF24",
+        "overall_level": 3,
+        "tier": "Defined",
+        "label": "Defined",
+        "overall_label": "Defined",
+        "color": "#4B7BF5",
         "dimension_breakdown": {
           "build_integration": {"score": 48, "level": 2, "label": "Managed", "display_name": "Build & Integration"},
           "testing_quality": {"score": 35, "level": 2, "label": "Managed", "display_name": "Testing & Quality"},
@@ -213,10 +215,11 @@
       "composite": {
         "score": 70,
         "overall_score": 70,
+        "overall_level": 4,
         "tier": "Measured",
         "label": "Measured",
         "overall_label": "Measured",
-        "color": "#34D399",
+        "color": "#A78BFA",
         "dimension_breakdown": {
           "build_integration": {"score": 75, "level": 4, "label": "Measured", "display_name": "Build & Integration"},
           "testing_quality": {"score": 62, "level": 3, "label": "Defined", "display_name": "Testing & Quality"},
