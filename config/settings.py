@@ -51,7 +51,7 @@ def set_demo_mode(enabled: bool) -> None:
     When *enabled* is ``False``, restores the original env-var setting.
     """
     global USE_MOCK
-    USE_MOCK = True if enabled else _ORIGINAL_USE_MOCK
+    USE_MOCK = enabled
 
 
 def get_full_table_name(table: str) -> str:
