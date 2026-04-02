@@ -1,0 +1,1802 @@
+[
+  {
+    "cluster_id": "1220-184814-vvluo632",
+    "cluster_name": "gary@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0416-150554-uqzpd1zf",
+    "cluster_name": "gary@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121350-6lh6x4uu",
+    "cluster_name": "ext-cchiulan@bpcs.com's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0418-145342-gma5ri24",
+    "cluster_name": "Vova's Shared Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-vtikhonov@bpcs.com",
+    "driver_node_type": "Standard_F4s_v2",
+    "worker_node_type": "Standard_F4s_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0109-110554-vce1w48v",
+    "cluster_name": "CostiInvalidSharedCluster (clone)",
+    "cluster_source": "UI",
+    "creator": "ext-dchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0415-164024-fcb6o3dn",
+    "cluster_name": "job-1089589878428609-run-673037871485955-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0529-081741-tysx7be4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094114-v0rytzh0",
+    "cluster_name": "amaieras's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "ext-amaieras@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0404-114805-1z7wyrwv",
+    "cluster_name": "job-145449600340345-run-329867723349304-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0320-225159-g5g1at4v",
+    "cluster_name": "uc-migration-assessment",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-144916-omxf9ooj",
+    "cluster_name": "job-430530897761626-run-1077785807722422-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-183036-awdx0c3d",
+    "cluster_name": "job-685823630526902-run-998639487121611-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0516-143742-7wdgmrc4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_D4s_v5",
+    "worker_node_type": "Standard_D4s_v5",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0417-115010-zdpwiis6",
+    "cluster_name": "job-228153305436401-run-1047794013271078-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0225-005811-zafnk6to",
+    "cluster_name": "GPU-report-wayfinder-stage-2",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_NC8as_T4_v3",
+    "worker_node_type": "Standard_NC8as_T4_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-193656-gc0d73oa",
+    "cluster_name": "CPU-getAI-HR-chatbot",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0112-090230-p7fitgnf",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster Diff",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0112-090230-p7fitgnf",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster Diff",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-122050-dye5b6z3",
+    "cluster_name": "job-942338656722014-run-161511156568251-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0415-070426-8clflk5a",
+    "cluster_name": "job-64615004420432-run-943291415282641-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0112-090230-p7fitgnf",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster Diff",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-095457-w7mtag35",
+    "cluster_name": "job-228153305436401-run-186501298933845-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0414-203215-ute17s6e",
+    "cluster_name": "gary@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0403-100743-ipjrvavj",
+    "cluster_name": "job-296745254330114-run-747557767642841-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0114-032314-srohffsy",
+    "cluster_name": "gary@bpcs.com's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0403-093908-28534s9i",
+    "cluster_name": "job-817475269645059-run-248030190827816-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-142550-6gxok2mi",
+    "cluster_name": "job-661479655513439-run-837247029730950-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1211-165302-qn38n7y3",
+    "cluster_name": "ext-cchiulan@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-083722-cwerrulx",
+    "cluster_name": "costi pool single-user",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-083722-cwerrulx",
+    "cluster_name": "costi pool single-user",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1211-165302-qn38n7y3",
+    "cluster_name": "ext-cchiulan@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121410-djjqjuk",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094223-xdhrsabt",
+    "cluster_name": "amaieras's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-amaieras@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-133229-zq8lglt6",
+    "cluster_name": "job-562319927521061-run-282703286588266-lho_uc_migration_staging-jc",
+    "cluster_source": "JOB",
+    "creator": "721c27c1-4f97-4966-ac64-9329c3565277",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0320-225159-g5g1at4v",
+    "cluster_name": "uc-migration-assessment",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0112-090230-p7fitgnf",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster Diff",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0404-125855-rd641cpe",
+    "cluster_name": "job-145449600340345-run-1090236113194436-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1214-131759-8gq9nufr",
+    "cluster_name": "CostiInvalidSharedCluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0306-115311-aih52v6p",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0417-110226-rlp09km8",
+    "cluster_name": "job-228153305436401-run-482717590513388-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0529-081741-tysx7be4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1211-165302-qn38n7y3",
+    "cluster_name": "ext-cchiulan@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094020-scj1zlyw",
+    "cluster_name": "amaieras's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-amaieras@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0404-162017-nfiege5z",
+    "cluster_name": "job-1009596207478040-run-1071157063471366-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-123841-rqartxra",
+    "cluster_name": "job-562319927521061-run-506074924945363-lho_uc_migration_staging-jc",
+    "cluster_source": "JOB",
+    "creator": "721c27c1-4f97-4966-ac64-9329c3565277",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-084702-ouj4pmk9",
+    "cluster_name": "job-942338656722014-run-400392271443896-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0413-182958-rhil9zhd",
+    "cluster_name": "job-185481507952090-run-1020698236264569-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0112-090230-p7fitgnf",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster Diff",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-113446-uxn6dpno",
+    "cluster_name": "job-199630350122466-run-612842854335323-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-082209-el6vtd16",
+    "cluster_name": "cchiulan-shared-pool",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-082209-el6vtd16",
+    "cluster_name": "cchiulan-shared-pool",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0227-214803-sno3t8dq",
+    "cluster_name": "GPU-ReportIQ-Stage-2",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_NC4as_T4_v3",
+    "worker_node_type": "Standard_NC4as_T4_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-084358-ifcygwzc",
+    "cluster_name": "job-228153305436401-run-34485204282544-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094114-v0rytzh0",
+    "cluster_name": "amaieras's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "ext-amaieras@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-083655-4w1xcqq4",
+    "cluster_name": "job-730550752442367-run-264591139093858-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-114532-2eib0o4i",
+    "cluster_name": "job-250472676200708-run-869881099544602-Job_cluster",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-130339-o0hp6z0k",
+    "cluster_name": "test-2costi",
+    "cluster_source": "UI",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0225-162254-ldgy9em",
+    "cluster_name": "GPU-report-wayfinder-stage-2",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_NC4as_T4_v3",
+    "worker_node_type": "Standard_NC4as_T4_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0210-212724-wseu2b7n",
+    "cluster_name": "gary@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS4_v2",
+    "worker_node_type": "Standard_DS4_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "8edad42d-b465-4b57-a9f5-8ee2be6abfa5",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-085126-c9uly4bl",
+    "cluster_name": "job-942338656722014-run-835839200440300-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-202152-h0lrkip",
+    "cluster_name": "job-90392810644521-run-654491308741721-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-082209-el6vtd16",
+    "cluster_name": "cchiulan-shared-pool",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0516-143742-7wdgmrc4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_D4s_v5",
+    "worker_node_type": "Standard_D4s_v5",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-130339-o0hp6z0k",
+    "cluster_name": "test-2costi",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0403-090312-nrjdcngb",
+    "cluster_name": "job-870611348671786-run-1123871398571097-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1204-153150-tz1cudye",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121350-6lh6x4uu",
+    "cluster_name": "ext-cchiulan@bpcs.com's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-195737-s32v52z0",
+    "cluster_name": "job-640785542538455-run-469630147546666-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-083431-x37t9jvu",
+    "cluster_name": "job-228153305436401-run-595477099565505-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0529-081603-v5zidjmz",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0405-103756-ywg2g0z3",
+    "cluster_name": "job-730550752442367-run-15219765740118-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121350-6lh6x4uu",
+    "cluster_name": "ext-cchiulan@bpcs.com's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-131748-dnv9adqe",
+    "cluster_name": "job-562319927521061-run-997749425614627-lho_uc_migration_staging-jc",
+    "cluster_source": "JOB",
+    "creator": "721c27c1-4f97-4966-ac64-9329c3565277",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0320-225159-g5g1at4v",
+    "cluster_name": "uc-migration-assessment",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0413-054921-ycslc5ab",
+    "cluster_name": "job-661479655513439-run-876908787513522-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1207-230156-o7oupgh5",
+    "cluster_name": "!GAmbit's Cluster",
+    "cluster_source": "UI",
+    "creator": "gambit@bpcs.com",
+    "driver_node_type": "Standard_NC4as_T4_v3",
+    "worker_node_type": "Standard_NC4as_T4_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-144922-i5luybub",
+    "cluster_name": "job-562319927521061-run-410806729530037-lho_uc_migration_staging-jc",
+    "cluster_source": "JOB",
+    "creator": "721c27c1-4f97-4966-ac64-9329c3565277",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0520-101907-gjsosew0",
+    "cluster_name": "job-800025645266450-run-928986403278733-Shared_job_cluster",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS4_v2",
+    "worker_node_type": "Standard_DS4_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0529-081741-tysx7be4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1214-131759-8gq9nufr",
+    "cluster_name": "ext-cchiulan@bpcs.com's Shared Compute Cluster (clone)",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0401-204304-9yf8zvor",
+    "cluster_name": "Bryan Kepler's Cluster",
+    "cluster_source": "UI",
+    "creator": "bkepler@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-121316-vjws615f",
+    "cluster_name": "cchiulan-pool2",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0306-115311-aih52v6p",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "8edad42d-b465-4b57-a9f5-8ee2be6abfa5",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0320-225159-g5g1at4v",
+    "cluster_name": "uc-migration-assessment",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0403-095956-o1j8oywr",
+    "cluster_name": "job-296745254330114-run-888128800734359-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121410-djjqjuk",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094020-scj1zlyw",
+    "cluster_name": "amaieras's Cluster",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0414-145345-1nl6dajb",
+    "cluster_name": "gary@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0109-110554-vce1w48v",
+    "cluster_name": "CostiInvalidSharedCluster (clone)",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0320-225159-g5g1at4v",
+    "cluster_name": "uc-migration-assessment",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0423-135412-vym63f9m",
+    "cluster_name": "job-199630350122466-run-873907304564410-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0416-151533-q731t4c9",
+    "cluster_name": "job-228153305436401-run-469506382058332-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1219-215014-i8jp2lb4",
+    "cluster_name": "gary@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-183633-gf7h01wj",
+    "cluster_name": "job-778496190743435-run-1090880803787431-Job_cluster",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0413-184408-5uyhvu3q",
+    "cluster_name": "job-718226318499898-run-162260620576701-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0529-081741-tysx7be4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121410-djjqjuk",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-130246-o6mtcheo",
+    "cluster_name": "job-562319927521061-run-867319310524513-lho_uc_migration_staging-jc",
+    "cluster_source": "JOB",
+    "creator": "721c27c1-4f97-4966-ac64-9329c3565277",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0907-171909-l91f47cp",
+    "cluster_name": "gary@bpcs.com's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS5_v2",
+    "worker_node_type": "Standard_DS5_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1211-165302-qn38n7y3",
+    "cluster_name": "ext-cchiulan@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0516-143742-7wdgmrc4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_D4s_v5",
+    "worker_node_type": "Standard_D4s_v5",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0520-110824-qwd5904b",
+    "cluster_name": "job-800025645266450-run-229591322944182-Shared_job_cluster",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_D4ads_v5",
+    "worker_node_type": "Standard_D4ads_v5",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-172845-am69uafx",
+    "cluster_name": "job-250472676200708-run-742873251252513-Job_cluster",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1220-215952-5gukxyef",
+    "cluster_name": "gary@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094020-scj1zlyw",
+    "cluster_name": "amaieras's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-amaieras@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-121316-vjws615f",
+    "cluster_name": "cchiulan-pool2",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0413-185930-19c5k1yy",
+    "cluster_name": "job-718226318499898-run-741977806108644-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0414-145345-1nl6dajb",
+    "cluster_name": "gary@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-161826-odmczllc",
+    "cluster_name": "gary@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0225-150452-wqv3niq0",
+    "cluster_name": "GPU-report-wayfinder-stage-2",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_NC4as_T4_v3",
+    "worker_node_type": "Standard_NC4as_T4_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1214-131759-8gq9nufr",
+    "cluster_name": "CostiInvalidSharedCluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0225-015428-wrdsfcfy",
+    "cluster_name": "CPU-report-wayfinder-stage-2",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0413-175023-smy52p0r",
+    "cluster_name": "job-684203588034842-run-113170340133536-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0424-162429-rlz3g0w6",
+    "cluster_name": "job-199630350122466-run-87228773382040-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1222-180707-bh6xi7yb",
+    "cluster_name": "gary@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121410-djjqjuk",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0404-115902-lk7uhijv",
+    "cluster_name": "job-145449600340345-run-676209829487221-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0424-163507-ywptprop",
+    "cluster_name": "job-199630350122466-run-182590068059559-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0516-143742-7wdgmrc4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094114-v0rytzh0",
+    "cluster_name": "amaieras's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "ext-amaieras@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "8edad42d-b465-4b57-a9f5-8ee2be6abfa5",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0415-183037-w16s6upd",
+    "cluster_name": "job-1089589878428609-run-611428523700552-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-130339-o0hp6z0k",
+    "cluster_name": "test-2costi",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094114-v0rytzh0",
+    "cluster_name": "amaieras's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0415-131021-jp9y4asn",
+    "cluster_name": "job-718226318499898-run-1085067928007030-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-082209-el6vtd16",
+    "cluster_name": "cchiulan-shared-pool",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-094223-xdhrsabt",
+    "cluster_name": "amaieras's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-amaieras@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0516-143742-7wdgmrc4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_D4s_v5",
+    "worker_node_type": "Standard_D4s_v5",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0424-163012-2d5inxqo",
+    "cluster_name": "job-562319927521061-run-650801881410294-lho_uc_migration_staging-jc",
+    "cluster_source": "JOB",
+    "creator": "721c27c1-4f97-4966-ac64-9329c3565277",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0306-115311-aih52v6p",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1214-131759-8gq9nufr",
+    "cluster_name": "CostiInvalidSharedCluster",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-190015-hkq8u2t5",
+    "cluster_name": "job-640785542538455-run-514771248300873-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-130515-4rraksuz",
+    "cluster_name": "test-compute-wod-driver-spot",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0210-015154-sjlf4c3p",
+    "cluster_name": "gary@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-082209-el6vtd16",
+    "cluster_name": "cchiulan-shared-pool",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0429-183517-9jbh3cs7",
+    "cluster_name": "job-214063941623221-run-79119924463594-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-102919-wf329bua",
+    "cluster_name": "job-228153305436401-run-281302075875846-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-082209-el6vtd16",
+    "cluster_name": "cchiulan-shared-pool",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0413-055907-25c1ea27",
+    "cluster_name": "job-661479655513439-run-441313937796838-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0416-192607-jgerebj4",
+    "cluster_name": "job-240839382158014-run-1083774538092078-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0408-124754-6nv2tt7d",
+    "cluster_name": "AlexSisu_MultipleDaysCompute",
+    "cluster_source": "UI",
+    "creator": "ext-asisu@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0412-124807-zig2wx41",
+    "cluster_name": "ext-vtikhonov@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-vtikhonov@bpcs.com",
+    "driver_node_type": "Standard_F4s",
+    "worker_node_type": "Standard_F4s",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0416-171655-gx5y6ev6",
+    "cluster_name": "job-228153305436401-run-521951313598085-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0404-163119-bagbd7o4",
+    "cluster_name": "job-356929283671800-run-374231218644780-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0705-213002-karp754l",
+    "cluster_name": "jurban@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "jurban@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0408-124754-6nv2tt7d",
+    "cluster_name": "AlexSisu_MultipleDaysCompute",
+    "cluster_source": "UI",
+    "creator": "ext-asisu@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0229-143507-w7c2aoxc",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0306-115311-aih52v6p",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "8edad42d-b465-4b57-a9f5-8ee2be6abfa5",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0408-124754-6nv2tt7d",
+    "cluster_name": "AlexSisu_MultipleDaysCompute",
+    "cluster_source": "UI",
+    "creator": "ext-asisu@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0418-145342-gma5ri24",
+    "cluster_name": "Vova's Shared Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-vtikhonov@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-083722-cwerrulx",
+    "cluster_name": "costi pool single-user",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0224-234627-rosj05g7",
+    "cluster_name": "report-wayfinder-stage2-GPU",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_NC4as_T4_v3",
+    "worker_node_type": "Standard_NC4as_T4_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0414-063610-s69yy1o7",
+    "cluster_name": "gary@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-123549-mklxts16",
+    "cluster_name": "costi pool single-userc",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0210-154302-9sl80skt",
+    "cluster_name": "genAI-use-case-employee-handbook",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0306-115311-aih52v6p",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0220-015722-o3rg9af2",
+    "cluster_name": "uc-migration-test",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121350-6lh6x4uu",
+    "cluster_name": "ext-cchiulan@bpcs.com's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-121316-vjws615f",
+    "cluster_name": "cchiulan-pool2",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0413-173204-3a0btrcr",
+    "cluster_name": "job-915959737387384-run-811648617068103-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0414-203215-ute17s6e",
+    "cluster_name": "gary@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0529-081741-tysx7be4",
+    "cluster_name": "ext-cchiulan ext-cchiulan's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_F4",
+    "worker_node_type": "Standard_F4",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0417-130854-eru8snu5",
+    "cluster_name": "job-228153305436401-run-266855273028917-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0112-090230-p7fitgnf",
+    "cluster_name": "ext-cchiulan@bpcs.com's Personal Compute Cluster Diff",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0117-082209-el6vtd16",
+    "cluster_name": "cchiulan-shared-pool",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121350-6lh6x4uu",
+    "cluster_name": "ext-cchiulan@bpcs.com's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0209-200546-bk84w36j",
+    "cluster_name": "gary@bpcs.com's Personal Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0308-125640-ygiotko6",
+    "cluster_name": "job-1093970743460686-run-80857077032214-Job_cluster",
+    "cluster_source": "JOB",
+    "creator": "ext-amaieras@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0416-162055-w607fw9",
+    "cluster_name": "job-917879304500317-run-621171218224271-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0110-121350-6lh6x4uu",
+    "cluster_name": "ext-cchiulan@bpcs.com's-unrestricted",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0228-014500-h3r9spba",
+    "cluster_name": "CPU-ReportIQ-Stage-2",
+    "cluster_source": "UI",
+    "creator": "gary@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-090523-xrz7xkqf",
+    "cluster_name": "job-228153305436401-run-1043474958184105-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "d70b40d7-1028-4551-8521-326fede4eab6",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0422-192200-pym929ci",
+    "cluster_name": "job-240839382158014-run-783276295439408-lho-uc-migration-jc",
+    "cluster_source": "JOB",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_D4s_v3",
+    "worker_node_type": "Standard_D4s_v3",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1211-165302-qn38n7y3",
+    "cluster_name": "ext-cchiulan@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0111-091514-l7ce6p4y",
+    "cluster_name": "ext-cchiulan@bpcs.com's Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "1211-165302-qn38n7y3",
+    "cluster_name": "ext-cchiulan@bpcs.com's Shared Compute Cluster",
+    "cluster_source": "UI",
+    "creator": "ext-cchiulan@bpcs.com",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  },
+  {
+    "cluster_id": "0320-225159-g5g1at4v",
+    "cluster_name": "uc-migration-assessment",
+    "cluster_source": "UI",
+    "creator": "3cbe7c7a-f635-4a83-a731-f892a0724e48",
+    "driver_node_type": "Standard_DS3_v2",
+    "worker_node_type": "Standard_DS3_v2",
+    "policy_id": null
+  }
+]

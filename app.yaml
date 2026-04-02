@@ -11,14 +11,14 @@ command:
   - "30"
 env:
   - name: CICD_APP_USE_MOCK
-    value: "true"
+    value: "false"
   - name: AUTH_MODE
     value: "databricks"
   - name: CICD_APP_CATALOG
-    value: "your_catalog"
+    value: "demos"
   - name: CICD_APP_SCHEMA
     value: "cicd"
   - name: DATABRICKS_WAREHOUSE_HTTP_PATH
-    value: "/sql/1.0/warehouses/your_warehouse_id"
+    value: "/sql/1.0/warehouses/e3a0fc2c08db05bb"
   - name: APP_DEBUG
     value: "false"

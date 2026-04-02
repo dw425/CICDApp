@@ -1,0 +1,1402 @@
+[
+  {
+    "job_id": "538256815621823",
+    "workspace_id": "4311935272120849",
+    "name": "[dev dlokey] uc_008 \u2014 Schema Refresh and Batch Test",
+    "creator_user_name": "dlokey@bpcs.com",
+    "run_as_user_name": "dlokey@bpcs.com"
+  },
+  {
+    "job_id": "538256815621823",
+    "workspace_id": "4311935272120849",
+    "name": "[dev dlokey] uc_008 \u2014 Schema Refresh and Batch Test",
+    "creator_user_name": "dlokey@bpcs.com",
+    "run_as_user_name": "dlokey@bpcs.com"
+  },
+  {
+    "job_id": "1050826363540691",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-serverless-run-job",
+    "creator_user_name": "cchiulan@bpcs.com",
+    "run_as_user_name": "cchiulan@bpcs.com"
+  },
+  {
+    "job_id": "738005540591164",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-serverless-run-job-inner",
+    "creator_user_name": "cchiulan@bpcs.com",
+    "run_as_user_name": "cchiulan@bpcs.com"
+  },
+  {
+    "job_id": "882297019168679",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-serverless-job-task",
+    "creator_user_name": "cchiulan@bpcs.com",
+    "run_as_user_name": "cchiulan@bpcs.com"
+  },
+  {
+    "job_id": "738005540591164",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-serverless-run-job",
+    "creator_user_name": "cchiulan@bpcs.com",
+    "run_as_user_name": "cchiulan@bpcs.com"
+  },
+  {
+    "job_id": "1095917599188709",
+    "workspace_id": "4311935272120849",
+    "name": "[dev dlokey] uc_001 \u2014 Weekly Cost Forecast Retraining",
+    "creator_user_name": "dlokey@bpcs.com",
+    "run_as_user_name": "dlokey@bpcs.com"
+  },
+  {
+    "job_id": "155196827080024",
+    "workspace_id": "4311935272120849",
+    "name": "[dev dlokey] uc_001 \u2014 Daily Cost Forecast Scoring",
+    "creator_user_name": "dlokey@bpcs.com",
+    "run_as_user_name": "dlokey@bpcs.com"
+  },
+  {
+    "job_id": "1095917599188709",
+    "workspace_id": "4311935272120849",
+    "name": "[dev dlokey] uc_001 \u2014 Weekly Cost Forecast Retraining",
+    "creator_user_name": "dlokey@bpcs.com",
+    "run_as_user_name": "dlokey@bpcs.com"
+  },
+  {
+    "job_id": "155196827080024",
+    "workspace_id": "4311935272120849",
+    "name": "[dev dlokey] uc_001 \u2014 Daily Cost Forecast Scoring",
+    "creator_user_name": "dlokey@bpcs.com",
+    "run_as_user_name": "dlokey@bpcs.com"
+  },
+  {
+    "job_id": "299291843664376",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-budget-policy",
+    "creator_user_name": "cchiulan@bpcs.com",
+    "run_as_user_name": "cchiulan@bpcs.com"
+  },
+  {
+    "job_id": "391442514055549",
+    "workspace_id": "1866518241053589",
+    "name": "NXP ICN8 Job",
+    "creator_user_name": "gary@bpcs.com",
+    "run_as_user_name": "gary@bpcs.com"
+  },
+  {
+    "job_id": "226417932930271",
+    "workspace_id": "1866518241053589",
+    "name": "Customer_Exports",
+    "creator_user_name": "lurban@bpcs.com",
+    "run_as_user_name": "lurban@bpcs.com"
+  },
+  {
+    "job_id": "226417932930271",
+    "workspace_id": "1866518241053589",
+    "name": "New Job Dec 18, 2025, 03:47 PM",
+    "creator_user_name": "lurban@bpcs.com",
+    "run_as_user_name": "lurban@bpcs.com"
+  },
+  {
+    "job_id": "523164968212393",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-oserverless",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "138753019448580",
+    "workspace_id": "6636762599206300",
+    "name": "dchiulan-tags",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "138753019448580",
+    "workspace_id": "6636762599206300",
+    "name": "New Job May 06, 2025 at 06:56 PM",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "628213518907461",
+    "workspace_id": "6636762599206300",
+    "name": "[providers] Daily aggregator stats",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "228166643933580",
+    "workspace_id": "1866518241053589",
+    "name": "Catalog_Aware_GenAI_Teradata_Code_Migration_Flow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "904857963184955",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-recursive-3",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "904857963184955",
+    "workspace_id": "6636762599206300",
+    "name": "New Job May 03, 2025, 09:51 AM",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "795928536100440",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-recursive-1",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1068384918085121",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-recursive-2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "587218528993385",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-job2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "907869243714442",
+    "workspace_id": "6636762599206300",
+    "name": "initial-job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "907869243714442",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-initial-job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1085148641544644",
+    "workspace_id": "6636762599206300",
+    "name": "final-job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1085148641544644",
+    "workspace_id": "6636762599206300",
+    "name": "initial-job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "65320175663719",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-dnb-bug-repro",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "65320175663719",
+    "workspace_id": "6636762599206300",
+    "name": "New Job May 02, 2025, 08:39 PM",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "926128619840601",
+    "workspace_id": "1866518241053589",
+    "name": "Teradata_GenAI_Code_Migration_Flow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "926128619840601",
+    "workspace_id": "1866518241053589",
+    "name": "New Job Apr 30, 2025, 02:30 PM",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "735958029292327",
+    "workspace_id": "1866518241053589",
+    "name": "HR-review-candidate-resume",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "329642539080710",
+    "workspace_id": "1866518241053589",
+    "name": "Pandas No Spark Test",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "363541087099286",
+    "workspace_id": "1866518241053589",
+    "name": "API Call No Spark Test",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "928116108825996",
+    "workspace_id": "6636762599206300",
+    "name": "test-foreach",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1076955177051232",
+    "workspace_id": "6636762599206300",
+    "name": "test_raluca_permissions",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "101124157687569",
+    "workspace_id": "1866518241053589",
+    "name": "TD Migration Validation",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "101124157687569",
+    "workspace_id": "1866518241053589",
+    "name": "TD Migration",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "101124157687569",
+    "workspace_id": "1866518241053589",
+    "name": "TD Migration Validation",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "101124157687569",
+    "workspace_id": "1866518241053589",
+    "name": "New Job Apr 23, 2025, 02:28 PM",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "765020269717810",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-multi-task",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "837051437437531",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan_test_2min_running",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "18296370382538",
+    "workspace_id": "6636762599206300",
+    "name": "rtunea_test",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1092746404908110",
+    "workspace_id": "6636762599206300",
+    "name": "alpha_mixed_clucaci",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "137847345139810",
+    "workspace_id": "6636762599206300",
+    "name": "vt-job-pool2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "576547127217807",
+    "workspace_id": "6636762599206300",
+    "name": "vt-job-pool-mix",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "974246196530627",
+    "workspace_id": "6636762599206300",
+    "name": "stock_out_prediction",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1093970743460686",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-personal-compute",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "784445977556340",
+    "workspace_id": "6636762599206300",
+    "name": "vt-pool-single",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "131464667103799",
+    "workspace_id": "6636762599206300",
+    "name": "vt-job-pool1",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "250472676200708",
+    "workspace_id": "6636762599206300",
+    "name": "amaieras-personal-compute",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "858575635901328",
+    "workspace_id": "6636762599206300",
+    "name": "bplm-analyser",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "596251777026583",
+    "workspace_id": "6636762599206300",
+    "name": "daily-marketing-metrics-clucaci",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "981574385136067",
+    "workspace_id": "6636762599206300",
+    "name": "AlexSisuParentChildTasks",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "240839382158014",
+    "workspace_id": "1866518241053589",
+    "name": "lho-uc-migration",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "885109808386505",
+    "workspace_id": "6636762599206300",
+    "name": "Clone of cchiulan-serverless-invalid-3",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "800025645266450",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan_test",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "652842183692636",
+    "workspace_id": "6636762599206300",
+    "name": "[UCX] 099-test-wkf",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "162006296249285",
+    "workspace_id": "6636762599206300",
+    "name": "seasonal_sale_forecast",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "751057592365904",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-shared-compute-apc",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "104099547363858",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-serverless-invalid-1",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "658387398991909",
+    "workspace_id": "6636762599206300",
+    "name": "recursive-3",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "610537453981073",
+    "workspace_id": "6636762599206300",
+    "name": "recursive-2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "34933224466957",
+    "workspace_id": "6636762599206300",
+    "name": "conditional-job-test",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "265180341879436",
+    "workspace_id": "6636762599206300",
+    "name": "recursive-1",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "696801913587193",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-test",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "754205452596219",
+    "workspace_id": "1866518241053589",
+    "name": "plant_disease_management",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "562319927521061",
+    "workspace_id": "6636762599206300",
+    "name": "lho_uc_migration_staging",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "778496190743435",
+    "workspace_id": "6636762599206300",
+    "name": "amaieras-shared-compute",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1048022815714898",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-serverless",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "214063941623221",
+    "workspace_id": "6636762599206300",
+    "name": "lho-uc-migration",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "146130593202769",
+    "workspace_id": "1866518241053589",
+    "name": "apc_demo",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "772554076121014",
+    "workspace_id": "1866518241053589",
+    "name": "UC-Migration-Retail-Job-Example",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "771698602395634",
+    "workspace_id": "1866518241053589",
+    "name": "LHO-customer-forecast-workflow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "744084808169932",
+    "workspace_id": "1866518241053589",
+    "name": "demo_passing_val_to_tasks",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1053026047045071",
+    "workspace_id": "1866518241053589",
+    "name": "workshop_demo_flights",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "886519017114700",
+    "workspace_id": "1866518241053589",
+    "name": "workshop_best_practices_job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "735958029292327",
+    "workspace_id": "1866518241053589",
+    "name": "HR-review-candidate-resume",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "172326507386972",
+    "workspace_id": "1866518241053589",
+    "name": "dbdemos_billing_forecast_init_gary",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "912390043723587",
+    "workspace_id": "1866518241053589",
+    "name": "Driver_Ethan 2024-10-04 10:58:41",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "892708703457210",
+    "workspace_id": "1866518241053589",
+    "name": "Ethan_Rag_Webinar",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "107846186805874",
+    "workspace_id": "6636762599206300",
+    "name": "Clone of cchiulan-serverless-invalid-2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "127206626619773",
+    "workspace_id": "1866518241053589",
+    "name": "Marketing-Generate-Project-Story-From-Transcript",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "810251507820794",
+    "workspace_id": "1866518241053589",
+    "name": "jurban-serverless-workflow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "97510908906378",
+    "workspace_id": "1866518241053589",
+    "name": "job_serverless",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "198038002751129",
+    "workspace_id": "1866518241053589",
+    "name": "classic_job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1092900634544176",
+    "workspace_id": "4954698753268067",
+    "name": "lho-uc-migration",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "586729042492730",
+    "workspace_id": "6636762599206300",
+    "name": "New Job 2024-02-29 16:35:17",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "236336633346245",
+    "workspace_id": "6636762599206300",
+    "name": "amaieras-personal-compute-apc",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "78977453411148",
+    "workspace_id": "6636762599206300",
+    "name": "amaieras-shared-compute-apc",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "533952742864648",
+    "workspace_id": "6636762599206300",
+    "name": "amaieras-personal-compute-apc-unrestricted",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "736412664369770",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-shared-compute",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1025451758590063",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-personal-compute-apc",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "79929986974589",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-personal-compute-apc-unrestricted",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1025602216822450",
+    "workspace_id": "1866518241053589",
+    "name": "demos_churn_model_staging_validation",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "363016223234872",
+    "workspace_id": "1866518241053589",
+    "name": "demos_mlops_end2end_init_chendon",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "637098578585724",
+    "workspace_id": "1866518241053589",
+    "name": "dbdemos_lakehouse_churn_init_eric",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "856483214453882",
+    "workspace_id": "6636762599206300",
+    "name": "rtunea_test_2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "678570001467018",
+    "workspace_id": "6636762599206300",
+    "name": "craciun_testing",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1076955177051232",
+    "workspace_id": "6636762599206300",
+    "name": "test_raluca_permissions",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "711055090894876",
+    "workspace_id": "6636762599206300",
+    "name": "AlexSisuParentChildTasksWithMPC",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "822142833984172",
+    "workspace_id": "6636762599206300",
+    "name": "AlexSisuMultiPurposeTask",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "41681999611443",
+    "workspace_id": "6636762599206300",
+    "name": "vt-job-on-all-purpose",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "757440689736915",
+    "workspace_id": "1866518241053589",
+    "name": "CampaignIQ-data-generation",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "722205916317849",
+    "workspace_id": "1866518241053589",
+    "name": "serverless_plant_disease_management",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "722205916317849",
+    "workspace_id": "1866518241053589",
+    "name": "serverless_plant_disease_management",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "97510908906378",
+    "workspace_id": "1866518241053589",
+    "name": "job_serverless",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1092900634544176",
+    "workspace_id": "4954698753268067",
+    "name": "lho-uc-migration",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "736412664369770",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-shared-compute",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "486176542558735",
+    "workspace_id": "1866518241053589",
+    "name": "[941331224028206] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "425376967785057",
+    "workspace_id": "1866518241053589",
+    "name": "[941331224028206] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "175557769612446",
+    "workspace_id": "1866518241053589",
+    "name": "New Job May 29, 2025, 10:48 AM",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "175557769612446",
+    "workspace_id": "1866518241053589",
+    "name": "guidelines_app_evaluation",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "983871609450673",
+    "workspace_id": "1866518241053589",
+    "name": "[1875959366546917] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "778993621800147",
+    "workspace_id": "1866518241053589",
+    "name": "[1875959366546917] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "548116145103688",
+    "workspace_id": "1866518241053589",
+    "name": "blueprint-campaigniq-workflow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "467307773297134",
+    "workspace_id": "1866518241053589",
+    "name": "[2876036965005221] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1112341468355425",
+    "workspace_id": "1866518241053589",
+    "name": "[2876036965005221] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "273801776946781",
+    "workspace_id": "1866518241053589",
+    "name": "[3274089723033793] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "521245873077751",
+    "workspace_id": "1866518241053589",
+    "name": "[3274089723033793] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "145968880041010",
+    "workspace_id": "1866518241053589",
+    "name": "playzone-campaigniq-workflow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "587218528993385",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-job-renamed",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "573669998467875",
+    "workspace_id": "6636762599206300",
+    "name": "Clone of cchiulan-job-renamed",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "573669998467875",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-job-renamed",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1041712562085787",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - Customer_Enrichment",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "559689555030316",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - Customer_Enrichment",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1038460552070866",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - Customer_Enrichment",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "42539400996878",
+    "workspace_id": "1866518241053589",
+    "name": "playzone-campaigniq-workflow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "145968880041010",
+    "workspace_id": "1866518241053589",
+    "name": "playzone-campaigniq-workflow_bak",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "686887146445488",
+    "workspace_id": "1866518241053589",
+    "name": "Invoice Processing Pipeline",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "757731531878347",
+    "workspace_id": "1866518241053589",
+    "name": "New Job Jun 24, 2025, 12:57 PM",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "757731531878347",
+    "workspace_id": "1866518241053589",
+    "name": "Ssuman_LHO_Opt_GenAI",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "757731531878347",
+    "workspace_id": "1866518241053589",
+    "name": "Ssuman_LHO_Opt_GenAI_Sample",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "188546348135784",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - customer_etl_mapping",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1039458687879396",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - customer_etl_mapping",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "468475199011416",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - customer_etl_mapping",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "657010556707623",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - customer_etl_mapping",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "897253217580352",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - customer_etl_mapping",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1009426291277398",
+    "workspace_id": "1866518241053589",
+    "name": "Informatica Migration - customer_etl_mapping",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "38028457994947",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] remove-workspace-local-backup-groups",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "692405792664906",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] failing",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1081012743047008",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migrate-external-hiveserde-tables-in-place-experimental",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "399327878510243",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] scan-tables-in-mounts-experimental",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "549232664261194",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migrate-tables",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "372824898867967",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migration-progress-experimental",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "197280499989655",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migrate-groups-legacy",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "162997373027989",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] assessment",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "46264443565036",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migrate-groups",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "299882877957461",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migrate-tables-in-mounts-experimental",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "927569634403900",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migrate-external-tables-ctas",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "303389536778148",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migrate-data-reconciliation",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "593463449514884",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] validate-groups-permissions",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "129189071991023",
+    "workspace_id": "1866518241053589",
+    "name": "[2838262911878199] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "713429172696047",
+    "workspace_id": "1866518241053589",
+    "name": "[2838262911878199] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "469395616679213",
+    "workspace_id": "1866518241053589",
+    "name": "[4048854135776274] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "586348321738234",
+    "workspace_id": "1866518241053589",
+    "name": "[4048854135776274] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "523930996847979",
+    "workspace_id": "1866518241053589",
+    "name": "parse_pdfs_to_delta",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "608061500091964",
+    "workspace_id": "1866518241053589",
+    "name": "parse_pdfs_to_delta",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "686887146445488",
+    "workspace_id": "1866518241053589",
+    "name": "poc-pdf-invoice-ingestion",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "634126008359854",
+    "workspace_id": "1866518241053589",
+    "name": "poc-pdf-invoice-ingestion-v2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "283064003475397",
+    "workspace_id": "1866518241053589",
+    "name": "poc-build-ticket-agent-model",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "757440689736915",
+    "workspace_id": "1866518241053589",
+    "name": "CampaignIQ-data-generation",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "548116145103688",
+    "workspace_id": "1866518241053589",
+    "name": "blueprint-campaigniq-workflow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "42539400996878",
+    "workspace_id": "1866518241053589",
+    "name": "playzone-campaigniq-workflow",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "849844142624588",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-test-continous",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "646737023719114",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-test-continous2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "19203256530874",
+    "workspace_id": "1866518241053589",
+    "name": "[3938119082367974] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "538432679985742",
+    "workspace_id": "1866518241053589",
+    "name": "[3938119082367974] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "98923743016803",
+    "workspace_id": "1866518241053589",
+    "name": "[553248772374201] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "374946076806451",
+    "workspace_id": "1866518241053589",
+    "name": "[553248772374201] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "634126008359854",
+    "workspace_id": "1866518241053589",
+    "name": "poc-pdf-invoice-ingestion-markdown-v2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "981100641076963",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-shared-test1",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "552539191946451",
+    "workspace_id": "1866518241053589",
+    "name": "New Job Aug 07, 2025, 10:26 AM",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "794638506742214",
+    "workspace_id": "1866518241053589",
+    "name": "parse_pdfs_to_delta",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "824588221968601",
+    "workspace_id": "1866518241053589",
+    "name": "[1988481870453564] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "3264702650824",
+    "workspace_id": "1866518241053589",
+    "name": "[1988481870453564] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "478389438264178",
+    "workspace_id": "1866518241053589",
+    "name": "[2248893415233586] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1048564763408598",
+    "workspace_id": "1866518241053589",
+    "name": "[2248893415233586] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "653257063846567",
+    "workspace_id": "1866518241053589",
+    "name": "[847464300821310] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "73159039524649",
+    "workspace_id": "1866518241053589",
+    "name": "[847464300821310] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "546757752815435",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-personal-compute-2",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "455938381768652",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-personal-compute-3",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "1033073254214084",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-personal-compute-6",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "354870797128637",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-personal-compute-4",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "811727831093235",
+    "workspace_id": "6636762599206300",
+    "name": "cchiulan-personal-compute-5",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "3264702650824",
+    "workspace_id": "1866518241053589",
+    "name": "[1988481870453564] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "374946076806451",
+    "workspace_id": "1866518241053589",
+    "name": "[553248772374201] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "98923743016803",
+    "workspace_id": "1866518241053589",
+    "name": "[553248772374201] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "467307773297134",
+    "workspace_id": "1866518241053589",
+    "name": "[2876036965005221] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "538432679985742",
+    "workspace_id": "1866518241053589",
+    "name": "[3938119082367974] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "129189071991023",
+    "workspace_id": "1866518241053589",
+    "name": "[2838262911878199] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "713429172696047",
+    "workspace_id": "1866518241053589",
+    "name": "[2838262911878199] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "521245873077751",
+    "workspace_id": "1866518241053589",
+    "name": "[3274089723033793] Trace Archive Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "162006296249285",
+    "workspace_id": "6636762599206300",
+    "name": "seasonal_sale_forecast",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "372824898867967",
+    "workspace_id": "1866518241053589",
+    "name": "[UCX] migration-progress-experimental",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "329642539080710",
+    "workspace_id": "1866518241053589",
+    "name": "Pandas No Spark Test",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "596251777026583",
+    "workspace_id": "6636762599206300",
+    "name": "daily-marketing-metrics-clucaci",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "983871609450673",
+    "workspace_id": "1866518241053589",
+    "name": "[1875959366546917] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  },
+  {
+    "job_id": "19203256530874",
+    "workspace_id": "1866518241053589",
+    "name": "[3938119082367974] Trace Metrics Computation Job",
+    "creator_user_name": null,
+    "run_as_user_name": null
+  }
+]

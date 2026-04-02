@@ -1,0 +1,52 @@
+[
+  {
+    "metric_name": "deployment_frequency",
+    "metric_value": "0.581",
+    "unit": "deploys/day",
+    "tier": "High",
+    "color": "#22C55E",
+    "period_days": "90",
+    "total_deploys": "51",
+    "computed_at": "2026-04-02T16:33:07.690Z"
+  },
+  {
+    "metric_name": "change_failure_rate",
+    "metric_value": "1.96",
+    "unit": "%",
+    "tier": "Elite",
+    "color": "#22C55E",
+    "period_days": "90",
+    "total_deploys": "51",
+    "computed_at": "2026-04-02T16:33:07.690Z"
+  },
+  {
+    "metric_name": "recovery_time",
+    "metric_value": "0.0",
+    "unit": "hours",
+    "tier": "Elite",
+    "color": "#22C55E",
+    "period_days": "90",
+    "total_deploys": "51",
+    "computed_at": "2026-04-02T16:33:07.690Z"
+  },
+  {
+    "metric_name": "lead_time",
+    "metric_value": null,
+    "unit": "hours",
+    "tier": "Unknown",
+    "color": "#6B7280",
+    "period_days": "90",
+    "total_deploys": "51",
+    "computed_at": "2026-04-02T16:33:07.690Z"
+  },
+  {
+    "metric_name": "rework_rate",
+    "metric_value": null,
+    "unit": "%",
+    "tier": "Unknown",
+    "color": "#6B7280",
+    "period_days": "90",
+    "total_deploys": "51",
+    "computed_at": "2026-04-02T16:33:07.690Z"
+  }
+]

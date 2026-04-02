@@ -48,6 +48,13 @@ def _live_layout():
     except Exception:
         clusters_df = jobs_df = dlt_df = tables_df = None
 
+    # Fall back to precomputed JSON for clusters and jobs if SQL returned empty
+    from data_layer import precomputed
+    if clusters_df is None or clusters_df.empty:
+        clusters_df = precomputed.get_clusters()
+    if jobs_df is None or jobs_df.empty:
+        jobs_df = precomputed.get_jobs()
+
     import pandas as pd
     has_clusters = clusters_df is not None and not clusters_df.empty
     has_jobs = jobs_df is not None and not jobs_df.empty

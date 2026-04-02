@@ -261,9 +261,90 @@ def create_full_data_state(
                 ], className="card-body"),
             ], className="card"),
         ], className="grid-2", style={"marginTop": "12px"}),
+
+        # External data sources
+        _create_external_data_section(),
     ])
     # ****Checked and Verified as Real*****
     # State 3: Full data — assessment + telemetry + DORA.
+
+
+def _create_external_data_section() -> html.Div:
+    """Render connected external data sources (GitHub, Jira, etc.)."""
+    try:
+        from config.settings import USE_MOCK
+        if USE_MOCK:
+            return html.Div()
+        from data_layer.queries.custom_tables import get_external_metrics
+        ext = get_external_metrics()
+        if ext.empty:
+            return html.Div()
+
+        total = len(ext)
+        sources = ext["source_system"].value_counts().to_dict() if "source_system" in ext.columns else {}
+        event_types = ext["event_type"].value_counts().to_dict() if "event_type" in ext.columns else {}
+
+        source_pills = [
+            html.Span(f"{src}: {cnt}", style={
+                "backgroundColor": "#21262D", "color": "#58A6FF",
+                "padding": "4px 10px", "borderRadius": "12px",
+                "fontSize": "11px", "fontWeight": "600",
+            })
+            for src, cnt in sources.items()
+        ]
+        type_pills = [
+            html.Span(f"{etype}: {cnt}", style={
+                "backgroundColor": "#21262D", "color": "#8B949E",
+                "padding": "4px 10px", "borderRadius": "12px",
+                "fontSize": "11px",
+            })
+            for etype, cnt in event_types.items()
+        ]
+
+        # Recent activity
+        recent_items = []
+        if "event_date" in ext.columns and "title" in ext.columns:
+            recent = ext.sort_values("event_date", ascending=False).head(5)
+            for _, row in recent.iterrows():
+                recent_items.append(html.Div([
+                    html.Span(str(row.get("event_date", ""))[:10],
+                              style={"color": "#484F58", "fontSize": "11px", "width": "80px", "flexShrink": "0"}),
+                    html.Span(str(row.get("title", ""))[:60],
+                              style={"color": "#E6EDF3", "fontSize": "12px", "flex": "1", "overflow": "hidden",
+                                     "textOverflow": "ellipsis", "whiteSpace": "nowrap"}),
+                    html.Span(str(row.get("source_system", "")),
+                              style={"color": "#58A6FF", "fontSize": "10px", "flexShrink": "0"}),
+                ], style={"display": "flex", "gap": "10px", "padding": "4px 0",
+                          "borderBottom": "1px solid #21262D22"}))
+
+        return html.Div([
+            html.Div([
+                html.Div([
+                    html.I(className="fas fa-plug", style={"color": "#58A6FF", "marginRight": "8px"}),
+                    "Connected Data Sources",
+                ], className="card-header", style={"display": "flex", "alignItems": "center"}),
+                html.Div([
+                    html.Div([
+                        html.Div(str(total), style={"color": "#58A6FF", "fontSize": "28px", "fontWeight": "700"}),
+                        html.Div("external records", style={"color": "#8B949E", "fontSize": "11px"}),
+                    ], style={"marginBottom": "12px"}),
+                    html.Div(source_pills, style={"display": "flex", "gap": "8px", "flexWrap": "wrap",
+                                                   "marginBottom": "8px"}),
+                    html.Div(type_pills, style={"display": "flex", "gap": "8px", "flexWrap": "wrap"}),
+                ], className="card-body"),
+            ], className="card"),
+            html.Div([
+                html.Div("Recent External Activity", className="card-header"),
+                html.Div(
+                    recent_items if recent_items else [
+                        html.Div("No recent activity", style={"color": "#484F58", "fontSize": "12px"})
+                    ],
+                    className="card-body",
+                ),
+            ], className="card"),
+        ], className="grid-2", style={"marginTop": "12px"})
+    except Exception:
+        return html.Div()
 
 
 def _cta_card(title: str, desc: str, icon: str, color: str, page: str) -> html.Div:

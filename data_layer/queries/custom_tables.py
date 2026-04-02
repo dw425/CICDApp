@@ -2,15 +2,13 @@
 Query functions for CI/CD maturity data.
 
 In **mock mode**, delegates to the MockDataProvider (CSV-based).
-In **live mode**, queries Databricks system tables — no custom customer
-tables required (except team_registry for team definitions).
-
-The scoring engine and UI callbacks consume the same DataFrame interfaces
-regardless of the backend.
+In **live mode**, tries Databricks SQL first, falls back to precomputed
+JSON files if the warehouse is unavailable.
 """
 
 from __future__ import annotations
 
+import logging
 from typing import Optional
 
 import pandas as pd
@@ -18,6 +16,21 @@ import pandas as pd
 from config.settings import get_full_table_name
 from data_layer.connection import get_connection
 from data_layer.queries import system_tables
+from data_layer import precomputed
+
+logger = logging.getLogger(__name__)
+
+
+def _with_fallback(live_fn, precomputed_fn, *args, **kwargs) -> pd.DataFrame:
+    """Try live SQL query, fall back to precomputed JSON on failure."""
+    conn = get_connection()
+    if conn.is_mock():
+        return live_fn(*args, **kwargs)
+    try:
+        return live_fn(*args, **kwargs)
+    except Exception:
+        logger.info("SQL query failed, using precomputed data for %s", precomputed_fn.__name__)
+        return precomputed_fn(**kwargs)
 
 
 # ---------------------------------------------------------------------------
@@ -25,17 +38,16 @@ from data_layer.queries import system_tables
 # ---------------------------------------------------------------------------
 
 def get_teams() -> pd.DataFrame:
-    """Return all registered teams.
-
-    This is the only table that must be customer-managed.  It defines which
-    teams exist and maps workspace artefacts to team ownership.
-    """
+    """Return all registered teams."""
     conn = get_connection()
     if conn.is_mock():
         return conn.get_mock_provider().get_teams()
-    return conn.execute_query(
-        f"SELECT * FROM {get_full_table_name('team_registry')}"
-    )
+    try:
+        return conn.execute_query(
+            f"SELECT * FROM {get_full_table_name('team_registry')}"
+        )
+    except Exception:
+        return precomputed.get_teams()
 
 
 # ---------------------------------------------------------------------------
@@ -48,9 +60,15 @@ def get_deployment_events(
     end_date: Optional[str] = None,
 ) -> pd.DataFrame:
     """Return deployment events derived from system audit log."""
-    return system_tables.get_deployment_events(
-        team_id=team_id, start_date=start_date, end_date=end_date,
-    )
+    try:
+        df = system_tables.get_deployment_events(
+            team_id=team_id, start_date=start_date, end_date=end_date,
+        )
+        if not df.empty:
+            return df
+    except Exception:
+        pass
+    return precomputed.get_deployment_events()
 
 
 # ---------------------------------------------------------------------------
@@ -61,7 +79,13 @@ def get_pipeline_runs(
     team_id: Optional[str] = None,
 ) -> pd.DataFrame:
     """Return pipeline run records from system job run timeline."""
-    return system_tables.get_pipeline_runs(team_id=team_id)
+    try:
+        df = system_tables.get_pipeline_runs(team_id=team_id)
+        if not df.empty:
+            return df
+    except Exception:
+        pass
+    return precomputed.get_pipeline_runs()
 
 
 # ---------------------------------------------------------------------------
@@ -116,40 +140,37 @@ def get_maturity_scores(
     team_id: Optional[str] = None,
     latest: bool = False,
 ) -> pd.DataFrame:
-    """Return maturity scores.
-
-    These are computed by the scoring engine and stored in the app's schema.
-    Falls back to mock data in dev mode.
-    """
+    """Return maturity scores."""
     conn = get_connection()
     if conn.is_mock():
         return conn.get_mock_provider().get_maturity_scores(
             team_id=team_id, latest=latest,
         )
-
-    if latest:
-        subquery = (
-            f"SELECT *, ROW_NUMBER() OVER "
-            f"(PARTITION BY team_id ORDER BY score_date DESC) AS rn "
-            f"FROM {get_full_table_name('maturity_scores')}"
-        )
-        clauses: list[str] = ["rn = 1"]
-        params: dict = {}
-        if team_id:
-            clauses.append("team_id = %(team_id)s")
-            params["team_id"] = team_id
-        where = " WHERE " + " AND ".join(clauses)
-        query = f"SELECT * FROM ({subquery}){where}"
-    else:
-        clauses = []
-        params = {}
-        if team_id:
-            clauses.append("team_id = %(team_id)s")
-            params["team_id"] = team_id
-        where = " WHERE " + " AND ".join(clauses) if clauses else ""
-        query = f"SELECT * FROM {get_full_table_name('maturity_scores')}{where}"
-
-    return conn.execute_query(query, params or None)
+    try:
+        if latest:
+            subquery = (
+                f"SELECT *, ROW_NUMBER() OVER "
+                f"(PARTITION BY team_id ORDER BY score_date DESC) AS rn "
+                f"FROM {get_full_table_name('maturity_scores')}"
+            )
+            clauses: list[str] = ["rn = 1"]
+            params: dict = {}
+            if team_id:
+                clauses.append("team_id = %(team_id)s")
+                params["team_id"] = team_id
+            where = " WHERE " + " AND ".join(clauses)
+            query = f"SELECT * FROM ({subquery}){where}"
+        else:
+            clauses = []
+            params = {}
+            if team_id:
+                clauses.append("team_id = %(team_id)s")
+                params["team_id"] = team_id
+            where = " WHERE " + " AND ".join(clauses) if clauses else ""
+            query = f"SELECT * FROM {get_full_table_name('maturity_scores')}{where}"
+        return conn.execute_query(query, params or None)
+    except Exception:
+        return precomputed.get_maturity_scores(team_id=team_id, latest=latest)
 
 
 # ---------------------------------------------------------------------------
@@ -166,15 +187,17 @@ def get_maturity_trends(
         return conn.get_mock_provider().get_maturity_trends(
             team_id=team_id, period_type=period_type,
         )
-
-    clauses: list[str] = ["period_type = %(period_type)s"]
-    params: dict = {"period_type": period_type}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    where = " WHERE " + " AND ".join(clauses)
-    query = f"SELECT * FROM {get_full_table_name('maturity_trends')}{where}"
-    return conn.execute_query(query, params)
+    try:
+        clauses: list[str] = ["period_type = %(period_type)s"]
+        params: dict = {"period_type": period_type}
+        if team_id:
+            clauses.append("team_id = %(team_id)s")
+            params["team_id"] = team_id
+        where = " WHERE " + " AND ".join(clauses)
+        query = f"SELECT * FROM {get_full_table_name('maturity_trends')}{where}"
+        return conn.execute_query(query, params)
+    except Exception:
+        return precomputed.get_maturity_trends(team_id=team_id, period_type=period_type)
 
 
 # ---------------------------------------------------------------------------
@@ -191,18 +214,20 @@ def get_coaching_alerts(
         return conn.get_mock_provider().get_coaching_alerts(
             team_id=team_id, acknowledged=acknowledged,
         )
-
-    clauses: list[str] = []
-    params: dict = {}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    if acknowledged is not None:
-        clauses.append("is_acknowledged = %(acknowledged)s")
-        params["acknowledged"] = acknowledged
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    query = f"SELECT * FROM {get_full_table_name('coaching_alerts')}{where}"
-    return conn.execute_query(query, params or None)
+    try:
+        clauses: list[str] = []
+        params: dict = {}
+        if team_id:
+            clauses.append("team_id = %(team_id)s")
+            params["team_id"] = team_id
+        if acknowledged is not None:
+            clauses.append("is_acknowledged = %(acknowledged)s")
+            params["acknowledged"] = acknowledged
+        where = " WHERE " + " AND ".join(clauses) if clauses else ""
+        query = f"SELECT * FROM {get_full_table_name('coaching_alerts')}{where}"
+        return conn.execute_query(query, params or None)
+    except Exception:
+        return precomputed.get_coaching_alerts()
 
 
 # ---------------------------------------------------------------------------
@@ -219,20 +244,22 @@ def get_external_metrics(
         return conn.get_mock_provider().get_external_metrics(
             team_id=team_id, source_system=source_system,
         )
-
-    clauses: list[str] = []
-    params: dict = {}
-    if team_id:
-        clauses.append("team_id = %(team_id)s")
-        params["team_id"] = team_id
-    if source_system:
-        clauses.append("source_system = %(source_system)s")
-        params["source_system"] = source_system
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    query = (
-        f"SELECT * FROM {get_full_table_name('external_quality_metrics')}{where}"
-    )
-    return conn.execute_query(query, params or None)
+    try:
+        clauses: list[str] = []
+        params: dict = {}
+        if team_id:
+            clauses.append("team_id = %(team_id)s")
+            params["team_id"] = team_id
+        if source_system:
+            clauses.append("source_system = %(source_system)s")
+            params["source_system"] = source_system
+        where = " WHERE " + " AND ".join(clauses) if clauses else ""
+        query = (
+            f"SELECT * FROM {get_full_table_name('external_quality_metrics')}{where}"
+        )
+        return conn.execute_query(query, params or None)
+    except Exception:
+        return precomputed.get_external_metrics()
 
 
 # ---------------------------------------------------------------------------

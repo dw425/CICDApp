@@ -538,5 +538,185 @@
         "expected_improvement": 8
       }
     ]
+  },
+  {
+    "id": "bp-assessment-001",
+    "org_id": "bp-org-001",
+    "assessment_type": "standard",
+    "status": "completed",
+    "weight_profile": "data_engineering",
+    "respondent_name": "Dan",
+    "respondent_role": "Platform Engineering Lead",
+    "started_at": "2026-04-02T12:00:00Z",
+    "completed_at": "2026-04-02T13:30:00Z",
+    "created_at": "2026-04-02T12:00:00Z",
+    "responses": {},
+    "scores": {
+      "build_integration": {
+        "raw_score": 52,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      },
+      "testing_quality": {
+        "raw_score": 42,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      },
+      "deployment_release": {
+        "raw_score": 58,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      },
+      "security_compliance": {
+        "raw_score": 45,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      },
+      "observability": {
+        "raw_score": 55,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      },
+      "iac_configuration": {
+        "raw_score": 48,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      },
+      "artifact_management": {
+        "raw_score": 52,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      },
+      "developer_experience": {
+        "raw_score": 50,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      },
+      "pipeline_governance": {
+        "raw_score": 46,
+        "level": 3,
+        "label": "Defined",
+        "color": "#EAB308"
+      }
+    },
+    "composite": {
+      "score": 50,
+      "overall_score": 50,
+      "overall_level": 3,
+      "tier": "Defined",
+      "label": "Defined",
+      "overall_label": "Defined",
+      "color": "#EAB308",
+      "dimension_breakdown": {
+        "build_integration": {
+          "score": 52,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "Build & Integration"
+        },
+        "testing_quality": {
+          "score": 42,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "Testing & Quality"
+        },
+        "deployment_release": {
+          "score": 58,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "Deployment & Release"
+        },
+        "security_compliance": {
+          "score": 45,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "Security & Compliance"
+        },
+        "observability": {
+          "score": 55,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "Observability"
+        },
+        "iac_configuration": {
+          "score": 48,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "IaC & Configuration"
+        },
+        "artifact_management": {
+          "score": 52,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "Artifact Management"
+        },
+        "developer_experience": {
+          "score": 50,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "Developer Experience"
+        },
+        "pipeline_governance": {
+          "score": 46,
+          "level": 3,
+          "label": "Defined",
+          "display_name": "Pipeline Governance"
+        }
+      }
+    },
+    "anti_patterns": [
+      {
+        "id": "inconsistent_testing",
+        "name": "Inconsistent Test Practices",
+        "severity": "high",
+        "category": "quality",
+        "description": "Testing exists but lacks standardization across teams. Unit tests present but integration and contract tests are sparse.",
+        "recommendation": "Define a testing pyramid standard and enforce minimum integration test coverage for all services.",
+        "impact_dimensions": ["testing_quality", "pipeline_governance"],
+        "effort_days": 21,
+        "expected_improvement": 15
+      },
+      {
+        "id": "partial_security_scanning",
+        "name": "Partial Security Integration",
+        "severity": "medium",
+        "category": "security",
+        "description": "SAST scanning runs but results are advisory-only. No DAST or dependency scanning enforced.",
+        "recommendation": "Add Dependabot/Snyk for SCA, enable DAST for staging environments, and enforce blocking on critical findings.",
+        "impact_dimensions": ["security_compliance"],
+        "effort_days": 14,
+        "expected_improvement": 18
+      },
+      {
+        "id": "manual_promotion",
+        "name": "Semi-Automated Environment Promotion",
+        "severity": "medium",
+        "category": "pipeline",
+        "description": "Dev-to-staging is automated but staging-to-prod still requires manual approval gates without automated verification.",
+        "recommendation": "Implement automated canary/blue-green deployments with auto-rollback on health check failures.",
+        "impact_dimensions": ["deployment_release", "iac_configuration"],
+        "effort_days": 30,
+        "expected_improvement": 12
+      },
+      {
+        "id": "governance_gaps",
+        "name": "Governance Documentation Gaps",
+        "severity": "low",
+        "category": "governance",
+        "description": "Pipeline standards exist informally but are not codified or enforced through automated policy checks.",
+        "recommendation": "Codify pipeline standards as policy-as-code (OPA/Sentinel) and publish a golden path template repository.",
+        "impact_dimensions": ["pipeline_governance", "developer_experience"],
+        "effort_days": 14,
+        "expected_improvement": 10
+      }
+    ]
   }
 ]

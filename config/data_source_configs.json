@@ -1,1 +1,76 @@
-[]
+[
+  {
+    "config_id": "gh-etl-dep-viz-workflows",
+    "source_name": "ETL Dep Viz - CI Workflows",
+    "source_type": "github",
+    "slot_id": "pipeline_runs",
+    "data_type": "workflows",
+    "is_active": true,
+    "connection_config": {
+      "owner": "dw425",
+      "repo": "etl-dep-viz",
+      "token": "${GITHUB_PAT}"
+    },
+    "field_mapping": {
+      "id": "run_id",
+      "name": "pipeline_name",
+      "conclusion": "status",
+      "created_at": "run_date",
+      "event": "trigger_type"
+    },
+    "filters": {},
+    "target_table": "pipeline_runs",
+    "created_at": "2026-04-02T14:00:00Z",
+    "updated_at": "2026-04-02T14:00:00Z",
+    "last_sync_at": null,
+    "last_sync_status": null,
+    "last_sync_rows": 0
+  },
+  {
+    "config_id": "gh-etl-dep-viz-commits",
+    "source_name": "ETL Dep Viz - Repo Activity",
+    "source_type": "github",
+    "slot_id": "repo_activity",
+    "data_type": "repo_stats",
+    "is_active": true,
+    "connection_config": {
+      "owner": "dw425",
+      "repo": "etl-dep-viz",
+      "token": "${GITHUB_PAT}"
+    },
+    "field_mapping": {
+      "sha": "activity_id",
+      "date": "event_date",
+      "author": "author",
+      "repo": "repo_name"
+    },
+    "filters": {},
+    "target_table": "external_quality_metrics",
+    "created_at": "2026-04-02T14:00:00Z",
+    "updated_at": "2026-04-02T14:00:00Z",
+    "last_sync_at": null,
+    "last_sync_status": null,
+    "last_sync_rows": 0
+  },
+  {
+    "config_id": "gh-etl-dep-viz-hygiene",
+    "source_name": "ETL Dep Viz - Repo Hygiene",
+    "source_type": "github",
+    "slot_id": "repo_activity",
+    "data_type": "repo_hygiene",
+    "is_active": true,
+    "connection_config": {
+      "owner": "dw425",
+      "repo": "etl-dep-viz",
+      "token": "${GITHUB_PAT}"
+    },
+    "field_mapping": {},
+    "filters": {},
+    "target_table": "external_quality_metrics",
+    "created_at": "2026-04-02T14:00:00Z",
+    "updated_at": "2026-04-02T14:00:00Z",
+    "last_sync_at": null,
+    "last_sync_status": null,
+    "last_sync_rows": 0
+  }
+]

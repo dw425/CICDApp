@@ -1,0 +1,812 @@
+[
+  {
+    "score_id": "02c9492a-7792-4522-a2e9-e0dfc2e866a5",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "artifact_management",
+    "raw_score": "54.7",
+    "weighted_score": "6.08",
+    "composite_score": "56.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "9b513ccf-f688-4952-bf4b-139a521dd07f",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "build_integration",
+    "raw_score": "49.7",
+    "weighted_score": "5.52",
+    "composite_score": "56.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "40d4a3ff-13b0-4ceb-8b21-af311fd9208e",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "deployment_release",
+    "raw_score": "69.5",
+    "weighted_score": "7.72",
+    "composite_score": "56.0",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "38cf2523-370c-4bea-80bc-6fb9514288db",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "developer_experience",
+    "raw_score": "69.5",
+    "weighted_score": "7.72",
+    "composite_score": "56.0",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "70fdc771-2b57-4698-9f7d-ce85fcfca08a",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "iac_configuration",
+    "raw_score": "44.7",
+    "weighted_score": "4.97",
+    "composite_score": "56.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "fa420422-b610-4ce4-87cd-475fd36d6ac2",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "observability",
+    "raw_score": "49.6",
+    "weighted_score": "5.51",
+    "composite_score": "56.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "0baa1eb0-c4a3-4523-997b-61231cb23ec3",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "pipeline_governance",
+    "raw_score": "28.9",
+    "weighted_score": "3.21",
+    "composite_score": "56.0",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "ae74d576-08da-46b4-bac5-f80819360174",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "security_compliance",
+    "raw_score": "58.1",
+    "weighted_score": "6.46",
+    "composite_score": "56.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "e867a4e7-509d-46cb-b1e8-7a13d6bac422",
+    "team_id": "team-bp-001",
+    "score_date": "2026-04-02",
+    "domain": "testing_quality",
+    "raw_score": "79.5",
+    "weighted_score": "8.83",
+    "composite_score": "56.0",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "5933ee51-58e5-4b05-acc8-95f78a8df21b",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "artifact_management",
+    "raw_score": "52.1",
+    "weighted_score": "5.79",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "a6a863cc-5936-4c2f-a7f0-44f9f3604cf4",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "build_integration",
+    "raw_score": "47.1",
+    "weighted_score": "5.23",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "7ecab07c-e2e2-44df-a739-76d0d5c8ef44",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "deployment_release",
+    "raw_score": "66.9",
+    "weighted_score": "7.43",
+    "composite_score": "53.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "97fd8fd1-db10-44d7-8e06-e73f98d59ee9",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "developer_experience",
+    "raw_score": "66.9",
+    "weighted_score": "7.43",
+    "composite_score": "53.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "1b936143-24ce-47ed-80c7-c3cbcc5fbb41",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "iac_configuration",
+    "raw_score": "42.1",
+    "weighted_score": "4.68",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "e6a1f477-2116-440f-a828-785f09544a30",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "observability",
+    "raw_score": "47.0",
+    "weighted_score": "5.22",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "d1651249-c2ac-4563-a66a-d9dc5c2494fc",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "pipeline_governance",
+    "raw_score": "26.3",
+    "weighted_score": "2.92",
+    "composite_score": "53.4",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "e35eb2d4-d6c9-48d2-9fb2-bc4d4572e3f9",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "security_compliance",
+    "raw_score": "55.5",
+    "weighted_score": "6.17",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "fc2577f3-82c6-42b5-b769-382997ad73cf",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-26",
+    "domain": "testing_quality",
+    "raw_score": "76.9",
+    "weighted_score": "8.54",
+    "composite_score": "53.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "983d294f-eacb-4b80-94ff-72e86d635af9",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "artifact_management",
+    "raw_score": "54.2",
+    "weighted_score": "6.02",
+    "composite_score": "55.5",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "2b5106cb-c8c4-487f-9a6f-5ddbb40ee1a2",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "build_integration",
+    "raw_score": "49.2",
+    "weighted_score": "5.47",
+    "composite_score": "55.5",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "9d874625-6987-4ecb-bfbd-17f6ee62d660",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "deployment_release",
+    "raw_score": "69.0",
+    "weighted_score": "7.67",
+    "composite_score": "55.5",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "e76647ac-e108-4eb1-b76c-e464fa2ad70d",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "developer_experience",
+    "raw_score": "69.0",
+    "weighted_score": "7.67",
+    "composite_score": "55.5",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "aafe2728-1a73-4088-9927-6a85f3f3f798",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "iac_configuration",
+    "raw_score": "44.2",
+    "weighted_score": "4.91",
+    "composite_score": "55.5",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "6317d163-68c1-4be5-8f93-8e32a36ada14",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "observability",
+    "raw_score": "49.1",
+    "weighted_score": "5.46",
+    "composite_score": "55.5",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "8462ef96-e1c7-4856-8411-195efc109f56",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "pipeline_governance",
+    "raw_score": "28.4",
+    "weighted_score": "3.16",
+    "composite_score": "55.5",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "db99e49b-2b20-4932-87a9-aebeaa0b5efe",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "security_compliance",
+    "raw_score": "57.6",
+    "weighted_score": "6.4",
+    "composite_score": "55.5",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "5507cc6d-48b4-4c5c-8509-c5afa765c621",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-19",
+    "domain": "testing_quality",
+    "raw_score": "79.0",
+    "weighted_score": "8.78",
+    "composite_score": "55.5",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "a60f7b50-48ff-4358-bee3-36154f9c5b28",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "artifact_management",
+    "raw_score": "52.1",
+    "weighted_score": "5.79",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "2b1cde04-a0b7-4d6f-9bd5-bac69949cd62",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "build_integration",
+    "raw_score": "47.1",
+    "weighted_score": "5.23",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "eaf26efe-b91d-4e48-96ef-683b45ea3c46",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "deployment_release",
+    "raw_score": "66.9",
+    "weighted_score": "7.43",
+    "composite_score": "53.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "6faa8da8-6034-486b-a065-1073b91313a4",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "developer_experience",
+    "raw_score": "66.9",
+    "weighted_score": "7.43",
+    "composite_score": "53.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "a43838e2-fd7a-4ca0-8ee3-fa16d7d013a4",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "iac_configuration",
+    "raw_score": "42.1",
+    "weighted_score": "4.68",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "444ccb05-abb5-4825-8d21-cf2097cba863",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "observability",
+    "raw_score": "47.0",
+    "weighted_score": "5.22",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "480dcb23-efd5-4d2b-b4ea-4a066ccb3368",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "pipeline_governance",
+    "raw_score": "26.3",
+    "weighted_score": "2.92",
+    "composite_score": "53.4",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "76dac352-ef32-4801-a6ec-6cfd49ed54e4",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "security_compliance",
+    "raw_score": "55.5",
+    "weighted_score": "6.17",
+    "composite_score": "53.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "bea03968-4e76-4aaf-84ca-84dc5b354cdb",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-12",
+    "domain": "testing_quality",
+    "raw_score": "76.9",
+    "weighted_score": "8.54",
+    "composite_score": "53.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "eecfc3b2-606c-441e-abae-e1b353648a24",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "artifact_management",
+    "raw_score": "51.1",
+    "weighted_score": "5.68",
+    "composite_score": "52.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "94930e0f-2020-4086-9a17-5eaf74afb694",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "build_integration",
+    "raw_score": "46.1",
+    "weighted_score": "5.12",
+    "composite_score": "52.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "410f8fef-1dc7-4921-bf1a-5002bfdfe01b",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "deployment_release",
+    "raw_score": "65.9",
+    "weighted_score": "7.32",
+    "composite_score": "52.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "cef22bc8-999a-470c-91cc-04e3e8a1a770",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "developer_experience",
+    "raw_score": "65.9",
+    "weighted_score": "7.32",
+    "composite_score": "52.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "0abdaa9c-a13b-42df-aa09-2af5bb9297e7",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "iac_configuration",
+    "raw_score": "41.1",
+    "weighted_score": "4.57",
+    "composite_score": "52.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "0fe62ff5-7f15-41c7-940e-8ee7f61aad0e",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "observability",
+    "raw_score": "46.0",
+    "weighted_score": "5.11",
+    "composite_score": "52.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "ec6676da-0e41-4970-92ca-283950e22c09",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "pipeline_governance",
+    "raw_score": "25.3",
+    "weighted_score": "2.81",
+    "composite_score": "52.4",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "7d368ca6-7ba8-46d5-b33a-10147c3548e0",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "security_compliance",
+    "raw_score": "54.5",
+    "weighted_score": "6.06",
+    "composite_score": "52.4",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "cbe39642-935b-489f-9bc4-a37810cee720",
+    "team_id": "team-bp-001",
+    "score_date": "2026-03-05",
+    "domain": "testing_quality",
+    "raw_score": "75.9",
+    "weighted_score": "8.43",
+    "composite_score": "52.4",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "b7e7d55c-c801-4ae3-92e6-c99a57a1563f",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "artifact_management",
+    "raw_score": "47.9",
+    "weighted_score": "5.32",
+    "composite_score": "49.2",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "951f30e3-8100-4dec-887c-f96239f912dd",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "build_integration",
+    "raw_score": "42.9",
+    "weighted_score": "4.77",
+    "composite_score": "49.2",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "9b304d13-0e54-4f95-9349-529f01ed6254",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "deployment_release",
+    "raw_score": "62.7",
+    "weighted_score": "6.97",
+    "composite_score": "49.2",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "a3bfffea-98bc-404c-aee5-040333a2c01f",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "developer_experience",
+    "raw_score": "62.7",
+    "weighted_score": "6.97",
+    "composite_score": "49.2",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "4b6b5188-833f-4f8e-bf2d-dd2f21d5a336",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "iac_configuration",
+    "raw_score": "37.9",
+    "weighted_score": "4.21",
+    "composite_score": "49.2",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "11498599-bb09-42f3-855f-5e8baef1a74b",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "observability",
+    "raw_score": "42.8",
+    "weighted_score": "4.76",
+    "composite_score": "49.2",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "cb6cef34-8d33-4d05-b5c0-09a1d93deb2f",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "pipeline_governance",
+    "raw_score": "22.1",
+    "weighted_score": "2.46",
+    "composite_score": "49.2",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "f76ccd63-38e0-42f2-8db5-78e7eff5920c",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "security_compliance",
+    "raw_score": "51.3",
+    "weighted_score": "5.7",
+    "composite_score": "49.2",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "c82f11ac-3c78-4268-a74b-5ca80a22a3a1",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-26",
+    "domain": "testing_quality",
+    "raw_score": "72.7",
+    "weighted_score": "8.08",
+    "composite_score": "49.2",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "bd530a32-2995-4196-816e-084131c2533d",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "artifact_management",
+    "raw_score": "46.9",
+    "weighted_score": "5.21",
+    "composite_score": "48.2",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "e11a412d-4d40-414e-a273-3ce9cd9d9e72",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "build_integration",
+    "raw_score": "41.9",
+    "weighted_score": "4.66",
+    "composite_score": "48.2",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "72a8075f-cee7-4f73-9eec-b19c5803f818",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "deployment_release",
+    "raw_score": "61.7",
+    "weighted_score": "6.86",
+    "composite_score": "48.2",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "e1fbc5df-cd7f-48b3-ad20-a7a0b14de972",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "developer_experience",
+    "raw_score": "61.7",
+    "weighted_score": "6.86",
+    "composite_score": "48.2",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "86ccbb42-dae2-4c78-be08-d8b46b513c1b",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "iac_configuration",
+    "raw_score": "36.9",
+    "weighted_score": "4.1",
+    "composite_score": "48.2",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "deea4db7-8601-44d2-83dc-627c6217b4df",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "observability",
+    "raw_score": "41.8",
+    "weighted_score": "4.64",
+    "composite_score": "48.2",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "8209c404-089e-4199-ae4e-13dde569c6a8",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "pipeline_governance",
+    "raw_score": "21.1",
+    "weighted_score": "2.34",
+    "composite_score": "48.2",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "9f026d94-54ab-402c-882b-1d3e9e71a93e",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "security_compliance",
+    "raw_score": "50.3",
+    "weighted_score": "5.59",
+    "composite_score": "48.2",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "c1baa502-90b7-4602-aebb-a9e028f82e37",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-19",
+    "domain": "testing_quality",
+    "raw_score": "71.7",
+    "weighted_score": "7.97",
+    "composite_score": "48.2",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "46b98a40-8ecf-4e2a-bf55-c9ecfad3a06a",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "artifact_management",
+    "raw_score": "44.7",
+    "weighted_score": "4.97",
+    "composite_score": "46.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "d1d3aea9-956c-4dbf-8d2a-e9acc2ea350d",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "build_integration",
+    "raw_score": "39.7",
+    "weighted_score": "4.41",
+    "composite_score": "46.0",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "155af4af-46f7-4f56-84e8-681a16e35720",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "deployment_release",
+    "raw_score": "59.5",
+    "weighted_score": "6.61",
+    "composite_score": "46.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "765af1be-9e1f-41bc-a4d0-25a2c7fbfb22",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "developer_experience",
+    "raw_score": "59.5",
+    "weighted_score": "6.61",
+    "composite_score": "46.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "acc6c1e4-bdcd-48f6-9575-568a92e3b019",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "iac_configuration",
+    "raw_score": "34.7",
+    "weighted_score": "3.86",
+    "composite_score": "46.0",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "6d2d2965-611e-4a08-8002-56c74b3a0ac6",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "observability",
+    "raw_score": "39.6",
+    "weighted_score": "4.4",
+    "composite_score": "46.0",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "a6cc6f6f-6107-49f5-a726-fd968cf6e996",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "pipeline_governance",
+    "raw_score": "18.9",
+    "weighted_score": "2.1",
+    "composite_score": "46.0",
+    "maturity_tier": "Initial"
+  },
+  {
+    "score_id": "c8af49a8-1d04-4c1c-8223-b3f9be87c123",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "security_compliance",
+    "raw_score": "48.1",
+    "weighted_score": "5.34",
+    "composite_score": "46.0",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "beb84c3a-98e9-470b-b7e5-de62812c0708",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-12",
+    "domain": "testing_quality",
+    "raw_score": "69.5",
+    "weighted_score": "7.72",
+    "composite_score": "46.0",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "08362359-5a52-459d-9b83-158b0645f2a7",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "artifact_management",
+    "raw_score": "46.0",
+    "weighted_score": "5.11",
+    "composite_score": "47.3",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "778f82dd-fde4-423e-8c8b-7ccea99feca2",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "build_integration",
+    "raw_score": "41.0",
+    "weighted_score": "4.56",
+    "composite_score": "47.3",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "320cd291-de2c-4bd0-a55d-fc4f8ba7c497",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "deployment_release",
+    "raw_score": "60.8",
+    "weighted_score": "6.76",
+    "composite_score": "47.3",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "567e0247-1fbe-440c-aac3-1e75b1800386",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "developer_experience",
+    "raw_score": "60.8",
+    "weighted_score": "6.76",
+    "composite_score": "47.3",
+    "maturity_tier": "Optimized"
+  },
+  {
+    "score_id": "bd9be172-d24a-4c41-a6f5-b74e4f317deb",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "iac_configuration",
+    "raw_score": "36.0",
+    "weighted_score": "4.0",
+    "composite_score": "47.3",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "b8933d88-3edc-4016-a0b1-985eca79e93c",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "observability",
+    "raw_score": "40.9",
+    "weighted_score": "4.54",
+    "composite_score": "47.3",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "620b41e5-e436-4295-91ae-fde3d90309e7",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "pipeline_governance",
+    "raw_score": "20.2",
+    "weighted_score": "2.24",
+    "composite_score": "47.3",
+    "maturity_tier": "Managed"
+  },
+  {
+    "score_id": "8d3e63ad-84ec-449b-b8d3-2d93a54f860a",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "security_compliance",
+    "raw_score": "49.4",
+    "weighted_score": "5.49",
+    "composite_score": "47.3",
+    "maturity_tier": "Defined"
+  },
+  {
+    "score_id": "39d6185f-07cf-48e7-8120-05df467e9a79",
+    "team_id": "team-bp-001",
+    "score_date": "2026-02-05",
+    "domain": "testing_quality",
+    "raw_score": "70.8",
+    "weighted_score": "7.87",
+    "composite_score": "47.3",
+    "maturity_tier": "Optimized"
+  }
+]

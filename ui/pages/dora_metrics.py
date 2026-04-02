@@ -4,10 +4,67 @@
 # benchmark comparison table. Full implementation with mock data.
 """
 
+import pandas as pd
 from dash import html, dcc
 import plotly.graph_objects as go
 from compass.scoring_constants import DORA_BENCHMARKS, DORA_TIER_COLORS
 from ui.components.dora_tiles import create_dora_tiles_row
+
+
+def _load_staged_dora() -> dict:
+    """Load pre-computed DORA metrics from staged table, fall back to JSON."""
+    try:
+        from data_layer.connection import get_connection
+        from config.settings import get_full_table_name
+        conn = get_connection()
+        if conn.is_mock():
+            return {}
+        df = conn.execute_query(
+            f"SELECT * FROM {get_full_table_name('staged_dora_metrics')}"
+        )
+        if df.empty:
+            raise ValueError("empty result")
+        dora = {}
+        total_deploys = 0
+        period_days = 90
+        for _, row in df.iterrows():
+            name = row.get("metric_name", "")
+            val = row.get("metric_value")
+            dora[name] = {
+                "value": round(float(val), 3) if val is not None and pd.notna(val) else None,
+                "unit": row.get("unit", ""),
+                "tier": row.get("tier", "Unknown"),
+                "color": row.get("color", "#6B7280"),
+            }
+            if row.get("total_deploys"):
+                total_deploys = int(row["total_deploys"])
+            if row.get("period_days"):
+                period_days = int(row["period_days"])
+        dora["total_deploys"] = total_deploys
+        dora["period_days"] = period_days
+        return dora
+    except Exception:
+        # Fall back to precomputed JSON
+        from data_layer import precomputed
+        return precomputed.get_staged_dora()
+
+
+def _map_deploys_for_dora(deploys: pd.DataFrame) -> pd.DataFrame:
+    """Map system table deployment events to DORA calculator schema.
+
+    Renames ``event_date`` → ``deployed_at``, normalises environment names
+    (``prod`` → ``production``), and maps ``failed`` → ``failure`` so the
+    calculator's filters match.
+    """
+    df = deploys.rename(columns={"event_date": "deployed_at"})
+    if "environment" in df.columns:
+        env_map = {"prod": "production", "staging": "staging", "dev": "production"}
+        df["environment"] = df["environment"].map(lambda e: env_map.get(e, "production"))
+    else:
+        df["environment"] = "production"
+    if "status" in df.columns:
+        df["status"] = df["status"].replace({"failed": "failure"})
+    return df
 
 
 def create_layout():
@@ -17,13 +74,20 @@ def create_layout():
         from compass.dora_calculator import get_mock_dora_metrics
         dora = get_mock_dora_metrics()
     else:
-        try:
-            from compass.dora_calculator import compute_dora_metrics
-            from data_layer.queries.custom_tables import get_deployment_events
-            deploys = get_deployment_events()
-            dora = compute_dora_metrics(deploys) if not deploys.empty else {}
-        except Exception:
-            dora = {}
+        # Try staged table first, fall back to live computation
+        dora = _load_staged_dora()
+        if not dora:
+            try:
+                from compass.dora_calculator import compute_dora_metrics
+                from data_layer.queries.custom_tables import get_deployment_events
+                deploys = get_deployment_events()
+                if not deploys.empty:
+                    dora_deploys = _map_deploys_for_dora(deploys)
+                    dora = compute_dora_metrics(deployments=dora_deploys)
+                else:
+                    dora = {}
+            except Exception:
+                dora = {}
 
     # Safe accessors for chart values
     def _val(key):

@@ -28,6 +28,7 @@ from typing import Optional
 import pandas as pd
 
 from data_layer.connection import get_connection
+from data_layer import precomputed
 
 logger = logging.getLogger(__name__)
 
@@ -117,10 +118,14 @@ def get_deployment_events(team_id: Optional[str] = None,
       {date_filter}
     ORDER BY event_time DESC
     """
-    return _safe_query(conn, query, [
+    fallback_cols = [
         "event_id", "event_date", "actor_type", "actor_email",
         "is_golden_path", "artifact_type", "environment", "source_system", "status",
-    ])
+    ]
+    df = _safe_query(conn, query, fallback_cols)
+    if not df.empty:
+        return df
+    return precomputed.get_deployment_events()
 
 
 # ---------------------------------------------------------------------------
@@ -146,8 +151,8 @@ def get_pipeline_runs(team_id: Optional[str] = None) -> pd.DataFrame:
         j.name AS job_name,
         DATE(r.period_start_time) AS run_date,
         CASE
-            WHEN r.result_state = 'SUCCESS' THEN 'success'
-            WHEN r.result_state IN ('FAILED', 'TIMEDOUT', 'CANCELED') THEN 'failed'
+            WHEN r.result_state = 'SUCCEEDED' THEN 'success'
+            WHEN r.result_state IN ('FAILED', 'ERROR', 'TIMEDOUT', 'CANCELED', 'CANCELLED') THEN 'failed'
             ELSE 'unknown'
         END AS status,
         COALESCE(
@@ -168,10 +173,14 @@ def get_pipeline_runs(team_id: Optional[str] = None) -> pd.DataFrame:
       AND r.result_state IS NOT NULL
     ORDER BY r.period_start_time DESC
     """
-    return _safe_query(conn, query, [
+    fallback_cols = [
         "run_id", "job_id", "job_name", "run_date",
         "status", "duration_seconds", "is_git_backed",
-    ])
+    ]
+    df = _safe_query(conn, query, fallback_cols)
+    if not df.empty:
+        return df
+    return precomputed.get_pipeline_runs()
 
 
 # ---------------------------------------------------------------------------
@@ -372,14 +381,20 @@ def get_jobs() -> pd.DataFrame:
     conn = get_connection()
     if conn.is_mock():
         return pd.DataFrame(columns=cols)
-    query = """
-    SELECT job_id, workspace_id, name, creator_user_name,
-           run_as_user_name, job_type, schedule,
-           CAST(settings AS STRING) AS settings
-    FROM system.lakeflow.jobs
-    WHERE delete_time IS NULL
-    """
-    return _safe_query(conn, query, cols)
+    try:
+        query = """
+        SELECT job_id, workspace_id, name, creator_user_name,
+               run_as_user_name, job_type, schedule,
+               CAST(settings AS STRING) AS settings
+        FROM system.lakeflow.jobs
+        WHERE delete_time IS NULL
+        """
+        df = _safe_query(conn, query, cols)
+        if not df.empty:
+            return df
+    except Exception:
+        pass
+    return precomputed.get_jobs()
 
 
 # ---------------------------------------------------------------------------
@@ -441,19 +456,25 @@ def get_clusters() -> pd.DataFrame:
     conn = get_connection()
     if conn.is_mock():
         return pd.DataFrame(columns=cols)
-    query = """
-    SELECT cluster_id, cluster_name, cluster_source,
-           owned_by AS creator,
-           driver_node_type_id AS driver_node_type,
-           node_type_id AS worker_node_type,
-           num_workers,
-           autoscale_min_workers AS autoscale_min,
-           autoscale_max_workers AS autoscale_max,
-           policy_id
-    FROM system.compute.clusters
-    WHERE delete_time IS NULL
-    """
-    return _safe_query(conn, query, cols)
+    try:
+        query = """
+        SELECT cluster_id, cluster_name, cluster_source,
+               owned_by AS creator,
+               driver_node_type_id AS driver_node_type,
+               node_type_id AS worker_node_type,
+               num_workers,
+               autoscale_min_workers AS autoscale_min,
+               autoscale_max_workers AS autoscale_max,
+               policy_id
+        FROM system.compute.clusters
+        WHERE delete_time IS NULL
+        """
+        df = _safe_query(conn, query, cols)
+        if not df.empty:
+            return df
+    except Exception:
+        pass
+    return precomputed.get_clusters()
 
 
 # ---------------------------------------------------------------------------

@@ -135,6 +135,11 @@ class DataConnection:
                 "Use get_mock_provider() methods instead."
             )
 
+        # Lazy retry: if initial connection failed, try again
+        if self._sql_connection is None:
+            logger.info("SQL connection not available, retrying...")
+            self._init_sql_connection()
+
         if self._sql_connection is None:
             raise ConnectionError(
                 "No SQL connection available. Check warehouse and auth configuration."

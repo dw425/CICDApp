@@ -1,0 +1,4502 @@
+[
+  {
+    "run_id": "671856129858722",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "671856129858722",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "850310216747912",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "850310216747912",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "760505497057699",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "59",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "760505497057699",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "59",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "806146183584294",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "806146183584294",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "909401377809801",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "909401377809801",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "82569126112977",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "82569126112977",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "890291754517633",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "890291754517633",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "853775741726993",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "853775741726993",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "203647382782514",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "203647382782514",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "961112176997877",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "961112176997877",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "263930754771354",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "263930754771354",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1104713794423310",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1104713794423310",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "211235608111556",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "72",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "211235608111556",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "72",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "429703103864514",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "429703103864514",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "392002646648029",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "32",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "392002646648029",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "32",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "885967733374154",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "885967733374154",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1057865415148404",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1057865415148404",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "454368280564044",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "454368280564044",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "884758326418250",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "884758326418250",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "814040809352176",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "814040809352176",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "379066410430640",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "379066410430640",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1052236068749644",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "94",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1052236068749644",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "94",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "633158272772071",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "633158272772071",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "606055237879859",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "56",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "606055237879859",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "56",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "111172962049530",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "111172962049530",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "812631364027638",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "812631364027638",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "262399878242785",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "262399878242785",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "636159339707055",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "636159339707055",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "766677531640461",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "766677531640461",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "855798161865377",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "855798161865377",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "479010075499453",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "479010075499453",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "451009523605441",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "25",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "451009523605441",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "25",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "123782196248833",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "123782196248833",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "631645285792400",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "631645285792400",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "159701725609873",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "159701725609873",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "603933290564384",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "603933290564384",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "361451979316194",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "361451979316194",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "190966664924212",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "190966664924212",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "206291748292425",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "206291748292425",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "527199966984613",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "527199966984613",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "729680654203066",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "729680654203066",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "753459488726386",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "753459488726386",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "289190165620289",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "289190165620289",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "606468860974230",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "606468860974230",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "416455026474970",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "416455026474970",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "531444239757183",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "531444239757183",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "630267613598268",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "630267613598268",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1050805605733772",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "28",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1050805605733772",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "28",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "3719706899512",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "52",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "3719706899512",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "52",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "957234681703953",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "54",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "957234681703953",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "54",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "318511620745330",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "318511620745330",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "739945768602238",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "74",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "739945768602238",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "74",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "906216843568533",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "906216843568533",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "700954673643161",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "700954673643161",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "264282415337077",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "264282415337077",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "865255936838387",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "865255936838387",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "119141592471541",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "119141592471541",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "268928119375855",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "268928119375855",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "973358616526755",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "973358616526755",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "991725261814998",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "991725261814998",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "807292561148606",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "807292561148606",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "507998625036726",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "507998625036726",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "196407703793947",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "196407703793947",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1116892855044577",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1116892855044577",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "450831723586912",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "27",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "450831723586912",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "27",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "930188648038893",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "52",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "930188648038893",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "52",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "543467850849663",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "543467850849663",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1062281608431526",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1062281608431526",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "270002300913532",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "270002300913532",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "954824281794896",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "954824281794896",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "426890599971518",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "55",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "426890599971518",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "55",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "465555154568100",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "465555154568100",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "412782289705385",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "412782289705385",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "666013321419723",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "666013321419723",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "275555951679838",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "275555951679838",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "159627321230965",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "159627321230965",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "434697404836938",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "434697404836938",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1050565388216172",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1050565388216172",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "539308211435338",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "539308211435338",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "420063742968620",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "54",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "420063742968620",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "54",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "681785531971708",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "681785531971708",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "801499224231629",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "30",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "163647115963700",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "801499224231629",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "30",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "163647115963700",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "770172665470266",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "770172665470266",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "602760971096526",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "602760971096526",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "655487961060457",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "655487961060457",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "947073269107698",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "39",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "947073269107698",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "39",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "830968995856323",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "74",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "830968995856323",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "74",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "911833438379117",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "911833438379117",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "314238595999208",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "314238595999208",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "582798322951275",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "582798322951275",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "761305505876586",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "67",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "761305505876586",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "67",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "251450227766528",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "251450227766528",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "667544074994981",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "667544074994981",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "234452485878518",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "234452485878518",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "458624172246044",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "458624172246044",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "34925669280069",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "34925669280069",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "957306648449702",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "957306648449702",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "657562317820013",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "657562317820013",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "18929001089790",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "24",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "18929001089790",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "24",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "214585584252358",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "214585584252358",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "613101584201954",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "613101584201954",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "412938579834975",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "412938579834975",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "7062507859995",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "7062507859995",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1055165156351527",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1055165156351527",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "288855223881176",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "288855223881176",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1000044127892004",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1000044127892004",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "581630356764385",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "581630356764385",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1023861854021375",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1023861854021375",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "591914362725959",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "591914362725959",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "803138450392560",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "71",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "803138450392560",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "71",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "86338919943052",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "86338919943052",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "930893251984030",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "930893251984030",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "153050989478380",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "153050989478380",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "17447775075175",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "17447775075175",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1028133121852474",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "30",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1028133121852474",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "30",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "890399723502259",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "890399723502259",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "716678083134984",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "716678083134984",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "434151230071854",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "434151230071854",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1084223316721694",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1084223316721694",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1109738875761971",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "38",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1109738875761971",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "38",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "683713995226136",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "683713995226136",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1065168156521132",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1065168156521132",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "77182669501087",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "67",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "77182669501087",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "67",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "431854114449009",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "431854114449009",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "309464917643412",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "309464917643412",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "942655116548361",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "942655116548361",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "715023797298214",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "715023797298214",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "315632376725746",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "315632376725746",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "339023428416023",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "339023428416023",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "809257243362564",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "809257243362564",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "80243721676462",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "80243721676462",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "393140344468969",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "28",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "740431022966368",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "393140344468969",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "28",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "740431022966368",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "326530603676922",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "59",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "326530603676922",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "59",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "583645234856553",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "583645234856553",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "170432149868817",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "76",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "170432149868817",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "76",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "16599873985811",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "16599873985811",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "400322160132621",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "56",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "400322160132621",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "56",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "400494708285961",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "400494708285961",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "519478305565369",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "519478305565369",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "10845164147418",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "10845164147418",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "495433153870850",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "495433153870850",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "64535804128607",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "64535804128607",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "608154698968979",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "75",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "608154698968979",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "75",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "941931208958763",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "941931208958763",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "48",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "470598295119769",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "470598295119769",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "671360360439721",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "671360360439721",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1056634984514813",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1056634984514813",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "759931924544154",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "29",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "759931924544154",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "29",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "270464357777697",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "270464357777697",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "678855782046561",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "678855782046561",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1091841276854498",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1091841276854498",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "955183975286130",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "955183975286130",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "973530916423122",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "39",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "973530916423122",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "39",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "7427058546657",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "7427058546657",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "492345140033435",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "492345140033435",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "53620136732295",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "53620136732295",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "499003665131581",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "499003665131581",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "46",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "596248141873679",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "56",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "596248141873679",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "56",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "749147973971532",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "749147973971532",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "145667984496053",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "72",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "145667984496053",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "72",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "477450798576977",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "477450798576977",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "251177725326397",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "58",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "251177725326397",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "58",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "303674550510387",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "303674550510387",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "619226054407788",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "619226054407788",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "782144828679138",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "782144828679138",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "587808872084347",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "26",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "587808872084347",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "26",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "106551665423331",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "106551665423331",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "205942489941337",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "205942489941337",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "572398637556641",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "74",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "572398637556641",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "74",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "922226905789286",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "59",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "922226905789286",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "59",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "281620786508380",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "281620786508380",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "646020959775823",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "646020959775823",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "190202371922494",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "190202371922494",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "951658723145257",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "951658723145257",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "300521392382814",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "58",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "300521392382814",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "58",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "938493653355058",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "938493653355058",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "996335032869972",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "996335032869972",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "992691111600782",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "992691111600782",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "786431431979152",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "786431431979152",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1009715270230422",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1009715270230422",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1048498567897523",
+    "job_id": "155196827080024",
+    "job_name": "[dev dlokey] uc_001 \u2014 Daily Cost Forecast Scoring",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "941",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1048498567897523",
+    "job_id": "155196827080024",
+    "job_name": "[dev dlokey] uc_001 \u2014 Daily Cost Forecast Scoring",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "941",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "169644526615597",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "169644526615597",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "365913369623709",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "30",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "365913369623709",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "30",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "85707251603818",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "85707251603818",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1117142586907642",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "58",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1117142586907642",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "58",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "525628547635236",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "525628547635236",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "985335518751717",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "91",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "985335518751717",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "91",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "987350814048600",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "987350814048600",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "761351898315376",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "55",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "761351898315376",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "55",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "217894197700565",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "217894197700565",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "101138953277587",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "101138953277587",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "80548210765680",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "80548210765680",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "145541655777515",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "145541655777515",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "66",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1109535395972783",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1109535395972783",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "40",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1096502449411825",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1096502449411825",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1097109800120202",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1097109800120202",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "913060756904340",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "56",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "913060756904340",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "56",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1043542606420620",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "52",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1043542606420620",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "52",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "956417002807232",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "956417002807232",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "144022712200487",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "54",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "144022712200487",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "54",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "691417669421206",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "23",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "691417669421206",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "23",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "72231147820137",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "72231147820137",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "523830761872547",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "523830761872547",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "626091001435478",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "626091001435478",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "941375531198975",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "941375531198975",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "77579709189781",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "74",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "77579709189781",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "74",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "915772424357362",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "915772424357362",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "29707500501728",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "73",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "29707500501728",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "73",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "353286520955562",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "353286520955562",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "49",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "147159272629101",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "147159272629101",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "63",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "880996680153307",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "880996680153307",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1019450111347197",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "67",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1019450111347197",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "67",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "713181802283866",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "713181802283866",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "883644269640490",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "883644269640490",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1006969747136529",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1006969747136529",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "835269395885595",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "835269395885595",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "432109350981487",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "26",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "432109350981487",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "26",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "405153797245304",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "405153797245304",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "933628298264596",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "933628298264596",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "61",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "134065478013774",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "134065478013774",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "210699568180429",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "210699568180429",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "70",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "248276488469187",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "248276488469187",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "44",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "921678453066812",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "921678453066812",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "336749955697561",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "336749955697561",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "45",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "694432397494975",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "72",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "694432397494975",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "72",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "427025908466788",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "427025908466788",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "352309630467388",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "352309630467388",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "65",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1037729063420645",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1037729063420645",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1006834068157794",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "82",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1006834068157794",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "82",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "787334792307894",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "787334792307894",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "903045091310809",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "903045091310809",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "68",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "824427174184499",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "824427174184499",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "50",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1124009168112483",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "72",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1124009168112483",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "72",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "451911619599997",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "451911619599997",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "43",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "341940559320903",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "38",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "341940559320903",
+    "job_id": "329642539080710",
+    "job_name": "Pandas No Spark Test",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "38",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "286916807803023",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "286916807803023",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "62",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "163262428305139",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "163262428305139",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "53",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "728830445013455",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "77",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "728830445013455",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "77",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "322970111192990",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "322970111192990",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "47",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "708817611751627",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "708817611751627",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "57",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "196205839187248",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "196205839187248",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "41",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1085966993630533",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "73",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "1085966993630533",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "73",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "976800241197640",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "52",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "976800241197640",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "52",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "21386575862340",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "69",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "21386575862340",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "69",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "162977157398644",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "162977157398644",
+    "job_id": "690080106993799",
+    "job_name": "[2113057708050922] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "42",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "722161265888525",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "722161265888525",
+    "job_id": "608531436898083",
+    "job_name": "[1835655496503006] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "64",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "635332125863255",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "635332125863255",
+    "job_id": "965207764790375",
+    "job_name": "[3075223085651441] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "51",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "328365057541512",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  },
+  {
+    "run_id": "328365057541512",
+    "job_id": "98923743016803",
+    "job_name": "[553248772374201] Trace Archive Job",
+    "run_date": "2026-04-02",
+    "status": "success",
+    "duration_seconds": "60",
+    "is_git_backed": "true"
+  }
+]
